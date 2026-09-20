@@ -15,4 +15,4 @@ RUN useradd --create-home angelix \
 && chown -R angelix:angelix /app
 USER angelix
 EXPOSE 10000
-CMD ["sh", "-c","gunicorn --bind 0.0.0.0:${PORT:-10000} --workers 1 wsgi:app"]
+CMD ["sh","-c","flask --app run:app db upgrade && gunicorn --bind 0.0.0.0:${PORT:-10000} --workers 1 wsgi:app"]
