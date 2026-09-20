@@ -1,0 +1,7 @@
+Transaction,Expected Account,V2 Account,V2 Account Confidence,V3 Account,V3 Account Confidence,Expected D/C,V2 D/C,V2 D/C Confidence,V3 D/C,V3 D/C Confidence,V2 Account Correct,V3 Account Correct,V2 D/C Correct,V3 D/C Correct
+Office Electricity Bill,expense,expense,0.9899212272753773,expense,0.9033333333333333,debit,debit,0.9671730715963269,debit,0.8933333333333333,True,True,True,True
+Customer Revenue,revenue,revenue,0.991893079431366,revenue,0.7133333333333334,credit,credit,0.9209817478851592,credit,0.5633333333333334,True,True,True,True
+Office Laptop Purchase,asset,asset,0.9953010307679897,asset,0.8233333333333334,debit,debit,0.9870306835107909,debit,0.9533333333333334,True,True,True,True
+Business Loan,liability,liability,0.9961341163040068,liability,0.6933333333333334,credit,credit,0.9401363272718036,credit,0.7733333333333333,True,True,True,True
+Owner Capital,equity,equity,0.9987192657178644,equity,0.8533333333333334,credit,credit,0.9614478533638728,credit,0.8566666666666667,True,True,True,True
+Stationery Items,expense,asset,0.9945185409349857,asset,0.71,debit,debit,0.9919678946093957,debit,0.9066666666666666,False,False,True,True

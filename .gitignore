@@ -1,0 +1,16 @@
+.env
+.venv/
+__pycache__/
+*.py[cod]
+*.db
+.pytest_cache/
+.coverage
+htmlcov/
+uploads/*
+generated_reports/*
+logs/*
+!uploads/.gitkeep
+!generated_reports/.gitkeep
+!logs/.gitkeep
+instance/ml_models/organization_*/
+ANGELIX_Supervised_Accounting_ML/models/debit_credit_classifier_v3.joblib

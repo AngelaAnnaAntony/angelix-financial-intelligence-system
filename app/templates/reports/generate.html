@@ -1,0 +1,3097 @@
+{% extends "base.html" %}
+
+{% block title %}Financial Reports{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+
+    <div>
+        <div class="eyebrow">
+            FINANCIAL REPORTING
+        </div>
+
+        <h1>
+            Financial Reports
+        </h1>
+
+        <p class="page-subtitle">
+            Generate structured financial statements or a complete
+            financial analysis report for your organization.
+        </p>
+    </div>
+
+</div>
+
+
+<!-- ============================================================
+     REPORT GENERATION
+     ============================================================ -->
+
+<div class="report-layout">
+
+    <!-- ========================================================
+         GENERATION CARD
+         ======================================================== -->
+
+    <section class="card report-card">
+
+        <div class="card-header">
+
+            <div>
+
+                <h2>
+                    Generate Report
+                </h2>
+
+                <p>
+                    Select the reporting period and choose the type
+                    of report you want ANGELIX to generate.
+                </p>
+
+            </div>
+
+            <div class="report-icon">
+                PDF
+            </div>
+
+        </div>
+
+
+        <form
+            method="POST"
+            action="{{ url_for(
+                'reports.generate',
+                organization_id=organization_id
+            ) }}"
+            class="report-form"
+            id="reportGenerationForm"
+        >
+
+            <!-- CSRF -->
+            <input
+                type="hidden"
+                name="csrf_token"
+                value="{{ csrf_token() }}"
+            >
+
+
+            <!-- ==================================================
+                 REPORT TYPE
+                 ================================================== -->
+
+            <div class="form-section">
+
+                <div class="section-heading">
+
+                    <h3>
+                        1. Select Report Type
+                    </h3>
+
+                    <p>
+                        Choose the type of financial document
+                        ANGELIX should generate.
+                    </p>
+
+                </div>
+
+
+                <div class="report-type-grid">
+
+                    <!-- Financial Statements -->
+
+                    <label
+                        class="report-type-option"
+                        for="financialStatementsReport"
+                    >
+
+                        <input
+                            type="radio"
+                            id="financialStatementsReport"
+                            name="report_type"
+                            value="financial_statements"
+                        >
+
+                        <span class="report-type-card">
+
+                            <span class="report-type-check">
+                                ✓
+                            </span>
+
+                            <span class="report-type-icon statement">
+                                FS
+                            </span>
+
+                            <span class="report-type-content">
+
+                                <strong>
+                                    Financial Statements Report
+                                </strong>
+
+                                <span>
+                                    Generate the core financial
+                                    statements from transaction or
+                                    structured financial data.
+                                </span>
+
+                            </span>
+
+                        </span>
+
+                    </label>
+
+
+                    <!-- Financial Analysis -->
+
+                    <label
+                        class="report-type-option"
+                        for="financialAnalysisReport"
+                    >
+
+                        <input
+                            type="radio"
+                            id="financialAnalysisReport"
+                            name="report_type"
+                            value="financial_analysis"
+                            checked
+                        >
+
+                        <span class="report-type-card">
+
+                            <span class="report-type-check">
+                                ✓
+                            </span>
+
+                            <span class="report-type-icon analysis">
+                                AI
+                            </span>
+
+                            <span class="report-type-content">
+
+                                <strong>
+                                    Financial Analysis Report
+                                </strong>
+
+                                <span>
+                                    Generate a complete financial
+                                    analysis with charts, trends,
+                                    health score and AI insights.
+                                </span>
+
+                            </span>
+
+                        </span>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==================================================
+                 FINANCIAL STATEMENTS INFORMATION
+                 ================================================== -->
+
+            <div
+                id="financialStatementsInfo"
+                class="report-type-info statement-info"
+                hidden
+            >
+
+                <div class="info-icon">
+                    FS
+                </div>
+
+                <div>
+
+                    <strong>
+                        Financial Statements Report
+                    </strong>
+
+                    <p>
+                        This report combines the core financial
+                        statements into one PDF:
+                    </p>
+
+                    <ul>
+
+                        <li>
+                            Profit & Loss Statement
+                        </li>
+
+                        <li>
+                            Income & Expenditure Statement
+                        </li>
+
+                        <li>
+                            Balance Sheet
+                        </li>
+
+                    </ul>
+
+                    <p class="important-note">
+                        This report is intended for cases where
+                        financial statements have not already been
+                        uploaded or extracted for the selected
+                        reporting period. If an existing financial
+                        statement overlaps the selected period,
+                        ANGELIX will prevent duplicate statement
+                        generation.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==================================================
+                 FINANCIAL ANALYSIS INFORMATION
+                 ================================================== -->
+
+            <div
+                id="financialAnalysisInfo"
+                class="report-type-info analysis-info"
+            >
+
+                <div class="info-icon">
+                    AI
+                </div>
+
+                <div>
+
+                    <strong>
+                        Financial Analysis Report
+                    </strong>
+
+                    <p>
+                        This report focuses on understanding the
+                        organization's financial performance and
+                        provides:
+                    </p>
+
+                    <div class="analysis-feature-grid">
+
+                        <span>
+                            ✓ Financial KPIs
+                        </span>
+
+                        <span>
+                            ✓ Revenue & Expense Analysis
+                        </span>
+
+                        <span>
+                            ✓ Trends & Charts
+                        </span>
+
+                        <span>
+                            ✓ Financial Ratios
+                        </span>
+
+                        <span>
+                            ✓ Balance Sheet Analysis
+                        </span>
+
+                        <span>
+                            ✓ Financial Health Score
+                        </span>
+
+                        <span>
+                            ✓ Financial Forecast
+                        </span>
+
+                        <span>
+                            ✓ AI Financial Analysis
+                        </span>
+
+                        <span>
+                            ✓ AI Recommendations
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==================================================
+                 REPORTING PERIOD
+                 ================================================== -->
+
+            <div class="form-section">
+
+                <div class="section-heading">
+
+                    <h3>
+                        2. Select Reporting Period
+                    </h3>
+
+                    <p>
+                        Define the financial period that should be
+                        included in the report.
+                    </p>
+
+                </div>
+
+
+                <div class="form-grid">
+
+                    <!-- Start Date -->
+
+                    <div class="form-group">
+
+                        <label for="start">
+                            Start Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="start"
+                            name="start"
+                            value="{{ request.form.get(
+                                'start',
+                                '2026-04-01'
+                            ) }}"
+                            required
+                        >
+
+                        <small>
+                            Beginning of the reporting period.
+                        </small>
+
+                    </div>
+
+
+                    <!-- End Date -->
+
+                    <div class="form-group">
+
+                        <label for="end">
+                            End Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="end"
+                            name="end"
+                            value="{{ request.form.get(
+                                'end',
+                                '2027-03-31'
+                            ) }}"
+                            required
+                        >
+
+                        <small>
+                            End of the reporting period.
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==================================================
+                 REPORT PREVIEW
+                 ================================================== -->
+
+            <div
+                id="reportPreview"
+                class="report-preview"
+            >
+
+                <div
+                    id="reportPreviewIcon"
+                    class="preview-icon"
+                >
+                    AI
+                </div>
+
+                <div>
+
+                    <strong id="reportPreviewTitle">
+                        Financial Analysis Report
+                    </strong>
+
+                    <p id="reportPreviewDescription">
+                        ANGELIX will generate a PDF containing
+                        financial KPIs, analytics, trends,
+                        financial health information, forecast,
+                        AI financial analysis and AI-powered
+                        recommendations.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==================================================
+                 FORM ACTIONS
+                 ================================================== -->
+
+            <div class="form-actions">
+
+                <a
+                    href="{{ url_for('dashboard.home') }}"
+                    class="btn btn-secondary"
+                >
+                    Cancel
+                </a>
+
+                <button
+                    type="submit"
+                    class="btn btn-primary"
+                    id="generateReportBtn"
+                >
+                    <span>
+                        Generate PDF Report
+                    </span>
+                </button>
+
+            </div>
+
+        </form>
+
+    </section>
+
+
+    <!-- ========================================================
+         INFORMATION CARD
+         ======================================================== -->
+
+    <aside class="card information-card">
+
+        <div class="card-header">
+
+            <div>
+
+                <h2>
+                    Report Types
+                </h2>
+
+                <p>
+                    ANGELIX separates financial statements from
+                    financial interpretation and AI analysis.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="report-features">
+
+            <!-- Statements -->
+
+            <div class="feature-item">
+
+                <span class="feature-icon">
+                    FS
+                </span>
+
+                <div>
+
+                    <strong>
+                        Financial Statements
+                    </strong>
+
+                    <p>
+                        Profit & Loss, Income & Expenditure and
+                        Balance Sheet in one structured report.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- KPIs -->
+
+            <div class="feature-item">
+
+                <span class="feature-icon">
+                    ₹
+                </span>
+
+                <div>
+
+                    <strong>
+                        Financial KPIs
+                    </strong>
+
+                    <p>
+                        Revenue, expenses, net profit, margins and
+                        other deterministic financial indicators.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Charts -->
+
+            <div class="feature-item">
+
+                <span class="feature-icon">
+                    ↗
+                </span>
+
+                <div>
+
+                    <strong>
+                        Charts & Trends
+                    </strong>
+
+                    <p>
+                        Visual analysis of revenue, expenses,
+                        performance and financial trends.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Health -->
+
+            <div class="feature-item">
+
+                <span class="feature-icon">
+                    H
+                </span>
+
+                <div>
+
+                    <strong>
+                        Financial Health
+                    </strong>
+
+                    <p>
+                        Transparent Financial Health Score with
+                        component-level analysis.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- AI -->
+
+            <div class="feature-item">
+
+                <span class="feature-icon">
+                    AI
+                </span>
+
+                <div>
+
+                    <strong>
+                        AI Analysis & Recommendations
+                    </strong>
+
+                    <p>
+                        AI-generated financial observations and
+                        actionable recommendations based on the
+                        available financial context.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- PDF -->
+
+            <div class="feature-item">
+
+                <span class="feature-icon">
+                    PDF
+                </span>
+
+                <div>
+
+                    <strong>
+                        Professional PDF
+                    </strong>
+
+                    <p>
+                        Downloadable PDF suitable for review,
+                        presentation and financial documentation.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+</div>
+
+
+
+<!-- ============================================================
+     REPORT HISTORY
+     ============================================================ -->
+
+<section class="card report-history-card">
+
+    <div class="history-header">
+
+        <div>
+
+            <div class="eyebrow">
+                REPORT MANAGEMENT
+            </div>
+
+            <h2>
+                Report History
+            </h2>
+
+            <p>
+                View, download and manage reports generated
+                for your organization.
+            </p>
+
+        </div>
+
+
+        <button
+            type="button"
+            id="refreshReportHistoryBtn"
+            class="btn btn-secondary refresh-btn"
+        >
+            <span class="refresh-icon">↻</span>
+            Refresh
+        </button>
+
+    </div>
+
+
+    <!-- ========================================================
+         REPORT STATISTICS
+         ======================================================== -->
+
+    <div class="history-stat-grid">
+
+        <div class="history-stat-card">
+
+            <div class="history-stat-icon blue">
+                R
+            </div>
+
+            <div>
+
+                <span class="history-stat-label">
+                    Total Reports
+                </span>
+
+                <strong id="historyTotalReports">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="history-stat-card">
+
+            <div class="history-stat-icon green">
+                ✓
+            </div>
+
+            <div>
+
+                <span class="history-stat-label">
+                    Completed
+                </span>
+
+                <strong id="historyReadyReports">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="history-stat-card">
+
+            <div class="history-stat-icon amber">
+                …
+            </div>
+
+            <div>
+
+                <span class="history-stat-label">
+                    Processing
+                </span>
+
+                <strong id="historyProcessingReports">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="history-stat-card">
+
+            <div class="history-stat-icon purple">
+                M
+            </div>
+
+            <div>
+
+                <span class="history-stat-label">
+                    This Month
+                </span>
+
+                <strong id="historyMonthlyReports">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================================
+         SEARCH AND FILTERS
+         ======================================================== -->
+
+    <div class="history-controls">
+
+        <div class="history-search">
+
+            <span class="search-icon">
+                ⌕
+            </span>
+
+            <input
+                type="search"
+                id="reportHistorySearch"
+                placeholder="Search reports..."
+                autocomplete="off"
+            >
+
+            <button
+                type="button"
+                id="clearReportSearchBtn"
+                class="clear-search-btn"
+                hidden
+                aria-label="Clear search"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="history-filter-grid">
+
+            <select
+                id="historyReportType"
+                aria-label="Filter by report type"
+            >
+
+                <option value="all">
+                    All Report Types
+                </option>
+
+                <option value="financial_statements">
+                    Financial Statements
+                </option>
+
+                <option value="financial_analysis">
+                    Financial Analysis
+                </option>
+
+                <option value="financial_summary">
+                    Financial Summary
+                </option>
+
+                <option value="profit_loss">
+                    Profit & Loss
+                </option>
+
+                <option value="balance_sheet">
+                    Balance Sheet
+                </option>
+
+                <option value="cash_flow">
+                    Cash Flow
+                </option>
+
+                <option value="ai_analysis">
+                    AI Financial Analysis
+                </option>
+
+            </select>
+
+
+            <select
+                id="historyReportStatus"
+                aria-label="Filter by report status"
+            >
+
+                <option value="all">
+                    All Statuses
+                </option>
+
+                <option value="completed">
+                    Completed
+                </option>
+
+                <option value="processing">
+                    Processing
+                </option>
+
+                <option value="pending">
+                    Pending
+                </option>
+
+                <option value="failed">
+                    Failed
+                </option>
+
+            </select>
+
+
+            <select
+                id="historyReportFormat"
+                aria-label="Filter by report format"
+            >
+
+                <option value="all">
+                    All Formats
+                </option>
+
+                <option value="pdf">
+                    PDF
+                </option>
+
+                <option value="xlsx">
+                    XLSX
+                </option>
+
+                <option value="csv">
+                    CSV
+                </option>
+
+            </select>
+
+
+            <select
+                id="historyDateRange"
+                aria-label="Filter by date"
+            >
+
+                <option value="all">
+                    All Dates
+                </option>
+
+                <option value="7">
+                    Last 7 Days
+                </option>
+
+                <option value="30">
+                    Last 30 Days
+                </option>
+
+                <option value="90">
+                    Last 90 Days
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="history-filter-actions">
+
+            <button
+                type="button"
+                id="clearReportFiltersBtn"
+                class="text-action-btn"
+            >
+                Clear Filters
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================================
+         BULK ACTION TOOLBAR
+         ======================================================== -->
+
+    <div
+        id="historyBulkToolbar"
+        class="history-bulk-toolbar"
+        hidden
+    >
+
+        <div class="bulk-selection-info">
+
+            <strong id="selectedReportsCount">
+                0
+            </strong>
+
+            <span>
+                report(s) selected
+            </span>
+
+        </div>
+
+
+        <div class="bulk-actions">
+
+            <button
+                type="button"
+                id="bulkDownloadBtn"
+                class="btn btn-secondary btn-small"
+            >
+                Download Selected
+            </button>
+
+            <button
+                type="button"
+                id="bulkDeleteBtn"
+                class="btn btn-danger btn-small"
+            >
+                Delete Selected
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================================
+         REPORT TABLE
+         ======================================================== -->
+
+    <div class="history-table-wrapper">
+
+        <table class="report-history-table">
+
+            <thead>
+
+                <tr>
+
+                    <th class="checkbox-column">
+
+                        <label class="table-checkbox">
+
+                            <input
+                                type="checkbox"
+                                id="selectAllReports"
+                                aria-label="Select all reports"
+                            >
+
+                            <span></span>
+
+                        </label>
+
+                    </th>
+
+                    <th>
+                        Report
+                    </th>
+
+                    <th>
+                        Type
+                    </th>
+
+                    <th>
+                        Period
+                    </th>
+
+                    <th>
+                        Format
+                    </th>
+
+                    <th>
+                        Created
+                    </th>
+
+                    <th>
+                        Status
+                    </th>
+
+                    <th>
+                        Size
+                    </th>
+
+                    <th>
+                        Actions
+                    </th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="reportHistoryTableBody"></tbody>
+
+        </table>
+
+    </div>
+
+
+    <!-- ========================================================
+         EMPTY STATE
+         ======================================================== -->
+
+    <div
+        id="reportHistoryEmptyState"
+        class="history-empty-state"
+        hidden
+    >
+
+        <div class="empty-icon">
+            PDF
+        </div>
+
+        <h3>
+            No Reports Found
+        </h3>
+
+        <p>
+            No reports match the current filters.
+            Generate a financial report above to get started.
+        </p>
+
+        <button
+            type="button"
+            id="resetHistoryFiltersBtn"
+            class="btn btn-primary"
+        >
+            Reset Filters
+        </button>
+
+    </div>
+
+
+    <!-- ========================================================
+         PAGINATION
+         ======================================================== -->
+
+    <div class="history-pagination">
+
+        <div class="pagination-summary">
+
+            Showing
+
+            <strong id="historyShowingFrom">
+                0
+            </strong>
+
+            –
+
+            <strong id="historyShowingTo">
+                0
+            </strong>
+
+            of
+
+            <strong id="historyShowingTotal">
+                0
+            </strong>
+
+            reports
+
+        </div>
+
+
+        <div class="pagination-controls">
+
+            <button
+                type="button"
+                id="historyPreviousPage"
+                class="pagination-arrow"
+                aria-label="Previous page"
+            >
+                ‹
+            </button>
+
+            <button
+                type="button"
+                class="pagination-page active"
+                data-page="1"
+            >
+                1
+            </button>
+
+            <button
+                type="button"
+                id="historyNextPage"
+                class="pagination-arrow"
+                aria-label="Next page"
+            >
+                ›
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     DELETE CONFIRMATION MODAL
+     ============================================================ -->
+
+<div
+    id="historyDeleteModal"
+    class="report-modal"
+    hidden
+>
+
+    <div class="report-modal-content">
+
+        <button
+            type="button"
+            id="closeHistoryDeleteModal"
+            class="modal-close"
+            aria-label="Close"
+        >
+            ×
+        </button>
+
+        <div class="modal-icon">
+            !
+        </div>
+
+        <h3>
+            Delete Report
+        </h3>
+
+        <p id="deleteReportsMessage">
+            Are you sure you want to delete this report?
+            This action cannot be undone.
+        </p>
+
+        <div class="modal-actions">
+
+            <button
+                type="button"
+                id="cancelHistoryDeleteBtn"
+                class="btn btn-secondary"
+            >
+                Cancel
+            </button>
+
+            <button
+                type="button"
+                id="confirmHistoryDeleteBtn"
+                class="btn btn-danger"
+            >
+                Delete Report
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- ============================================================
+     TOAST CONTAINER
+     ============================================================ -->
+
+<div
+    id="reportHistoryToastContainer"
+    class="report-toast-container"
+    aria-live="polite"
+    aria-atomic="true"
+></div>
+
+
+
+<!-- ============================================================
+     SERVER-SIDE REPORT DATA
+     ============================================================ -->
+
+<script
+    id="angelixReportHistoryData"
+    type="application/json"
+>{{ reports|default([])|tojson }}</script>
+
+
+
+<!-- ============================================================
+     PAGE STYLES
+     ============================================================ -->
+
+<style>
+
+    /* ==========================================================
+       GENERAL
+       ========================================================== */
+
+    .page-header {
+        margin-bottom: 32px;
+    }
+
+    .eyebrow {
+        color: #4f46e5;
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 1.5px;
+        margin-bottom: 8px;
+    }
+
+    .page-header h1 {
+        margin: 0 0 10px;
+        font-size: 42px;
+        line-height: 1.15;
+    }
+
+    .page-subtitle {
+        margin: 0;
+        color: #64748b;
+        font-size: 17px;
+        max-width: 800px;
+        line-height: 1.6;
+    }
+
+
+    /* ==========================================================
+       LAYOUT
+       ========================================================== */
+
+    .report-layout {
+        display: grid;
+        grid-template-columns:
+            minmax(0, 2fr)
+            minmax(280px, 1fr);
+        gap: 24px;
+        align-items: start;
+        margin-bottom: 28px;
+    }
+
+    .card {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 22px;
+        padding: 30px;
+        box-shadow:
+            0 12px 35px
+            rgba(15, 23, 42, 0.06);
+    }
+
+    .card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 20px;
+        padding-bottom: 24px;
+        border-bottom: 1px solid #e2e8f0;
+        margin-bottom: 26px;
+    }
+
+    .card-header h2 {
+        margin: 0 0 7px;
+        font-size: 22px;
+        color: #0f172a;
+    }
+
+    .card-header p {
+        margin: 0;
+        color: #64748b;
+        line-height: 1.5;
+    }
+
+    .report-icon {
+        min-width: 54px;
+        height: 54px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 15px;
+        background:
+            linear-gradient(
+                135deg,
+                #2563eb,
+                #4f46e5
+            );
+        color: #ffffff;
+        font-weight: 800;
+        font-size: 13px;
+    }
+
+
+    /* ==========================================================
+       FORM SECTIONS
+       ========================================================== */
+
+    .form-section {
+        margin-bottom: 28px;
+    }
+
+    .section-heading {
+        margin-bottom: 16px;
+    }
+
+    .section-heading h3 {
+        margin: 0 0 5px;
+        color: #0f172a;
+        font-size: 16px;
+    }
+
+    .section-heading p {
+        margin: 0;
+        color: #64748b;
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+
+    /* ==========================================================
+       REPORT TYPE CARDS
+       ========================================================== */
+
+    .report-type-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+
+    .report-type-option {
+        position: relative;
+        display: block;
+        cursor: pointer;
+    }
+
+    .report-type-option > input {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .report-type-card {
+        position: relative;
+        display: flex;
+        gap: 13px;
+        align-items: flex-start;
+        min-height: 145px;
+        box-sizing: border-box;
+        padding: 20px;
+        border: 1.5px solid #cbd5e1;
+        border-radius: 16px;
+        background: #ffffff;
+        transition:
+            border-color 0.2s,
+            background 0.2s,
+            box-shadow 0.2s,
+            transform 0.2s;
+    }
+
+    .report-type-card:hover {
+        border-color: #93c5fd;
+        transform: translateY(-1px);
+    }
+
+    .report-type-option > input:checked
+        + .report-type-card {
+        border-color: #4f46e5;
+        background: #eef2ff;
+        box-shadow:
+            0 8px 25px
+            rgba(79, 70, 229, 0.12);
+    }
+
+    .report-type-check {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        width: 22px;
+        height: 22px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1.5px solid #cbd5e1;
+        border-radius: 50%;
+        background: #ffffff;
+        color: transparent;
+        font-size: 12px;
+        font-weight: 800;
+    }
+
+    .report-type-option > input:checked
+        + .report-type-card
+        .report-type-check {
+        border-color: #4f46e5;
+        background: #4f46e5;
+        color: #ffffff;
+    }
+
+    .report-type-icon {
+        min-width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 12px;
+        font-size: 12px;
+        font-weight: 800;
+    }
+
+    .report-type-icon.statement {
+        background: #dbeafe;
+        color: #2563eb;
+    }
+
+    .report-type-icon.analysis {
+        background: #ede9fe;
+        color: #7c3aed;
+    }
+
+    .report-type-content {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+        padding-right: 20px;
+    }
+
+    .report-type-content strong {
+        color: #0f172a;
+        font-size: 14px;
+        line-height: 1.35;
+    }
+
+    .report-type-content > span {
+        color: #64748b;
+        font-size: 12px;
+        line-height: 1.55;
+    }
+
+
+    /* ==========================================================
+       REPORT INFORMATION PANELS
+       ========================================================== */
+
+    .report-type-info {
+        display: flex;
+        gap: 14px;
+        align-items: flex-start;
+        margin-bottom: 28px;
+        padding: 18px;
+        border-radius: 15px;
+        border: 1px solid;
+    }
+
+    .report-type-info[hidden] {
+        display: none;
+    }
+
+    .statement-info {
+        background: #eff6ff;
+        border-color: #bfdbfe;
+    }
+
+    .analysis-info {
+        background: #f5f3ff;
+        border-color: #ddd6fe;
+    }
+
+    .info-icon {
+        min-width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 11px;
+        background: #ffffff;
+        color: #4338ca;
+        font-size: 11px;
+        font-weight: 800;
+    }
+
+    .report-type-info strong {
+        display: block;
+        margin-bottom: 6px;
+        color: #0f172a;
+        font-size: 14px;
+    }
+
+    .report-type-info p {
+        margin: 0 0 8px;
+        color: #475569;
+        font-size: 12px;
+        line-height: 1.55;
+    }
+
+    .report-type-info p:last-child {
+        margin-bottom: 0;
+    }
+
+    .report-type-info ul {
+        margin: 7px 0 10px;
+        padding-left: 18px;
+        color: #475569;
+        font-size: 12px;
+        line-height: 1.7;
+    }
+
+    .important-note {
+        padding-top: 9px;
+        border-top: 1px solid rgba(37, 99, 235, 0.18);
+    }
+
+    .analysis-feature-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 7px 18px;
+        margin-top: 10px;
+    }
+
+    .analysis-feature-grid span {
+        color: #475569;
+        font-size: 12px;
+    }
+
+
+    /* ==========================================================
+       FORM
+       ========================================================== */
+
+    .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-group label {
+        margin-bottom: 8px;
+        font-size: 14px;
+        font-weight: 700;
+        color: #334155;
+    }
+
+    .form-group input {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 13px 14px;
+        border: 1px solid #cbd5e1;
+        border-radius: 11px;
+        background: #ffffff;
+        color: #0f172a;
+        font-size: 15px;
+        outline: none;
+        transition:
+            border-color 0.2s,
+            box-shadow 0.2s;
+    }
+
+    .form-group input:focus {
+        border-color: #4f46e5;
+        box-shadow:
+            0 0 0 3px
+            rgba(79, 70, 229, 0.12);
+    }
+
+    .form-group small {
+        margin-top: 7px;
+        color: #94a3b8;
+        font-size: 12px;
+    }
+
+
+    /* ==========================================================
+       REPORT PREVIEW
+       ========================================================== */
+
+    .report-preview {
+        display: flex;
+        gap: 15px;
+        align-items: flex-start;
+        margin-top: 4px;
+        padding: 18px;
+        border-radius: 15px;
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+    }
+
+    .preview-icon {
+        min-width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 12px;
+        background: #ede9fe;
+        color: #7c3aed;
+        font-weight: 800;
+        font-size: 11px;
+    }
+
+    .report-preview strong {
+        display: block;
+        margin-bottom: 5px;
+        color: #0f172a;
+    }
+
+    .report-preview p {
+        margin: 0;
+        color: #64748b;
+        line-height: 1.5;
+        font-size: 13px;
+    }
+
+
+    /* ==========================================================
+       FORM ACTIONS
+       ========================================================== */
+
+    .form-actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 12px;
+        margin-top: 28px;
+        padding-top: 22px;
+        border-top: 1px solid #e2e8f0;
+    }
+
+
+    /* ==========================================================
+       BUTTONS
+       ========================================================== */
+
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 46px;
+        padding: 0 22px;
+        border-radius: 11px;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 700;
+        border: none;
+        cursor: pointer;
+        transition:
+            transform 0.2s,
+            box-shadow 0.2s,
+            opacity 0.2s;
+    }
+
+    .btn:hover {
+        transform: translateY(-1px);
+    }
+
+    .btn:disabled {
+        opacity: 0.55;
+        cursor: not-allowed;
+        transform: none;
+    }
+
+    .btn-primary {
+        color: #ffffff;
+        background:
+            linear-gradient(
+                135deg,
+                #2563eb,
+                #4f46e5
+            );
+        box-shadow:
+            0 8px 20px
+            rgba(79, 70, 229, 0.22);
+    }
+
+    .btn-secondary {
+        color: #334155;
+        background: #ffffff;
+        border: 1px solid #cbd5e1;
+    }
+
+    .btn-danger {
+        color: #ffffff;
+        background:
+            linear-gradient(
+                135deg,
+                #dc2626,
+                #b91c1c
+            );
+    }
+
+    .btn-small {
+        min-height: 38px;
+        padding: 0 15px;
+        font-size: 13px;
+    }
+
+
+    /* ==========================================================
+       INFORMATION CARD
+       ========================================================== */
+
+    .report-features {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .feature-item {
+        display: flex;
+        gap: 13px;
+        align-items: flex-start;
+    }
+
+    .feature-icon {
+        min-width: 42px;
+        height: 42px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 12px;
+        background: #eef2ff;
+        color: #4f46e5;
+        font-size: 12px;
+        font-weight: 800;
+    }
+
+    .feature-item strong {
+        display: block;
+        margin-bottom: 4px;
+        color: #0f172a;
+    }
+
+    .feature-item p {
+        margin: 0;
+        color: #64748b;
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+
+    /* ==========================================================
+       REPORT HISTORY
+       ========================================================== */
+
+    .report-history-card {
+        padding: 30px;
+    }
+
+    .history-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 20px;
+        margin-bottom: 28px;
+    }
+
+    .history-header h2 {
+        margin: 0 0 7px;
+        font-size: 28px;
+        color: #0f172a;
+    }
+
+    .history-header p {
+        margin: 0;
+        color: #64748b;
+        line-height: 1.5;
+    }
+
+    .refresh-btn {
+        flex-shrink: 0;
+    }
+
+    .refresh-icon {
+        display: inline-block;
+        margin-right: 7px;
+        font-size: 17px;
+    }
+
+    .refresh-btn.rotating .refresh-icon {
+        animation: reportSpin 0.8s linear infinite;
+    }
+
+    @keyframes reportSpin {
+
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+
+    }
+
+
+    /* ==========================================================
+       STATISTICS
+       ========================================================== */
+
+    .history-stat-grid {
+        display: grid;
+        grid-template-columns:
+            repeat(4, minmax(0, 1fr));
+        gap: 16px;
+        margin-bottom: 26px;
+    }
+
+    .history-stat-card {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 18px;
+        border: 1px solid #e2e8f0;
+        border-radius: 16px;
+        background: #f8fafc;
+    }
+
+    .history-stat-icon {
+        min-width: 42px;
+        height: 42px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 12px;
+        font-size: 13px;
+        font-weight: 800;
+    }
+
+    .history-stat-icon.blue {
+        background: #dbeafe;
+        color: #2563eb;
+    }
+
+    .history-stat-icon.green {
+        background: #dcfce7;
+        color: #16a34a;
+    }
+
+    .history-stat-icon.amber {
+        background: #fef3c7;
+        color: #d97706;
+    }
+
+    .history-stat-icon.purple {
+        background: #ede9fe;
+        color: #7c3aed;
+    }
+
+    .history-stat-label {
+        display: block;
+        margin-bottom: 3px;
+        color: #64748b;
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    .history-stat-card strong {
+        color: #0f172a;
+        font-size: 24px;
+        line-height: 1;
+    }
+
+
+    /* ==========================================================
+       SEARCH / FILTERS
+       ========================================================== */
+
+    .history-controls {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        margin-bottom: 20px;
+    }
+
+    .history-search {
+        position: relative;
+        width: 100%;
+    }
+
+    .history-search input {
+        width: 100%;
+        box-sizing: border-box;
+        min-height: 46px;
+        padding:
+            0 42px
+            0 42px;
+        border:
+            1px solid #cbd5e1;
+        border-radius: 12px;
+        background: #ffffff;
+        color: #0f172a;
+        outline: none;
+        font-size: 14px;
+    }
+
+    .history-search input:focus {
+        border-color: #4f46e5;
+        box-shadow:
+            0 0 0 3px
+            rgba(79, 70, 229, 0.1);
+    }
+
+    .search-icon {
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #64748b;
+        font-size: 19px;
+        pointer-events: none;
+    }
+
+    .clear-search-btn {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 28px;
+        height: 28px;
+        border: none;
+        border-radius: 50%;
+        background: #e2e8f0;
+        color: #475569;
+        cursor: pointer;
+        font-size: 17px;
+    }
+
+    .history-filter-grid {
+        display: grid;
+        grid-template-columns:
+            repeat(4, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .history-filter-grid select {
+        min-height: 44px;
+        padding: 0 13px;
+        border:
+            1px solid #cbd5e1;
+        border-radius: 11px;
+        background: #ffffff;
+        color: #334155;
+        font-size: 13px;
+        outline: none;
+        cursor: pointer;
+    }
+
+    .history-filter-grid select:focus {
+        border-color: #4f46e5;
+    }
+
+    .history-filter-actions {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .text-action-btn {
+        border: none;
+        background: transparent;
+        color: #4f46e5;
+        font-size: 13px;
+        font-weight: 700;
+        cursor: pointer;
+    }
+
+    .text-action-btn:hover {
+        text-decoration: underline;
+    }
+
+
+    /* ==========================================================
+       BULK TOOLBAR
+       ========================================================== */
+
+    .history-bulk-toolbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
+        padding: 13px 16px;
+        margin-bottom: 16px;
+        border:
+            1px solid #c7d2fe;
+        border-radius: 13px;
+        background: #eef2ff;
+    }
+
+    .bulk-selection-info {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        color: #4338ca;
+        font-size: 13px;
+    }
+
+    .bulk-selection-info strong {
+        font-size: 15px;
+    }
+
+    .bulk-actions {
+        display: flex;
+        gap: 8px;
+    }
+
+
+    /* ==========================================================
+       TABLE
+       ========================================================== */
+
+    .history-table-wrapper {
+        width: 100%;
+        overflow-x: auto;
+        border:
+            1px solid #e2e8f0;
+        border-radius: 15px;
+    }
+
+    .report-history-table {
+        width: 100%;
+        min-width: 1050px;
+        border-collapse: collapse;
+    }
+
+    .report-history-table th {
+        padding: 14px 13px;
+        text-align: left;
+        background: #f8fafc;
+        color: #64748b;
+        font-size: 11px;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.6px;
+        border-bottom:
+            1px solid #e2e8f0;
+        white-space: nowrap;
+    }
+
+    .report-history-table td {
+        padding: 15px 13px;
+        border-bottom:
+            1px solid #f1f5f9;
+        color: #334155;
+        font-size: 13px;
+        vertical-align: middle;
+    }
+
+    .report-history-table tbody tr:last-child td {
+        border-bottom: none;
+    }
+
+    .report-history-table tbody tr:hover {
+        background: #f8fafc;
+    }
+
+    .checkbox-column {
+        width: 45px;
+        text-align: center !important;
+    }
+
+    .table-checkbox {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    .table-checkbox input {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .table-checkbox span {
+        width: 17px;
+        height: 17px;
+        display: block;
+        border:
+            1.5px solid #cbd5e1;
+        border-radius: 5px;
+        background: #ffffff;
+    }
+
+    .table-checkbox input:checked + span {
+        background: #4f46e5;
+        border-color: #4f46e5;
+        box-shadow:
+            inset 0 0 0 3px #ffffff;
+    }
+
+    .report-name-cell {
+        display: flex;
+        align-items: center;
+        gap: 11px;
+        min-width: 210px;
+    }
+
+    .report-file-icon {
+        min-width: 38px;
+        height: 38px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        background: #eef2ff;
+        font-size: 16px;
+    }
+
+    .report-name-cell strong {
+        display: block;
+        max-width: 230px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        color: #0f172a;
+        font-size: 13px;
+    }
+
+    .report-name-cell small {
+        display: block;
+        margin-top: 3px;
+        color: #94a3b8;
+        font-size: 11px;
+    }
+
+    .report-type-label {
+        color: #475569;
+        font-weight: 600;
+        white-space: nowrap;
+    }
+
+    .report-format-badge {
+        display: inline-flex;
+        align-items: center;
+        padding: 4px 8px;
+        border-radius: 7px;
+        background: #f1f5f9;
+        color: #475569;
+        font-size: 10px;
+        font-weight: 800;
+    }
+
+
+    /* ==========================================================
+       STATUS
+       ========================================================== */
+
+    .status-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 5px 9px;
+        border-radius: 999px;
+        font-size: 11px;
+        font-weight: 700;
+        white-space: nowrap;
+    }
+
+    .status-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+    }
+
+    .status-badge.completed {
+        background: #dcfce7;
+        color: #15803d;
+    }
+
+    .status-badge.completed .status-dot {
+        background: #16a34a;
+    }
+
+    .status-badge.processing {
+        background: #fef3c7;
+        color: #b45309;
+    }
+
+    .status-badge.processing .status-dot {
+        background: #f59e0b;
+    }
+
+    .status-badge.failed {
+        background: #fee2e2;
+        color: #b91c1c;
+    }
+
+    .status-badge.failed .status-dot {
+        background: #dc2626;
+    }
+
+
+    /* ==========================================================
+       ACTION BUTTONS
+       ========================================================== */
+
+    .table-actions {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .table-action-btn {
+        width: 31px;
+        height: 31px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border:
+            1px solid #e2e8f0;
+        border-radius: 8px;
+        background: #ffffff;
+        color: #475569;
+        cursor: pointer;
+        font-size: 13px;
+        transition:
+            background 0.2s,
+            border-color 0.2s,
+            transform 0.2s;
+    }
+
+    .table-action-btn:hover:not(:disabled) {
+        background: #eef2ff;
+        border-color: #c7d2fe;
+        color: #4338ca;
+        transform: translateY(-1px);
+    }
+
+    .table-action-btn:disabled {
+        opacity: 0.35;
+        cursor: not-allowed;
+    }
+
+
+    /* ==========================================================
+       EMPTY STATE
+       ========================================================== */
+
+    .history-empty-state {
+        padding: 55px 20px;
+        text-align: center;
+        border:
+            1px dashed #cbd5e1;
+        border-radius: 15px;
+        background: #f8fafc;
+    }
+
+    .empty-icon {
+        width: 58px;
+        height: 58px;
+        margin: 0 auto 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 15px;
+        background: #e0e7ff;
+        color: #4338ca;
+        font-size: 12px;
+        font-weight: 800;
+    }
+
+    .history-empty-state h3 {
+        margin: 0 0 7px;
+        color: #0f172a;
+        font-size: 19px;
+    }
+
+    .history-empty-state p {
+        max-width: 480px;
+        margin: 0 auto 20px;
+        color: #64748b;
+        line-height: 1.5;
+        font-size: 13px;
+    }
+
+
+    /* ==========================================================
+       PAGINATION
+       ========================================================== */
+
+    .history-pagination {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
+        padding-top: 20px;
+    }
+
+    .pagination-summary {
+        color: #64748b;
+        font-size: 12px;
+    }
+
+    .pagination-summary strong {
+        color: #334155;
+    }
+
+    .pagination-controls {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .pagination-arrow,
+    .pagination-page {
+        width: 34px;
+        height: 34px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border:
+            1px solid #e2e8f0;
+        border-radius: 8px;
+        background: #ffffff;
+        color: #475569;
+        cursor: pointer;
+        font-size: 13px;
+    }
+
+    .pagination-page.active {
+        background: #4f46e5;
+        border-color: #4f46e5;
+        color: #ffffff;
+        font-weight: 700;
+    }
+
+    .pagination-arrow:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+    }
+
+
+    /* ==========================================================
+       DELETE MODAL
+       ========================================================== */
+
+    .report-modal {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        background:
+            rgba(15, 23, 42, 0.58);
+        backdrop-filter: blur(5px);
+    }
+
+    .report-modal[hidden] {
+        display: none;
+    }
+
+    .report-modal-content {
+        position: relative;
+        width: min(440px, 100%);
+        padding: 30px;
+        border-radius: 20px;
+        background: #ffffff;
+        box-shadow:
+            0 25px 70px
+            rgba(15, 23, 42, 0.22);
+        text-align: center;
+    }
+
+    .modal-close {
+        position: absolute;
+        top: 12px;
+        right: 14px;
+        width: 32px;
+        height: 32px;
+        border: none;
+        border-radius: 50%;
+        background: #f1f5f9;
+        color: #475569;
+        cursor: pointer;
+        font-size: 19px;
+    }
+
+    .modal-icon {
+        width: 52px;
+        height: 52px;
+        margin: 0 auto 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: #fee2e2;
+        color: #dc2626;
+        font-size: 22px;
+        font-weight: 800;
+    }
+
+    .report-modal-content h3 {
+        margin: 0 0 9px;
+        color: #0f172a;
+        font-size: 21px;
+    }
+
+    .report-modal-content p {
+        margin: 0;
+        color: #64748b;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .modal-actions {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 24px;
+    }
+
+
+    /* ==========================================================
+       TOAST
+       ========================================================== */
+
+    .report-toast-container {
+        position: fixed;
+        right: 24px;
+        bottom: 24px;
+        z-index: 10000;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: min(380px, calc(100vw - 48px));
+    }
+
+    .report-toast-container .toast {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 13px 14px;
+        border-radius: 12px;
+        background: #ffffff;
+        border:
+            1px solid #e2e8f0;
+        box-shadow:
+            0 12px 35px
+            rgba(15, 23, 42, 0.14);
+        opacity: 0;
+        transform: translateY(10px);
+        transition:
+            opacity 0.25s,
+            transform 0.25s;
+    }
+
+    .report-toast-container .toast.show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .toast-icon {
+        width: 26px;
+        height: 26px;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: #eef2ff;
+        color: #4f46e5;
+        font-size: 12px;
+        font-weight: 800;
+    }
+
+    .toast-message {
+        flex: 1;
+        color: #334155;
+        font-size: 13px;
+        line-height: 1.4;
+    }
+
+    .toast-close {
+        border: none;
+        background: transparent;
+        color: #94a3b8;
+        cursor: pointer;
+        font-size: 18px;
+    }
+
+
+    /* ==========================================================
+       DARK MODE
+       ========================================================== */
+
+    body.dark-mode .card,
+    [data-theme="dark"] .card {
+        background: #111827;
+        border-color: #1e293b;
+    }
+
+    body.dark-mode .card-header,
+    [data-theme="dark"] .card-header {
+        border-color: #1e293b;
+    }
+
+    body.dark-mode .card-header h2,
+    [data-theme="dark"] .card-header h2,
+    body.dark-mode .history-header h2,
+    [data-theme="dark"] .history-header h2,
+    body.dark-mode .report-preview strong,
+    [data-theme="dark"] .report-preview strong,
+    body.dark-mode .feature-item strong,
+    [data-theme="dark"] .feature-item strong,
+    body.dark-mode .history-stat-card strong,
+    [data-theme="dark"] .history-stat-card strong,
+    body.dark-mode .report-name-cell strong,
+    [data-theme="dark"] .report-name-cell strong,
+    body.dark-mode .history-empty-state h3,
+    [data-theme="dark"] .history-empty-state h3,
+    body.dark-mode .report-modal-content h3,
+    [data-theme="dark"] .report-modal-content h3,
+    body.dark-mode .section-heading h3,
+    [data-theme="dark"] .section-heading h3,
+    body.dark-mode .report-type-content strong,
+    [data-theme="dark"] .report-type-content strong,
+    body.dark-mode .report-type-info strong,
+    [data-theme="dark"] .report-type-info strong {
+        color: #f8fafc;
+    }
+
+    body.dark-mode .page-subtitle,
+    [data-theme="dark"] .page-subtitle,
+    body.dark-mode .history-header p,
+    [data-theme="dark"] .history-header p,
+    body.dark-mode .section-heading p,
+    [data-theme="dark"] .section-heading p {
+        color: #94a3b8;
+    }
+
+    body.dark-mode .form-group label,
+    [data-theme="dark"] .form-group label {
+        color: #cbd5e1;
+    }
+
+    body.dark-mode .form-group input,
+    [data-theme="dark"] .form-group input,
+    body.dark-mode .history-search input,
+    [data-theme="dark"] .history-search input,
+    body.dark-mode .history-filter-grid select,
+    [data-theme="dark"] .history-filter-grid select {
+        background: #0f172a;
+        border-color: #334155;
+        color: #f8fafc;
+    }
+
+    body.dark-mode .report-type-card,
+    [data-theme="dark"] .report-type-card {
+        background: #0f172a;
+        border-color: #334155;
+    }
+
+    body.dark-mode .report-type-option > input:checked
+        + .report-type-card,
+    [data-theme="dark"]
+        .report-type-option > input:checked
+        + .report-type-card {
+        background: #1e1b4b;
+        border-color: #6366f1;
+    }
+
+    body.dark-mode .report-type-content > span,
+    [data-theme="dark"] .report-type-content > span,
+    body.dark-mode .report-type-info p,
+    [data-theme="dark"] .report-type-info p,
+    body.dark-mode .report-type-info ul,
+    [data-theme="dark"] .report-type-info ul,
+    body.dark-mode .analysis-feature-grid span,
+    [data-theme="dark"] .analysis-feature-grid span {
+        color: #94a3b8;
+    }
+
+    body.dark-mode .statement-info,
+    [data-theme="dark"] .statement-info {
+        background: #172554;
+        border-color: #1e40af;
+    }
+
+    body.dark-mode .analysis-info,
+    [data-theme="dark"] .analysis-info {
+        background: #2e1065;
+        border-color: #5b21b6;
+    }
+
+    body.dark-mode .report-preview,
+    [data-theme="dark"] .report-preview {
+        background: #0f172a;
+        border-color: #1e293b;
+    }
+
+    body.dark-mode .form-actions,
+    [data-theme="dark"] .form-actions {
+        border-color: #1e293b;
+    }
+
+    body.dark-mode .btn-secondary,
+    [data-theme="dark"] .btn-secondary {
+        background: #111827;
+        color: #e2e8f0;
+        border-color: #334155;
+    }
+
+    body.dark-mode .history-stat-card,
+    [data-theme="dark"] .history-stat-card {
+        background: #0f172a;
+        border-color: #1e293b;
+    }
+
+    body.dark-mode .history-stat-label,
+    [data-theme="dark"] .history-stat-label {
+        color: #94a3b8;
+    }
+
+    body.dark-mode .history-table-wrapper,
+    [data-theme="dark"] .history-table-wrapper {
+        border-color: #1e293b;
+    }
+
+    body.dark-mode .report-history-table th,
+    [data-theme="dark"] .report-history-table th {
+        background: #0f172a;
+        color: #94a3b8;
+        border-color: #1e293b;
+    }
+
+    body.dark-mode .report-history-table td,
+    [data-theme="dark"] .report-history-table td {
+        border-color: #1e293b;
+        color: #cbd5e1;
+    }
+
+    body.dark-mode .report-history-table tbody tr:hover,
+    [data-theme="dark"] .report-history-table tbody tr:hover {
+        background: #0f172a;
+    }
+
+    body.dark-mode .table-checkbox span,
+    [data-theme="dark"] .table-checkbox span {
+        background: #0f172a;
+        border-color: #475569;
+    }
+
+    body.dark-mode .table-action-btn,
+    [data-theme="dark"] .table-action-btn,
+    body.dark-mode .pagination-arrow,
+    [data-theme="dark"] .pagination-arrow,
+    body.dark-mode .pagination-page,
+    [data-theme="dark"] .pagination-page {
+        background: #111827;
+        border-color: #334155;
+        color: #cbd5e1;
+    }
+
+    body.dark-mode .report-format-badge,
+    [data-theme="dark"] .report-format-badge {
+        background: #1e293b;
+        color: #cbd5e1;
+    }
+
+    body.dark-mode .history-empty-state,
+    [data-theme="dark"] .history-empty-state {
+        background: #0f172a;
+        border-color: #334155;
+    }
+
+    body.dark-mode .report-modal-content,
+    [data-theme="dark"] .report-modal-content {
+        background: #111827;
+    }
+
+    body.dark-mode .modal-close,
+    [data-theme="dark"] .modal-close {
+        background: #1e293b;
+        color: #cbd5e1;
+    }
+
+    body.dark-mode .toast,
+    [data-theme="dark"] .toast {
+        background: #111827;
+        border-color: #334155;
+    }
+
+    body.dark-mode .toast-message,
+    [data-theme="dark"] .toast-message {
+        color: #e2e8f0;
+    }
+
+
+    /* ==========================================================
+       RESPONSIVE
+       ========================================================== */
+
+    @media (max-width: 1100px) {
+
+        .history-stat-grid {
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+        }
+
+        .history-filter-grid {
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+        }
+
+    }
+
+
+    @media (max-width: 900px) {
+
+        .report-layout {
+            grid-template-columns: 1fr;
+        }
+
+        .report-type-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .history-header {
+            flex-direction: column;
+        }
+
+        .refresh-btn {
+            width: 100%;
+        }
+
+    }
+
+
+    @media (max-width: 600px) {
+
+        .page-header h1 {
+            font-size: 32px;
+        }
+
+        .form-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .form-actions {
+            flex-direction: column;
+        }
+
+        .form-actions .btn {
+            width: 100%;
+        }
+
+        .card {
+            padding: 22px;
+        }
+
+        .history-stat-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .history-filter-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .analysis-feature-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .history-bulk-toolbar {
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        .bulk-actions {
+            flex-direction: column;
+        }
+
+        .bulk-actions .btn {
+            width: 100%;
+        }
+
+        .history-pagination {
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        .pagination-controls {
+            justify-content: center;
+        }
+
+        .modal-actions {
+            flex-direction: column;
+        }
+
+        .modal-actions .btn {
+            width: 100%;
+        }
+
+    }
+
+</style>
+
+
+
+<!-- ============================================================
+     REPORT TYPE INTERACTION
+     ============================================================ -->
+
+<script>
+
+(function () {
+
+    "use strict";
+
+
+    const statementsRadio =
+        document.getElementById(
+            "financialStatementsReport"
+        );
+
+    const analysisRadio =
+        document.getElementById(
+            "financialAnalysisReport"
+        );
+
+    const statementsInfo =
+        document.getElementById(
+            "financialStatementsInfo"
+        );
+
+    const analysisInfo =
+        document.getElementById(
+            "financialAnalysisInfo"
+        );
+
+    const previewIcon =
+        document.getElementById(
+            "reportPreviewIcon"
+        );
+
+    const previewTitle =
+        document.getElementById(
+            "reportPreviewTitle"
+        );
+
+    const previewDescription =
+        document.getElementById(
+            "reportPreviewDescription"
+        );
+
+    const generateButton =
+        document.getElementById(
+            "generateReportBtn"
+        );
+
+    const form =
+        document.getElementById(
+            "reportGenerationForm"
+        );
+
+
+    function updateReportTypeUI() {
+
+        const isStatements =
+            statementsRadio &&
+            statementsRadio.checked;
+
+
+        if (statementsInfo) {
+
+            statementsInfo.hidden =
+                !isStatements;
+
+        }
+
+
+        if (analysisInfo) {
+
+            analysisInfo.hidden =
+                isStatements;
+
+        }
+
+
+        if (isStatements) {
+
+            if (previewIcon) {
+
+                previewIcon.textContent =
+                    "FS";
+
+                previewIcon.style.background =
+                    "#dbeafe";
+
+                previewIcon.style.color =
+                    "#2563eb";
+
+            }
+
+
+            if (previewTitle) {
+
+                previewTitle.textContent =
+                    "Financial Statements Report";
+
+            }
+
+
+            if (previewDescription) {
+
+                previewDescription.textContent =
+                    "ANGELIX will generate a PDF containing "
+                    + "Profit & Loss, Income & Expenditure and "
+                    + "Balance Sheet information for the selected "
+                    + "period. If an existing financial statement "
+                    + "overlaps the period, generation will be "
+                    + "prevented to avoid duplicate statements.";
+
+            }
+
+
+            if (generateButton) {
+
+                generateButton.querySelector(
+                    "span"
+                ).textContent =
+                    "Generate Statements PDF";
+
+            }
+
+        } else {
+
+            if (previewIcon) {
+
+                previewIcon.textContent =
+                    "AI";
+
+                previewIcon.style.background =
+                    "#ede9fe";
+
+                previewIcon.style.color =
+                    "#7c3aed";
+
+            }
+
+
+            if (previewTitle) {
+
+                previewTitle.textContent =
+                    "Financial Analysis Report";
+
+            }
+
+
+            if (previewDescription) {
+
+                previewDescription.textContent =
+                    "ANGELIX will generate a PDF containing "
+                    + "financial KPIs, charts, trends, ratios, "
+                    + "Balance Sheet analysis, Financial Health "
+                    + "Score, forecast, AI financial analysis "
+                    + "and AI recommendations.";
+
+            }
+
+
+            if (generateButton) {
+
+                generateButton.querySelector(
+                    "span"
+                ).textContent =
+                    "Generate Analysis PDF";
+
+            }
+
+        }
+
+    }
+
+
+    if (statementsRadio) {
+
+        statementsRadio.addEventListener(
+            "change",
+            updateReportTypeUI
+        );
+
+    }
+
+
+    if (analysisRadio) {
+
+        analysisRadio.addEventListener(
+            "change",
+            updateReportTypeUI
+        );
+
+    }
+
+
+    if (form) {
+
+        form.addEventListener(
+            "submit",
+            function () {
+
+                if (!generateButton) {
+                    return;
+                }
+
+                generateButton.disabled =
+                    true;
+
+                const buttonText =
+                    generateButton.querySelector(
+                        "span"
+                    );
+
+                if (buttonText) {
+
+                    buttonText.textContent =
+                        "Generating PDF...";
+
+                }
+
+            }
+        );
+
+    }
+
+
+    updateReportTypeUI();
+
+})();
+
+</script>
+
+
+
+<!-- ============================================================
+     REPORT HISTORY JAVASCRIPT
+     ============================================================ -->
+
+<script
+    src="{{ url_for(
+        'static',
+        filename='js/report_history.js'
+    ) }}"
+    defer
+></script>
+
+
+{% endblock %}

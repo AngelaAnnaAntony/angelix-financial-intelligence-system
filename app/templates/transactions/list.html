@@ -1,0 +1,1533 @@
+{% extends "base.html" %}
+
+{% block title %}Transactions | ANGELIX{% endblock %}
+
+{% block content %}
+
+<div class="transactions-page">
+
+    <!-- =====================================================
+         PAGE HEADER
+         ===================================================== -->
+    <section class="page-header transactions-header">
+
+        <div>
+            <span class="page-eyebrow">
+                FINANCIAL DATA
+            </span>
+
+            <h1>
+                Transactions
+            </h1>
+
+            <p>
+                Review and manage the financial transactions
+                recorded for your organization.
+            </p>
+        </div>
+
+        <div class="page-header-actions">
+
+            <a
+                href="{{ url_for(
+                    'transactions.new',
+                    organization_id=organization_id
+                ) }}"
+                class="btn btn-primary"
+            >
+                <span>+</span>
+                Add Transaction
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SUMMARY CARDS
+         ===================================================== -->
+    <section class="transaction-summary-grid">
+
+        <div class="transaction-summary-card">
+
+            <div class="summary-card-icon">
+                #
+            </div>
+
+            <div>
+                <span class="summary-card-label">
+                    Total Transactions
+                </span>
+
+                <strong>
+                    {{ pagination.total }}
+                </strong>
+            </div>
+
+        </div>
+
+
+        <div class="transaction-summary-card">
+
+            <div class="summary-card-icon">
+                ✓
+            </div>
+
+            <div>
+                <span class="summary-card-label">
+                    Current Page
+                </span>
+
+                <strong>
+                    {{ pagination.page }}
+                    <small>
+                        / {{ pagination.pages or 1 }}
+                    </small>
+                </strong>
+            </div>
+
+        </div>
+
+
+        <div class="transaction-summary-card">
+
+            <div class="summary-card-icon">
+                📘
+            </div>
+
+            <div>
+                <span class="summary-card-label">
+                    Records Shown
+                </span>
+
+                <strong>
+                    {{ transactions|length }}
+                </strong>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         TRANSACTION TABLE CARD
+         ===================================================== -->
+    <section class="content-card transactions-card">
+
+        <div class="content-card-header">
+
+            <div>
+                <h2>
+                    Transaction Records
+                </h2>
+
+                <p>
+                    Latest financial activity is displayed first.
+                </p>
+            </div>
+
+            <div class="transaction-record-count">
+                {{ pagination.total }} record{% if pagination.total != 1 %}s{% endif %}
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             FILTER / SEARCH AREA
+             ================================================= -->
+        <div class="transaction-filters">
+
+            <div class="transaction-search">
+
+                <label for="transactionSearch">
+                    Search
+                </label>
+
+                <div class="search-input-wrapper">
+
+                    <span class="search-icon">
+                        ⌕
+                    </span>
+
+                    <input
+                        type="search"
+                        id="transactionSearch"
+                        placeholder="Search description, category or reference..."
+                        autocomplete="off"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="transaction-filter-field">
+
+                <label for="typeFilter">
+                    Transaction Type
+                </label>
+
+                <select id="typeFilter">
+
+                    <option value="all">
+                        All Types
+                    </option>
+
+                    <option value="income">
+                        Income
+                    </option>
+
+                    <option value="expense">
+                        Expense
+                    </option>
+
+                    <option value="asset">
+                        Asset
+                    </option>
+
+                    <option value="liability">
+                        Liability
+                    </option>
+
+                    <option value="equity">
+                        Equity
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="transaction-filter-field">
+
+                <label for="pageSize">
+                    Records per page
+                </label>
+
+                <select
+                    id="pageSize"
+                    onchange="changePageSize(this.value)"
+                >
+
+                    <option
+                        value="10"
+                        {% if pagination.per_page == 10 %}selected{% endif %}
+                    >
+                        10
+                    </option>
+
+                    <option
+                        value="20"
+                        {% if pagination.per_page == 20 %}selected{% endif %}
+                    >
+                        20
+                    </option>
+
+                    <option
+                        value="50"
+                        {% if pagination.per_page == 50 %}selected{% endif %}
+                    >
+                        50
+                    </option>
+
+                    <option
+                        value="100"
+                        {% if pagination.per_page == 100 %}selected{% endif %}
+                    >
+                        100
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             TABLE
+             ================================================= -->
+        {% if transactions %}
+
+        <div class="table-container">
+
+            <table
+                class="data-table transactions-table"
+                id="transactionsTable"
+            >
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Date
+                        </th>
+
+                        <th>
+                            Description
+                        </th>
+
+                        <th>
+                            Type
+                        </th>
+
+                        <th>
+                            Category
+                        </th>
+
+                        <th>
+                            Reference
+                        </th>
+
+                        <th class="amount-column">
+                            Amount
+                        </th>
+
+                        <th>
+                            Source
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    {% for transaction in transactions %}
+
+                    <tr
+                        data-type="{{ transaction.transaction_type|lower }}"
+                        data-search="{{ (
+                            (transaction.description or '') ~ ' ' ~
+                            (transaction.category or '') ~ ' ' ~
+                            (transaction.subcategory or '') ~ ' ' ~
+                            (transaction.reference_number or '')
+                        )|lower }}"
+                    >
+
+                        <!-- Date -->
+                        <td>
+
+                            <span class="transaction-date">
+                                {{ transaction.transaction_date.strftime('%d %b %Y') }}
+                            </span>
+
+                        </td>
+
+
+                        <!-- Description -->
+                        <td>
+
+                            <div class="transaction-description">
+
+                                <strong>
+                                    {{ transaction.description }}
+                                </strong>
+
+                                {% if transaction.subcategory %}
+
+                                <span>
+                                    {{ transaction.subcategory }}
+                                </span>
+
+                                {% endif %}
+
+                            </div>
+
+                        </td>
+
+
+                        <!-- Type -->
+                        <td>
+
+                            {% set transaction_type =
+                                transaction.transaction_type|lower
+                            %}
+
+                            <span
+                                class="transaction-type-badge type-{{ transaction_type }}"
+                            >
+                                {{ transaction_type|capitalize }}
+                            </span>
+
+                        </td>
+
+
+                        <!-- Category -->
+                        <td>
+
+                            {% if transaction.category %}
+
+                            <span class="category-text">
+                                {{ transaction.category }}
+                            </span>
+
+                            {% else %}
+
+                            <span class="muted-text">
+                                Uncategorized
+                            </span>
+
+                            {% endif %}
+
+                        </td>
+
+
+                        <!-- Reference -->
+                        <td>
+
+                            {% if transaction.reference_number %}
+
+                            <span class="reference-number">
+                                {{ transaction.reference_number }}
+                            </span>
+
+                            {% else %}
+
+                            <span class="muted-text">
+                                —
+                            </span>
+
+                            {% endif %}
+
+                        </td>
+
+
+                        <!-- Amount -->
+                        <td class="amount-column">
+
+                            <span
+                                class="transaction-amount amount-{{ transaction_type }}"
+                            >
+
+                                {% if transaction_type == "income" %}
+                                    +
+                                {% elif transaction_type in ["expense", "liability"] %}
+                                    -
+                                {% endif %}
+
+                                ₹{{ "{:,.2f}".format(transaction.amount|float) }}
+
+                            </span>
+
+                        </td>
+
+
+                        <!-- Source -->
+                        <td>
+
+                            <span class="source-badge">
+                                {{ (transaction.source or "unknown")|capitalize }}
+                            </span>
+
+                        </td>
+
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <!-- =================================================
+             NO SEARCH RESULTS
+             ================================================= -->
+        <div
+            class="table-filter-empty"
+            id="tableFilterEmpty"
+            hidden
+        >
+
+            <div class="empty-state-icon">
+                ⌕
+            </div>
+
+            <h3>
+                No matching transactions
+            </h3>
+
+            <p>
+                Try changing your search term or transaction type filter.
+            </p>
+
+        </div>
+
+
+        <!-- =================================================
+             PAGINATION
+             ================================================= -->
+        {% if pagination.pages > 1 %}
+
+        <div class="pagination-container">
+
+            <div class="pagination-info">
+
+                Showing
+                <strong>
+                    {{ pagination.first }}
+                </strong>
+                –
+                <strong>
+                    {{ pagination.last }}
+                </strong>
+                of
+                <strong>
+                    {{ pagination.total }}
+                </strong>
+
+            </div>
+
+
+            <div class="pagination-controls">
+
+                {% if pagination.has_prev %}
+
+                <a
+                    href="{{ url_for(
+                        'transactions.list_transactions',
+                        organization_id=organization_id,
+                        page=pagination.prev_num,
+                        per_page=pagination.per_page
+                    ) }}"
+                    class="pagination-button"
+                    aria-label="Previous page"
+                >
+                    ←
+                </a>
+
+                {% else %}
+
+                <span class="pagination-button disabled">
+                    ←
+                </span>
+
+                {% endif %}
+
+
+                {% for page_number in pagination.iter_pages(
+                    left_edge=1,
+                    left_current=1,
+                    right_current=1,
+                    right_edge=1
+                ) %}
+
+                    {% if page_number %}
+
+                        {% if page_number == pagination.page %}
+
+                        <span class="pagination-button active">
+                            {{ page_number }}
+                        </span>
+
+                        {% else %}
+
+                        <a
+                            href="{{ url_for(
+                                'transactions.list_transactions',
+                                organization_id=organization_id,
+                                page=page_number,
+                                per_page=pagination.per_page
+                            ) }}"
+                            class="pagination-button"
+                        >
+                            {{ page_number }}
+                        </a>
+
+                        {% endif %}
+
+                    {% else %}
+
+                    <span class="pagination-ellipsis">
+                        …
+                    </span>
+
+                    {% endif %}
+
+                {% endfor %}
+
+
+                {% if pagination.has_next %}
+
+                <a
+                    href="{{ url_for(
+                        'transactions.list_transactions',
+                        organization_id=organization_id,
+                        page=pagination.next_num,
+                        per_page=pagination.per_page
+                    ) }}"
+                    class="pagination-button"
+                    aria-label="Next page"
+                >
+                    →
+                </a>
+
+                {% else %}
+
+                <span class="pagination-button disabled">
+                    →
+                </span>
+
+                {% endif %}
+
+            </div>
+
+        </div>
+
+        {% endif %}
+
+
+        {% else %}
+
+        <!-- =================================================
+             EMPTY STATE
+             ================================================= -->
+        <div class="transaction-empty-state">
+
+            <div class="empty-state-icon">
+                ₹
+            </div>
+
+            <h3>
+                No transactions yet
+            </h3>
+
+            <p>
+                There are currently no financial transactions
+                recorded for this organization.
+            </p>
+
+            <a
+                href="{{ url_for(
+                    'transactions.new',
+                    organization_id=organization_id
+                ) }}"
+                class="btn btn-primary"
+            >
+                <span>+</span>
+                Add Your First Transaction
+            </a>
+
+        </div>
+
+        {% endif %}
+
+    </section>
+
+</div>
+
+
+<!-- =========================================================
+     PAGE-SPECIFIC STYLES
+     ========================================================= -->
+
+<style>
+
+/* =========================================================
+   TRANSACTIONS PAGE
+   ========================================================= */
+
+.transactions-page {
+    width: 100%;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+   ========================================================= */
+
+.transactions-header {
+    margin-bottom: 24px;
+}
+
+
+/* =========================================================
+   SUMMARY GRID
+   ========================================================= */
+
+.transaction-summary-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 16px;
+
+    margin-bottom: 24px;
+}
+
+.transaction-summary-card {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 18px;
+
+    background: var(--surface);
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    box-shadow: var(--shadow-sm);
+}
+
+.summary-card-icon {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(37, 99, 235, 0.12),
+            rgba(79, 70, 229, 0.14)
+        );
+
+    color: var(--primary);
+
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.summary-card-label {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: var(--text-muted);
+
+    font-size: 11px;
+    font-weight: 600;
+
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.transaction-summary-card strong {
+    color: var(--text-primary);
+
+    font-size: 21px;
+    font-weight: 800;
+}
+
+.transaction-summary-card strong small {
+    color: var(--text-muted);
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   CONTENT CARD
+   ========================================================= */
+
+.transactions-card {
+    overflow: hidden;
+}
+
+.content-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding-bottom: 20px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.content-card-header h2 {
+    margin: 0 0 5px;
+
+    color: var(--text-primary);
+
+    font-size: 18px;
+    font-weight: 750;
+}
+
+.content-card-header p {
+    margin: 0;
+
+    color: var(--text-muted);
+
+    font-size: 12px;
+}
+
+.transaction-record-count {
+    padding: 6px 10px;
+
+    border-radius: 999px;
+
+    background: var(--surface-muted);
+
+    color: var(--text-secondary);
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   FILTERS
+   ========================================================= */
+
+.transaction-filters {
+    display: grid;
+
+    grid-template-columns:
+        minmax(240px, 1fr)
+        190px
+        160px;
+
+    gap: 14px;
+
+    padding: 20px 0;
+}
+
+.transaction-filters label {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: var(--text-secondary);
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.transaction-search,
+.transaction-filter-field {
+    min-width: 0;
+}
+
+.search-input-wrapper {
+    position: relative;
+}
+
+.search-icon {
+    position: absolute;
+
+    left: 12px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: var(--text-muted);
+
+    pointer-events: none;
+}
+
+.search-input-wrapper input,
+.transaction-filter-field select {
+    width: 100%;
+    height: 40px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 9px;
+
+    background: var(--input-background);
+
+    color: var(--text-primary);
+
+    font-family: inherit;
+    font-size: 12px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.search-input-wrapper input {
+    padding:
+        0 12px 0 34px;
+}
+
+.transaction-filter-field select {
+    padding: 0 11px;
+}
+
+.search-input-wrapper input:focus,
+.transaction-filter-field select:focus {
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(37, 99, 235, 0.10);
+}
+
+
+/* =========================================================
+   TABLE
+   ========================================================= */
+
+.table-container {
+    width: 100%;
+
+    overflow-x: auto;
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+}
+
+.transactions-table {
+    width: 100%;
+
+    min-width: 900px;
+
+    border-collapse: collapse;
+}
+
+.transactions-table th {
+    padding: 12px 14px;
+
+    background: var(--surface-muted);
+
+    border-bottom: 1px solid var(--border);
+
+    color: var(--text-muted);
+
+    font-size: 10px;
+    font-weight: 800;
+
+    text-align: left;
+    text-transform: uppercase;
+
+    letter-spacing: 0.05em;
+
+    white-space: nowrap;
+}
+
+.transactions-table td {
+    padding: 14px;
+
+    border-bottom: 1px solid var(--border);
+
+    color: var(--text-secondary);
+
+    font-size: 12px;
+
+    vertical-align: middle;
+}
+
+.transactions-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.transactions-table tbody tr {
+    transition: background 0.15s ease;
+}
+
+.transactions-table tbody tr:hover {
+    background: var(--surface-hover);
+}
+
+
+/* =========================================================
+   TRANSACTION CONTENT
+   ========================================================= */
+
+.transaction-date {
+    color: var(--text-secondary);
+
+    font-size: 11px;
+
+    white-space: nowrap;
+}
+
+.transaction-description strong {
+    display: block;
+
+    max-width: 250px;
+
+    overflow: hidden;
+
+    color: var(--text-primary);
+
+    font-size: 12px;
+
+    font-weight: 650;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+.transaction-description span {
+    display: block;
+
+    margin-top: 3px;
+
+    color: var(--text-muted);
+
+    font-size: 10px;
+}
+
+.category-text {
+    color: var(--text-secondary);
+
+    font-weight: 550;
+}
+
+.reference-number {
+    color: var(--text-muted);
+
+    font-family: monospace;
+
+    font-size: 10px;
+}
+
+.muted-text {
+    color: var(--text-muted);
+}
+
+
+/* =========================================================
+   TYPE BADGES
+   ========================================================= */
+
+.transaction-type-badge,
+.source-badge {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 5px 8px;
+
+    border-radius: 999px;
+
+    font-size: 10px;
+    font-weight: 750;
+
+    white-space: nowrap;
+}
+
+.transaction-type-badge {
+    background: var(--surface-muted);
+
+    color: var(--text-secondary);
+}
+
+.type-income {
+    background: rgba(22, 163, 74, 0.10);
+
+    color: #15803d;
+}
+
+.type-expense {
+    background: rgba(220, 38, 38, 0.10);
+
+    color: #b91c1c;
+}
+
+.type-asset {
+    background: rgba(37, 99, 235, 0.10);
+
+    color: #1d4ed8;
+}
+
+.type-liability {
+    background: rgba(234, 88, 12, 0.10);
+
+    color: #c2410c;
+}
+
+.type-equity {
+    background: rgba(124, 58, 237, 0.10);
+
+    color: #6d28d9;
+}
+
+.source-badge {
+    background: var(--surface-muted);
+
+    color: var(--text-muted);
+}
+
+
+/* =========================================================
+   AMOUNTS
+   ========================================================= */
+
+.amount-column {
+    text-align: right !important;
+}
+
+.transaction-amount {
+    font-weight: 750;
+
+    white-space: nowrap;
+}
+
+.amount-income {
+    color: #15803d;
+}
+
+.amount-expense,
+.amount-liability {
+    color: #b91c1c;
+}
+
+.amount-asset {
+    color: #1d4ed8;
+}
+
+.amount-equity {
+    color: #6d28d9;
+}
+
+
+/* =========================================================
+   SEARCH EMPTY STATE
+   ========================================================= */
+
+.table-filter-empty {
+    padding: 45px 20px;
+
+    text-align: center;
+}
+
+.table-filter-empty[hidden] {
+    display: none;
+}
+
+.table-filter-empty h3 {
+    margin: 12px 0 5px;
+
+    color: var(--text-primary);
+
+    font-size: 15px;
+}
+
+.table-filter-empty p {
+    margin: 0;
+
+    color: var(--text-muted);
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.transaction-empty-state {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 320px;
+
+    padding: 50px 20px;
+
+    text-align: center;
+}
+
+.empty-state-icon {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(37, 99, 235, 0.10),
+            rgba(6, 182, 212, 0.10)
+        );
+
+    color: var(--primary);
+
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.transaction-empty-state h3 {
+    margin: 15px 0 7px;
+
+    color: var(--text-primary);
+
+    font-size: 17px;
+}
+
+.transaction-empty-state p {
+    max-width: 430px;
+
+    margin: 0 0 20px;
+
+    color: var(--text-muted);
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   PAGINATION
+   ========================================================= */
+
+.pagination-container {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding-top: 18px;
+}
+
+.pagination-info {
+    color: var(--text-muted);
+
+    font-size: 11px;
+}
+
+.pagination-info strong {
+    color: var(--text-secondary);
+}
+
+.pagination-controls {
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+}
+
+.pagination-button {
+    min-width: 30px;
+    height: 30px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 8px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 7px;
+
+    background: var(--surface);
+
+    color: var(--text-secondary);
+
+    font-size: 11px;
+    font-weight: 650;
+
+    text-decoration: none;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.pagination-button:hover {
+    border-color: var(--primary);
+
+    color: var(--primary);
+}
+
+.pagination-button.active {
+    border-color: var(--primary);
+
+    background: var(--primary);
+
+    color: #ffffff;
+}
+
+.pagination-button.disabled {
+    opacity: 0.45;
+
+    cursor: not-allowed;
+}
+
+.pagination-ellipsis {
+    padding: 0 4px;
+
+    color: var(--text-muted);
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   DARK MODE
+   ========================================================= */
+
+[data-theme="dark"] .type-income,
+[data-theme="dark"] .amount-income {
+    color: #4ade80;
+}
+
+[data-theme="dark"] .type-expense,
+[data-theme="dark"] .amount-expense,
+[data-theme="dark"] .amount-liability {
+    color: #f87171;
+}
+
+[data-theme="dark"] .type-asset,
+[data-theme="dark"] .amount-asset {
+    color: #60a5fa;
+}
+
+[data-theme="dark"] .type-liability {
+    color: #fb923c;
+}
+
+[data-theme="dark"] .type-equity,
+[data-theme="dark"] .amount-equity {
+    color: #a78bfa;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .transaction-summary-grid {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+    }
+
+    .transaction-filters {
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+    .transaction-search {
+        grid-column: 1 / -1;
+    }
+
+}
+
+
+@media (max-width: 640px) {
+
+    .transaction-summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .transaction-filters {
+        grid-template-columns: 1fr;
+    }
+
+    .transaction-search {
+        grid-column: auto;
+    }
+
+    .content-card-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .pagination-container {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .pagination-controls {
+        flex-wrap: wrap;
+    }
+
+}
+
+</style>
+
+
+<!-- =========================================================
+     PAGE-SPECIFIC JAVASCRIPT
+     ========================================================= -->
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        const searchInput =
+            document.getElementById(
+                "transactionSearch"
+            );
+
+        const typeFilter =
+            document.getElementById(
+                "typeFilter"
+            );
+
+        const table =
+            document.getElementById(
+                "transactionsTable"
+            );
+
+        const filterEmpty =
+            document.getElementById(
+                "tableFilterEmpty"
+            );
+
+
+        if (!table) {
+            return;
+        }
+
+
+        const rows =
+            Array.from(
+                table.querySelectorAll(
+                    "tbody tr"
+                )
+            );
+
+
+        function filterTransactions() {
+
+            const searchTerm =
+                (searchInput.value || "")
+                    .trim()
+                    .toLowerCase();
+
+            const selectedType =
+                (
+                    typeFilter.value || "all"
+                ).toLowerCase();
+
+            let visibleCount = 0;
+
+
+            rows.forEach(function (row) {
+
+                const rowSearch =
+                    row.dataset.search || "";
+
+                const rowType =
+                    row.dataset.type || "";
+
+
+                const matchesSearch =
+                    !searchTerm ||
+                    rowSearch.includes(
+                        searchTerm
+                    );
+
+
+                const matchesType =
+                    selectedType === "all" ||
+                    rowType === selectedType;
+
+
+                const visible =
+                    matchesSearch &&
+                    matchesType;
+
+
+                row.style.display =
+                    visible
+                        ? ""
+                        : "none";
+
+
+                if (visible) {
+                    visibleCount++;
+                }
+
+            });
+
+
+            if (filterEmpty) {
+
+                filterEmpty.hidden =
+                    visibleCount !== 0;
+
+            }
+
+        }
+
+
+        if (searchInput) {
+
+            searchInput.addEventListener(
+                "input",
+                filterTransactions
+            );
+
+        }
+
+
+        if (typeFilter) {
+
+            typeFilter.addEventListener(
+                "change",
+                filterTransactions
+            );
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   PAGE SIZE
+   ========================================================= */
+
+function changePageSize(value) {
+
+    const url =
+        new URL(
+            window.location.href
+        );
+
+    url.searchParams.set(
+        "per_page",
+        value
+    );
+
+    url.searchParams.set(
+        "page",
+        "1"
+    );
+
+    window.location.href =
+        url.toString();
+}
+
+</script>
+
+{% endblock %}

@@ -1,0 +1,144 @@
+{
+    "model_version": "v3",
+    "dataset": {
+        "existing_records": 10000,
+        "new_records": 1200,
+        "combined_records": 11200
+    },
+    "account_type_classifier": {
+        "accuracy": 1.0,
+        "classes": [
+            "asset",
+            "equity",
+            "expense",
+            "liability",
+            "revenue"
+        ],
+        "classification_report": {
+            "asset": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1-score": 1.0,
+                "support": 412.0
+            },
+            "equity": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1-score": 1.0,
+                "support": 424.0
+            },
+            "expense": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1-score": 1.0,
+                "support": 536.0
+            },
+            "liability": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1-score": 1.0,
+                "support": 422.0
+            },
+            "revenue": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1-score": 1.0,
+                "support": 446.0
+            },
+            "accuracy": 1.0,
+            "macro avg": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1-score": 1.0,
+                "support": 2240.0
+            },
+            "weighted avg": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1-score": 1.0,
+                "support": 2240.0
+            }
+        },
+        "confusion_matrix": [
+            [
+                412,
+                0,
+                0,
+                0,
+                0
+            ],
+            [
+                0,
+                424,
+                0,
+                0,
+                0
+            ],
+            [
+                0,
+                0,
+                536,
+                0,
+                0
+            ],
+            [
+                0,
+                0,
+                0,
+                422,
+                0
+            ],
+            [
+                0,
+                0,
+                0,
+                0,
+                446
+            ]
+        ]
+    },
+    "debit_credit_classifier": {
+        "accuracy": 0.93125,
+        "classes": [
+            "credit",
+            "debit"
+        ],
+        "classification_report": {
+            "credit": {
+                "precision": 0.9260731319554849,
+                "recall": 0.9502446982055465,
+                "f1-score": 0.9380032206119162,
+                "support": 1226.0
+            },
+            "debit": {
+                "precision": 0.9378818737270875,
+                "recall": 0.908284023668639,
+                "f1-score": 0.9228456913827655,
+                "support": 1014.0
+            },
+            "accuracy": 0.93125,
+            "macro avg": {
+                "precision": 0.9319775028412862,
+                "recall": 0.9292643609370927,
+                "f1-score": 0.9304244559973409,
+                "support": 2240.0
+            },
+            "weighted avg": {
+                "precision": 0.9314186963110229,
+                "recall": 0.93125,
+                "f1-score": 0.9311417319340775,
+                "support": 2240.0
+            }
+        },
+        "confusion_matrix": [
+            [
+                1165,
+                61
+            ],
+            [
+                93,
+                921
+            ]
+        ]
+    }
+}

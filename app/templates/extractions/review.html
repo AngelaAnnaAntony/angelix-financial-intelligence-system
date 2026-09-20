@@ -1,0 +1,2481 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Review Extraction | ANGELIX
+{% endblock %}
+
+
+{% block content %}
+
+{% set extraction = candidate.extraction if candidate.extraction else None %}
+
+{% set statement_type = detected_statement_type or '' %}
+
+{% set is_statement = statement_type in [
+    'balance_sheet',
+    'income_statement',
+    'profit_and_loss',
+    'cash_flow_statement',
+    'trial_balance'
+] %}
+
+{% set is_pnl = statement_type in [
+    'income_statement',
+    'profit_and_loss'
+] %}
+
+{% set is_balance_sheet = statement_type == 'balance_sheet' %}
+
+{% set is_cash_flow = statement_type == 'cash_flow_statement' %}
+
+{% set is_trial_balance = statement_type == 'trial_balance' %}
+
+<div class="extraction-review-page">
+
+    <!-- ============================================================ -->
+    <!-- PAGE HEADER -->
+    <!-- ============================================================ -->
+
+    <section class="review-header">
+
+        <div class="review-header-content">
+
+            <div class="review-eyebrow">
+                DOCUMENT INTELLIGENCE
+            </div>
+
+            <h1 class="review-title">
+                Review Extracted Record
+            </h1>
+
+            <p class="review-description">
+                Verify the information extracted from the uploaded
+                financial document before approving it as trusted
+                financial data.
+            </p>
+
+        </div>
+
+
+        <div class="review-header-actions">
+
+            <a
+                href="{{ url_for(
+                    'extractions.review_list',
+                    organization_id=organization_id
+                ) }}"
+                class="btn btn-secondary"
+            >
+                ← Back to Review Queue
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ============================================================ -->
+    <!-- STATUS CARD -->
+    <!-- ============================================================ -->
+
+    <section class="review-status-card">
+
+        <div class="status-icon">
+            !
+        </div>
+
+        <div class="status-content">
+
+            <strong>
+                Human Review Required
+            </strong>
+
+            <p>
+                Verify the extracted values carefully. Corrections can
+                be made before the record is approved.
+            </p>
+
+        </div>
+
+        <div class="status-badge">
+            Pending Review
+        </div>
+
+    </section>
+
+
+    <!-- ============================================================ -->
+    <!-- DOCUMENT TYPE CARD -->
+    <!-- ============================================================ -->
+
+    <section class="document-type-card">
+
+        <div class="document-type-content">
+
+            <span class="document-type-label">
+                Detected Document Type
+            </span>
+
+
+            {% if statement_type == 'profit_and_loss' %}
+
+                <strong class="document-type-value">
+                    Profit & Loss Statement
+                </strong>
+
+                <span class="document-type-help">
+                    P&L line items use Income, Expense and Calculated
+                    classifications.
+                </span>
+
+
+            {% elif statement_type == 'income_statement' %}
+
+                <strong class="document-type-value">
+                    Income Statement
+                </strong>
+
+                <span class="document-type-help">
+                    Income statement line items use Income, Expense
+                    and Calculated classifications.
+                </span>
+
+
+            {% elif statement_type == 'balance_sheet' %}
+
+                <strong class="document-type-value">
+                    Balance Sheet
+                </strong>
+
+                <span class="document-type-help">
+                    Balance sheet line items use Asset, Liability
+                    and Equity classifications.
+                </span>
+
+
+            {% elif statement_type == 'cash_flow_statement' %}
+
+                <strong class="document-type-value">
+                    Cash Flow Statement
+                </strong>
+
+                <span class="document-type-help">
+                    Cash flow items use Operating, Investing,
+                    Financing and Calculated classifications.
+                </span>
+
+
+            {% elif statement_type == 'trial_balance' %}
+
+                <strong class="document-type-value">
+                    Trial Balance
+                </strong>
+
+                <span class="document-type-help">
+                    Trial balance entries can be classified as
+                    Income, Expense, Asset, Liability or Equity.
+                </span>
+
+
+            {% else %}
+
+                <strong class="document-type-value">
+                    Financial Transaction
+                </strong>
+
+                <span class="document-type-help">
+                    Standard transaction classification is used.
+                </span>
+
+            {% endif %}
+
+        </div>
+
+    </section>
+
+
+    <!-- ============================================================ -->
+    <!-- MAIN REVIEW LAYOUT -->
+    <!-- ============================================================ -->
+
+    <div class="review-layout">
+
+
+        <!-- ======================================================== -->
+        <!-- MAIN FORM -->
+        <!-- ======================================================== -->
+
+        <main class="review-main-card">
+
+            <div class="card-header">
+
+                <div>
+
+                    <h2 id="reviewHeading">
+                        {% if is_statement %}
+                            Review Statement Line Item
+                        {% else %}
+                            Review Transaction
+                        {% endif %}
+                    </h2>
+
+                    <p id="reviewDescription">
+
+                        {% if is_statement %}
+
+                            Verify the financial-statement line item
+                            and its classification.
+
+                        {% else %}
+
+                            Verify the extracted transaction
+                            information.
+
+                        {% endif %}
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==================================================== -->
+            <!-- REVIEW FORM -->
+            <!-- ==================================================== -->
+
+            <form
+                method="POST"
+                action="{{ url_for(
+                    'extractions.update_candidate',
+                    organization_id=organization_id,
+                    candidate_id=candidate.id
+                ) }}"
+                id="candidateForm"
+            >
+
+                <input
+                    type="hidden"
+                    name="csrf_token"
+                    value="{{ csrf_token() }}"
+                >
+
+
+                <!-- ================================================== -->
+                <!-- TRANSACTION / COMMON FIELDS -->
+                <!-- ================================================== -->
+
+                <div class="form-section">
+
+                    <div class="form-section-title">
+                        Basic Information
+                    </div>
+
+
+                    <div class="form-grid">
+
+
+                        <!-- Transaction Date -->
+
+                        <div
+                            class="form-group"
+                            id="transactionDateGroup"
+                        >
+
+                            <label for="transaction_date">
+                                Transaction Date
+                            </label>
+
+                            <input
+                                type="date"
+                                id="transaction_date"
+                                name="transaction_date"
+                                value="{% if candidate.transaction_date %}{{ candidate.transaction_date.strftime('%Y-%m-%d') }}{% endif %}"
+                            >
+
+                        </div>
+
+
+                        <!-- Description -->
+
+                        <div class="form-group">
+
+                            <label for="description">
+                                Description
+                            </label>
+
+                            <input
+                                type="text"
+                                id="description"
+                                name="description"
+                                value="{{ candidate.description or '' }}"
+                                maxlength="255"
+                            >
+
+                        </div>
+
+
+                        <!-- Reference -->
+
+                        <div class="form-group">
+
+                            <label for="reference_number">
+                                Reference Number
+                            </label>
+
+                            <input
+                                type="text"
+                                id="reference_number"
+                                name="reference_number"
+                                value="{{ candidate.reference_number or '' }}"
+                                maxlength="100"
+                            >
+
+                        </div>
+
+
+                        <!-- Amount -->
+
+                        <div class="form-group">
+
+                            <label for="amount">
+                                Amount
+                            </label>
+
+                            <div class="input-prefix-wrapper">
+
+                                <span class="input-prefix">
+                                    ₹
+                                </span>
+
+                                <input
+                                    type="number"
+                                    id="amount"
+                                    name="amount"
+                                    value="{% if candidate.amount is not none %}{{ candidate.amount }}{% endif %}"
+                                    step="0.01"
+                                    min="0"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================================================== -->
+                <!-- TRANSACTION CLASSIFICATION -->
+                <!-- ================================================== -->
+
+                <div
+                    class="form-section"
+                    id="transactionFields"
+                    {% if is_statement %}
+                        style="display: none;"
+                    {% endif %}
+                >
+
+                    <div class="form-section-title">
+                        Transaction Classification
+                    </div>
+
+
+                    <div class="form-grid">
+
+
+                        <!-- Debit / Credit -->
+
+                        <div class="form-group">
+
+                            <label for="debit_credit">
+                                Debit / Credit
+                            </label>
+
+                            <select
+                                id="debit_credit"
+                                name="debit_credit"
+                            >
+
+                                <option value="">
+                                    Select
+                                </option>
+
+                                <option
+                                    value="debit"
+                                    {% if candidate.debit_credit == 'debit' %}
+                                        selected
+                                    {% endif %}
+                                >
+                                    Debit
+                                </option>
+
+                                <option
+                                    value="credit"
+                                    {% if candidate.debit_credit == 'credit' %}
+                                        selected
+                                    {% endif %}
+                                >
+                                    Credit
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- Transaction Type -->
+
+                        <div class="form-group">
+
+                            <label for="transaction_type">
+                                Transaction Type
+                            </label>
+
+                            <select
+                                id="transaction_type"
+                                name="transaction_type"
+                            >
+
+                                <option value="">
+                                    Select transaction type
+                                </option>
+
+                                <option
+                                    value="income"
+                                    {% if candidate.transaction_type == 'income' %}
+                                        selected
+                                    {% endif %}
+                                >
+                                    Income
+                                </option>
+
+                                <option
+                                    value="expense"
+                                    {% if candidate.transaction_type == 'expense' %}
+                                        selected
+                                    {% endif %}
+                                >
+                                    Expense
+                                </option>
+
+                                <option
+                                    value="asset"
+                                    {% if candidate.transaction_type == 'asset' %}
+                                        selected
+                                    {% endif %}
+                                >
+                                    Asset
+                                </option>
+
+                                <option
+                                    value="liability"
+                                    {% if candidate.transaction_type == 'liability' %}
+                                        selected
+                                    {% endif %}
+                                >
+                                    Liability
+                                </option>
+
+                                <option
+                                    value="equity"
+                                    {% if candidate.transaction_type == 'equity' %}
+                                        selected
+                                    {% endif %}
+                                >
+                                    Equity
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- Category -->
+
+                        <div class="form-group">
+
+                            <label for="category">
+                                Category
+                            </label>
+
+                            <input
+                                type="text"
+                                id="category"
+                                name="category"
+                                value="{{ candidate.category or '' }}"
+                                maxlength="100"
+                            >
+
+                        </div>
+
+
+                        <!-- Subcategory -->
+
+                        <div class="form-group">
+
+                            <label for="subcategory">
+                                Subcategory
+                            </label>
+
+                            <input
+                                type="text"
+                                id="subcategory"
+                                name="subcategory"
+                                value="{{ candidate.subcategory or '' }}"
+                                maxlength="100"
+                            >
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================================================== -->
+                <!-- STATEMENT INFORMATION -->
+                <!-- ================================================== -->
+
+                <div
+                    class="form-section statement-section"
+                    id="statementFields"
+                    {% if is_statement %}
+                        style="display: block;"
+                    {% endif %}
+                >
+
+                    <div class="form-section-title">
+                        Financial Statement Context
+                    </div>
+
+
+                    <div class="form-grid">
+
+
+                        <!-- Statement Type -->
+
+                        <div class="form-group">
+
+                            <label for="statement_type">
+                                Statement Type
+                            </label>
+
+                            <select
+                                id="statement_type"
+                                name="statement_type"
+                            >
+
+                                <option value="">
+                                    Select statement type
+                                </option>
+
+                                <option
+                                    value="profit_and_loss"
+                                    {% if statement_type == 'profit_and_loss' %}
+                                        selected
+                                    {% endif %}
+                                >
+                                    Profit & Loss
+                                </option>
+
+                                <option
+                                    value="income_statement"
+                                    {% if statement_type == 'income_statement' %}
+                                        selected
+                                    {% endif %}
+                                >
+                                    Income Statement
+                                </option>
+
+                                <option
+                                    value="balance_sheet"
+                                    {% if statement_type == 'balance_sheet' %}
+                                        selected
+                                    {% endif %}
+                                >
+                                    Balance Sheet
+                                </option>
+
+                                <option
+                                    value="cash_flow_statement"
+                                    {% if statement_type == 'cash_flow_statement' %}
+                                        selected
+                                    {% endif %}
+                                >
+                                    Cash Flow Statement
+                                </option>
+
+                                <option
+                                    value="trial_balance"
+                                    {% if statement_type == 'trial_balance' %}
+                                        selected
+                                    {% endif %}
+                                >
+                                    Trial Balance
+                                </option>
+
+                                <option
+                                    value="other"
+                                    {% if statement_type == 'other' %}
+                                        selected
+                                    {% endif %}
+                                >
+                                    Other
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- Period Type -->
+
+                        <div class="form-group">
+
+                            <label for="period_type">
+                                Period Type
+                            </label>
+
+                            <select
+                                id="period_type"
+                                name="period_type"
+                            >
+
+                                <option value="">
+                                    Select period
+                                </option>
+
+                                <option
+                                    value="monthly"
+                                    {% if extraction and extraction.period_type == 'monthly' %}
+                                        selected
+                                    {% endif %}
+                                >
+                                    Monthly
+                                </option>
+
+                                <option
+                                    value="quarterly"
+                                    {% if extraction and extraction.period_type == 'quarterly' %}
+                                        selected
+                                    {% endif %}
+                                >
+                                    Quarterly
+                                </option>
+
+                                <option
+                                    value="half_yearly"
+                                    {% if extraction and extraction.period_type == 'half_yearly' %}
+                                        selected
+                                    {% endif %}
+                                >
+                                    Half-Yearly
+                                </option>
+
+                                <option
+                                    value="annual"
+                                    {% if extraction and extraction.period_type == 'annual' %}
+                                        selected
+                                    {% endif %}
+                                >
+                                    Annual
+                                </option>
+
+                                <option
+                                    value="yearly"
+                                    {% if extraction and extraction.period_type == 'yearly' %}
+                                        selected
+                                    {% endif %}
+                                >
+                                    Yearly
+                                </option>
+
+                                <option
+                                    value="custom"
+                                    {% if extraction and extraction.period_type == 'custom' %}
+                                        selected
+                                    {% endif %}
+                                >
+                                    Custom
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- Period Start -->
+
+                        <div class="form-group">
+
+                            <label for="period_start">
+                                Period Start
+                            </label>
+
+                            <input
+                                type="date"
+                                id="period_start"
+                                name="period_start"
+                                value="{% if extraction and extraction.period_start %}{{ extraction.period_start.strftime('%Y-%m-%d') }}{% endif %}"
+                            >
+
+                        </div>
+
+
+                        <!-- Period End -->
+
+                        <div class="form-group">
+
+                            <label for="period_end">
+                                Period End
+                            </label>
+
+                            <input
+                                type="date"
+                                id="period_end"
+                                name="period_end"
+                                value="{% if extraction and extraction.period_end %}{{ extraction.period_end.strftime('%Y-%m-%d') }}{% endif %}"
+                            >
+
+                        </div>
+
+
+                        <!-- Fiscal Year -->
+
+                        <div class="form-group">
+
+                            <label for="fiscal_year">
+                                Fiscal Year
+                            </label>
+
+                            <input
+                                type="number"
+                                id="fiscal_year"
+                                name="fiscal_year"
+                                min="1900"
+                                max="2200"
+                                value="{% if extraction and extraction.fiscal_year %}{{ extraction.fiscal_year }}{% endif %}"
+                                placeholder="e.g. 2025"
+                            >
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================================================== -->
+                <!-- STATEMENT LINE ITEM -->
+                <!-- ================================================== -->
+
+                <div
+                    class="form-section statement-section"
+                    id="statementLineItemFields"
+                    {if is_statement %}
+                        style="display: block;"
+                    
+                >
+
+                    <div class="form-section-title">
+                        Statement Line Item
+                    </div>
+
+
+                    <div class="form-grid">
+
+
+                        <!-- Line Item Name -->
+
+                        <div class="form-group">
+
+                            <label for="line_item_name">
+                                Line Item Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="line_item_name"
+                                name="line_item_name"
+                                value="{{ candidate.description or '' }}"
+                                maxlength="255"
+                            >
+
+                        </div>
+
+
+                        <!-- Section -->
+
+                        <div class="form-group">
+
+                            <label for="section">
+                                Section
+                            </label>
+
+                            <select
+                                id="section"
+                                name="section"
+                            >
+
+                                <option value="">
+                                    Select section
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- Account Type -->
+
+                        <div class="form-group">
+
+                            <label for="account_type">
+                                Classification
+                            </label>
+
+                            <select
+                                id="account_type"
+                                name="account_type"
+                            >
+
+                                <option value="">
+                                    Select classification
+                                </option>
+
+                            </select>
+
+                            <span class="field-help">
+                                Classification depends on the statement type.
+                            </span>
+
+                        </div>
+
+
+                        <!-- Statement Amount -->
+
+                        <div class="form-group">
+
+                            <label for="statement_amount">
+                                Statement Amount
+                            </label>
+
+                            <div class="input-prefix-wrapper">
+
+                                <span class="input-prefix">
+                                    ₹
+                                </span>
+
+                                <input
+                                    type="number"
+                                    id="statement_amount"
+                                    name="statement_amount"
+                                    value="{% if candidate.amount is not none %}{{ candidate.amount }}{% endif %}"
+                                    step="0.01"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================================================== -->
+                <!-- CORRECTION NOTES -->
+                <!-- ================================================== -->
+
+                <div class="form-section">
+
+                    <div class="form-section-title">
+                        Review Notes
+                    </div>
+
+
+                    <div class="form-group form-group-wide">
+
+                        <label for="correction_notes">
+                            Correction Notes
+                        </label>
+
+                        <textarea
+                            id="correction_notes"
+                            name="correction_notes"
+                            rows="4"
+                            maxlength="2000"
+                            placeholder="Optional: explain any corrections made during review..."
+                        >{{ candidate.correction_notes or '' }}</textarea>
+
+                        <span class="field-help">
+                            These notes are stored with the review history.
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================================================== -->
+                <!-- SAVE -->
+                <!-- ================================================== -->
+
+                <div class="form-actions">
+
+                    <button
+                        type="submit"
+                        class="btn btn-secondary"
+                    >
+                        Save Corrections
+                    </button>
+
+                </div>
+
+            </form>
+
+
+            <!-- ==================================================== -->
+            <!-- APPROVAL / REJECTION -->
+            <!-- ==================================================== -->
+
+            <div class="approval-section">
+
+                <div class="approval-warning">
+
+                    <strong>
+                        Before approving
+                    </strong>
+
+                    <span>
+                        Make sure the document type, line-item name,
+                        amount and classification are correct.
+                    </span>
+
+                </div>
+
+
+                <div class="approval-actions">
+
+
+                    <!-- APPROVE -->
+
+                    <form
+                        method="POST"
+                        action="{{ url_for(
+                            'extractions.approve_candidate',
+                            organization_id=organization_id,
+                            candidate_id=candidate.id
+                        ) }}"
+                        id="approveForm"
+                    >
+
+                        <input
+                            type="hidden"
+                            name="csrf_token"
+                            value="{{ csrf_token() }}"
+                        >
+
+
+                        <!-- Common fields -->
+
+                        <input
+                            type="hidden"
+                            name="transaction_date"
+                            id="approve_transaction_date"
+                        >
+
+                        <input
+                            type="hidden"
+                            name="description"
+                            id="approve_description"
+                        >
+
+                        <input
+                            type="hidden"
+                            name="reference_number"
+                            id="approve_reference_number"
+                        >
+
+                        <input
+                            type="hidden"
+                            name="amount"
+                            id="approve_amount"
+                        >
+
+                        <input
+                            type="hidden"
+                            name="transaction_type"
+                            id="approve_transaction_type"
+                        >
+
+                        <input
+                            type="hidden"
+                            name="category"
+                            id="approve_category"
+                        >
+
+                        <input
+                            type="hidden"
+                            name="subcategory"
+                            id="approve_subcategory"
+                        >
+
+                        <input
+                            type="hidden"
+                            name="correction_notes"
+                            id="approve_correction_notes"
+                        >
+
+
+                        <!-- Statement fields -->
+
+                        <input
+                            type="hidden"
+                            name="statement_type"
+                            id="approve_statement_type"
+                        >
+
+                        <input
+                            type="hidden"
+                            name="period_type"
+                            id="approve_period_type"
+                        >
+
+                        <input
+                            type="hidden"
+                            name="period_start"
+                            id="approve_period_start"
+                        >
+
+                        <input
+                            type="hidden"
+                            name="period_end"
+                            id="approve_period_end"
+                        >
+
+                        <input
+                            type="hidden"
+                            name="fiscal_year"
+                            id="approve_fiscal_year"
+                        >
+
+                        <input
+                            type="hidden"
+                            name="line_item_name"
+                            id="approve_line_item_name"
+                        >
+
+                        <input
+                            type="hidden"
+                            name="section"
+                            id="approve_section"
+                        >
+
+                        <input
+                            type="hidden"
+                            name="account_type"
+                            id="approve_account_type"
+                        >
+
+
+                        <button
+                            type="submit"
+                            class="btn btn-primary"
+                            id="approveButton"
+                        >
+                            Approve
+                        </button>
+
+                    </form>
+
+
+                    <!-- REJECT -->
+
+                    <form
+                        method="POST"
+                        action="{{ url_for(
+                            'extractions.reject_candidate',
+                            organization_id=organization_id,
+                            candidate_id=candidate.id
+                        ) }}"
+                        id="rejectForm"
+                    >
+
+                        <input
+                            type="hidden"
+                            name="csrf_token"
+                            value="{{ csrf_token() }}"
+                        >
+
+                        <input
+                            type="hidden"
+                            name="correction_notes"
+                            id="reject_correction_notes"
+                        >
+
+                        <button
+                            type="submit"
+                            class="btn btn-danger"
+                        >
+                            Reject
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </main>
+
+
+        <!-- ======================================================== -->
+        <!-- SIDEBAR -->
+        <!-- ======================================================== -->
+
+        <aside class="review-sidebar">
+
+
+            <!-- Confidence -->
+
+            <div class="sidebar-card">
+
+                <div class="sidebar-label">
+                    Extraction Confidence
+                </div>
+
+                {% if candidate.confidence_score is not none %}
+
+                    {% set confidence =
+                        candidate.confidence_score|float * 100
+                    %}
+
+                    <strong class="confidence-number">
+                        {{ "%.1f"|format(confidence) }}%
+                    </strong>
+
+                    <div class="confidence-bar">
+
+                        <div
+                            class="confidence-fill"
+                            data-confidence="{{ confidence }}"
+                        ></div>
+
+                    </div>
+
+                {% else %}
+
+                    <strong class="confidence-number">
+                        N/A
+                    </strong>
+
+                {% endif %}
+
+            </div>
+
+
+            <!-- Source -->
+
+            <div class="sidebar-card">
+
+                <div class="sidebar-label">
+                    Extraction Source
+                </div>
+
+                <strong>
+                    {% if extraction and extraction.upload %}
+                        {{ extraction.upload.original_filename }}
+                    {% else %}
+                        Document Extraction
+                    {% endif %}
+                </strong>
+
+            </div>
+
+
+            <!-- Candidate ID -->
+
+            <div class="sidebar-card">
+
+                <div class="sidebar-label">
+                    Candidate ID
+                </div>
+
+                <strong>
+                    #{{ candidate.id }}
+                </strong>
+
+            </div>
+
+
+            <!-- Classification Help -->
+
+            <div class="sidebar-card help-card">
+
+                <div class="sidebar-label">
+                    Classification Guide
+                </div>
+
+
+                {% if is_pnl %}
+
+                    <p>
+                        <strong>Income</strong>
+                        represents revenue or other income.
+                    </p>
+
+                    <p>
+                        <strong>Expense</strong>
+                        represents costs incurred by the business.
+                    </p>
+
+                    <p>
+                        <strong>Calculated</strong>
+                        represents subtotals or calculated results such
+                        as Gross Profit or Net Profit.
+                    </p>
+
+
+                {% elif is_balance_sheet %}
+
+                    <p>
+                        <strong>Asset</strong>
+                        represents resources owned by the organization.
+                    </p>
+
+                    <p>
+                        <strong>Liability</strong>
+                        represents obligations owed by the organization.
+                    </p>
+
+                    <p>
+                        <strong>Equity</strong>
+                        represents the owner's or shareholders' interest.
+                    </p>
+
+
+                {% elif is_cash_flow %}
+
+                    <p>
+                        <strong>Operating</strong>,
+                        <strong>Investing</strong> and
+                        <strong>Financing</strong> classify cash-flow
+                        activities.
+                    </p>
+
+                    <p>
+                        <strong>Calculated</strong>
+                        is used for calculated totals or subtotals.
+                    </p>
+
+
+                {% elif is_trial_balance %}
+
+                    <p>
+                        Trial balance entries may be classified as
+                        Income, Expense, Asset, Liability or Equity.
+                    </p>
+
+
+                {% else %}
+
+                    <p>
+                        Standard transactions can be classified as
+                        Income, Expense, Asset, Liability or Equity.
+                    </p>
+
+                {% endif %}
+
+            </div>
+
+        </aside>
+
+    </div>
+
+</div>
+
+
+<!-- ================================================================ -->
+<!-- STYLES -->
+<!-- ================================================================ -->
+
+<style>
+
+    .extraction-review-page {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 24px;
+    }
+
+
+    .review-header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 24px;
+        margin-bottom: 24px;
+    }
+
+
+    .review-eyebrow {
+        margin-bottom: 8px;
+        color: #2563eb;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+    }
+
+
+    .review-title {
+        margin: 0;
+        color: var(--text-primary, #0f172a);
+        font-size: 32px;
+        font-weight: 800;
+    }
+
+
+    .review-description {
+        max-width: 720px;
+        margin: 8px 0 0;
+        color: var(--text-secondary, #64748b);
+        line-height: 1.6;
+    }
+
+
+    .review-status-card {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 20px;
+        padding: 18px 20px;
+        border: 1px solid #fde68a;
+        border-radius: 14px;
+        background: #fffbeb;
+    }
+
+
+    .status-icon {
+        width: 42px;
+        height: 42px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        border-radius: 50%;
+        background: #f59e0b;
+        color: white;
+        font-weight: 800;
+    }
+
+
+    .status-content {
+        flex: 1;
+    }
+
+
+    .status-content strong {
+        display: block;
+        margin-bottom: 4px;
+        color: #92400e;
+    }
+
+
+    .status-content p {
+        margin: 0;
+        color: #92400e;
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+
+    .status-badge {
+        padding: 7px 12px;
+        border-radius: 999px;
+        background: #fef3c7;
+        color: #92400e;
+        font-size: 12px;
+        font-weight: 800;
+        white-space: nowrap;
+    }
+
+
+    .document-type-card {
+        margin-bottom: 24px;
+        padding: 18px 20px;
+        border: 1px solid #dbeafe;
+        border-radius: 14px;
+        background:
+            linear-gradient(
+                135deg,
+                rgba(37, 99, 235, 0.08),
+                rgba(124, 58, 237, 0.06)
+            );
+    }
+
+
+    .document-type-content {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+
+    .document-type-label {
+        color: #64748b;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+    }
+
+
+    .document-type-value {
+        color: #1e3a8a;
+        font-size: 20px;
+        font-weight: 800;
+    }
+
+
+    .document-type-help {
+        color: #475569;
+        font-size: 13px;
+    }
+
+
+    .review-layout {
+        display: grid;
+        grid-template-columns:
+            minmax(0, 1fr)
+            300px;
+        gap: 24px;
+        align-items: start;
+    }
+
+
+    .review-main-card,
+    .sidebar-card {
+        border: 1px solid var(--border, #e2e8f0);
+        border-radius: 16px;
+        background: var(--surface, #ffffff);
+        box-shadow:
+            0 8px 24px rgba(15, 23, 42, 0.05);
+    }
+
+
+    .review-main-card {
+        overflow: hidden;
+    }
+
+
+    .card-header {
+        padding: 22px 24px;
+        border-bottom: 1px solid var(--border, #e2e8f0);
+    }
+
+
+    .card-header h2 {
+        margin: 0;
+        color: var(--text-primary, #0f172a);
+        font-size: 20px;
+    }
+
+
+    .card-header p {
+        margin: 6px 0 0;
+        color: var(--text-secondary, #64748b);
+        font-size: 13px;
+    }
+
+
+    .form-section {
+        padding: 22px 24px;
+        border-bottom: 1px solid var(--border, #e2e8f0);
+    }
+
+
+    .form-section-title {
+        margin-bottom: 18px;
+        color: var(--text-primary, #0f172a);
+        font-size: 14px;
+        font-weight: 800;
+    }
+
+
+    .form-grid {
+        display: grid;
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+    }
+
+
+    .form-group-wide {
+        grid-column: 1 / -1;
+    }
+
+
+    .form-group label {
+        color: var(--text-primary, #334155);
+        font-size: 13px;
+        font-weight: 700;
+    }
+
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 11px 12px;
+        border: 1px solid var(--border, #cbd5e1);
+        border-radius: 9px;
+        background: var(--surface, #ffffff);
+        color: var(--text-primary, #0f172a);
+        font: inherit;
+        outline: none;
+    }
+
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+        border-color: #2563eb;
+        box-shadow:
+            0 0 0 3px rgba(37, 99, 235, 0.10);
+    }
+
+
+    .form-group textarea {
+        resize: vertical;
+        min-height: 100px;
+    }
+
+
+    .field-help {
+        color: #64748b;
+        font-size: 11px;
+        line-height: 1.4;
+    }
+
+
+    .input-prefix-wrapper {
+        position: relative;
+    }
+
+
+    .input-prefix {
+        position: absolute;
+        left: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #64748b;
+        font-weight: 700;
+        pointer-events: none;
+    }
+
+
+    .input-prefix-wrapper input {
+        padding-left: 30px;
+    }
+
+
+    .statement-section {
+        display: none;
+    }
+
+
+    .form-actions {
+        display: flex;
+        justify-content: flex-end;
+        padding: 20px 24px;
+    }
+
+
+    .approval-section {
+        padding: 20px 24px;
+        background: rgba(248, 250, 252, 0.8);
+    }
+
+
+    .approval-warning {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        margin-bottom: 16px;
+        padding: 14px;
+        border: 1px solid #dbeafe;
+        border-radius: 10px;
+        background: #eff6ff;
+    }
+
+
+    .approval-warning strong {
+        color: #1e40af;
+        font-size: 13px;
+    }
+
+
+    .approval-warning span {
+        color: #475569;
+        font-size: 12px;
+    }
+
+
+    .approval-actions {
+        display: flex;
+        gap: 10px;
+    }
+
+
+    .review-sidebar {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+
+    .sidebar-card {
+        padding: 18px;
+    }
+
+
+    .sidebar-label {
+        margin-bottom: 8px;
+        color: #64748b;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+    }
+
+
+    .sidebar-card strong {
+        color: #0f172a;
+        font-size: 14px;
+        line-height: 1.5;
+        word-break: break-word;
+    }
+
+
+    .confidence-number {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 28px !important;
+    }
+
+
+    .confidence-bar {
+        width: 100%;
+        height: 8px;
+        overflow: hidden;
+        border-radius: 999px;
+        background: #e2e8f0;
+    }
+
+
+    .confidence-fill {
+        width: 0;
+        height: 100%;
+        border-radius: inherit;
+        background:
+            linear-gradient(
+                90deg,
+                #2563eb,
+                #7c3aed
+            );
+    }
+
+
+    .help-card p {
+        margin: 0 0 10px;
+        color: #64748b;
+        font-size: 12px;
+        line-height: 1.55;
+    }
+
+
+    .help-card p:last-child {
+        margin-bottom: 0;
+    }
+
+
+    .help-card p strong {
+        color: #334155;
+        font-size: 12px;
+    }
+
+
+    @media (max-width: 1000px) {
+
+        .review-layout {
+            grid-template-columns: 1fr;
+        }
+
+        .review-sidebar {
+            display: grid;
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+        }
+
+    }
+
+
+    @media (max-width: 700px) {
+
+        .extraction-review-page {
+            padding: 16px;
+        }
+
+        .review-header {
+            flex-direction: column;
+        }
+
+        .review-title {
+            font-size: 26px;
+        }
+
+        .review-status-card {
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .form-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .review-sidebar {
+            grid-template-columns: 1fr;
+        }
+
+        .approval-actions {
+            flex-direction: column;
+        }
+
+        .approval-actions form,
+        .approval-actions button {
+            width: 100%;
+        }
+
+    }
+
+</style>
+
+
+<!-- ================================================================ -->
+<!-- JAVASCRIPT -->
+<!-- ================================================================ -->
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        const statementTypeField =
+            document.getElementById("statement_type");
+
+        const statementFields =
+            document.getElementById("statementFields");
+
+        const statementLineItemFields =
+            document.getElementById("statementLineItemFields");
+
+        const transactionFields =
+            document.getElementById("transactionFields");
+
+        const transactionDateGroup =
+            document.getElementById("transactionDateGroup");
+
+        const accountTypeField =
+            document.getElementById("account_type");
+
+        const sectionField =
+            document.getElementById("section");
+
+
+        const approveButton =
+            document.getElementById("approveButton");
+
+
+        const confidenceBars =
+            document.querySelectorAll(
+                ".confidence-fill[data-confidence]"
+            );
+
+
+        /* ============================================================
+           CONFIDENCE BAR
+           ============================================================ */
+
+        confidenceBars.forEach(
+            function (bar) {
+
+                const value = parseFloat(
+                    bar.dataset.confidence
+                );
+
+                if (Number.isNaN(value)) {
+                    bar.style.width = "0%";
+                    return;
+                }
+
+                const safeValue = Math.max(
+                    0,
+                    Math.min(
+                        100,
+                        value
+                    )
+                );
+
+                bar.style.width =
+                    safeValue + "%";
+
+            }
+        );
+
+
+        /* ============================================================
+           STATEMENT CLASSIFICATION OPTIONS
+           ============================================================ */
+
+        const statementConfigurations = {
+
+            profit_and_loss: {
+
+                types: [
+                    {
+                        value: "income",
+                        label: "Income"
+                    },
+                    {
+                        value: "expense",
+                        label: "Expense"
+                    },
+                    {
+                        value: "calculated",
+                        label: "Calculated"
+                    }
+                ],
+
+                sections: [
+                    "Revenue",
+                    "Other Income",
+                    "Cost of Goods / Services",
+                    "Operating Expenses",
+                    "Tax",
+                    "Calculated",
+                    "Profit"
+                ]
+
+            },
+
+
+            income_statement: {
+
+                types: [
+                    {
+                        value: "income",
+                        label: "Income"
+                    },
+                    {
+                        value: "expense",
+                        label: "Expense"
+                    },
+                    {
+                        value: "calculated",
+                        label: "Calculated"
+                    }
+                ],
+
+                sections: [
+                    "Revenue",
+                    "Other Income",
+                    "Cost of Goods / Services",
+                    "Operating Expenses",
+                    "Tax",
+                    "Calculated",
+                    "Profit"
+                ]
+
+            },
+
+
+            balance_sheet: {
+
+                types: [
+                    {
+                        value: "asset",
+                        label: "Asset"
+                    },
+                    {
+                        value: "liability",
+                        label: "Liability"
+                    },
+                    {
+                        value: "equity",
+                        label: "Equity"
+                    }
+                ],
+
+                sections: [
+                    "Assets",
+                    "Liabilities",
+                    "Equity"
+                ]
+
+            },
+
+
+            cash_flow_statement: {
+
+                types: [
+                    {
+                        value: "operating",
+                        label: "Operating"
+                    },
+                    {
+                        value: "investing",
+                        label: "Investing"
+                    },
+                    {
+                        value: "financing",
+                        label: "Financing"
+                    },
+                    {
+                        value: "calculated",
+                        label: "Calculated"
+                    }
+                ],
+
+                sections: [
+                    "Operating Activities",
+                    "Investing Activities",
+                    "Financing Activities",
+                    "Calculated"
+                ]
+
+            },
+
+
+            trial_balance: {
+
+                types: [
+                    {
+                        value: "income",
+                        label: "Income"
+                    },
+                    {
+                        value: "expense",
+                        label: "Expense"
+                    },
+                    {
+                        value: "asset",
+                        label: "Asset"
+                    },
+                    {
+                        value: "liability",
+                        label: "Liability"
+                    },
+                    {
+                        value: "equity",
+                        label: "Equity"
+                    }
+                ],
+
+                sections: [
+                    "Income",
+                    "Expense",
+                    "Assets",
+                    "Liabilities",
+                    "Equity"
+                ]
+
+            },
+
+
+            other: {
+
+                types: [
+                    {
+                        value: "income",
+                        label: "Income"
+                    },
+                    {
+                        value: "expense",
+                        label: "Expense"
+                    },
+                    {
+                        value: "asset",
+                        label: "Asset"
+                    },
+                    {
+                        value: "liability",
+                        label: "Liability"
+                    },
+                    {
+                        value: "equity",
+                        label: "Equity"
+                    },
+                    {
+                        value: "calculated",
+                        label: "Calculated"
+                    }
+                ],
+
+                sections: [
+                    "Income",
+                    "Expense",
+                    "Assets",
+                    "Liabilities",
+                    "Equity",
+                    "Calculated"
+                ]
+
+            }
+
+        };
+
+
+        /* ============================================================
+           CURRENT VALUES
+           ============================================================ */
+
+        const initialAccountType =
+            "{{ candidate.transaction_type or '' }}";
+
+        const initialSection =
+            "{{ candidate.subcategory or '' }}";
+
+
+        /* ============================================================
+           POPULATE STATEMENT OPTIONS
+           ============================================================ */
+
+        function populateStatementOptions() {
+
+            if (!statementTypeField) {
+                return;
+            }
+
+            const statementType =
+                statementTypeField.value;
+
+            const configuration =
+                statementConfigurations[
+                    statementType
+                ];
+
+
+            if (!configuration) {
+
+                if (accountTypeField) {
+                    accountTypeField.innerHTML =
+                        '<option value="">Select classification</option>';
+                }
+
+                if (sectionField) {
+                    sectionField.innerHTML =
+                        '<option value="">Select section</option>';
+                }
+
+                return;
+            }
+
+
+            /* --------------------------------------------------------
+               Account type
+            -------------------------------------------------------- */
+
+            if (accountTypeField) {
+
+                const previousValue =
+                    accountTypeField.value ||
+                    initialAccountType;
+
+                accountTypeField.innerHTML =
+                    '<option value="">Select classification</option>';
+
+
+                configuration.types.forEach(
+                    function (item) {
+
+                        const option =
+                            document.createElement("option");
+
+                        option.value =
+                            item.value;
+
+                        option.textContent =
+                            item.label;
+
+                        if (
+                            item.value.toLowerCase() ===
+                            previousValue.toLowerCase()
+                        ) {
+                            option.selected = true;
+                        }
+
+                        accountTypeField.appendChild(
+                            option
+                        );
+
+                    }
+                );
+
+            }
+
+
+            /* --------------------------------------------------------
+               Section
+            -------------------------------------------------------- */
+
+            if (sectionField) {
+
+                const previousSection =
+                    sectionField.value ||
+                    initialSection;
+
+                sectionField.innerHTML =
+                    '<option value="">Select section</option>';
+
+
+                configuration.sections.forEach(
+                    function (section) {
+
+                        const option =
+                            document.createElement("option");
+
+                        option.value =
+                            section;
+
+                        option.textContent =
+                            section;
+
+                        if (
+                            section.toLowerCase() ===
+                            previousSection.toLowerCase()
+                        ) {
+                            option.selected = true;
+                        }
+
+                        sectionField.appendChild(
+                            option
+                        );
+
+                    }
+                );
+
+            }
+
+        }
+
+
+        /* ============================================================
+           TOGGLE REVIEW MODE
+        ============================================================ */
+
+        function updateReviewMode() {
+
+            if (!statementTypeField) {
+                return;
+            }
+
+            const selectedStatementType =
+                statementTypeField.value;
+
+
+            const statementMode =
+                [
+                    "profit_and_loss",
+                    "income_statement",
+                    "balance_sheet",
+                    "cash_flow_statement",
+                    "trial_balance"
+                ].includes(
+                    selectedStatementType
+                );
+
+
+            if (statementMode) {
+
+                if (statementFields) {
+                    statementFields.style.display =
+                        "block";
+                }
+
+                if (statementLineItemFields) {
+                    statementLineItemFields.style.display =
+                        "block";
+                }
+
+                if (transactionFields) {
+                    transactionFields.style.display =
+                        "none";
+                }
+
+                if (transactionDateGroup) {
+                    transactionDateGroup.style.display =
+                        "none";
+                }
+
+            } else {
+
+                if (statementFields) {
+                    statementFields.style.display =
+                        "none";
+                }
+
+                if (statementLineItemFields) {
+                    statementLineItemFields.style.display =
+                        "none";
+                }
+
+                if (transactionFields) {
+                    transactionFields.style.display =
+                        "block";
+                }
+
+                if (transactionDateGroup) {
+                    transactionDateGroup.style.display =
+                        "flex";
+                }
+
+            }
+
+
+            populateStatementOptions();
+
+        }
+
+
+        if (statementTypeField) {
+
+            statementTypeField.addEventListener(
+                "change",
+                updateReviewMode
+            );
+
+        }
+
+
+        updateReviewMode();
+
+
+        /* ============================================================
+           COPY CURRENT FORM VALUES TO APPROVAL FORM
+        ============================================================ */
+
+        function copyValue(
+            sourceId,
+            targetId
+        ) {
+
+            const source =
+                document.getElementById(sourceId);
+
+            const target =
+                document.getElementById(targetId);
+
+            if (
+                source &&
+                target
+            ) {
+                target.value =
+                    source.value;
+            }
+
+        }
+
+
+        if (approveButton) {
+
+            approveButton.addEventListener(
+                "click",
+                function () {
+
+                    /* Common fields */
+
+                    copyValue(
+                        "transaction_date",
+                        "approve_transaction_date"
+                    );
+
+                    copyValue(
+                        "description",
+                        "approve_description"
+                    );
+
+                    copyValue(
+                        "reference_number",
+                        "approve_reference_number"
+                    );
+
+
+                    /* Statement amount is used when
+                       reviewing financial statements. */
+
+                    const statementAmount =
+                        document.getElementById(
+                            "statement_amount"
+                        );
+
+                    const amount =
+                        document.getElementById(
+                            "amount"
+                        );
+
+                    const approveAmount =
+                        document.getElementById(
+                            "approve_amount"
+                        );
+
+
+                    if (
+                        statementFields &&
+                        statementFields.style.display !==
+                            "none" &&
+                        statementAmount &&
+                        approveAmount
+                    ) {
+
+                        approveAmount.value =
+                            statementAmount.value;
+
+                    } else if (
+                        amount &&
+                        approveAmount
+                    ) {
+
+                        approveAmount.value =
+                            amount.value;
+
+                    }
+
+
+                    copyValue(
+                        "transaction_type",
+                        "approve_transaction_type"
+                    );
+
+                    copyValue(
+                        "category",
+                        "approve_category"
+                    );
+
+                    copyValue(
+                        "subcategory",
+                        "approve_subcategory"
+                    );
+
+                    copyValue(
+                        "correction_notes",
+                        "approve_correction_notes"
+                    );
+
+
+                    /* Statement fields */
+
+                    copyValue(
+                        "statement_type",
+                        "approve_statement_type"
+                    );
+
+                    copyValue(
+                        "period_type",
+                        "approve_period_type"
+                    );
+
+                    copyValue(
+                        "period_start",
+                        "approve_period_start"
+                    );
+
+                    copyValue(
+                        "period_end",
+                        "approve_period_end"
+                    );
+
+                    copyValue(
+                        "fiscal_year",
+                        "approve_fiscal_year"
+                    );
+
+                    copyValue(
+                        "line_item_name",
+                        "approve_line_item_name"
+                    );
+
+                    copyValue(
+                        "section",
+                        "approve_section"
+                    );
+
+                    copyValue(
+                        "account_type",
+                        "approve_account_type"
+                    );
+
+                }
+
+            );
+
+        }
+
+
+        /* ============================================================
+           REJECT FORM
+        ============================================================ */
+
+        const rejectNotes =
+            document.getElementById(
+                "reject_correction_notes"
+            );
+
+        const correctionNotes =
+            document.getElementById(
+                "correction_notes"
+            );
+
+
+        if (
+            rejectNotes &&
+            correctionNotes
+        ) {
+
+            correctionNotes.addEventListener(
+                "input",
+                function () {
+
+                    rejectNotes.value =
+                        correctionNotes.value;
+
+                }
+            );
+
+            rejectNotes.value =
+                correctionNotes.value;
+
+        }
+
+    }
+);
+
+</script>
+
+{% endblock %}

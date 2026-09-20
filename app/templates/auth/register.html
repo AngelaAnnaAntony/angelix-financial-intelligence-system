@@ -1,0 +1,1175 @@
+{% extends "base.html" %}
+
+{% block title %}Create Account | ANGELIX{% endblock %}
+
+{% block content %}
+
+<div class="auth-page auth-register-page">
+
+    <!-- ==========================================
+         LEFT BRAND / ONBOARDING PANEL
+         ========================================== -->
+
+    <section class="auth-brand-panel">
+
+        <div class="auth-brand-content">
+
+            <div class="auth-large-logo">
+
+                <span class="auth-logo-icon">
+                    A
+                </span>
+
+                <span>
+                    ANGELIX
+                </span>
+
+            </div>
+
+
+            <div class="auth-brand-copy">
+
+                <span class="auth-eyebrow">
+                    YOUR FINANCIAL INTELLIGENCE WORKSPACE
+                </span>
+
+                <h1>
+                    Start understanding
+                    your finances better.
+                </h1>
+
+                <p>
+                    Create your Angelix account and bring
+                    your financial data, analytics and
+                    intelligent decision support together
+                    in one secure workspace.
+                </p>
+
+            </div>
+
+
+            <!-- Onboarding highlights -->
+
+            <div class="auth-features">
+
+                <div class="auth-feature">
+
+                    <div class="auth-feature-icon">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Centralized Financial Data
+                        </strong>
+
+                        <span>
+                            Organize your financial information
+                            in one convenient workspace.
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="auth-feature">
+
+                    <div class="auth-feature-icon">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Automated Analysis
+                        </strong>
+
+                        <span>
+                            Turn financial records into useful
+                            metrics, trends and insights.
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="auth-feature">
+
+                    <div class="auth-feature-icon">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            AI Financial Guidance
+                        </strong>
+
+                        <span>
+                            Explore your financial information
+                            with AI-powered decision support.
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Decorative elements -->
+
+        <div class="auth-decoration auth-decoration-one"></div>
+
+        <div class="auth-decoration auth-decoration-two"></div>
+
+    </section>
+
+
+    <!-- ==========================================
+         RIGHT REGISTRATION PANEL
+         ========================================== -->
+
+    <section class="auth-form-panel">
+
+        <div class="auth-card auth-register-card">
+
+            <!-- Header -->
+
+            <div class="auth-card-header">
+
+                <span class="auth-mobile-logo">
+                    A
+                </span>
+
+                <h2>
+                    Create your account
+                </h2>
+
+                <p>
+                    Set up your Angelix account to begin
+                    your financial intelligence journey.
+                </p>
+
+            </div>
+
+
+            <!-- Registration Form -->
+
+            <form
+                method="post"
+                action="{{ url_for('auth.register') }}"
+                class="auth-form"
+                id="registerForm"
+            >
+                <input
+                    type="hidden"
+                    name="csrf_token"
+                    value="{{ csrf_token() }}"
+                >
+
+                <!-- Name -->
+
+                <div class="auth-name-grid">
+
+                    <!-- First Name -->
+
+                    <div class="auth-form-group">
+
+                        <label
+                            for="first_name"
+                            class="auth-label"
+                        >
+                            First name
+                        </label>
+
+                        <div class="auth-input-wrapper">
+
+                            <span
+                                class="auth-input-icon"
+                                aria-hidden="true"
+                            >
+                                A
+                            </span>
+
+                            <input
+                                id="first_name"
+                                name="first_name"
+                                type="text"
+                                class="auth-input"
+                                placeholder="First name"
+                                autocomplete="given-name"
+                                required
+                            >
+
+                        </div>
+
+                        <small
+                            class="auth-field-error"
+                            id="firstNameError"
+                        ></small>
+
+                    </div>
+
+
+                    <!-- Last Name -->
+
+                    <div class="auth-form-group">
+
+                        <label
+                            for="last_name"
+                            class="auth-label"
+                        >
+                            Last name
+                        </label>
+
+                        <div class="auth-input-wrapper">
+
+                            <span
+                                class="auth-input-icon"
+                                aria-hidden="true"
+                            >
+                                A
+                            </span>
+
+                            <input
+                                id="last_name"
+                                name="last_name"
+                                type="text"
+                                class="auth-input"
+                                placeholder="Last name"
+                                autocomplete="family-name"
+                                required
+                            >
+
+                        </div>
+
+                        <small
+                            class="auth-field-error"
+                            id="lastNameError"
+                        ></small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Email -->
+
+                <div class="auth-form-group">
+
+                    <label
+                        for="registerEmail"
+                        class="auth-label"
+                    >
+                        Email address
+                    </label>
+
+                    <div class="auth-input-wrapper">
+
+                        <span
+                            class="auth-input-icon"
+                            aria-hidden="true"
+                        >
+                            @
+                        </span>
+
+                        <input
+                            id="registerEmail"
+                            name="email"
+                            type="email"
+                            class="auth-input"
+                            placeholder="Enter your email address"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+                    <small
+                        class="auth-field-error"
+                        id="registerEmailError"
+                    ></small>
+
+                </div>
+
+
+                <!-- Password -->
+
+                <div class="auth-form-group">
+
+                    <label
+                        for="registerPassword"
+                        class="auth-label"
+                    >
+                        Password
+                    </label>
+
+                    <div class="auth-input-wrapper">
+
+                        <span
+                            class="auth-input-icon"
+                            aria-hidden="true"
+                        >
+                            •
+                        </span>
+
+                        <input
+                            id="registerPassword"
+                            name="password"
+                            type="password"
+                            class="auth-input auth-password-input"
+                            placeholder="Create a password"
+                            autocomplete="new-password"
+                            minlength="12"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            id="registerPasswordToggle"
+                            aria-label="Show password"
+                            title="Show password"
+                        >
+                            <span id="registerPasswordToggleText">
+                                Show
+                            </span>
+                        </button>
+
+                    </div>
+
+
+                    <!-- Password strength -->
+
+                    <div
+                        class="password-strength"
+                        id="passwordStrength"
+                    >
+
+                        <div class="password-strength-track">
+
+                            <span
+                                id="strengthBar"
+                            ></span>
+
+                        </div>
+
+                        <span
+                            id="strengthText"
+                        >
+                            Use at least 12 characters
+                        </span>
+
+                    </div>
+
+
+                    <!-- Requirements -->
+
+                    <div class="password-requirements">
+
+                        <span
+                            id="requirementLength"
+                            class="password-requirement"
+                        >
+                            <span>○</span>
+                            12+ characters
+                        </span>
+
+                        <span
+                            id="requirementUpper"
+                            class="password-requirement"
+                        >
+                            <span>○</span>
+                            Uppercase letter
+                        </span>
+
+                        <span
+                            id="requirementNumber"
+                            class="password-requirement"
+                        >
+                            <span>○</span>
+                            Number
+                        </span>
+
+                        <span
+                            id="requirementSpecial"
+                            class="password-requirement"
+                        >
+                            <span>○</span>
+                            Special character
+                        </span>
+
+                    </div>
+
+                    <small
+                        class="auth-field-error"
+                        id="registerPasswordError"
+                    ></small>
+
+                </div>
+
+
+                <!-- Submit -->
+
+                <button
+                    type="submit"
+                    class="auth-submit"
+                    id="registerButton"
+                >
+
+                    <span
+                        class="auth-submit-text"
+                        id="registerButtonText"
+                    >
+                        Create account
+                    </span>
+
+                    <span
+                        class="auth-spinner"
+                        id="registerSpinner"
+                        aria-hidden="true"
+                    ></span>
+
+                </button>
+
+            </form>
+
+
+            <!-- Login -->
+
+            <div class="auth-divider">
+
+                <span></span>
+
+                <small>
+                    Already have an account?
+                </small>
+
+                <span></span>
+
+            </div>
+
+
+            <a
+                href="/auth/login"
+                class="auth-register-link"
+            >
+                Sign in to Angelix
+                <span aria-hidden="true">→</span>
+            </a>
+
+
+            <!-- Security Notice -->
+
+            <div class="auth-security-note">
+
+                <span class="auth-security-icon">
+                    ✓
+                </span>
+
+                <span>
+                    Your password is securely protected
+                    using application-level authentication
+                    controls.
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+{% endblock %}
+
+
+{% block extra_css %}
+
+<style>
+
+    /* ==========================================
+       REGISTRATION NAME GRID
+       ========================================== */
+
+    .auth-name-grid {
+
+        display: grid;
+
+        grid-template-columns:
+            1fr 1fr;
+
+        gap: 14px;
+
+    }
+
+
+    /* ==========================================
+       PASSWORD STRENGTH
+       ========================================== */
+
+    .password-strength {
+
+        margin-top: 7px;
+
+    }
+
+
+    .password-strength-track {
+
+        width: 100%;
+
+        height: 4px;
+
+        overflow: hidden;
+
+        border-radius: 999px;
+
+        background:
+            var(--bg-tertiary);
+
+    }
+
+
+    .password-strength-track span {
+
+        display: block;
+
+        width: 0%;
+
+        height: 100%;
+
+        border-radius: 999px;
+
+        background:
+            var(--danger);
+
+        transition:
+            width 180ms ease,
+            background 180ms ease;
+
+    }
+
+
+    #strengthText {
+
+        display: block;
+
+        margin-top: 5px;
+
+        color:
+            var(--text-muted);
+
+        font-size: 10px;
+
+    }
+
+
+    /* ==========================================
+       PASSWORD REQUIREMENTS
+       ========================================== */
+
+    .password-requirements {
+
+        display: grid;
+
+        grid-template-columns:
+            1fr 1fr;
+
+        gap: 5px 12px;
+
+        margin-top: 10px;
+
+    }
+
+
+    .password-requirement {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 5px;
+
+        color:
+            var(--text-muted);
+
+        font-size: 10px;
+
+    }
+
+
+    .password-requirement.valid {
+
+        color:
+            var(--success);
+
+    }
+
+
+    .password-requirement.valid span {
+
+        font-weight:
+            800;
+
+    }
+
+
+    /* ==========================================
+       REGISTRATION CARD
+       ========================================== */
+
+    .auth-register-card {
+
+        max-width:
+            500px;
+
+    }
+
+
+    /* ==========================================
+       RESPONSIVE
+       ========================================== */
+
+    @media (max-width: 600px) {
+
+        .auth-name-grid {
+
+            grid-template-columns:
+                1fr;
+
+            gap: 0;
+
+        }
+
+
+        .password-requirements {
+
+            grid-template-columns:
+                1fr;
+
+        }
+
+    }
+
+</style>
+
+{% endblock %}
+
+
+{% block extra_js %}
+
+<script>
+
+    /* ==========================================
+       ELEMENTS
+       ========================================== */
+
+    const registerForm =
+        document.getElementById("registerForm");
+
+    const firstName =
+        document.getElementById("first_name");
+
+    const lastName =
+        document.getElementById("last_name");
+
+    const registerEmail =
+        document.getElementById("registerEmail");
+
+    const registerPassword =
+        document.getElementById("registerPassword");
+
+    const passwordToggle =
+        document.getElementById(
+            "registerPasswordToggle"
+        );
+
+    const passwordToggleText =
+        document.getElementById(
+            "registerPasswordToggleText"
+        );
+
+
+    /* ==========================================
+       PASSWORD VISIBILITY
+       ========================================== */
+
+    if (
+        registerPassword &&
+        passwordToggle
+    ) {
+
+        passwordToggle.addEventListener(
+            "click",
+            function () {
+
+                const hidden =
+                    registerPassword.type ===
+                    "password";
+
+
+                if (hidden) {
+
+                    registerPassword.type =
+                        "text";
+
+                    passwordToggleText.textContent =
+                        "Hide";
+
+                    passwordToggle.setAttribute(
+                        "aria-label",
+                        "Hide password"
+                    );
+
+                } else {
+
+                    registerPassword.type =
+                        "password";
+
+                    passwordToggleText.textContent =
+                        "Show";
+
+                    passwordToggle.setAttribute(
+                        "aria-label",
+                        "Show password"
+                    );
+
+                }
+
+            }
+        );
+
+    }
+
+
+    /* ==========================================
+       PASSWORD STRENGTH
+       ========================================== */
+
+    function updatePasswordStrength() {
+
+        const password =
+            registerPassword.value;
+
+        let score = 0;
+
+
+        const hasLength =
+            password.length >= 12;
+
+        const hasUppercase =
+            /[A-Z]/.test(password);
+
+        const hasNumber =
+            /[0-9]/.test(password);
+
+        const hasSpecial =
+            /[^A-Za-z0-9]/.test(password);
+
+
+        if (hasLength) {
+            score++;
+        }
+
+        if (hasUppercase) {
+            score++;
+        }
+
+        if (hasNumber) {
+            score++;
+        }
+
+        if (hasSpecial) {
+            score++;
+        }
+
+
+        const strengthBar =
+            document.getElementById(
+                "strengthBar"
+            );
+
+        const strengthText =
+            document.getElementById(
+                "strengthText"
+            );
+
+
+        const requirements = {
+
+            requirementLength:
+                hasLength,
+
+            requirementUpper:
+                hasUppercase,
+
+            requirementNumber:
+                hasNumber,
+
+            requirementSpecial:
+                hasSpecial
+
+        };
+
+
+        Object.entries(requirements)
+            .forEach(
+                function ([id, valid]) {
+
+                    const element =
+                        document.getElementById(id);
+
+                    if (!element) {
+                        return;
+                    }
+
+
+                    if (valid) {
+
+                        element.classList.add(
+                            "valid"
+                        );
+
+                        element
+                            .querySelector("span")
+                            .textContent = "✓";
+
+                    } else {
+
+                        element.classList.remove(
+                            "valid"
+                        );
+
+                        element
+                            .querySelector("span")
+                            .textContent = "○";
+
+                    }
+
+                }
+            );
+
+
+        if (score === 0) {
+
+            strengthBar.style.width =
+                "0%";
+
+            strengthText.textContent =
+                "Use at least 12 characters";
+
+        } else if (score === 1) {
+
+            strengthBar.style.width =
+                "25%";
+
+            strengthBar.style.background =
+                "var(--danger)";
+
+            strengthText.textContent =
+                "Weak password";
+
+        } else if (score === 2) {
+
+            strengthBar.style.width =
+                "50%";
+
+            strengthBar.style.background =
+                "var(--warning)";
+
+            strengthText.textContent =
+                "Fair password";
+
+        } else if (score === 3) {
+
+            strengthBar.style.width =
+                "75%";
+
+            strengthBar.style.background =
+                "var(--primary)";
+
+            strengthText.textContent =
+                "Good password";
+
+        } else {
+
+            strengthBar.style.width =
+                "100%";
+
+            strengthBar.style.background =
+                "var(--success)";
+
+            strengthText.textContent =
+                "Strong password";
+
+        }
+
+    }
+
+
+    if (registerPassword) {
+
+        registerPassword.addEventListener(
+            "input",
+            updatePasswordStrength
+        );
+
+    }
+
+
+    /* ==========================================
+       VALIDATION
+       ========================================== */
+
+    function clearRegistrationErrors() {
+
+        const errors = [
+            "firstNameError",
+            "lastNameError",
+            "registerEmailError",
+            "registerPasswordError"
+        ];
+
+
+        errors.forEach(
+            function (id) {
+
+                const element =
+                    document.getElementById(id);
+
+                if (element) {
+                    element.textContent = "";
+                }
+
+            }
+        );
+
+
+        [
+            firstName,
+            lastName,
+            registerEmail,
+            registerPassword
+        ].forEach(
+            function (element) {
+
+                if (element) {
+
+                    element.classList.remove(
+                        "auth-input-error"
+                    );
+
+                }
+
+            }
+        );
+
+    }
+
+
+    if (registerForm) {
+
+        registerForm.addEventListener(
+            "submit",
+            function (event) {
+
+                clearRegistrationErrors();
+
+                let valid = true;
+
+
+                /* First name */
+
+                if (
+                    !firstName.value.trim()
+                ) {
+
+                    document.getElementById(
+                        "firstNameError"
+                    ).textContent =
+                        "Please enter your first name.";
+
+                    firstName.classList.add(
+                        "auth-input-error"
+                    );
+
+                    valid = false;
+
+                }
+
+
+                /* Last name */
+
+                if (
+                    !lastName.value.trim()
+                ) {
+
+                    document.getElementById(
+                        "lastNameError"
+                    ).textContent =
+                        "Please enter your last name.";
+
+                    lastName.classList.add(
+                        "auth-input-error"
+                    );
+
+                    valid = false;
+
+                }
+
+
+                /* Email */
+
+                if (
+                    !registerEmail.value.trim()
+                ) {
+
+                    document.getElementById(
+                        "registerEmailError"
+                    ).textContent =
+                        "Please enter your email address.";
+
+                    registerEmail.classList.add(
+                        "auth-input-error"
+                    );
+
+                    valid = false;
+
+                } else if (
+                    !registerEmail.validity.valid
+                ) {
+
+                    document.getElementById(
+                        "registerEmailError"
+                    ).textContent =
+                        "Please enter a valid email address.";
+
+                    registerEmail.classList.add(
+                        "auth-input-error"
+                    );
+
+                    valid = false;
+
+                }
+
+
+                /* Password */
+
+                const password =
+                    registerPassword.value;
+
+
+                if (
+                    password.length < 12
+                ) {
+
+                    document.getElementById(
+                        "registerPasswordError"
+                    ).textContent =
+                        "Password must contain at least 12 characters.";
+
+                    registerPassword.classList.add(
+                        "auth-input-error"
+                    );
+
+                    valid = false;
+
+                }
+
+
+                if (!valid) {
+
+                    event.preventDefault();
+
+                    return;
+
+                }
+
+
+                /* Loading state */
+
+                const button =
+                    document.getElementById(
+                        "registerButton"
+                    );
+
+                const buttonText =
+                    document.getElementById(
+                        "registerButtonText"
+                    );
+
+                const spinner =
+                    document.getElementById(
+                        "registerSpinner"
+                    );
+
+
+                if (button) {
+
+                    button.disabled = true;
+
+                }
+
+
+                if (buttonText) {
+
+                    buttonText.textContent =
+                        "Creating account...";
+
+                }
+
+
+                if (spinner) {
+
+                    spinner.style.display =
+                        "block";
+
+                }
+
+            }
+        );
+
+    }
+
+
+    /* ==========================================
+       REMOVE ERROR STATE WHILE TYPING
+       ========================================== */
+
+    [
+        firstName,
+        lastName,
+        registerEmail,
+        registerPassword
+    ].forEach(
+        function (element) {
+
+            if (!element) {
+                return;
+            }
+
+
+            element.addEventListener(
+                "input",
+                function () {
+
+                    element.classList.remove(
+                        "auth-input-error"
+                    );
+
+                }
+            );
+
+        }
+    );
+
+</script>
+
+{% endblock %}

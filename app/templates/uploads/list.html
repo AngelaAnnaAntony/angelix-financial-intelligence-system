@@ -1,0 +1,868 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Financial Uploads | ANGELIX
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    /* ==========================================================
+       UPLOAD PAGE
+       ========================================================== */
+
+    .upload-page {
+        width: 100%;
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    .upload-header {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 24px;
+        margin-bottom: 26px;
+    }
+
+    .upload-eyebrow {
+        display: block;
+        margin-bottom: 8px;
+        color: var(--primary);
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+    }
+
+    .upload-title {
+        margin: 0;
+        color: var(--text-primary);
+        font-size: clamp(28px, 4vw, 38px);
+        font-weight: 800;
+        line-height: 1.15;
+    }
+
+    .upload-description {
+        max-width: 720px;
+        margin: 8px 0 0;
+        color: var(--text-secondary);
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    /* ==========================================================
+       UPLOAD CARD
+       ========================================================== */
+
+    .upload-card {
+        margin-bottom: 24px;
+        padding: 28px;
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        background: var(--surface);
+        box-shadow: var(--shadow-sm);
+    }
+
+    .upload-card-title {
+        margin: 0 0 6px;
+        color: var(--text-primary);
+        font-size: 19px;
+        font-weight: 800;
+    }
+
+    .upload-card-description {
+        margin: 0 0 22px;
+        color: var(--text-secondary);
+        font-size: 13px;
+    }
+
+    /* ==========================================================
+       FILE INPUT
+       ========================================================== */
+
+    .upload-form {
+        display: flex;
+        align-items: flex-end;
+        gap: 14px;
+    }
+
+    .upload-field {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .upload-label {
+        display: block;
+        margin-bottom: 8px;
+        color: var(--text-primary);
+        font-size: 13px;
+        font-weight: 700;
+    }
+
+    .upload-input {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 11px 13px;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        background: var(--surface);
+        color: var(--text-primary);
+        font-family: inherit;
+        font-size: 14px;
+    }
+
+    .upload-input:focus {
+        border-color: var(--primary);
+        outline: none;
+        box-shadow: 0 0 0 3px var(--primary-light);
+    }
+
+    .upload-help {
+        margin-top: 7px;
+        color: var(--text-muted);
+        font-size: 11px;
+    }
+
+    .upload-submit {
+        flex-shrink: 0;
+        min-width: 120px;
+    }
+
+    /* ==========================================================
+       SUPPORTED FILES
+       ========================================================== */
+
+    .upload-supported {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 18px;
+    }
+
+    .upload-file-type {
+        padding: 6px 10px;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        background: var(--surface-muted);
+        color: var(--text-secondary);
+        font-size: 11px;
+        font-weight: 700;
+    }
+
+    /* ==========================================================
+       UPLOAD LIST
+       ========================================================== */
+
+    .upload-list-card {
+        padding: 28px;
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        background: var(--surface);
+        box-shadow: var(--shadow-sm);
+    }
+
+    .upload-list-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 20px;
+    }
+
+    .upload-list-title {
+        margin: 0;
+        color: var(--text-primary);
+        font-size: 19px;
+        font-weight: 800;
+    }
+
+    .upload-count {
+        padding: 5px 9px;
+        border-radius: 999px;
+        background: var(--primary-light);
+        color: var(--primary);
+        font-size: 11px;
+        font-weight: 800;
+    }
+
+    .upload-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .upload-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 15px 16px;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        background: var(--surface-muted);
+    }
+
+    .upload-file-info {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        min-width: 0;
+        flex: 1;
+    }
+
+    .upload-file-icon {
+        display: inline-flex;
+        flex-shrink: 0;
+        align-items: center;
+        justify-content: center;
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
+        background: var(--primary-light);
+        color: var(--primary);
+        font-size: 13px;
+        font-weight: 800;
+    }
+
+    .upload-filename {
+        overflow: hidden;
+        color: var(--text-primary);
+        font-size: 13px;
+        font-weight: 700;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .upload-status {
+        flex-shrink: 0;
+        padding: 6px 10px;
+        border-radius: 999px;
+        font-size: 11px;
+        font-weight: 800;
+        text-transform: capitalize;
+    }
+
+    .upload-status.processing {
+        background: #fef3c7;
+        color: #92400e;
+    }
+
+    .upload-status.pending {
+        background: #e0e7ff;
+        color: #3730a3;
+    }
+
+    .upload-status.completed,
+    .upload-status.processed {
+        background: #dcfce7;
+        color: #166534;
+    }
+
+    .upload-status.failed,
+    .upload-status.error {
+        background: #fee2e2;
+        color: #991b1b;
+    }
+
+    .upload-status.default {
+        background: var(--surface);
+        color: var(--text-secondary);
+    }
+
+    /* ==========================================================
+       UPLOAD ACTIONS
+       ========================================================== */
+
+    .upload-actions {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-shrink: 0;
+        gap: 8px;
+    }
+
+    .upload-reprocess-form,
+    .upload-delete-form {
+        margin: 0;
+    }
+
+    .upload-reprocess-button,
+    .upload-delete-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 92px;
+        padding: 7px 11px;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        background: var(--surface);
+        font-family: inherit;
+        font-size: 11px;
+        font-weight: 800;
+        cursor: pointer;
+        transition:
+            background 0.2s ease,
+            border-color 0.2s ease,
+            color 0.2s ease,
+            transform 0.2s ease;
+    }
+
+    /* Reprocess */
+
+    .upload-reprocess-button {
+        color: var(--primary);
+    }
+
+    .upload-reprocess-button:hover {
+        border-color: var(--primary);
+        background: var(--primary-light);
+        transform: translateY(-1px);
+    }
+
+    /* Delete */
+
+    .upload-delete-button {
+        color: #dc2626;
+    }
+
+    .upload-delete-button:hover {
+        border-color: #dc2626;
+        background: #fee2e2;
+        color: #b91c1c;
+        transform: translateY(-1px);
+    }
+
+    .upload-reprocess-button:focus-visible,
+    .upload-delete-button:focus-visible {
+        outline: none;
+        box-shadow: 0 0 0 3px var(--primary-light);
+    }
+
+    .upload-reprocess-button:disabled,
+    .upload-delete-button:disabled {
+        opacity: 0.65;
+        cursor: not-allowed;
+        transform: none;
+    }
+
+    /* ==========================================================
+       EMPTY STATE
+       ========================================================== */
+
+    .upload-empty {
+        padding: 42px 24px;
+        border: 1px dashed var(--border);
+        border-radius: 14px;
+        text-align: center;
+        color: var(--text-secondary);
+    }
+
+    .upload-empty strong {
+        display: block;
+        margin-bottom: 6px;
+        color: var(--text-primary);
+        font-size: 15px;
+    }
+
+    /* ==========================================================
+       RESPONSIVE
+       ========================================================== */
+
+    @media (max-width: 700px) {
+        .upload-header {
+            align-items: flex-start;
+            flex-direction: column;
+        }
+
+        .upload-card,
+        .upload-list-card {
+            padding: 20px;
+        }
+
+        .upload-form {
+            align-items: stretch;
+            flex-direction: column;
+        }
+
+        .upload-submit {
+            width: 100%;
+        }
+
+        .upload-item {
+            align-items: flex-start;
+            flex-direction: column;
+        }
+
+        .upload-actions {
+            width: 100%;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .upload-status {
+            align-self: flex-start;
+        }
+
+        .upload-reprocess-form,
+        .upload-delete-form {
+            flex: 1;
+        }
+
+        .upload-reprocess-button,
+        .upload-delete-button {
+            width: 100%;
+        }
+    }
+</style>
+{% endblock %}
+
+
+{% block content %}
+
+<div class="upload-page">
+
+    <!-- ======================================================
+         PAGE HEADER
+         ====================================================== -->
+
+    <section class="upload-header">
+
+        <div>
+
+            <span class="upload-eyebrow">
+                Financial Data
+            </span>
+
+            <h1 class="upload-title">
+                Financial Uploads
+            </h1>
+
+            <p class="upload-description">
+                Upload financial statements and supporting documents
+                for processing, extraction and analysis by ANGELIX.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ======================================================
+         UPLOAD FORM
+         ====================================================== -->
+
+    <section class="upload-card">
+
+        <h2 class="upload-card-title">
+            Upload Financial Document
+        </h2>
+
+        <p class="upload-card-description">
+            Select a financial document from your computer and upload it
+            securely to your organization's private storage.
+        </p>
+
+
+        <form
+            method="POST"
+            enctype="multipart/form-data"
+            action="{{ url_for(
+                'uploads.uploads',
+                organization_id=organization_id
+            ) }}"
+            class="upload-form"
+            id="uploadForm"
+        >
+
+            <input
+                type="hidden"
+                name="csrf_token"
+                value="{{ csrf_token() }}"
+            >
+
+
+            <div class="upload-field">
+
+                <label
+                    for="financialFile"
+                    class="upload-label"
+                >
+                    Financial Document
+                </label>
+
+                <input
+                    type="file"
+                    id="financialFile"
+                    name="file"
+                    class="upload-input"
+                    accept=".pdf,.csv,.xlsx,.xls,.png,.jpg,.jpeg"
+                    required
+                >
+
+                <div class="upload-help">
+                    Maximum file size and validation rules are enforced
+                    by the Angelix backend.
+                </div>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="btn btn-primary upload-submit"
+                id="uploadSubmitButton"
+            >
+                Upload
+            </button>
+
+        </form>
+
+
+        <div class="upload-supported">
+
+            <span class="upload-file-type">PDF</span>
+            <span class="upload-file-type">CSV</span>
+            <span class="upload-file-type">XLSX</span>
+            <span class="upload-file-type">XLS</span>
+            <span class="upload-file-type">PNG</span>
+            <span class="upload-file-type">JPG</span>
+            <span class="upload-file-type">JPEG</span>
+
+        </div>
+
+    </section>
+
+
+    <!-- ======================================================
+         UPLOAD HISTORY
+         ====================================================== -->
+
+    <section class="upload-list-card">
+
+        <div class="upload-list-header">
+
+            <h2 class="upload-list-title">
+                Upload History
+            </h2>
+
+            <span class="upload-count">
+                {{ uploads|length }}
+                file{% if uploads|length != 1 %}s{% endif %}
+            </span>
+
+        </div>
+
+
+        {% if uploads %}
+
+            <ul class="upload-list">
+
+                {% for u in uploads %}
+
+                    {% set status = (u.processing_status or "unknown")|lower %}
+
+                    {% if status in ["processing", "in_progress"] %}
+                        {% set status_class = "processing" %}
+                    {% elif status in ["pending", "queued"] %}
+                        {% set status_class = "pending" %}
+                    {% elif status in ["completed", "processed", "success", "successful"] %}
+                        {% set status_class = "completed" %}
+                    {% elif status in ["failed", "error", "rejected"] %}
+                        {% set status_class = "failed" %}
+                    {% else %}
+                        {% set status_class = "default" %}
+                    {% endif %}
+
+
+                    <li class="upload-item">
+
+                        <div class="upload-file-info">
+
+                            <span
+                                class="upload-file-icon"
+                                aria-hidden="true"
+                            >
+                                FILE
+                            </span>
+
+                            <span
+                                class="upload-filename"
+                                title="{{ u.original_filename }}"
+                            >
+                                {{ u.original_filename }}
+                            </span>
+
+                        </div>
+
+
+                        <div class="upload-actions">
+
+                            <span
+                                class="upload-status {{ status_class }}"
+                            >
+                                {{ u.processing_status or "Unknown" }}
+                            </span>
+
+
+                            <!-- ==========================================
+                                 REPROCESS
+                                 ========================================== -->
+
+                            {% if status in [
+                                "completed",
+                                "processed",
+                                "success",
+                                "successful",
+                                "failed",
+                                "error",
+                                "rejected"
+                            ] %}
+
+                                <form
+                                    method="POST"
+                                    action="{{ url_for(
+                                        'extractions.reprocess_upload',
+                                        organization_id=organization_id,
+                                        upload_id=u.id
+                                    ) }}"
+                                    class="upload-reprocess-form"
+                                    data-reprocess-form
+                                >
+
+                                    <input
+                                        type="hidden"
+                                        name="csrf_token"
+                                        value="{{ csrf_token() }}"
+                                    >
+
+                                    <button
+                                        type="submit"
+                                        class="upload-reprocess-button"
+                                        data-reprocess-button
+                                    >
+                                        Reprocess
+                                    </button>
+
+                                </form>
+
+                            {% endif %}
+
+
+                            <!-- ==========================================
+                                 DELETE
+                                 ========================================== -->
+
+                            <form
+                                method="POST"
+                                action="{{ url_for(
+                                    'uploads.delete_upload',
+                                    organization_id=organization_id,
+                                    upload_id=u.id
+                                ) }}"
+                                class="upload-delete-form"
+                                data-delete-form
+                            >
+
+                                <input
+                                    type="hidden"
+                                    name="csrf_token"
+                                    value="{{ csrf_token() }}"
+                                >
+
+                                <button
+                                    type="submit"
+                                    class="upload-delete-button"
+                                    data-delete-button
+                                >
+                                    Delete
+                                </button>
+
+                            </form>
+
+                        </div>
+
+                    </li>
+
+                {% endfor %}
+
+            </ul>
+
+        {% else %}
+
+            <div class="upload-empty">
+
+                <strong>
+                    No uploads yet
+                </strong>
+
+                Upload your first financial document to begin
+                processing and analysis.
+
+            </div>
+
+        {% endif %}
+
+    </section>
+
+</div>
+
+{% endblock %}
+
+
+{% block extra_js %}
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    /* ==========================================================
+       UPLOAD FORM
+       ========================================================== */
+
+    const form =
+        document.getElementById("uploadForm");
+
+    const fileInput =
+        document.getElementById("financialFile");
+
+    const submitButton =
+        document.getElementById("uploadSubmitButton");
+
+
+    if (form && fileInput && submitButton) {
+
+        form.addEventListener("submit", function (event) {
+
+            if (!fileInput.files.length) {
+
+                event.preventDefault();
+
+                fileInput.focus();
+
+                return;
+            }
+
+            submitButton.disabled = true;
+
+            submitButton.textContent =
+                "Uploading...";
+
+        });
+
+    }
+
+
+    /* ==========================================================
+       REPROCESS ACTIONS
+       ========================================================== */
+
+    const reprocessForms =
+        document.querySelectorAll(
+            "[data-reprocess-form]"
+        );
+
+
+    reprocessForms.forEach(function (reprocessForm) {
+
+        reprocessForm.addEventListener(
+            "submit",
+            function (event) {
+
+                const confirmed = window.confirm(
+                    "Reprocess this document?\n\n" +
+                    "The existing unapproved extraction candidates " +
+                    "will be replaced with fresh candidates generated " +
+                    "using the current ANGELIX extraction pipeline.\n\n" +
+                    "Approved transactions are protected and cannot " +
+                    "be silently replaced."
+                );
+
+
+                if (!confirmed) {
+
+                    event.preventDefault();
+
+                    return;
+                }
+
+
+                const button =
+                    reprocessForm.querySelector(
+                        "[data-reprocess-button]"
+                    );
+
+
+                if (button) {
+
+                    button.disabled = true;
+
+                    button.textContent =
+                        "Processing...";
+                }
+
+            }
+        );
+
+    });
+
+
+    /* ==========================================================
+       DELETE ACTIONS
+       ========================================================== */
+
+    const deleteForms =
+        document.querySelectorAll(
+            "[data-delete-form]"
+        );
+
+
+    deleteForms.forEach(function (deleteForm) {
+
+        deleteForm.addEventListener(
+            "submit",
+            function (event) {
+
+                const confirmed = window.confirm(
+                    "Delete this document?\n\n" +
+                    "The uploaded file will be removed from " +
+                    "ANGELIX Upload History and its stored file " +
+                    "will be deleted.\n\n" +
+                    "Any trusted financial records that were already " +
+                    "approved from this document will not be deleted.\n\n" +
+                    "This action cannot be undone."
+                );
+
+
+                if (!confirmed) {
+
+                    event.preventDefault();
+
+                    return;
+                }
+
+
+                const button =
+                    deleteForm.querySelector(
+                        "[data-delete-button]"
+                    );
+
+
+                if (button) {
+
+                    button.disabled = true;
+
+                    button.textContent =
+                        "Deleting...";
+                }
+
+            }
+        );
+
+    });
+
+});
+</script>
+
+{% endblock %}

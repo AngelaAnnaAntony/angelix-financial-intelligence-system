@@ -1,0 +1,1201 @@
+Transaction_ID,Date,Scope,Category,Description,Amount,Income_vs_Expense,Profit_vs_Loss,Balance_Sheet_Category,Debit_vs_Credit,Payment_Method
+TXN-10240,2025-01-01,Business,Owner's Drawings / Distributions,Owner cash withdrawal for personal use,5603.62,Equity Withdrawal,Neutral,Equity,Debit,Wire Transfer
+TXN-10819,2025-01-01,Household,Utilities,"Electricity, water, and gas bills",126.95,Expense,Loss,Liability,Debit,Checking Account
+TXN-10451,2025-01-01,Business,Office Rent & Lease,Commercial property rental fee,4266.64,Expense,Loss,Liability,Debit,Credit Card
+TXN-10952,2025-01-01,Household,Utilities,"Electricity, water, and gas bills",90.59,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-10123,2025-01-01,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,1411.62,Transfer,Neutral,Liability,Debit,Credit Card
+TXN-10092,2025-01-02,Household,Groceries,Supermarket purchase (food/supplies),110.05,Expense,Loss,Asset,Debit,Credit Card
+TXN-10803,2025-01-02,Business,Loan Interest Expense,Interest charge on business debt/credit lines,658.24,Expense,Loss,Liability,Debit,Digital Wallet
+TXN-11127,2025-01-02,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,132.65,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-10865,2025-01-02,Business,Owner's Drawings / Distributions,Owner cash withdrawal for personal use,1308.27,Equity Withdrawal,Neutral,Equity,Debit,Checking Account
+TXN-10709,2025-01-03,Household,Rent / Mortgage,Monthly residential lease/mortgage payment,2697.33,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-10578,2025-01-03,Household,Dining Out,Restaurant bill / food delivery,116.27,Expense,Loss,Asset,Debit,Credit Card
+TXN-10050,2025-01-04,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,43.43,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-10672,2025-01-04,Household,Groceries,Supermarket purchase (food/supplies),126.6,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-11191,2025-01-04,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,2380.8,Transfer,Neutral,Liability,Debit,Credit Card
+TXN-10007,2025-01-04,Household,Vehicle Maintenance,"Gasoline, car insurance, or repairs",463.73,Expense,Loss,Asset,Debit,Credit Card
+TXN-10085,2025-01-05,Business,Owner's Drawings / Distributions,Owner cash withdrawal for personal use,5675.04,Equity Withdrawal,Neutral,Equity,Debit,Wire Transfer
+TXN-10821,2025-01-05,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",35.22,Expense,Loss,Asset,Debit,Cash
+TXN-11093,2025-01-05,Household,Groceries,Supermarket purchase (food/supplies),218.92,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-10743,2025-01-06,Household,Utilities,"Electricity, water, and gas bills",101.69,Expense,Loss,Liability,Debit,Credit Card
+TXN-10205,2025-01-07,Household,Utilities,"Electricity, water, and gas bills",206.29,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-11106,2025-01-07,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,8750.25,Income,Profit,Asset,Credit,Digital Wallet
+TXN-10990,2025-01-07,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",635.43,Expense,Loss,Asset,Debit,Wire Transfer
+TXN-10654,2025-01-08,Business,Product Sales Revenue,Direct cash/card sales to customers,1071.36,Income,Profit,Asset,Credit,Credit Card
+TXN-10063,2025-01-08,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,3406.99,Transfer,Neutral,Liability,Debit,Credit Card
+TXN-11059,2025-01-08,Business,Cost of Goods Sold (COGS),Raw materials and inventory purchases,4481.63,Expense,Loss,Asset,Debit,Wire Transfer
+TXN-10247,2025-01-08,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,2156.75,Transfer,Neutral,Liability,Debit,Checking Account
+TXN-10457,2025-01-09,Household,Vehicle Maintenance,"Gasoline, car insurance, or repairs",236.76,Expense,Loss,Asset,Debit,Checking Account
+TXN-10550,2025-01-09,Business,Owner's Equity Injection,Capital contributed by business owner/investor,21576.1,Equity Injection,Neutral,Equity,Credit,Digital Wallet
+TXN-10663,2025-01-09,Household,Dining Out,Restaurant bill / food delivery,42.38,Expense,Loss,Asset,Debit,Wire Transfer
+TXN-11060,2025-01-10,Household,Credit Card Payment,Credit card balance payoff from checking account,1079.77,Transfer,Neutral,Liability,Debit,Digital Wallet
+TXN-10377,2025-01-10,Business,Office Rent & Lease,Commercial property rental fee,3568.89,Expense,Loss,Liability,Debit,Checking Account
+TXN-10162,2025-01-10,Business,Owner's Equity Injection,Capital contributed by business owner/investor,38706.09,Equity Injection,Neutral,Equity,Credit,Checking Account
+TXN-11000,2025-01-11,Business,Cost of Goods Sold (COGS),Raw materials and inventory purchases,1821.76,Expense,Loss,Asset,Debit,Cash
+TXN-10231,2025-01-11,Business,Loan Interest Expense,Interest charge on business debt/credit lines,749.7,Expense,Loss,Liability,Debit,Digital Wallet
+TXN-10957,2025-01-11,Business,Product Sales Revenue,Direct cash/card sales to customers,1536.42,Income,Profit,Asset,Credit,Checking Account
+TXN-10932,2025-01-11,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,193.73,Expense,Loss,Asset,Debit,Checking Account
+TXN-10319,2025-01-11,Business,Equipment Asset Purchase,"Purchase of machinery, computers, or office hardware",1138.88,Asset Acquisition,Neutral,Asset,Debit,Cash
+TXN-10455,2025-01-11,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,1671.36,Transfer,Neutral,Liability,Debit,ACH Transfer
+TXN-10753,2025-01-12,Household,Utilities,"Electricity, water, and gas bills",266.82,Expense,Loss,Liability,Debit,Digital Wallet
+TXN-11069,2025-01-12,Household,Credit Card Payment,Credit card balance payoff from checking account,966.6,Transfer,Neutral,Liability,Debit,Credit Card
+TXN-10626,2025-01-12,Household,Salary / Wages,Monthly salary direct deposit,5924.72,Income,Profit,Asset,Credit,ACH Transfer
+TXN-10935,2025-01-12,Household,Groceries,Supermarket purchase (food/supplies),71.02,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-10107,2025-01-13,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,237.81,Expense,Loss,Asset,Debit,ACH Transfer
+TXN-10001,2025-01-13,Household,Utilities,"Electricity, water, and gas bills",243.14,Expense,Loss,Liability,Debit,Credit Card
+TXN-11195,2025-01-13,Household,Dining Out,Restaurant bill / food delivery,63.22,Expense,Loss,Asset,Debit,Cash
+TXN-11187,2025-01-13,Business,Product Sales Revenue,Direct cash/card sales to customers,4114.31,Income,Profit,Asset,Credit,Cash
+TXN-10920,2025-01-14,Household,Investment Returns,Stock dividend or savings interest payout,166.25,Income,Profit,Asset,Credit,Credit Card
+TXN-10005,2025-01-14,Business,Equipment Asset Purchase,"Purchase of machinery, computers, or office hardware",4560.34,Asset Acquisition,Neutral,Asset,Debit,Digital Wallet
+TXN-10170,2025-01-14,Business,Loan Interest Expense,Interest charge on business debt/credit lines,700.22,Expense,Loss,Liability,Debit,Wire Transfer
+TXN-11033,2025-01-14,Household,Dining Out,Restaurant bill / food delivery,83.82,Expense,Loss,Asset,Debit,Cash
+TXN-10185,2025-01-15,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,6437.37,Income,Profit,Asset,Credit,Cash
+TXN-10357,2025-01-15,Household,Vehicle Maintenance,"Gasoline, car insurance, or repairs",136.94,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-10514,2025-01-15,Household,Groceries,Supermarket purchase (food/supplies),57.06,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-10164,2025-01-16,Household,Groceries,Supermarket purchase (food/supplies),239.42,Expense,Loss,Asset,Debit,Credit Card
+TXN-10022,2025-01-17,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,285.67,Expense,Loss,Asset,Debit,ACH Transfer
+TXN-10556,2025-01-17,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,208.95,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-10671,2025-01-18,Business,Owner's Drawings / Distributions,Owner cash withdrawal for personal use,6873.48,Equity Withdrawal,Neutral,Equity,Debit,Checking Account
+TXN-10270,2025-01-19,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,2352.38,Transfer,Neutral,Liability,Debit,Credit Card
+TXN-11120,2025-01-19,Business,Office Rent & Lease,Commercial property rental fee,4007.09,Expense,Loss,Liability,Debit,Checking Account
+TXN-10308,2025-01-20,Household,Groceries,Supermarket purchase (food/supplies),103.92,Expense,Loss,Asset,Debit,ACH Transfer
+TXN-10998,2025-01-20,Business,Payroll & Wages,"Employee salaries, benefits, and payroll taxes",11707.44,Expense,Loss,Liability,Debit,Cash
+TXN-10544,2025-01-20,Household,Groceries,Supermarket purchase (food/supplies),68.78,Expense,Loss,Asset,Debit,Cash
+TXN-10585,2025-01-20,Business,Product Sales Revenue,Direct cash/card sales to customers,190.31,Income,Profit,Asset,Credit,Wire Transfer
+TXN-11058,2025-01-20,Household,Salary / Wages,Monthly salary direct deposit,4368.24,Income,Profit,Asset,Credit,Digital Wallet
+TXN-11185,2025-01-21,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,245.24,Expense,Loss,Asset,Debit,Cash
+TXN-11173,2025-01-21,Household,Dining Out,Restaurant bill / food delivery,31.14,Expense,Loss,Asset,Debit,Cash
+TXN-10228,2025-01-21,Business,Equipment Asset Purchase,"Purchase of machinery, computers, or office hardware",6759.13,Asset Acquisition,Neutral,Asset,Debit,Digital Wallet
+TXN-10690,2025-01-22,Business,Owner's Drawings / Distributions,Owner cash withdrawal for personal use,2608.37,Equity Withdrawal,Neutral,Equity,Debit,Digital Wallet
+TXN-10907,2025-01-22,Household,Utilities,"Electricity, water, and gas bills",287.3,Expense,Loss,Liability,Debit,Checking Account
+TXN-10425,2025-01-23,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",345.77,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-10460,2025-01-23,Household,Dining Out,Restaurant bill / food delivery,51.99,Expense,Loss,Asset,Debit,Cash
+TXN-10115,2025-01-23,Household,Vehicle Maintenance,"Gasoline, car insurance, or repairs",435.46,Expense,Loss,Asset,Debit,Checking Account
+TXN-10130,2025-01-24,Household,Salary / Wages,Monthly salary direct deposit,3356.95,Income,Profit,Asset,Credit,ACH Transfer
+TXN-11129,2025-01-24,Household,Utilities,"Electricity, water, and gas bills",277.31,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-10866,2025-01-24,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,175.68,Expense,Loss,Asset,Debit,ACH Transfer
+TXN-10014,2025-01-24,Household,Rent / Mortgage,Monthly residential lease/mortgage payment,2190.27,Expense,Loss,Liability,Debit,Cash
+TXN-11072,2025-01-25,Business,Equipment Asset Purchase,"Purchase of machinery, computers, or office hardware",4779.29,Asset Acquisition,Neutral,Asset,Debit,Checking Account
+TXN-10641,2025-01-25,Business,Owner's Equity Injection,Capital contributed by business owner/investor,48753.06,Equity Injection,Neutral,Equity,Credit,Digital Wallet
+TXN-11017,2025-01-26,Business,Payroll & Wages,"Employee salaries, benefits, and payroll taxes",6583.96,Expense,Loss,Liability,Debit,Wire Transfer
+TXN-10526,2025-01-26,Household,Utilities,"Electricity, water, and gas bills",143.85,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-11115,2025-01-26,Household,Vehicle Maintenance,"Gasoline, car insurance, or repairs",321.42,Expense,Loss,Asset,Debit,Wire Transfer
+TXN-10575,2025-01-26,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,241.05,Expense,Loss,Asset,Debit,Wire Transfer
+TXN-10999,2025-01-26,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,266.1,Expense,Loss,Asset,Debit,Cash
+TXN-10071,2025-01-26,Household,Groceries,Supermarket purchase (food/supplies),162.68,Expense,Loss,Asset,Debit,Wire Transfer
+TXN-10408,2025-01-27,Business,Equipment Asset Purchase,"Purchase of machinery, computers, or office hardware",6087.82,Asset Acquisition,Neutral,Asset,Debit,Digital Wallet
+TXN-10650,2025-01-27,Household,Credit Card Payment,Credit card balance payoff from checking account,549.0,Transfer,Neutral,Liability,Debit,Digital Wallet
+TXN-11174,2025-01-27,Business,Equipment Asset Purchase,"Purchase of machinery, computers, or office hardware",5983.53,Asset Acquisition,Neutral,Asset,Debit,Digital Wallet
+TXN-10243,2025-01-27,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",185.94,Expense,Loss,Asset,Debit,Wire Transfer
+TXN-10699,2025-01-28,Business,Cost of Goods Sold (COGS),Raw materials and inventory purchases,668.89,Expense,Loss,Asset,Debit,Credit Card
+TXN-11112,2025-01-28,Business,Equipment Asset Purchase,"Purchase of machinery, computers, or office hardware",878.02,Asset Acquisition,Neutral,Asset,Debit,Credit Card
+TXN-10203,2025-01-28,Household,Groceries,Supermarket purchase (food/supplies),156.21,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-11155,2025-01-28,Household,Dining Out,Restaurant bill / food delivery,85.38,Expense,Loss,Asset,Debit,Credit Card
+TXN-10396,2025-01-29,Business,Loan Interest Expense,Interest charge on business debt/credit lines,296.36,Expense,Loss,Liability,Debit,Checking Account
+TXN-11006,2025-01-29,Business,Cost of Goods Sold (COGS),Raw materials and inventory purchases,2673.29,Expense,Loss,Asset,Debit,Credit Card
+TXN-10613,2025-01-29,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",378.6,Expense,Loss,Asset,Debit,Wire Transfer
+TXN-10041,2025-01-30,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,99.49,Expense,Loss,Asset,Debit,Wire Transfer
+TXN-10851,2025-01-30,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,100.68,Expense,Loss,Asset,Debit,ACH Transfer
+TXN-10065,2025-01-31,Business,Payroll & Wages,"Employee salaries, benefits, and payroll taxes",6622.02,Expense,Loss,Liability,Debit,Checking Account
+TXN-10058,2025-02-01,Household,Utilities,"Electricity, water, and gas bills",168.58,Expense,Loss,Liability,Debit,Cash
+TXN-10914,2025-02-01,Business,Owner's Equity Injection,Capital contributed by business owner/investor,8947.47,Equity Injection,Neutral,Equity,Credit,ACH Transfer
+TXN-10976,2025-02-01,Business,Loan Interest Expense,Interest charge on business debt/credit lines,155.79,Expense,Loss,Liability,Debit,Digital Wallet
+TXN-10317,2025-02-01,Business,Cost of Goods Sold (COGS),Raw materials and inventory purchases,2111.07,Expense,Loss,Asset,Debit,Credit Card
+TXN-10403,2025-02-01,Household,Dining Out,Restaurant bill / food delivery,62.3,Expense,Loss,Asset,Debit,Cash
+TXN-10329,2025-02-02,Household,Utilities,"Electricity, water, and gas bills",184.77,Expense,Loss,Liability,Debit,Cash
+TXN-10448,2025-02-02,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",114.47,Expense,Loss,Asset,Debit,ACH Transfer
+TXN-10805,2025-02-02,Business,Cost of Goods Sold (COGS),Raw materials and inventory purchases,4019.25,Expense,Loss,Asset,Debit,ACH Transfer
+TXN-10023,2025-02-03,Household,Vehicle Maintenance,"Gasoline, car insurance, or repairs",154.21,Expense,Loss,Asset,Debit,Wire Transfer
+TXN-10905,2025-02-03,Household,Salary / Wages,Monthly salary direct deposit,3192.13,Income,Profit,Asset,Credit,Digital Wallet
+TXN-10409,2025-02-03,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,4626.6,Income,Profit,Asset,Credit,Wire Transfer
+TXN-10345,2025-02-04,Business,Owner's Equity Injection,Capital contributed by business owner/investor,9105.12,Equity Injection,Neutral,Equity,Credit,Checking Account
+TXN-11178,2025-02-04,Business,Owner's Drawings / Distributions,Owner cash withdrawal for personal use,6503.81,Equity Withdrawal,Neutral,Equity,Debit,Credit Card
+TXN-10673,2025-02-04,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,253.37,Expense,Loss,Asset,Debit,Checking Account
+TXN-10253,2025-02-05,Household,Dining Out,Restaurant bill / food delivery,44.01,Expense,Loss,Asset,Debit,ACH Transfer
+TXN-10873,2025-02-05,Business,Payroll & Wages,"Employee salaries, benefits, and payroll taxes",22293.81,Expense,Loss,Liability,Debit,Cash
+TXN-10176,2025-02-05,Business,Cost of Goods Sold (COGS),Raw materials and inventory purchases,2628.61,Expense,Loss,Asset,Debit,Cash
+TXN-10826,2025-02-05,Household,Dining Out,Restaurant bill / food delivery,70.7,Expense,Loss,Asset,Debit,Checking Account
+TXN-10052,2025-02-06,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,6655.72,Income,Profit,Asset,Credit,Cash
+TXN-10839,2025-02-06,Business,Equipment Asset Purchase,"Purchase of machinery, computers, or office hardware",4339.52,Asset Acquisition,Neutral,Asset,Debit,Checking Account
+TXN-10501,2025-02-07,Business,Loan Interest Expense,Interest charge on business debt/credit lines,137.73,Expense,Loss,Liability,Debit,Cash
+TXN-10081,2025-02-07,Household,Utilities,"Electricity, water, and gas bills",198.28,Expense,Loss,Liability,Debit,Wire Transfer
+TXN-10842,2025-02-07,Business,Owner's Equity Injection,Capital contributed by business owner/investor,5751.02,Equity Injection,Neutral,Equity,Credit,Checking Account
+TXN-10131,2025-02-07,Business,Equipment Asset Purchase,"Purchase of machinery, computers, or office hardware",3851.29,Asset Acquisition,Neutral,Asset,Debit,Digital Wallet
+TXN-10959,2025-02-08,Household,Investment Returns,Stock dividend or savings interest payout,278.05,Income,Profit,Asset,Credit,Checking Account
+TXN-10266,2025-02-08,Household,Dining Out,Restaurant bill / food delivery,64.3,Expense,Loss,Asset,Debit,Cash
+TXN-10608,2025-02-09,Business,Cost of Goods Sold (COGS),Raw materials and inventory purchases,4602.77,Expense,Loss,Asset,Debit,Checking Account
+TXN-10695,2025-02-09,Business,Payroll & Wages,"Employee salaries, benefits, and payroll taxes",9584.09,Expense,Loss,Liability,Debit,Wire Transfer
+TXN-10683,2025-02-10,Business,Payroll & Wages,"Employee salaries, benefits, and payroll taxes",11207.13,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-10472,2025-02-10,Business,Office Rent & Lease,Commercial property rental fee,3437.73,Expense,Loss,Liability,Debit,Credit Card
+TXN-10981,2025-02-10,Business,Product Sales Revenue,Direct cash/card sales to customers,1867.4,Income,Profit,Asset,Credit,Digital Wallet
+TXN-10607,2025-02-11,Business,Equipment Asset Purchase,"Purchase of machinery, computers, or office hardware",4320.89,Asset Acquisition,Neutral,Asset,Debit,Wire Transfer
+TXN-10335,2025-02-11,Household,Rent / Mortgage,Monthly residential lease/mortgage payment,1579.8,Expense,Loss,Liability,Debit,Credit Card
+TXN-10970,2025-02-11,Business,Product Sales Revenue,Direct cash/card sales to customers,2210.03,Income,Profit,Asset,Credit,Checking Account
+TXN-10439,2025-02-11,Business,Payroll & Wages,"Employee salaries, benefits, and payroll taxes",11248.08,Expense,Loss,Liability,Debit,Checking Account
+TXN-10688,2025-02-12,Household,Investment Returns,Stock dividend or savings interest payout,254.93,Income,Profit,Asset,Credit,ACH Transfer
+TXN-10705,2025-02-13,Business,Payroll & Wages,"Employee salaries, benefits, and payroll taxes",19987.68,Expense,Loss,Liability,Debit,Cash
+TXN-10042,2025-02-13,Household,Rent / Mortgage,Monthly residential lease/mortgage payment,2317.43,Expense,Loss,Liability,Debit,Checking Account
+TXN-10885,2025-02-13,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",476.77,Expense,Loss,Asset,Debit,Wire Transfer
+TXN-10715,2025-02-13,Business,Payroll & Wages,"Employee salaries, benefits, and payroll taxes",18946.56,Expense,Loss,Liability,Debit,Wire Transfer
+TXN-10977,2025-02-13,Household,Utilities,"Electricity, water, and gas bills",226.99,Expense,Loss,Liability,Debit,Wire Transfer
+TXN-10210,2025-02-13,Business,Product Sales Revenue,Direct cash/card sales to customers,4473.54,Income,Profit,Asset,Credit,Checking Account
+TXN-11196,2025-02-14,Household,Groceries,Supermarket purchase (food/supplies),55.38,Expense,Loss,Asset,Debit,Credit Card
+TXN-10988,2025-02-14,Household,Rent / Mortgage,Monthly residential lease/mortgage payment,1698.58,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-10003,2025-02-14,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,2271.48,Transfer,Neutral,Liability,Debit,Checking Account
+TXN-10931,2025-02-16,Household,Groceries,Supermarket purchase (food/supplies),51.8,Expense,Loss,Asset,Debit,Wire Transfer
+TXN-10436,2025-02-16,Business,Office Rent & Lease,Commercial property rental fee,5758.86,Expense,Loss,Liability,Debit,Credit Card
+TXN-10972,2025-02-16,Household,Vehicle Maintenance,"Gasoline, car insurance, or repairs",397.65,Expense,Loss,Asset,Debit,ACH Transfer
+TXN-10416,2025-02-17,Business,Owner's Drawings / Distributions,Owner cash withdrawal for personal use,5522.17,Equity Withdrawal,Neutral,Equity,Debit,ACH Transfer
+TXN-10686,2025-02-17,Household,Groceries,Supermarket purchase (food/supplies),125.11,Expense,Loss,Asset,Debit,ACH Transfer
+TXN-10004,2025-02-17,Household,Salary / Wages,Monthly salary direct deposit,3265.23,Income,Profit,Asset,Credit,Wire Transfer
+TXN-10511,2025-02-17,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,2007.72,Transfer,Neutral,Liability,Debit,Credit Card
+TXN-10343,2025-02-18,Business,Office Rent & Lease,Commercial property rental fee,2906.47,Expense,Loss,Liability,Debit,Cash
+TXN-11109,2025-02-18,Business,Equipment Asset Purchase,"Purchase of machinery, computers, or office hardware",3700.08,Asset Acquisition,Neutral,Asset,Debit,Digital Wallet
+TXN-10309,2025-02-19,Household,Utilities,"Electricity, water, and gas bills",131.66,Expense,Loss,Liability,Debit,Wire Transfer
+TXN-10751,2025-02-19,Business,Owner's Equity Injection,Capital contributed by business owner/investor,24717.47,Equity Injection,Neutral,Equity,Credit,Digital Wallet
+TXN-11190,2025-02-19,Household,Rent / Mortgage,Monthly residential lease/mortgage payment,1301.31,Expense,Loss,Liability,Debit,Wire Transfer
+TXN-10969,2025-02-19,Household,Credit Card Payment,Credit card balance payoff from checking account,233.46,Transfer,Neutral,Liability,Debit,Credit Card
+TXN-10660,2025-02-20,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",647.97,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-10440,2025-02-20,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,10230.94,Income,Profit,Asset,Credit,Digital Wallet
+TXN-11088,2025-02-21,Household,Rent / Mortgage,Monthly residential lease/mortgage payment,2628.6,Expense,Loss,Liability,Debit,Digital Wallet
+TXN-10264,2025-02-21,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",434.51,Expense,Loss,Asset,Debit,ACH Transfer
+TXN-10830,2025-02-21,Household,Rent / Mortgage,Monthly residential lease/mortgage payment,1252.02,Expense,Loss,Liability,Debit,Checking Account
+TXN-10993,2025-02-21,Business,Loan Interest Expense,Interest charge on business debt/credit lines,697.45,Expense,Loss,Liability,Debit,Wire Transfer
+TXN-10923,2025-02-21,Household,Investment Returns,Stock dividend or savings interest payout,131.45,Income,Profit,Asset,Credit,Credit Card
+TXN-10433,2025-02-22,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,2634.2,Transfer,Neutral,Liability,Debit,Wire Transfer
+TXN-10173,2025-02-22,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,250.07,Expense,Loss,Asset,Debit,Cash
+TXN-10824,2025-02-22,Household,Utilities,"Electricity, water, and gas bills",148.94,Expense,Loss,Liability,Debit,Cash
+TXN-10009,2025-02-22,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,2020.2,Income,Profit,Asset,Credit,Checking Account
+TXN-11100,2025-02-23,Household,Investment Returns,Stock dividend or savings interest payout,213.85,Income,Profit,Asset,Credit,Wire Transfer
+TXN-10382,2025-02-24,Business,Office Rent & Lease,Commercial property rental fee,2594.92,Expense,Loss,Liability,Debit,Wire Transfer
+TXN-10134,2025-02-24,Household,Salary / Wages,Monthly salary direct deposit,5224.47,Income,Profit,Asset,Credit,Credit Card
+TXN-10586,2025-02-24,Business,Equipment Asset Purchase,"Purchase of machinery, computers, or office hardware",7020.65,Asset Acquisition,Neutral,Asset,Debit,Cash
+TXN-10036,2025-02-24,Business,Owner's Drawings / Distributions,Owner cash withdrawal for personal use,7093.63,Equity Withdrawal,Neutral,Equity,Debit,Cash
+TXN-10524,2025-02-24,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,1457.35,Transfer,Neutral,Liability,Debit,ACH Transfer
+TXN-11133,2025-02-25,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,9328.64,Income,Profit,Asset,Credit,Checking Account
+TXN-10112,2025-02-25,Household,Groceries,Supermarket purchase (food/supplies),165.28,Expense,Loss,Asset,Debit,Cash
+TXN-10936,2025-02-26,Household,Dining Out,Restaurant bill / food delivery,103.88,Expense,Loss,Asset,Debit,Cash
+TXN-11086,2025-02-26,Household,Rent / Mortgage,Monthly residential lease/mortgage payment,2503.42,Expense,Loss,Liability,Debit,Digital Wallet
+TXN-10629,2025-02-27,Household,Credit Card Payment,Credit card balance payoff from checking account,241.88,Transfer,Neutral,Liability,Debit,Digital Wallet
+TXN-10248,2025-02-28,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,172.28,Expense,Loss,Asset,Debit,Checking Account
+TXN-10298,2025-02-28,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,6151.65,Income,Profit,Asset,Credit,Checking Account
+TXN-11126,2025-02-28,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",104.12,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-10222,2025-02-28,Business,Office Rent & Lease,Commercial property rental fee,3950.53,Expense,Loss,Liability,Debit,Digital Wallet
+TXN-11183,2025-02-28,Household,Salary / Wages,Monthly salary direct deposit,4841.28,Income,Profit,Asset,Credit,ACH Transfer
+TXN-10730,2025-02-28,Business,Cost of Goods Sold (COGS),Raw materials and inventory purchases,4673.92,Expense,Loss,Asset,Debit,Credit Card
+TXN-10783,2025-02-28,Business,Loan Interest Expense,Interest charge on business debt/credit lines,237.52,Expense,Loss,Liability,Debit,Wire Transfer
+TXN-11186,2025-02-28,Business,Payroll & Wages,"Employee salaries, benefits, and payroll taxes",11489.27,Expense,Loss,Liability,Debit,Wire Transfer
+TXN-10087,2025-03-01,Household,Vehicle Maintenance,"Gasoline, car insurance, or repairs",537.69,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-10858,2025-03-02,Household,Vehicle Maintenance,"Gasoline, car insurance, or repairs",470.86,Expense,Loss,Asset,Debit,Checking Account
+TXN-10540,2025-03-02,Business,Equipment Asset Purchase,"Purchase of machinery, computers, or office hardware",1662.04,Asset Acquisition,Neutral,Asset,Debit,Checking Account
+TXN-10488,2025-03-02,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,1285.33,Transfer,Neutral,Liability,Debit,Cash
+TXN-10788,2025-03-02,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",627.01,Expense,Loss,Asset,Debit,Credit Card
+TXN-10174,2025-03-03,Business,Equipment Asset Purchase,"Purchase of machinery, computers, or office hardware",6134.72,Asset Acquisition,Neutral,Asset,Debit,Wire Transfer
+TXN-10895,2025-03-03,Household,Vehicle Maintenance,"Gasoline, car insurance, or repairs",86.09,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-10871,2025-03-03,Business,Cost of Goods Sold (COGS),Raw materials and inventory purchases,2609.8,Expense,Loss,Asset,Debit,Checking Account
+TXN-10854,2025-03-03,Household,Investment Returns,Stock dividend or savings interest payout,16.21,Income,Profit,Asset,Credit,Credit Card
+TXN-11170,2025-03-03,Business,Owner's Drawings / Distributions,Owner cash withdrawal for personal use,3640.39,Equity Withdrawal,Neutral,Equity,Debit,ACH Transfer
+TXN-10902,2025-03-04,Household,Dining Out,Restaurant bill / food delivery,16.26,Expense,Loss,Asset,Debit,Credit Card
+TXN-10245,2025-03-04,Business,Owner's Equity Injection,Capital contributed by business owner/investor,6299.12,Equity Injection,Neutral,Equity,Credit,Digital Wallet
+TXN-11134,2025-03-05,Business,Loan Interest Expense,Interest charge on business debt/credit lines,590.5,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-10811,2025-03-05,Household,Salary / Wages,Monthly salary direct deposit,5753.02,Income,Profit,Asset,Credit,Credit Card
+TXN-10481,2025-03-06,Household,Groceries,Supermarket purchase (food/supplies),54.12,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-10328,2025-03-06,Household,Groceries,Supermarket purchase (food/supplies),195.76,Expense,Loss,Asset,Debit,Wire Transfer
+TXN-10336,2025-03-06,Household,Rent / Mortgage,Monthly residential lease/mortgage payment,1495.03,Expense,Loss,Liability,Debit,Digital Wallet
+TXN-10320,2025-03-06,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,279.7,Expense,Loss,Asset,Debit,Credit Card
+TXN-10043,2025-03-06,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,885.17,Transfer,Neutral,Liability,Debit,ACH Transfer
+TXN-10510,2025-03-06,Household,Vehicle Maintenance,"Gasoline, car insurance, or repairs",388.14,Expense,Loss,Asset,Debit,Wire Transfer
+TXN-10625,2025-03-07,Business,Owner's Drawings / Distributions,Owner cash withdrawal for personal use,6095.01,Equity Withdrawal,Neutral,Equity,Debit,Credit Card
+TXN-10944,2025-03-07,Business,Product Sales Revenue,Direct cash/card sales to customers,923.03,Income,Profit,Asset,Credit,Checking Account
+TXN-10906,2025-03-07,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",99.92,Expense,Loss,Asset,Debit,Cash
+TXN-10503,2025-03-07,Business,Cost of Goods Sold (COGS),Raw materials and inventory purchases,4414.21,Expense,Loss,Asset,Debit,Wire Transfer
+TXN-10347,2025-03-08,Business,Cost of Goods Sold (COGS),Raw materials and inventory purchases,2870.58,Expense,Loss,Asset,Debit,Wire Transfer
+TXN-11062,2025-03-08,Business,Product Sales Revenue,Direct cash/card sales to customers,596.78,Income,Profit,Asset,Credit,Wire Transfer
+TXN-10413,2025-03-08,Business,Payroll & Wages,"Employee salaries, benefits, and payroll taxes",16090.91,Expense,Loss,Liability,Debit,Checking Account
+TXN-10523,2025-03-08,Business,Payroll & Wages,"Employee salaries, benefits, and payroll taxes",19734.63,Expense,Loss,Liability,Debit,Wire Transfer
+TXN-10082,2025-03-09,Household,Vehicle Maintenance,"Gasoline, car insurance, or repairs",562.29,Expense,Loss,Asset,Debit,Checking Account
+TXN-11099,2025-03-09,Household,Utilities,"Electricity, water, and gas bills",233.16,Expense,Loss,Liability,Debit,Checking Account
+TXN-10295,2025-03-09,Household,Credit Card Payment,Credit card balance payoff from checking account,1222.47,Transfer,Neutral,Liability,Debit,Cash
+TXN-10137,2025-03-10,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",646.89,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-10535,2025-03-10,Business,Office Rent & Lease,Commercial property rental fee,5471.05,Expense,Loss,Liability,Debit,Digital Wallet
+TXN-10623,2025-03-10,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,2460.6,Transfer,Neutral,Liability,Debit,Cash
+TXN-10939,2025-03-11,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,11734.47,Income,Profit,Asset,Credit,Digital Wallet
+TXN-10795,2025-03-11,Household,Utilities,"Electricity, water, and gas bills",291.81,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-10620,2025-03-11,Household,Investment Returns,Stock dividend or savings interest payout,385.26,Income,Profit,Asset,Credit,Digital Wallet
+TXN-10722,2025-03-11,Household,Utilities,"Electricity, water, and gas bills",147.02,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-10891,2025-03-11,Household,Credit Card Payment,Credit card balance payoff from checking account,1213.92,Transfer,Neutral,Liability,Debit,Wire Transfer
+TXN-10158,2025-03-11,Business,Office Rent & Lease,Commercial property rental fee,5400.83,Expense,Loss,Liability,Debit,Credit Card
+TXN-10725,2025-03-11,Business,Equipment Asset Purchase,"Purchase of machinery, computers, or office hardware",2812.92,Asset Acquisition,Neutral,Asset,Debit,Wire Transfer
+TXN-10485,2025-03-12,Business,Loan Interest Expense,Interest charge on business debt/credit lines,420.62,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-11049,2025-03-12,Household,Dining Out,Restaurant bill / food delivery,119.2,Expense,Loss,Asset,Debit,Cash
+TXN-10145,2025-03-12,Household,Rent / Mortgage,Monthly residential lease/mortgage payment,1271.5,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-11144,2025-03-12,Household,Dining Out,Restaurant bill / food delivery,58.34,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-10832,2025-03-13,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,3725.65,Income,Profit,Asset,Credit,Digital Wallet
+TXN-10496,2025-03-13,Household,Credit Card Payment,Credit card balance payoff from checking account,507.76,Transfer,Neutral,Liability,Debit,ACH Transfer
+TXN-10060,2025-03-13,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",354.27,Expense,Loss,Asset,Debit,Cash
+TXN-10669,2025-03-13,Household,Investment Returns,Stock dividend or savings interest payout,362.95,Income,Profit,Asset,Credit,ACH Transfer
+TXN-10002,2025-03-13,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,263.04,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-10546,2025-03-13,Business,Owner's Drawings / Distributions,Owner cash withdrawal for personal use,3295.76,Equity Withdrawal,Neutral,Equity,Debit,Wire Transfer
+TXN-10749,2025-03-14,Household,Utilities,"Electricity, water, and gas bills",156.63,Expense,Loss,Liability,Debit,Cash
+TXN-10929,2025-03-14,Business,Loan Interest Expense,Interest charge on business debt/credit lines,444.18,Expense,Loss,Liability,Debit,Credit Card
+TXN-10265,2025-03-15,Household,Salary / Wages,Monthly salary direct deposit,3934.93,Income,Profit,Asset,Credit,Digital Wallet
+TXN-10025,2025-03-15,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",233.22,Expense,Loss,Asset,Debit,Credit Card
+TXN-10694,2025-03-15,Business,Loan Interest Expense,Interest charge on business debt/credit lines,576.58,Expense,Loss,Liability,Debit,Digital Wallet
+TXN-10570,2025-03-16,Business,Cost of Goods Sold (COGS),Raw materials and inventory purchases,1594.17,Expense,Loss,Asset,Debit,Cash
+TXN-10441,2025-03-16,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,2513.6,Income,Profit,Asset,Credit,Cash
+TXN-10388,2025-03-16,Household,Utilities,"Electricity, water, and gas bills",136.31,Expense,Loss,Liability,Debit,Credit Card
+TXN-11157,2025-03-16,Household,Vehicle Maintenance,"Gasoline, car insurance, or repairs",509.25,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-10411,2025-03-18,Business,Equipment Asset Purchase,"Purchase of machinery, computers, or office hardware",3033.53,Asset Acquisition,Neutral,Asset,Debit,Wire Transfer
+TXN-10643,2025-03-18,Business,Office Rent & Lease,Commercial property rental fee,2849.5,Expense,Loss,Liability,Debit,Credit Card
+TXN-11111,2025-03-18,Business,Payroll & Wages,"Employee salaries, benefits, and payroll taxes",21458.73,Expense,Loss,Liability,Debit,Wire Transfer
+TXN-10681,2025-03-18,Business,Owner's Drawings / Distributions,Owner cash withdrawal for personal use,2686.78,Equity Withdrawal,Neutral,Equity,Debit,Wire Transfer
+TXN-11087,2025-03-18,Business,Owner's Equity Injection,Capital contributed by business owner/investor,47725.07,Equity Injection,Neutral,Equity,Credit,Wire Transfer
+TXN-10992,2025-03-18,Business,Office Rent & Lease,Commercial property rental fee,2166.9,Expense,Loss,Liability,Debit,Wire Transfer
+TXN-10256,2025-03-18,Business,Owner's Equity Injection,Capital contributed by business owner/investor,25094.63,Equity Injection,Neutral,Equity,Credit,ACH Transfer
+TXN-10209,2025-03-19,Household,Groceries,Supermarket purchase (food/supplies),71.33,Expense,Loss,Asset,Debit,Wire Transfer
+TXN-10394,2025-03-19,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,5837.39,Income,Profit,Asset,Credit,ACH Transfer
+TXN-10558,2025-03-19,Business,Office Rent & Lease,Commercial property rental fee,3358.32,Expense,Loss,Liability,Debit,Credit Card
+TXN-10029,2025-03-20,Household,Utilities,"Electricity, water, and gas bills",218.04,Expense,Loss,Liability,Debit,Digital Wallet
+TXN-10604,2025-03-20,Business,Owner's Equity Injection,Capital contributed by business owner/investor,25474.04,Equity Injection,Neutral,Equity,Credit,Wire Transfer
+TXN-10389,2025-03-20,Business,Equipment Asset Purchase,"Purchase of machinery, computers, or office hardware",5893.44,Asset Acquisition,Neutral,Asset,Debit,Digital Wallet
+TXN-10088,2025-03-21,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,1317.04,Transfer,Neutral,Liability,Debit,Wire Transfer
+TXN-10100,2025-03-21,Business,Equipment Asset Purchase,"Purchase of machinery, computers, or office hardware",7002.62,Asset Acquisition,Neutral,Asset,Debit,Credit Card
+TXN-10892,2025-03-21,Household,Utilities,"Electricity, water, and gas bills",103.24,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-10362,2025-03-22,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,5070.58,Income,Profit,Asset,Credit,Digital Wallet
+TXN-10216,2025-03-22,Household,Rent / Mortgage,Monthly residential lease/mortgage payment,1431.76,Expense,Loss,Liability,Debit,Wire Transfer
+TXN-10520,2025-03-22,Household,Groceries,Supermarket purchase (food/supplies),132.32,Expense,Loss,Asset,Debit,ACH Transfer
+TXN-10863,2025-03-22,Business,Cost of Goods Sold (COGS),Raw materials and inventory purchases,1424.56,Expense,Loss,Asset,Debit,Checking Account
+TXN-10217,2025-03-22,Household,Rent / Mortgage,Monthly residential lease/mortgage payment,1004.82,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-10364,2025-03-22,Household,Dining Out,Restaurant bill / food delivery,94.22,Expense,Loss,Asset,Debit,Checking Account
+TXN-10072,2025-03-22,Business,Owner's Drawings / Distributions,Owner cash withdrawal for personal use,1398.16,Equity Withdrawal,Neutral,Equity,Debit,Wire Transfer
+TXN-11055,2025-03-23,Business,Loan Interest Expense,Interest charge on business debt/credit lines,392.7,Expense,Loss,Liability,Debit,Checking Account
+TXN-10140,2025-03-23,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",602.36,Expense,Loss,Asset,Debit,ACH Transfer
+TXN-10814,2025-03-23,Business,Product Sales Revenue,Direct cash/card sales to customers,3953.74,Income,Profit,Asset,Credit,Cash
+TXN-10093,2025-03-24,Household,Vehicle Maintenance,"Gasoline, car insurance, or repairs",453.8,Expense,Loss,Asset,Debit,Wire Transfer
+TXN-11156,2025-03-24,Household,Vehicle Maintenance,"Gasoline, car insurance, or repairs",590.7,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-10590,2025-03-25,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,9042.31,Income,Profit,Asset,Credit,Digital Wallet
+TXN-10020,2025-03-25,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,172.55,Expense,Loss,Asset,Debit,Cash
+TXN-10956,2025-03-25,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,168.92,Expense,Loss,Asset,Debit,Checking Account
+TXN-10547,2025-03-25,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,5322.5,Income,Profit,Asset,Credit,Wire Transfer
+TXN-10169,2025-03-25,Household,Utilities,"Electricity, water, and gas bills",292.24,Expense,Loss,Liability,Debit,Checking Account
+TXN-10855,2025-03-25,Household,Salary / Wages,Monthly salary direct deposit,4237.45,Income,Profit,Asset,Credit,Cash
+TXN-10224,2025-03-26,Household,Groceries,Supermarket purchase (food/supplies),206.45,Expense,Loss,Asset,Debit,Wire Transfer
+TXN-10044,2025-03-26,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,1295.17,Transfer,Neutral,Liability,Debit,Wire Transfer
+TXN-10155,2025-03-26,Business,Payroll & Wages,"Employee salaries, benefits, and payroll taxes",21491.12,Expense,Loss,Liability,Debit,Credit Card
+TXN-10779,2025-03-27,Business,Owner's Equity Injection,Capital contributed by business owner/investor,8720.18,Equity Injection,Neutral,Equity,Credit,Checking Account
+TXN-10773,2025-03-27,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,1968.93,Transfer,Neutral,Liability,Debit,Credit Card
+TXN-10953,2025-03-27,Business,Office Rent & Lease,Commercial property rental fee,5480.48,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-10857,2025-03-27,Household,Vehicle Maintenance,"Gasoline, car insurance, or repairs",245.11,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-10273,2025-03-27,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",564.07,Expense,Loss,Asset,Debit,Checking Account
+TXN-10793,2025-03-28,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,1470.96,Transfer,Neutral,Liability,Debit,Digital Wallet
+TXN-10717,2025-03-28,Business,Payroll & Wages,"Employee salaries, benefits, and payroll taxes",6054.48,Expense,Loss,Liability,Debit,Cash
+TXN-10380,2025-03-29,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,9814.54,Income,Profit,Asset,Credit,Wire Transfer
+TXN-11139,2025-03-30,Business,Loan Interest Expense,Interest charge on business debt/credit lines,561.35,Expense,Loss,Liability,Debit,Credit Card
+TXN-10910,2025-03-30,Business,Office Rent & Lease,Commercial property rental fee,3092.74,Expense,Loss,Liability,Debit,Credit Card
+TXN-10926,2025-03-30,Business,Cost of Goods Sold (COGS),Raw materials and inventory purchases,1045.28,Expense,Loss,Asset,Debit,Wire Transfer
+TXN-10491,2025-03-30,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",721.88,Expense,Loss,Asset,Debit,ACH Transfer
+TXN-10583,2025-03-31,Household,Groceries,Supermarket purchase (food/supplies),127.76,Expense,Loss,Asset,Debit,Credit Card
+TXN-10941,2025-03-31,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,8779.01,Income,Profit,Asset,Credit,Wire Transfer
+TXN-10277,2025-03-31,Household,Investment Returns,Stock dividend or savings interest payout,48.69,Income,Profit,Asset,Credit,ACH Transfer
+TXN-10934,2025-04-01,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,11106.59,Income,Profit,Asset,Credit,Cash
+TXN-10101,2025-04-01,Household,Investment Returns,Stock dividend or savings interest payout,441.89,Income,Profit,Asset,Credit,Checking Account
+TXN-11014,2025-04-01,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",769.56,Expense,Loss,Asset,Debit,ACH Transfer
+TXN-10390,2025-04-01,Household,Rent / Mortgage,Monthly residential lease/mortgage payment,2712.33,Expense,Loss,Liability,Debit,Digital Wallet
+TXN-10624,2025-04-02,Household,Utilities,"Electricity, water, and gas bills",298.43,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-10680,2025-04-02,Business,Office Rent & Lease,Commercial property rental fee,1981.57,Expense,Loss,Liability,Debit,Checking Account
+TXN-10867,2025-04-02,Household,Dining Out,Restaurant bill / food delivery,112.77,Expense,Loss,Asset,Debit,Checking Account
+TXN-10111,2025-04-02,Household,Vehicle Maintenance,"Gasoline, car insurance, or repairs",363.03,Expense,Loss,Asset,Debit,Cash
+TXN-11039,2025-04-03,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,1381.35,Transfer,Neutral,Liability,Debit,ACH Transfer
+TXN-10504,2025-04-04,Business,Loan Interest Expense,Interest charge on business debt/credit lines,587.45,Expense,Loss,Liability,Debit,Credit Card
+TXN-10946,2025-04-04,Household,Groceries,Supermarket purchase (food/supplies),166.5,Expense,Loss,Asset,Debit,Wire Transfer
+TXN-10769,2025-04-04,Household,Utilities,"Electricity, water, and gas bills",162.13,Expense,Loss,Liability,Debit,Credit Card
+TXN-10595,2025-04-05,Household,Utilities,"Electricity, water, and gas bills",295.97,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-10073,2025-04-06,Household,Rent / Mortgage,Monthly residential lease/mortgage payment,1123.34,Expense,Loss,Liability,Debit,Checking Account
+TXN-10704,2025-04-06,Business,Office Rent & Lease,Commercial property rental fee,4558.63,Expense,Loss,Liability,Debit,Digital Wallet
+TXN-10470,2025-04-06,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,6458.24,Income,Profit,Asset,Credit,ACH Transfer
+TXN-10591,2025-04-06,Household,Vehicle Maintenance,"Gasoline, car insurance, or repairs",42.96,Expense,Loss,Asset,Debit,Cash
+TXN-10487,2025-04-06,Household,Salary / Wages,Monthly salary direct deposit,4246.65,Income,Profit,Asset,Credit,ACH Transfer
+TXN-11169,2025-04-06,Household,Rent / Mortgage,Monthly residential lease/mortgage payment,2732.46,Expense,Loss,Liability,Debit,Digital Wallet
+TXN-11067,2025-04-07,Business,Cost of Goods Sold (COGS),Raw materials and inventory purchases,991.44,Expense,Loss,Asset,Debit,ACH Transfer
+TXN-11131,2025-04-07,Household,Credit Card Payment,Credit card balance payoff from checking account,356.97,Transfer,Neutral,Liability,Debit,ACH Transfer
+TXN-11031,2025-04-07,Business,Product Sales Revenue,Direct cash/card sales to customers,802.19,Income,Profit,Asset,Credit,Credit Card
+TXN-10055,2025-04-08,Business,Office Rent & Lease,Commercial property rental fee,1924.47,Expense,Loss,Liability,Debit,Digital Wallet
+TXN-10557,2025-04-08,Household,Utilities,"Electricity, water, and gas bills",84.17,Expense,Loss,Liability,Debit,Cash
+TXN-10252,2025-04-08,Business,Payroll & Wages,"Employee salaries, benefits, and payroll taxes",23281.1,Expense,Loss,Liability,Debit,Wire Transfer
+TXN-10985,2025-04-09,Household,Credit Card Payment,Credit card balance payoff from checking account,364.04,Transfer,Neutral,Liability,Debit,ACH Transfer
+TXN-10121,2025-04-09,Household,Dining Out,Restaurant bill / food delivery,59.15,Expense,Loss,Asset,Debit,ACH Transfer
+TXN-10198,2025-04-09,Household,Investment Returns,Stock dividend or savings interest payout,116.03,Income,Profit,Asset,Credit,ACH Transfer
+TXN-11009,2025-04-09,Household,Investment Returns,Stock dividend or savings interest payout,438.84,Income,Profit,Asset,Credit,Credit Card
+TXN-10386,2025-04-10,Business,Owner's Drawings / Distributions,Owner cash withdrawal for personal use,7341.46,Equity Withdrawal,Neutral,Equity,Debit,Cash
+TXN-11047,2025-04-10,Business,Owner's Equity Injection,Capital contributed by business owner/investor,27521.48,Equity Injection,Neutral,Equity,Credit,Digital Wallet
+TXN-11168,2025-04-10,Household,Credit Card Payment,Credit card balance payoff from checking account,582.43,Transfer,Neutral,Liability,Debit,Credit Card
+TXN-10132,2025-04-10,Business,Loan Interest Expense,Interest charge on business debt/credit lines,552.84,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-10428,2025-04-10,Business,Owner's Equity Injection,Capital contributed by business owner/investor,21552.84,Equity Injection,Neutral,Equity,Credit,Wire Transfer
+TXN-10776,2025-04-10,Household,Dining Out,Restaurant bill / food delivery,100.6,Expense,Loss,Asset,Debit,Wire Transfer
+TXN-10509,2025-04-11,Household,Vehicle Maintenance,"Gasoline, car insurance, or repairs",393.81,Expense,Loss,Asset,Debit,Wire Transfer
+TXN-10903,2025-04-12,Household,Dining Out,Restaurant bill / food delivery,101.49,Expense,Loss,Asset,Debit,Cash
+TXN-10490,2025-04-13,Business,Owner's Equity Injection,Capital contributed by business owner/investor,10518.68,Equity Injection,Neutral,Equity,Credit,Checking Account
+TXN-10105,2025-04-13,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,289.47,Expense,Loss,Asset,Debit,ACH Transfer
+TXN-10464,2025-04-13,Household,Groceries,Supermarket purchase (food/supplies),226.02,Expense,Loss,Asset,Debit,Cash
+TXN-11147,2025-04-13,Household,Credit Card Payment,Credit card balance payoff from checking account,472.63,Transfer,Neutral,Liability,Debit,Digital Wallet
+TXN-11165,2025-04-14,Household,Vehicle Maintenance,"Gasoline, car insurance, or repairs",385.62,Expense,Loss,Asset,Debit,ACH Transfer
+TXN-11158,2025-04-15,Business,Product Sales Revenue,Direct cash/card sales to customers,3428.13,Income,Profit,Asset,Credit,Checking Account
+TXN-10648,2025-04-15,Household,Vehicle Maintenance,"Gasoline, car insurance, or repairs",221.6,Expense,Loss,Asset,Debit,Checking Account
+TXN-10371,2025-04-15,Household,Salary / Wages,Monthly salary direct deposit,3554.97,Income,Profit,Asset,Credit,Credit Card
+TXN-10848,2025-04-15,Business,Owner's Drawings / Distributions,Owner cash withdrawal for personal use,7820.19,Equity Withdrawal,Neutral,Equity,Debit,Credit Card
+TXN-10521,2025-04-15,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",291.29,Expense,Loss,Asset,Debit,Credit Card
+TXN-10631,2025-04-16,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,42.21,Expense,Loss,Asset,Debit,Wire Transfer
+TXN-10148,2025-04-16,Household,Groceries,Supermarket purchase (food/supplies),214.91,Expense,Loss,Asset,Debit,ACH Transfer
+TXN-10963,2025-04-16,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,11718.38,Income,Profit,Asset,Credit,ACH Transfer
+TXN-10750,2025-04-16,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",430.78,Expense,Loss,Asset,Debit,Cash
+TXN-10791,2025-04-16,Household,Dining Out,Restaurant bill / food delivery,100.42,Expense,Loss,Asset,Debit,Checking Account
+TXN-10215,2025-04-17,Household,Utilities,"Electricity, water, and gas bills",217.61,Expense,Loss,Liability,Debit,Cash
+TXN-11084,2025-04-17,Business,Owner's Equity Injection,Capital contributed by business owner/investor,35969.18,Equity Injection,Neutral,Equity,Credit,ACH Transfer
+TXN-10894,2025-04-17,Business,Cost of Goods Sold (COGS),Raw materials and inventory purchases,2369.2,Expense,Loss,Asset,Debit,ACH Transfer
+TXN-11054,2025-04-18,Household,Vehicle Maintenance,"Gasoline, car insurance, or repairs",465.07,Expense,Loss,Asset,Debit,Credit Card
+TXN-10098,2025-04-18,Business,Cost of Goods Sold (COGS),Raw materials and inventory purchases,3473.92,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-10045,2025-04-19,Business,Office Rent & Lease,Commercial property rental fee,5680.11,Expense,Loss,Liability,Debit,Digital Wallet
+TXN-10024,2025-04-19,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,8209.83,Income,Profit,Asset,Credit,ACH Transfer
+TXN-10489,2025-04-20,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",797.2,Expense,Loss,Asset,Debit,Cash
+TXN-10418,2025-04-20,Household,Investment Returns,Stock dividend or savings interest payout,177.45,Income,Profit,Asset,Credit,ACH Transfer
+TXN-10053,2025-04-20,Business,Owner's Equity Injection,Capital contributed by business owner/investor,29265.53,Equity Injection,Neutral,Equity,Credit,Digital Wallet
+TXN-10361,2025-04-21,Business,Owner's Drawings / Distributions,Owner cash withdrawal for personal use,3633.36,Equity Withdrawal,Neutral,Equity,Debit,ACH Transfer
+TXN-10925,2025-04-23,Household,Groceries,Supermarket purchase (food/supplies),160.9,Expense,Loss,Asset,Debit,ACH Transfer
+TXN-10153,2025-04-23,Business,Owner's Equity Injection,Capital contributed by business owner/investor,17282.09,Equity Injection,Neutral,Equity,Credit,ACH Transfer
+TXN-10021,2025-04-23,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,2553.84,Transfer,Neutral,Liability,Debit,Checking Account
+TXN-11180,2025-04-24,Business,Cost of Goods Sold (COGS),Raw materials and inventory purchases,4440.3,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-10745,2025-04-24,Business,Loan Interest Expense,Interest charge on business debt/credit lines,362.04,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-11042,2025-04-24,Household,Rent / Mortgage,Monthly residential lease/mortgage payment,1639.51,Expense,Loss,Liability,Debit,Digital Wallet
+TXN-10192,2025-04-24,Business,Product Sales Revenue,Direct cash/card sales to customers,1909.14,Income,Profit,Asset,Credit,Credit Card
+TXN-10384,2025-04-24,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,4663.75,Income,Profit,Asset,Credit,Credit Card
+TXN-11018,2025-04-24,Household,Credit Card Payment,Credit card balance payoff from checking account,1041.59,Transfer,Neutral,Liability,Debit,Digital Wallet
+TXN-10638,2025-04-24,Business,Owner's Drawings / Distributions,Owner cash withdrawal for personal use,3894.92,Equity Withdrawal,Neutral,Equity,Debit,Cash
+TXN-11160,2025-04-25,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,2727.24,Transfer,Neutral,Liability,Debit,Wire Transfer
+TXN-10872,2025-04-25,Household,Investment Returns,Stock dividend or savings interest payout,404.13,Income,Profit,Asset,Credit,Checking Account
+TXN-10163,2025-04-25,Business,Cost of Goods Sold (COGS),Raw materials and inventory purchases,3320.69,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-10352,2025-04-25,Business,Owner's Equity Injection,Capital contributed by business owner/investor,43127.37,Equity Injection,Neutral,Equity,Credit,Cash
+TXN-10354,2025-04-26,Business,Loan Interest Expense,Interest charge on business debt/credit lines,615.05,Expense,Loss,Liability,Debit,Wire Transfer
+TXN-10129,2025-04-26,Business,Product Sales Revenue,Direct cash/card sales to customers,3658.55,Income,Profit,Asset,Credit,Credit Card
+TXN-10419,2025-04-26,Household,Credit Card Payment,Credit card balance payoff from checking account,1499.97,Transfer,Neutral,Liability,Debit,Credit Card
+TXN-11061,2025-04-26,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,248.86,Expense,Loss,Asset,Debit,Cash
+TXN-10299,2025-04-26,Household,Dining Out,Restaurant bill / food delivery,105.31,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-10201,2025-04-27,Business,Product Sales Revenue,Direct cash/card sales to customers,1719.83,Income,Profit,Asset,Credit,Cash
+TXN-11068,2025-04-27,Household,Salary / Wages,Monthly salary direct deposit,3285.12,Income,Profit,Asset,Credit,Credit Card
+TXN-10271,2025-04-27,Business,Product Sales Revenue,Direct cash/card sales to customers,3398.43,Income,Profit,Asset,Credit,ACH Transfer
+TXN-10703,2025-04-27,Business,Owner's Equity Injection,Capital contributed by business owner/investor,21011.5,Equity Injection,Neutral,Equity,Credit,ACH Transfer
+TXN-11002,2025-04-27,Household,Utilities,"Electricity, water, and gas bills",109.56,Expense,Loss,Liability,Debit,Digital Wallet
+TXN-10051,2025-04-28,Household,Groceries,Supermarket purchase (food/supplies),54.15,Expense,Loss,Asset,Debit,Checking Account
+TXN-10823,2025-04-28,Household,Rent / Mortgage,Monthly residential lease/mortgage payment,1689.53,Expense,Loss,Liability,Debit,Digital Wallet
+TXN-10665,2025-04-28,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,5178.24,Income,Profit,Asset,Credit,Credit Card
+TXN-10279,2025-04-29,Household,Dining Out,Restaurant bill / food delivery,63.42,Expense,Loss,Asset,Debit,Cash
+TXN-10582,2025-04-29,Business,Loan Interest Expense,Interest charge on business debt/credit lines,424.61,Expense,Loss,Liability,Debit,Digital Wallet
+TXN-10879,2025-04-30,Household,Salary / Wages,Monthly salary direct deposit,4395.41,Income,Profit,Asset,Credit,Digital Wallet
+TXN-10427,2025-04-30,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",440.72,Expense,Loss,Asset,Debit,Cash
+TXN-10015,2025-04-30,Household,Rent / Mortgage,Monthly residential lease/mortgage payment,2559.67,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-10634,2025-04-30,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",445.15,Expense,Loss,Asset,Debit,Checking Account
+TXN-10315,2025-05-01,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",688.55,Expense,Loss,Asset,Debit,Checking Account
+TXN-11085,2025-05-01,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,1030.12,Income,Profit,Asset,Credit,Digital Wallet
+TXN-10965,2025-05-02,Business,Product Sales Revenue,Direct cash/card sales to customers,567.23,Income,Profit,Asset,Credit,ACH Transfer
+TXN-10446,2025-05-02,Business,Product Sales Revenue,Direct cash/card sales to customers,1460.01,Income,Profit,Asset,Credit,Checking Account
+TXN-10637,2025-05-02,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,4319.41,Income,Profit,Asset,Credit,Credit Card
+TXN-10888,2025-05-02,Household,Dining Out,Restaurant bill / food delivery,45.63,Expense,Loss,Asset,Debit,Cash
+TXN-11161,2025-05-02,Business,Payroll & Wages,"Employee salaries, benefits, and payroll taxes",14240.29,Expense,Loss,Liability,Debit,Digital Wallet
+TXN-10078,2025-05-03,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,3921.76,Income,Profit,Asset,Credit,Credit Card
+TXN-10246,2025-05-03,Business,Equipment Asset Purchase,"Purchase of machinery, computers, or office hardware",5555.54,Asset Acquisition,Neutral,Asset,Debit,Cash
+TXN-10190,2025-05-04,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,2571.83,Transfer,Neutral,Liability,Debit,Digital Wallet
+TXN-10458,2025-05-04,Business,Cost of Goods Sold (COGS),Raw materials and inventory purchases,3718.12,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-11013,2025-05-04,Household,Salary / Wages,Monthly salary direct deposit,3803.63,Income,Profit,Asset,Credit,Wire Transfer
+TXN-10450,2025-05-04,Business,Loan Interest Expense,Interest charge on business debt/credit lines,552.98,Expense,Loss,Liability,Debit,Cash
+TXN-10735,2025-05-04,Business,Product Sales Revenue,Direct cash/card sales to customers,1249.17,Income,Profit,Asset,Credit,Credit Card
+TXN-10189,2025-05-04,Household,Rent / Mortgage,Monthly residential lease/mortgage payment,2296.13,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-10251,2025-05-05,Business,Owner's Equity Injection,Capital contributed by business owner/investor,25555.39,Equity Injection,Neutral,Equity,Credit,Credit Card
+TXN-10518,2025-05-06,Business,Owner's Equity Injection,Capital contributed by business owner/investor,41210.97,Equity Injection,Neutral,Equity,Credit,Digital Wallet
+TXN-10878,2025-05-06,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,951.7,Transfer,Neutral,Liability,Debit,ACH Transfer
+TXN-10633,2025-05-06,Household,Groceries,Supermarket purchase (food/supplies),195.51,Expense,Loss,Asset,Debit,ACH Transfer
+TXN-10048,2025-05-07,Household,Utilities,"Electricity, water, and gas bills",129.43,Expense,Loss,Liability,Debit,Cash
+TXN-10596,2025-05-08,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,1075.13,Income,Profit,Asset,Credit,ACH Transfer
+TXN-10833,2025-05-08,Household,Rent / Mortgage,Monthly residential lease/mortgage payment,1996.11,Expense,Loss,Liability,Debit,Wire Transfer
+TXN-10797,2025-05-08,Household,Dining Out,Restaurant bill / food delivery,30.36,Expense,Loss,Asset,Debit,Cash
+TXN-10901,2025-05-08,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,784.18,Transfer,Neutral,Liability,Debit,Checking Account
+TXN-10061,2025-05-08,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",703.23,Expense,Loss,Asset,Debit,Checking Account
+TXN-11010,2025-05-08,Household,Groceries,Supermarket purchase (food/supplies),46.94,Expense,Loss,Asset,Debit,Checking Account
+TXN-10136,2025-05-08,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,3252.41,Transfer,Neutral,Liability,Debit,Checking Account
+TXN-10059,2025-05-08,Household,Utilities,"Electricity, water, and gas bills",122.15,Expense,Loss,Liability,Debit,Wire Transfer
+TXN-10740,2025-05-08,Household,Utilities,"Electricity, water, and gas bills",224.67,Expense,Loss,Liability,Debit,Cash
+TXN-10682,2025-05-10,Business,Owner's Drawings / Distributions,Owner cash withdrawal for personal use,6706.5,Equity Withdrawal,Neutral,Equity,Debit,Cash
+TXN-11024,2025-05-10,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",197.24,Expense,Loss,Asset,Debit,Cash
+TXN-11075,2025-05-10,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,1923.19,Transfer,Neutral,Liability,Debit,Credit Card
+TXN-10466,2025-05-10,Business,Owner's Equity Injection,Capital contributed by business owner/investor,6647.93,Equity Injection,Neutral,Equity,Credit,Digital Wallet
+TXN-10239,2025-05-10,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,4556.01,Income,Profit,Asset,Credit,ACH Transfer
+TXN-11172,2025-05-11,Business,Loan Interest Expense,Interest charge on business debt/credit lines,53.95,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-10280,2025-05-11,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",543.13,Expense,Loss,Asset,Debit,ACH Transfer
+TXN-10372,2025-05-11,Household,Dining Out,Restaurant bill / food delivery,45.39,Expense,Loss,Asset,Debit,Checking Account
+TXN-10667,2025-05-12,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,9396.97,Income,Profit,Asset,Credit,ACH Transfer
+TXN-10444,2025-05-12,Household,Salary / Wages,Monthly salary direct deposit,3254.79,Income,Profit,Asset,Credit,Credit Card
+TXN-11040,2025-05-13,Household,Dining Out,Restaurant bill / food delivery,91.14,Expense,Loss,Asset,Debit,Wire Transfer
+TXN-10141,2025-05-13,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",608.62,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-10899,2025-05-14,Business,Product Sales Revenue,Direct cash/card sales to customers,3717.39,Income,Profit,Asset,Credit,Credit Card
+TXN-11044,2025-05-14,Business,Cost of Goods Sold (COGS),Raw materials and inventory purchases,3010.74,Expense,Loss,Asset,Debit,ACH Transfer
+TXN-10159,2025-05-14,Household,Groceries,Supermarket purchase (food/supplies),119.61,Expense,Loss,Asset,Debit,Credit Card
+TXN-10843,2025-05-15,Household,Salary / Wages,Monthly salary direct deposit,3255.1,Income,Profit,Asset,Credit,Checking Account
+TXN-10035,2025-05-15,Household,Salary / Wages,Monthly salary direct deposit,5901.61,Income,Profit,Asset,Credit,Credit Card
+TXN-10763,2025-05-15,Household,Utilities,"Electricity, water, and gas bills",227.55,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-10975,2025-05-15,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",203.43,Expense,Loss,Asset,Debit,Cash
+TXN-10301,2025-05-16,Household,Salary / Wages,Monthly salary direct deposit,4378.0,Income,Profit,Asset,Credit,ACH Transfer
+TXN-10995,2025-05-16,Business,Office Rent & Lease,Commercial property rental fee,3223.7,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-10066,2025-05-16,Business,Payroll & Wages,"Employee salaries, benefits, and payroll taxes",23383.4,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-10515,2025-05-16,Business,Loan Interest Expense,Interest charge on business debt/credit lines,505.79,Expense,Loss,Liability,Debit,Wire Transfer
+TXN-10525,2025-05-17,Household,Utilities,"Electricity, water, and gas bills",178.91,Expense,Loss,Liability,Debit,Credit Card
+TXN-10033,2025-05-17,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,2805.8,Transfer,Neutral,Liability,Debit,Cash
+TXN-10103,2025-05-17,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,72.54,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-10223,2025-05-17,Household,Dining Out,Restaurant bill / food delivery,101.8,Expense,Loss,Asset,Debit,Checking Account
+TXN-10182,2025-05-18,Business,Loan Interest Expense,Interest charge on business debt/credit lines,275.61,Expense,Loss,Liability,Debit,Credit Card
+TXN-11019,2025-05-18,Household,Credit Card Payment,Credit card balance payoff from checking account,1047.06,Transfer,Neutral,Liability,Debit,Wire Transfer
+TXN-11095,2025-05-18,Business,Equipment Asset Purchase,"Purchase of machinery, computers, or office hardware",6685.79,Asset Acquisition,Neutral,Asset,Debit,Checking Account
+TXN-11078,2025-05-19,Business,Owner's Drawings / Distributions,Owner cash withdrawal for personal use,5359.58,Equity Withdrawal,Neutral,Equity,Debit,Digital Wallet
+TXN-10710,2025-05-19,Business,Cost of Goods Sold (COGS),Raw materials and inventory purchases,690.71,Expense,Loss,Asset,Debit,Checking Account
+TXN-10870,2025-05-19,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,10085.97,Income,Profit,Asset,Credit,Wire Transfer
+TXN-10365,2025-05-20,Household,Rent / Mortgage,Monthly residential lease/mortgage payment,1797.6,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-10468,2025-05-20,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,2369.23,Income,Profit,Asset,Credit,Cash
+TXN-10144,2025-05-20,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,130.83,Expense,Loss,Asset,Debit,Wire Transfer
+TXN-10678,2025-05-21,Business,Owner's Drawings / Distributions,Owner cash withdrawal for personal use,4750.17,Equity Withdrawal,Neutral,Equity,Debit,Cash
+TXN-10287,2025-05-21,Business,Payroll & Wages,"Employee salaries, benefits, and payroll taxes",3178.16,Expense,Loss,Liability,Debit,Digital Wallet
+TXN-10323,2025-05-22,Household,Salary / Wages,Monthly salary direct deposit,5504.42,Income,Profit,Asset,Credit,Credit Card
+TXN-11029,2025-05-22,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,8046.54,Income,Profit,Asset,Credit,Cash
+TXN-10719,2025-05-22,Business,Office Rent & Lease,Commercial property rental fee,3394.96,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-10796,2025-05-22,Household,Groceries,Supermarket purchase (food/supplies),222.08,Expense,Loss,Asset,Debit,Credit Card
+TXN-10108,2025-05-23,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,10507.88,Income,Profit,Asset,Credit,Cash
+TXN-10847,2025-05-23,Household,Dining Out,Restaurant bill / food delivery,23.78,Expense,Loss,Asset,Debit,Checking Account
+TXN-10183,2025-05-23,Household,Rent / Mortgage,Monthly residential lease/mortgage payment,2586.94,Expense,Loss,Liability,Debit,Credit Card
+TXN-10729,2025-05-24,Business,Payroll & Wages,"Employee salaries, benefits, and payroll taxes",20962.88,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-10187,2025-05-24,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,10683.52,Income,Profit,Asset,Credit,Digital Wallet
+TXN-11001,2025-05-24,Business,Product Sales Revenue,Direct cash/card sales to customers,3816.38,Income,Profit,Asset,Credit,Digital Wallet
+TXN-10911,2025-05-24,Household,Vehicle Maintenance,"Gasoline, car insurance, or repairs",287.0,Expense,Loss,Asset,Debit,Credit Card
+TXN-10921,2025-05-24,Household,Salary / Wages,Monthly salary direct deposit,2705.07,Income,Profit,Asset,Credit,ACH Transfer
+TXN-10200,2025-05-25,Business,Equipment Asset Purchase,"Purchase of machinery, computers, or office hardware",7369.42,Asset Acquisition,Neutral,Asset,Debit,Credit Card
+TXN-10407,2025-05-25,Business,Cost of Goods Sold (COGS),Raw materials and inventory purchases,2059.6,Expense,Loss,Asset,Debit,Cash
+TXN-10368,2025-05-26,Household,Utilities,"Electricity, water, and gas bills",229.21,Expense,Loss,Liability,Debit,Wire Transfer
+TXN-10434,2025-05-26,Household,Utilities,"Electricity, water, and gas bills",98.45,Expense,Loss,Liability,Debit,Credit Card
+TXN-10410,2025-05-26,Business,Payroll & Wages,"Employee salaries, benefits, and payroll taxes",8543.91,Expense,Loss,Liability,Debit,Digital Wallet
+TXN-10834,2025-05-26,Business,Equipment Asset Purchase,"Purchase of machinery, computers, or office hardware",6019.1,Asset Acquisition,Neutral,Asset,Debit,Digital Wallet
+TXN-10994,2025-05-27,Household,Utilities,"Electricity, water, and gas bills",270.84,Expense,Loss,Liability,Debit,Cash
+TXN-10581,2025-05-27,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,8104.88,Income,Profit,Asset,Credit,Checking Account
+TXN-10398,2025-05-27,Business,Cost of Goods Sold (COGS),Raw materials and inventory purchases,568.31,Expense,Loss,Asset,Debit,Checking Account
+TXN-10534,2025-05-27,Business,Owner's Equity Injection,Capital contributed by business owner/investor,29151.08,Equity Injection,Neutral,Equity,Credit,Checking Account
+TXN-11153,2025-05-27,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,3132.43,Transfer,Neutral,Liability,Debit,ACH Transfer
+TXN-10467,2025-05-27,Household,Credit Card Payment,Credit card balance payoff from checking account,664.07,Transfer,Neutral,Liability,Debit,Checking Account
+TXN-10244,2025-05-28,Household,Dining Out,Restaurant bill / food delivery,61.0,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-10781,2025-05-28,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,1004.63,Transfer,Neutral,Liability,Debit,ACH Transfer
+TXN-10538,2025-05-28,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,720.6,Transfer,Neutral,Liability,Debit,Wire Transfer
+TXN-10350,2025-05-28,Household,Groceries,Supermarket purchase (food/supplies),166.09,Expense,Loss,Asset,Debit,Cash
+TXN-10568,2025-05-28,Household,Vehicle Maintenance,"Gasoline, car insurance, or repairs",103.86,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-10225,2025-05-28,Business,Loan Interest Expense,Interest charge on business debt/credit lines,357.41,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-10517,2025-05-29,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,2425.72,Transfer,Neutral,Liability,Debit,Cash
+TXN-11091,2025-05-29,Household,Groceries,Supermarket purchase (food/supplies),115.65,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-11064,2025-05-29,Business,Product Sales Revenue,Direct cash/card sales to customers,2133.28,Income,Profit,Asset,Credit,Wire Transfer
+TXN-10794,2025-05-29,Business,Product Sales Revenue,Direct cash/card sales to customers,2641.4,Income,Profit,Asset,Credit,Wire Transfer
+TXN-10379,2025-05-29,Business,Office Rent & Lease,Commercial property rental fee,2018.28,Expense,Loss,Liability,Debit,Checking Account
+TXN-10780,2025-05-30,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,30.79,Expense,Loss,Asset,Debit,Credit Card
+TXN-10727,2025-05-30,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,9083.62,Income,Profit,Asset,Credit,Digital Wallet
+TXN-10733,2025-05-30,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",669.92,Expense,Loss,Asset,Debit,Checking Account
+TXN-10034,2025-05-31,Household,Utilities,"Electricity, water, and gas bills",175.65,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-10473,2025-05-31,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,1463.63,Transfer,Neutral,Liability,Debit,Checking Account
+TXN-10748,2025-06-01,Household,Utilities,"Electricity, water, and gas bills",171.51,Expense,Loss,Liability,Debit,Checking Account
+TXN-10837,2025-06-01,Business,Payroll & Wages,"Employee salaries, benefits, and payroll taxes",17215.74,Expense,Loss,Liability,Debit,Credit Card
+TXN-10420,2025-06-01,Household,Rent / Mortgage,Monthly residential lease/mortgage payment,2519.97,Expense,Loss,Liability,Debit,Checking Account
+TXN-11083,2025-06-01,Business,Office Rent & Lease,Commercial property rental fee,2221.68,Expense,Loss,Liability,Debit,Wire Transfer
+TXN-10069,2025-06-01,Household,Credit Card Payment,Credit card balance payoff from checking account,483.01,Transfer,Neutral,Liability,Debit,Checking Account
+TXN-10255,2025-06-02,Business,Product Sales Revenue,Direct cash/card sales to customers,3793.02,Income,Profit,Asset,Credit,Wire Transfer
+TXN-10519,2025-06-02,Business,Payroll & Wages,"Employee salaries, benefits, and payroll taxes",12977.97,Expense,Loss,Liability,Debit,Digital Wallet
+TXN-10494,2025-06-03,Business,Product Sales Revenue,Direct cash/card sales to customers,3853.42,Income,Profit,Asset,Credit,Digital Wallet
+TXN-11145,2025-06-03,Business,Owner's Drawings / Distributions,Owner cash withdrawal for personal use,6901.52,Equity Withdrawal,Neutral,Equity,Debit,Wire Transfer
+TXN-10685,2025-06-03,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,245.73,Expense,Loss,Asset,Debit,Checking Account
+TXN-10332,2025-06-04,Business,Owner's Drawings / Distributions,Owner cash withdrawal for personal use,4206.3,Equity Withdrawal,Neutral,Equity,Debit,Checking Account
+TXN-11063,2025-06-06,Business,Loan Interest Expense,Interest charge on business debt/credit lines,166.91,Expense,Loss,Liability,Debit,Checking Account
+TXN-10196,2025-06-06,Household,Vehicle Maintenance,"Gasoline, car insurance, or repairs",177.04,Expense,Loss,Asset,Debit,Checking Account
+TXN-10106,2025-06-06,Business,Cost of Goods Sold (COGS),Raw materials and inventory purchases,4138.57,Expense,Loss,Asset,Debit,Credit Card
+TXN-10530,2025-06-07,Business,Owner's Equity Injection,Capital contributed by business owner/investor,27381.66,Equity Injection,Neutral,Equity,Credit,Checking Account
+TXN-10097,2025-06-07,Household,Groceries,Supermarket purchase (food/supplies),116.58,Expense,Loss,Asset,Debit,Checking Account
+TXN-10881,2025-06-07,Business,Payroll & Wages,"Employee salaries, benefits, and payroll taxes",5286.88,Expense,Loss,Liability,Debit,Wire Transfer
+TXN-10499,2025-06-08,Household,Rent / Mortgage,Monthly residential lease/mortgage payment,1716.69,Expense,Loss,Liability,Debit,Digital Wallet
+TXN-10292,2025-06-08,Household,Groceries,Supermarket purchase (food/supplies),205.61,Expense,Loss,Asset,Debit,Checking Account
+TXN-10850,2025-06-08,Household,Rent / Mortgage,Monthly residential lease/mortgage payment,2257.62,Expense,Loss,Liability,Debit,Digital Wallet
+TXN-11007,2025-06-09,Household,Rent / Mortgage,Monthly residential lease/mortgage payment,2277.22,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-10768,2025-06-10,Household,Dining Out,Restaurant bill / food delivery,27.38,Expense,Loss,Asset,Debit,Cash
+TXN-10893,2025-06-10,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",342.42,Expense,Loss,Asset,Debit,Wire Transfer
+TXN-10197,2025-06-11,Household,Credit Card Payment,Credit card balance payoff from checking account,355.42,Transfer,Neutral,Liability,Debit,Wire Transfer
+TXN-11051,2025-06-11,Household,Dining Out,Restaurant bill / food delivery,105.55,Expense,Loss,Asset,Debit,Credit Card
+TXN-10774,2025-06-11,Household,Investment Returns,Stock dividend or savings interest payout,422.57,Income,Profit,Asset,Credit,Wire Transfer
+TXN-10077,2025-06-11,Business,Owner's Drawings / Distributions,Owner cash withdrawal for personal use,7542.94,Equity Withdrawal,Neutral,Equity,Debit,Credit Card
+TXN-10693,2025-06-11,Household,Investment Returns,Stock dividend or savings interest payout,17.67,Income,Profit,Asset,Credit,Credit Card
+TXN-10567,2025-06-12,Business,Owner's Equity Injection,Capital contributed by business owner/investor,26591.15,Equity Injection,Neutral,Equity,Credit,Wire Transfer
+TXN-10260,2025-06-12,Household,Groceries,Supermarket purchase (food/supplies),196.39,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-10840,2025-06-12,Business,Cost of Goods Sold (COGS),Raw materials and inventory purchases,833.52,Expense,Loss,Asset,Debit,Wire Transfer
+TXN-10269,2025-06-12,Business,Payroll & Wages,"Employee salaries, benefits, and payroll taxes",16789.58,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-10949,2025-06-13,Business,Cost of Goods Sold (COGS),Raw materials and inventory purchases,1005.86,Expense,Loss,Asset,Debit,Checking Account
+TXN-10636,2025-06-13,Business,Loan Interest Expense,Interest charge on business debt/credit lines,454.23,Expense,Loss,Liability,Debit,Digital Wallet
+TXN-10522,2025-06-13,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,9076.2,Income,Profit,Asset,Credit,Cash
+TXN-10752,2025-06-13,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",80.79,Expense,Loss,Asset,Debit,Checking Account
+TXN-10661,2025-06-13,Business,Owner's Equity Injection,Capital contributed by business owner/investor,46144.87,Equity Injection,Neutral,Equity,Credit,Cash
+TXN-10402,2025-06-14,Household,Credit Card Payment,Credit card balance payoff from checking account,986.51,Transfer,Neutral,Liability,Debit,Wire Transfer
+TXN-10869,2025-06-14,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,101.93,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-11003,2025-06-14,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",236.72,Expense,Loss,Asset,Debit,ACH Transfer
+TXN-10657,2025-06-14,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,2826.54,Transfer,Neutral,Liability,Debit,ACH Transfer
+TXN-10507,2025-06-15,Household,Investment Returns,Stock dividend or savings interest payout,468.02,Income,Profit,Asset,Credit,Credit Card
+TXN-10393,2025-06-15,Business,Equipment Asset Purchase,"Purchase of machinery, computers, or office hardware",6590.45,Asset Acquisition,Neutral,Asset,Debit,Digital Wallet
+TXN-10327,2025-06-15,Business,Loan Interest Expense,Interest charge on business debt/credit lines,61.05,Expense,Loss,Liability,Debit,Cash
+TXN-10807,2025-06-15,Household,Vehicle Maintenance,"Gasoline, car insurance, or repairs",503.01,Expense,Loss,Asset,Debit,Cash
+TXN-10274,2025-06-16,Household,Groceries,Supermarket purchase (food/supplies),207.19,Expense,Loss,Asset,Debit,Cash
+TXN-10989,2025-06-16,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,3069.87,Transfer,Neutral,Liability,Debit,Wire Transfer
+TXN-10561,2025-06-16,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,3494.37,Transfer,Neutral,Liability,Debit,ACH Transfer
+TXN-10897,2025-06-17,Household,Credit Card Payment,Credit card balance payoff from checking account,392.82,Transfer,Neutral,Liability,Debit,Digital Wallet
+TXN-10849,2025-06-17,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,1672.19,Transfer,Neutral,Liability,Debit,Digital Wallet
+TXN-10874,2025-06-17,Business,Product Sales Revenue,Direct cash/card sales to customers,525.78,Income,Profit,Asset,Credit,ACH Transfer
+TXN-10294,2025-06-17,Business,Product Sales Revenue,Direct cash/card sales to customers,3401.54,Income,Profit,Asset,Credit,Credit Card
+TXN-10160,2025-06-17,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",289.21,Expense,Loss,Asset,Debit,ACH Transfer
+TXN-11094,2025-06-18,Household,Investment Returns,Stock dividend or savings interest payout,185.19,Income,Profit,Asset,Credit,ACH Transfer
+TXN-10322,2025-06-18,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,275.54,Expense,Loss,Asset,Debit,Wire Transfer
+TXN-10268,2025-06-18,Household,Rent / Mortgage,Monthly residential lease/mortgage payment,2534.21,Expense,Loss,Liability,Debit,Wire Transfer
+TXN-10195,2025-06-19,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,1555.43,Transfer,Neutral,Liability,Debit,ACH Transfer
+TXN-10742,2025-06-19,Business,Payroll & Wages,"Employee salaries, benefits, and payroll taxes",24245.77,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-10577,2025-06-19,Business,Office Rent & Lease,Commercial property rental fee,4728.11,Expense,Loss,Liability,Debit,Checking Account
+TXN-10147,2025-06-19,Business,Office Rent & Lease,Commercial property rental fee,3941.75,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-10110,2025-06-19,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,3317.71,Transfer,Neutral,Liability,Debit,Checking Account
+TXN-10948,2025-06-19,Household,Dining Out,Restaurant bill / food delivery,93.26,Expense,Loss,Asset,Debit,Credit Card
+TXN-10697,2025-06-19,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,1651.54,Transfer,Neutral,Liability,Debit,Digital Wallet
+TXN-11181,2025-06-19,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,4968.78,Income,Profit,Asset,Credit,Credit Card
+TXN-10102,2025-06-20,Household,Investment Returns,Stock dividend or savings interest payout,393.37,Income,Profit,Asset,Credit,ACH Transfer
+TXN-10257,2025-06-20,Business,Cost of Goods Sold (COGS),Raw materials and inventory purchases,2849.2,Expense,Loss,Asset,Debit,Wire Transfer
+TXN-10880,2025-06-21,Household,Salary / Wages,Monthly salary direct deposit,2505.12,Income,Profit,Asset,Credit,Digital Wallet
+TXN-10128,2025-06-21,Business,Equipment Asset Purchase,"Purchase of machinery, computers, or office hardware",1425.69,Asset Acquisition,Neutral,Asset,Debit,Credit Card
+TXN-10724,2025-06-21,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",361.01,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-10358,2025-06-23,Business,Product Sales Revenue,Direct cash/card sales to customers,1676.95,Income,Profit,Asset,Credit,Credit Card
+TXN-10342,2025-06-23,Business,Office Rent & Lease,Commercial property rental fee,5223.39,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-10700,2025-06-24,Household,Rent / Mortgage,Monthly residential lease/mortgage payment,2089.3,Expense,Loss,Liability,Debit,Wire Transfer
+TXN-10008,2025-06-24,Business,Office Rent & Lease,Commercial property rental fee,2750.42,Expense,Loss,Liability,Debit,Credit Card
+TXN-11123,2025-06-24,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",309.14,Expense,Loss,Asset,Debit,Checking Account
+TXN-10958,2025-06-25,Household,Rent / Mortgage,Monthly residential lease/mortgage payment,1306.19,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-11143,2025-06-25,Business,Payroll & Wages,"Employee salaries, benefits, and payroll taxes",24350.82,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-10089,2025-06-25,Household,Credit Card Payment,Credit card balance payoff from checking account,464.68,Transfer,Neutral,Liability,Debit,Digital Wallet
+TXN-11036,2025-06-25,Household,Credit Card Payment,Credit card balance payoff from checking account,1144.51,Transfer,Neutral,Liability,Debit,Credit Card
+TXN-11066,2025-06-25,Household,Dining Out,Restaurant bill / food delivery,119.59,Expense,Loss,Asset,Debit,ACH Transfer
+TXN-11096,2025-06-25,Business,Cost of Goods Sold (COGS),Raw materials and inventory purchases,1077.77,Expense,Loss,Asset,Debit,ACH Transfer
+TXN-10747,2025-06-26,Household,Dining Out,Restaurant bill / food delivery,119.76,Expense,Loss,Asset,Debit,ACH Transfer
+TXN-10010,2025-06-26,Business,Cost of Goods Sold (COGS),Raw materials and inventory purchases,3097.88,Expense,Loss,Asset,Debit,Checking Account
+TXN-10282,2025-06-26,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",790.48,Expense,Loss,Asset,Debit,Cash
+TXN-10571,2025-06-27,Household,Rent / Mortgage,Monthly residential lease/mortgage payment,2663.22,Expense,Loss,Liability,Debit,Digital Wallet
+TXN-10175,2025-06-27,Household,Groceries,Supermarket purchase (food/supplies),151.88,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-10437,2025-06-28,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",746.39,Expense,Loss,Asset,Debit,ACH Transfer
+TXN-10954,2025-06-29,Business,Payroll & Wages,"Employee salaries, benefits, and payroll taxes",15012.53,Expense,Loss,Liability,Debit,Checking Account
+TXN-10792,2025-06-29,Business,Loan Interest Expense,Interest charge on business debt/credit lines,422.6,Expense,Loss,Liability,Debit,Wire Transfer
+TXN-10412,2025-06-29,Household,Dining Out,Restaurant bill / food delivery,47.57,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-11151,2025-06-30,Household,Utilities,"Electricity, water, and gas bills",203.7,Expense,Loss,Liability,Debit,Wire Transfer
+TXN-10349,2025-07-01,Business,Office Rent & Lease,Commercial property rental fee,5431.23,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-10056,2025-07-01,Business,Office Rent & Lease,Commercial property rental fee,3406.1,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-10099,2025-07-01,Household,Utilities,"Electricity, water, and gas bills",251.63,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-10898,2025-07-02,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,150.76,Expense,Loss,Asset,Debit,Checking Account
+TXN-10942,2025-07-02,Business,Equipment Asset Purchase,"Purchase of machinery, computers, or office hardware",2295.69,Asset Acquisition,Neutral,Asset,Debit,Wire Transfer
+TXN-10326,2025-07-03,Household,Salary / Wages,Monthly salary direct deposit,5264.95,Income,Profit,Asset,Credit,Credit Card
+TXN-10922,2025-07-03,Business,Owner's Drawings / Distributions,Owner cash withdrawal for personal use,6367.9,Equity Withdrawal,Neutral,Equity,Debit,Credit Card
+TXN-10775,2025-07-03,Household,Groceries,Supermarket purchase (food/supplies),239.89,Expense,Loss,Asset,Debit,ACH Transfer
+TXN-11176,2025-07-03,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,718.64,Transfer,Neutral,Liability,Debit,Digital Wallet
+TXN-10497,2025-07-04,Household,Salary / Wages,Monthly salary direct deposit,4439.08,Income,Profit,Asset,Credit,Cash
+TXN-10659,2025-07-04,Household,Vehicle Maintenance,"Gasoline, car insurance, or repairs",324.74,Expense,Loss,Asset,Debit,ACH Transfer
+TXN-10720,2025-07-04,Household,Rent / Mortgage,Monthly residential lease/mortgage payment,1453.06,Expense,Loss,Liability,Debit,Credit Card
+TXN-10967,2025-07-04,Household,Groceries,Supermarket purchase (food/supplies),40.8,Expense,Loss,Asset,Debit,Checking Account
+TXN-10178,2025-07-05,Business,Office Rent & Lease,Commercial property rental fee,4360.13,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-10013,2025-07-05,Business,Equipment Asset Purchase,"Purchase of machinery, computers, or office hardware",4668.26,Asset Acquisition,Neutral,Asset,Debit,Digital Wallet
+TXN-10482,2025-07-05,Business,Cost of Goods Sold (COGS),Raw materials and inventory purchases,2037.7,Expense,Loss,Asset,Debit,Wire Transfer
+TXN-10495,2025-07-05,Household,Investment Returns,Stock dividend or savings interest payout,259.29,Income,Profit,Asset,Credit,Checking Account
+TXN-10040,2025-07-05,Household,Utilities,"Electricity, water, and gas bills",273.32,Expense,Loss,Liability,Debit,Cash
+TXN-10417,2025-07-05,Business,Owner's Drawings / Distributions,Owner cash withdrawal for personal use,1127.61,Equity Withdrawal,Neutral,Equity,Debit,Cash
+TXN-10117,2025-07-06,Household,Credit Card Payment,Credit card balance payoff from checking account,760.69,Transfer,Neutral,Liability,Debit,Digital Wallet
+TXN-10293,2025-07-06,Business,Loan Interest Expense,Interest charge on business debt/credit lines,562.65,Expense,Loss,Liability,Debit,Checking Account
+TXN-11070,2025-07-07,Household,Utilities,"Electricity, water, and gas bills",236.44,Expense,Loss,Liability,Debit,Checking Account
+TXN-10841,2025-07-07,Business,Office Rent & Lease,Commercial property rental fee,3958.6,Expense,Loss,Liability,Debit,Credit Card
+TXN-10542,2025-07-07,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,2764.9,Transfer,Neutral,Liability,Debit,Credit Card
+TXN-10762,2025-07-07,Household,Investment Returns,Stock dividend or savings interest payout,169.73,Income,Profit,Asset,Credit,ACH Transfer
+TXN-10875,2025-07-08,Household,Salary / Wages,Monthly salary direct deposit,3202.35,Income,Profit,Asset,Credit,Wire Transfer
+TXN-10353,2025-07-08,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,844.66,Transfer,Neutral,Liability,Debit,Cash
+TXN-10083,2025-07-09,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,114.05,Expense,Loss,Asset,Debit,ACH Transfer
+TXN-10973,2025-07-09,Household,Investment Returns,Stock dividend or savings interest payout,443.89,Income,Profit,Asset,Credit,Cash
+TXN-10017,2025-07-09,Household,Investment Returns,Stock dividend or savings interest payout,184.08,Income,Profit,Asset,Credit,Digital Wallet
+TXN-10649,2025-07-09,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",100.29,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-10484,2025-07-10,Business,Cost of Goods Sold (COGS),Raw materials and inventory purchases,2330.91,Expense,Loss,Asset,Debit,Checking Account
+TXN-10541,2025-07-11,Business,Payroll & Wages,"Employee salaries, benefits, and payroll taxes",20487.74,Expense,Loss,Liability,Debit,Cash
+TXN-10275,2025-07-11,Business,Cost of Goods Sold (COGS),Raw materials and inventory purchases,2267.3,Expense,Loss,Asset,Debit,Credit Card
+TXN-10344,2025-07-11,Household,Vehicle Maintenance,"Gasoline, car insurance, or repairs",573.78,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-10937,2025-07-11,Household,Rent / Mortgage,Monthly residential lease/mortgage payment,2268.17,Expense,Loss,Liability,Debit,Digital Wallet
+TXN-10621,2025-07-11,Business,Office Rent & Lease,Commercial property rental fee,5967.85,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-10562,2025-07-12,Business,Owner's Drawings / Distributions,Owner cash withdrawal for personal use,3196.27,Equity Withdrawal,Neutral,Equity,Debit,Credit Card
+TXN-10622,2025-07-13,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",318.62,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-10943,2025-07-13,Household,Investment Returns,Stock dividend or savings interest payout,160.34,Income,Profit,Asset,Credit,Digital Wallet
+TXN-10736,2025-07-13,Business,Office Rent & Lease,Commercial property rental fee,1832.84,Expense,Loss,Liability,Debit,Wire Transfer
+TXN-10555,2025-07-14,Business,Equipment Asset Purchase,"Purchase of machinery, computers, or office hardware",1790.1,Asset Acquisition,Neutral,Asset,Debit,Digital Wallet
+TXN-10374,2025-07-14,Household,Dining Out,Restaurant bill / food delivery,70.92,Expense,Loss,Asset,Debit,Credit Card
+TXN-10569,2025-07-14,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,3187.28,Transfer,Neutral,Liability,Debit,ACH Transfer
+TXN-11102,2025-07-14,Business,Equipment Asset Purchase,"Purchase of machinery, computers, or office hardware",6020.4,Asset Acquisition,Neutral,Asset,Debit,Wire Transfer
+TXN-10707,2025-07-14,Household,Dining Out,Restaurant bill / food delivery,89.73,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-10104,2025-07-15,Household,Utilities,"Electricity, water, and gas bills",271.88,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-10825,2025-07-15,Household,Dining Out,Restaurant bill / food delivery,96.21,Expense,Loss,Asset,Debit,Credit Card
+TXN-10285,2025-07-15,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,208.73,Expense,Loss,Asset,Debit,Wire Transfer
+TXN-10303,2025-07-15,Business,Loan Interest Expense,Interest charge on business debt/credit lines,625.69,Expense,Loss,Liability,Debit,Cash
+TXN-10917,2025-07-15,Household,Salary / Wages,Monthly salary direct deposit,5236.71,Income,Profit,Asset,Credit,Cash
+TXN-10284,2025-07-16,Household,Credit Card Payment,Credit card balance payoff from checking account,1309.34,Transfer,Neutral,Liability,Debit,Checking Account
+TXN-10831,2025-07-16,Business,Loan Interest Expense,Interest charge on business debt/credit lines,296.07,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-10771,2025-07-16,Business,Loan Interest Expense,Interest charge on business debt/credit lines,346.13,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-10261,2025-07-17,Business,Payroll & Wages,"Employee salaries, benefits, and payroll taxes",24745.11,Expense,Loss,Liability,Debit,Digital Wallet
+TXN-10838,2025-07-17,Business,Owner's Equity Injection,Capital contributed by business owner/investor,10073.46,Equity Injection,Neutral,Equity,Credit,ACH Transfer
+TXN-10714,2025-07-17,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,1135.75,Income,Profit,Asset,Credit,ACH Transfer
+TXN-10114,2025-07-17,Household,Utilities,"Electricity, water, and gas bills",277.89,Expense,Loss,Liability,Debit,Credit Card
+TXN-10770,2025-07-18,Business,Owner's Drawings / Distributions,Owner cash withdrawal for personal use,3927.67,Equity Withdrawal,Neutral,Equity,Debit,Credit Card
+TXN-11140,2025-07-18,Household,Utilities,"Electricity, water, and gas bills",224.65,Expense,Loss,Liability,Debit,Wire Transfer
+TXN-10310,2025-07-18,Household,Dining Out,Restaurant bill / food delivery,62.63,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-10151,2025-07-19,Business,Product Sales Revenue,Direct cash/card sales to customers,3862.5,Income,Profit,Asset,Credit,ACH Transfer
+TXN-10708,2025-07-19,Household,Dining Out,Restaurant bill / food delivery,48.25,Expense,Loss,Asset,Debit,Checking Account
+TXN-10154,2025-07-19,Household,Salary / Wages,Monthly salary direct deposit,3676.45,Income,Profit,Asset,Credit,Digital Wallet
+TXN-10765,2025-07-20,Business,Equipment Asset Purchase,"Purchase of machinery, computers, or office hardware",4732.93,Asset Acquisition,Neutral,Asset,Debit,Cash
+TXN-10945,2025-07-20,Business,Loan Interest Expense,Interest charge on business debt/credit lines,645.53,Expense,Loss,Liability,Debit,Wire Transfer
+TXN-10817,2025-07-22,Household,Groceries,Supermarket purchase (food/supplies),171.38,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-10616,2025-07-22,Household,Salary / Wages,Monthly salary direct deposit,3390.6,Income,Profit,Asset,Credit,Checking Account
+TXN-10438,2025-07-22,Household,Groceries,Supermarket purchase (food/supplies),145.42,Expense,Loss,Asset,Debit,Credit Card
+TXN-10370,2025-07-22,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,344.87,Expense,Loss,Asset,Debit,Checking Account
+TXN-10758,2025-07-22,Business,Office Rent & Lease,Commercial property rental fee,1631.37,Expense,Loss,Liability,Debit,Wire Transfer
+TXN-10376,2025-07-23,Household,Rent / Mortgage,Monthly residential lease/mortgage payment,2551.18,Expense,Loss,Liability,Debit,Checking Account
+TXN-10584,2025-07-23,Household,Groceries,Supermarket purchase (food/supplies),205.47,Expense,Loss,Asset,Debit,Credit Card
+TXN-10971,2025-07-23,Business,Product Sales Revenue,Direct cash/card sales to customers,2198.61,Income,Profit,Asset,Credit,Digital Wallet
+TXN-10701,2025-07-23,Business,Equipment Asset Purchase,"Purchase of machinery, computers, or office hardware",7291.77,Asset Acquisition,Neutral,Asset,Debit,Cash
+TXN-10171,2025-07-23,Business,Payroll & Wages,"Employee salaries, benefits, and payroll taxes",23712.35,Expense,Loss,Liability,Debit,Credit Card
+TXN-10133,2025-07-24,Business,Owner's Equity Injection,Capital contributed by business owner/investor,15979.3,Equity Injection,Neutral,Equity,Credit,Digital Wallet
+TXN-10469,2025-07-24,Business,Office Rent & Lease,Commercial property rental fee,4844.88,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-10074,2025-07-26,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,59.56,Expense,Loss,Asset,Debit,Wire Transfer
+TXN-11116,2025-07-26,Business,Payroll & Wages,"Employee salaries, benefits, and payroll taxes",20976.27,Expense,Loss,Liability,Debit,Checking Account
+TXN-10997,2025-07-26,Household,Vehicle Maintenance,"Gasoline, car insurance, or repairs",116.28,Expense,Loss,Asset,Debit,Wire Transfer
+TXN-10120,2025-07-26,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,8669.29,Income,Profit,Asset,Credit,Wire Transfer
+TXN-10536,2025-07-26,Business,Cost of Goods Sold (COGS),Raw materials and inventory purchases,1956.5,Expense,Loss,Asset,Debit,ACH Transfer
+TXN-10601,2025-07-27,Household,Investment Returns,Stock dividend or savings interest payout,346.18,Income,Profit,Asset,Credit,Digital Wallet
+TXN-10757,2025-07-27,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,227.82,Expense,Loss,Asset,Debit,Credit Card
+TXN-10900,2025-07-27,Household,Salary / Wages,Monthly salary direct deposit,5491.1,Income,Profit,Asset,Credit,Wire Transfer
+TXN-10313,2025-07-28,Business,Equipment Asset Purchase,"Purchase of machinery, computers, or office hardware",7091.66,Asset Acquisition,Neutral,Asset,Debit,Cash
+TXN-11198,2025-07-28,Household,Vehicle Maintenance,"Gasoline, car insurance, or repairs",254.24,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-11005,2025-07-28,Household,Credit Card Payment,Credit card balance payoff from checking account,1163.23,Transfer,Neutral,Liability,Debit,Wire Transfer
+TXN-10712,2025-07-28,Business,Owner's Drawings / Distributions,Owner cash withdrawal for personal use,1723.05,Equity Withdrawal,Neutral,Equity,Debit,Checking Account
+TXN-10064,2025-07-28,Household,Investment Returns,Stock dividend or savings interest payout,247.96,Income,Profit,Asset,Credit,Credit Card
+TXN-11130,2025-07-29,Household,Dining Out,Restaurant bill / food delivery,26.23,Expense,Loss,Asset,Debit,Wire Transfer
+TXN-10276,2025-07-30,Business,Owner's Drawings / Distributions,Owner cash withdrawal for personal use,4961.5,Equity Withdrawal,Neutral,Equity,Debit,Credit Card
+TXN-10237,2025-07-30,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,8630.41,Income,Profit,Asset,Credit,Cash
+TXN-10241,2025-07-31,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",70.79,Expense,Loss,Asset,Debit,Wire Transfer
+TXN-10662,2025-07-31,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,1502.87,Income,Profit,Asset,Credit,Credit Card
+TXN-10605,2025-08-01,Business,Cost of Goods Sold (COGS),Raw materials and inventory purchases,3569.32,Expense,Loss,Asset,Debit,ACH Transfer
+TXN-10312,2025-08-01,Household,Dining Out,Restaurant bill / food delivery,83.77,Expense,Loss,Asset,Debit,ACH Transfer
+TXN-10778,2025-08-01,Business,Owner's Equity Injection,Capital contributed by business owner/investor,36956.41,Equity Injection,Neutral,Equity,Credit,ACH Transfer
+TXN-10845,2025-08-01,Business,Owner's Drawings / Distributions,Owner cash withdrawal for personal use,3965.03,Equity Withdrawal,Neutral,Equity,Debit,ACH Transfer
+TXN-10452,2025-08-02,Business,Loan Interest Expense,Interest charge on business debt/credit lines,181.12,Expense,Loss,Liability,Debit,Digital Wallet
+TXN-11074,2025-08-02,Household,Utilities,"Electricity, water, and gas bills",177.75,Expense,Loss,Liability,Debit,Checking Account
+TXN-11163,2025-08-02,Business,Payroll & Wages,"Employee salaries, benefits, and payroll taxes",24047.44,Expense,Loss,Liability,Debit,Digital Wallet
+TXN-10551,2025-08-02,Household,Utilities,"Electricity, water, and gas bills",208.41,Expense,Loss,Liability,Debit,Digital Wallet
+TXN-10664,2025-08-02,Business,Loan Interest Expense,Interest charge on business debt/credit lines,256.63,Expense,Loss,Liability,Debit,Credit Card
+TXN-10211,2025-08-02,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,2318.95,Transfer,Neutral,Liability,Debit,Wire Transfer
+TXN-11034,2025-08-03,Household,Vehicle Maintenance,"Gasoline, car insurance, or repairs",263.6,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-10311,2025-08-03,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,2262.02,Transfer,Neutral,Liability,Debit,Digital Wallet
+TXN-10076,2025-08-03,Household,Rent / Mortgage,Monthly residential lease/mortgage payment,2183.27,Expense,Loss,Liability,Debit,Wire Transfer
+TXN-10447,2025-08-03,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,230.85,Expense,Loss,Asset,Debit,Wire Transfer
+TXN-10915,2025-08-03,Household,Dining Out,Restaurant bill / food delivery,35.94,Expense,Loss,Asset,Debit,Wire Transfer
+TXN-11079,2025-08-03,Household,Dining Out,Restaurant bill / food delivery,102.22,Expense,Loss,Asset,Debit,Checking Account
+TXN-10882,2025-08-03,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,182.37,Expense,Loss,Asset,Debit,Checking Account
+TXN-10527,2025-08-03,Business,Equipment Asset Purchase,"Purchase of machinery, computers, or office hardware",2463.41,Asset Acquisition,Neutral,Asset,Debit,Credit Card
+TXN-10006,2025-08-03,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,1161.32,Transfer,Neutral,Liability,Debit,Wire Transfer
+TXN-11043,2025-08-04,Business,Product Sales Revenue,Direct cash/card sales to customers,3578.19,Income,Profit,Asset,Credit,Cash
+TXN-11077,2025-08-04,Business,Product Sales Revenue,Direct cash/card sales to customers,3028.24,Income,Profit,Asset,Credit,Digital Wallet
+TXN-10177,2025-08-04,Household,Salary / Wages,Monthly salary direct deposit,5378.16,Income,Profit,Asset,Credit,Checking Account
+TXN-10161,2025-08-04,Household,Vehicle Maintenance,"Gasoline, car insurance, or repairs",177.53,Expense,Loss,Asset,Debit,Checking Account
+TXN-11098,2025-08-04,Business,Owner's Equity Injection,Capital contributed by business owner/investor,34198.09,Equity Injection,Neutral,Equity,Credit,Credit Card
+TXN-11023,2025-08-05,Household,Vehicle Maintenance,"Gasoline, car insurance, or repairs",540.95,Expense,Loss,Asset,Debit,Cash
+TXN-10822,2025-08-05,Household,Utilities,"Electricity, water, and gas bills",232.69,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-10067,2025-08-05,Business,Product Sales Revenue,Direct cash/card sales to customers,3180.17,Income,Profit,Asset,Credit,Digital Wallet
+TXN-10627,2025-08-06,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,2095.8,Transfer,Neutral,Liability,Debit,Credit Card
+TXN-10475,2025-08-07,Business,Equipment Asset Purchase,"Purchase of machinery, computers, or office hardware",1916.52,Asset Acquisition,Neutral,Asset,Debit,ACH Transfer
+TXN-11092,2025-08-07,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,9123.94,Income,Profit,Asset,Credit,Checking Account
+TXN-10859,2025-08-08,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,3991.79,Income,Profit,Asset,Credit,Checking Account
+TXN-11057,2025-08-08,Business,Payroll & Wages,"Employee salaries, benefits, and payroll taxes",24237.21,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-10818,2025-08-08,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,236.31,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-10806,2025-08-08,Household,Credit Card Payment,Credit card balance payoff from checking account,1272.3,Transfer,Neutral,Liability,Debit,ACH Transfer
+TXN-10711,2025-08-09,Household,Investment Returns,Stock dividend or savings interest payout,229.93,Income,Profit,Asset,Credit,Wire Transfer
+TXN-10961,2025-08-09,Household,Salary / Wages,Monthly salary direct deposit,5798.55,Income,Profit,Asset,Credit,Credit Card
+TXN-10341,2025-08-09,Household,Credit Card Payment,Credit card balance payoff from checking account,787.02,Transfer,Neutral,Liability,Debit,Credit Card
+TXN-10339,2025-08-09,Business,Equipment Asset Purchase,"Purchase of machinery, computers, or office hardware",1464.5,Asset Acquisition,Neutral,Asset,Debit,Digital Wallet
+TXN-10346,2025-08-10,Household,Rent / Mortgage,Monthly residential lease/mortgage payment,1173.82,Expense,Loss,Liability,Debit,Digital Wallet
+TXN-11199,2025-08-10,Business,Payroll & Wages,"Employee salaries, benefits, and payroll taxes",9960.89,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-10477,2025-08-11,Business,Equipment Asset Purchase,"Purchase of machinery, computers, or office hardware",2639.52,Asset Acquisition,Neutral,Asset,Debit,Checking Account
+TXN-10962,2025-08-11,Business,Equipment Asset Purchase,"Purchase of machinery, computers, or office hardware",1852.6,Asset Acquisition,Neutral,Asset,Debit,Checking Account
+TXN-10179,2025-08-11,Household,Dining Out,Restaurant bill / food delivery,33.49,Expense,Loss,Asset,Debit,Wire Transfer
+TXN-10113,2025-08-12,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,7668.3,Income,Profit,Asset,Credit,Wire Transfer
+TXN-10047,2025-08-13,Business,Cost of Goods Sold (COGS),Raw materials and inventory purchases,4518.15,Expense,Loss,Asset,Debit,ACH Transfer
+TXN-10206,2025-08-14,Business,Owner's Equity Injection,Capital contributed by business owner/investor,20331.77,Equity Injection,Neutral,Equity,Credit,Checking Account
+TXN-10143,2025-08-14,Household,Vehicle Maintenance,"Gasoline, car insurance, or repairs",78.78,Expense,Loss,Asset,Debit,Cash
+TXN-11105,2025-08-14,Business,Office Rent & Lease,Commercial property rental fee,1706.88,Expense,Loss,Liability,Debit,Cash
+TXN-10611,2025-08-15,Business,Owner's Drawings / Distributions,Owner cash withdrawal for personal use,1813.68,Equity Withdrawal,Neutral,Equity,Debit,Credit Card
+TXN-10125,2025-08-15,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",369.91,Expense,Loss,Asset,Debit,Credit Card
+TXN-11117,2025-08-16,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",646.77,Expense,Loss,Asset,Debit,ACH Transfer
+TXN-10426,2025-08-16,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,221.5,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-10597,2025-08-17,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,268.74,Expense,Loss,Asset,Debit,Cash
+TXN-10476,2025-08-17,Business,Cost of Goods Sold (COGS),Raw materials and inventory purchases,403.3,Expense,Loss,Asset,Debit,Cash
+TXN-10632,2025-08-17,Household,Groceries,Supermarket purchase (food/supplies),165.53,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-10950,2025-08-17,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,1125.35,Income,Profit,Asset,Credit,Credit Card
+TXN-10974,2025-08-17,Household,Investment Returns,Stock dividend or savings interest payout,31.86,Income,Profit,Asset,Credit,ACH Transfer
+TXN-10984,2025-08-18,Household,Utilities,"Electricity, water, and gas bills",118.03,Expense,Loss,Liability,Debit,Credit Card
+TXN-10191,2025-08-18,Business,Owner's Equity Injection,Capital contributed by business owner/investor,40681.98,Equity Injection,Neutral,Equity,Credit,Checking Account
+TXN-10443,2025-08-18,Business,Owner's Equity Injection,Capital contributed by business owner/investor,32690.67,Equity Injection,Neutral,Equity,Credit,Checking Account
+TXN-10787,2025-08-19,Household,Groceries,Supermarket purchase (food/supplies),95.19,Expense,Loss,Asset,Debit,Checking Account
+TXN-10759,2025-08-19,Household,Credit Card Payment,Credit card balance payoff from checking account,969.86,Transfer,Neutral,Liability,Debit,ACH Transfer
+TXN-10401,2025-08-19,Household,Groceries,Supermarket purchase (food/supplies),230.9,Expense,Loss,Asset,Debit,Wire Transfer
+TXN-10502,2025-08-19,Household,Rent / Mortgage,Monthly residential lease/mortgage payment,1838.5,Expense,Loss,Liability,Debit,Wire Transfer
+TXN-10435,2025-08-19,Household,Vehicle Maintenance,"Gasoline, car insurance, or repairs",546.5,Expense,Loss,Asset,Debit,Credit Card
+TXN-11159,2025-08-20,Business,Cost of Goods Sold (COGS),Raw materials and inventory purchases,691.9,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-10890,2025-08-20,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,3991.51,Income,Profit,Asset,Credit,Checking Account
+TXN-10800,2025-08-20,Business,Payroll & Wages,"Employee salaries, benefits, and payroll taxes",4661.36,Expense,Loss,Liability,Debit,Checking Account
+TXN-11124,2025-08-21,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,129.55,Expense,Loss,Asset,Debit,Wire Transfer
+TXN-10852,2025-08-21,Household,Utilities,"Electricity, water, and gas bills",214.71,Expense,Loss,Liability,Debit,Checking Account
+TXN-10587,2025-08-21,Business,Product Sales Revenue,Direct cash/card sales to customers,4452.58,Income,Profit,Asset,Credit,Wire Transfer
+TXN-10318,2025-08-21,Household,Utilities,"Electricity, water, and gas bills",100.17,Expense,Loss,Liability,Debit,Credit Card
+TXN-10016,2025-08-21,Household,Vehicle Maintenance,"Gasoline, car insurance, or repairs",394.16,Expense,Loss,Asset,Debit,Cash
+TXN-10802,2025-08-21,Business,Cost of Goods Sold (COGS),Raw materials and inventory purchases,4761.22,Expense,Loss,Asset,Debit,Cash
+TXN-10258,2025-08-22,Business,Payroll & Wages,"Employee salaries, benefits, and payroll taxes",23522.75,Expense,Loss,Liability,Debit,Credit Card
+TXN-10812,2025-08-22,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",29.52,Expense,Loss,Asset,Debit,ACH Transfer
+TXN-11097,2025-08-22,Business,Payroll & Wages,"Employee salaries, benefits, and payroll taxes",8980.33,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-10614,2025-08-22,Business,Office Rent & Lease,Commercial property rental fee,4037.6,Expense,Loss,Liability,Debit,Wire Transfer
+TXN-11089,2025-08-22,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,346.26,Expense,Loss,Asset,Debit,Cash
+TXN-10079,2025-08-23,Business,Product Sales Revenue,Direct cash/card sales to customers,1525.37,Income,Profit,Asset,Credit,Checking Account
+TXN-10080,2025-08-23,Household,Salary / Wages,Monthly salary direct deposit,4674.06,Income,Profit,Asset,Credit,Wire Transfer
+TXN-10766,2025-08-23,Business,Cost of Goods Sold (COGS),Raw materials and inventory purchases,3163.34,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-10463,2025-08-23,Household,Rent / Mortgage,Monthly residential lease/mortgage payment,1066.57,Expense,Loss,Liability,Debit,Credit Card
+TXN-11132,2025-08-23,Household,Credit Card Payment,Credit card balance payoff from checking account,1271.92,Transfer,Neutral,Liability,Debit,Credit Card
+TXN-10804,2025-08-23,Household,Rent / Mortgage,Monthly residential lease/mortgage payment,2142.71,Expense,Loss,Liability,Debit,Digital Wallet
+TXN-10668,2025-08-24,Business,Owner's Equity Injection,Capital contributed by business owner/investor,12570.51,Equity Injection,Neutral,Equity,Credit,Cash
+TXN-10628,2025-08-24,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,134.23,Expense,Loss,Asset,Debit,Cash
+TXN-10429,2025-08-25,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",622.24,Expense,Loss,Asset,Debit,ACH Transfer
+TXN-10732,2025-08-25,Household,Salary / Wages,Monthly salary direct deposit,5800.41,Income,Profit,Asset,Credit,Credit Card
+TXN-10397,2025-08-25,Business,Product Sales Revenue,Direct cash/card sales to customers,2115.83,Income,Profit,Asset,Credit,Checking Account
+TXN-11090,2025-08-26,Household,Vehicle Maintenance,"Gasoline, car insurance, or repairs",63.3,Expense,Loss,Asset,Debit,Credit Card
+TXN-10391,2025-08-26,Business,Owner's Equity Injection,Capital contributed by business owner/investor,38950.06,Equity Injection,Neutral,Equity,Credit,Wire Transfer
+TXN-10181,2025-08-27,Business,Owner's Equity Injection,Capital contributed by business owner/investor,24600.85,Equity Injection,Neutral,Equity,Credit,Digital Wallet
+TXN-10589,2025-08-28,Business,Owner's Drawings / Distributions,Owner cash withdrawal for personal use,2909.86,Equity Withdrawal,Neutral,Equity,Debit,Checking Account
+TXN-10031,2025-08-28,Business,Equipment Asset Purchase,"Purchase of machinery, computers, or office hardware",4345.07,Asset Acquisition,Neutral,Asset,Debit,Wire Transfer
+TXN-11113,2025-08-29,Business,Owner's Drawings / Distributions,Owner cash withdrawal for personal use,6963.1,Equity Withdrawal,Neutral,Equity,Debit,Credit Card
+TXN-10235,2025-08-29,Household,Rent / Mortgage,Monthly residential lease/mortgage payment,1626.33,Expense,Loss,Liability,Debit,Cash
+TXN-10218,2025-08-29,Business,Equipment Asset Purchase,"Purchase of machinery, computers, or office hardware",2751.44,Asset Acquisition,Neutral,Asset,Debit,Credit Card
+TXN-11045,2025-08-29,Household,Utilities,"Electricity, water, and gas bills",91.81,Expense,Loss,Liability,Debit,Digital Wallet
+TXN-10619,2025-08-30,Household,Rent / Mortgage,Monthly residential lease/mortgage payment,1057.12,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-10644,2025-08-31,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,1222.9,Transfer,Neutral,Liability,Debit,Credit Card
+TXN-11125,2025-08-31,Business,Equipment Asset Purchase,"Purchase of machinery, computers, or office hardware",5601.61,Asset Acquisition,Neutral,Asset,Debit,Cash
+TXN-10126,2025-08-31,Business,Owner's Drawings / Distributions,Owner cash withdrawal for personal use,6556.15,Equity Withdrawal,Neutral,Equity,Debit,Digital Wallet
+TXN-10691,2025-09-01,Business,Loan Interest Expense,Interest charge on business debt/credit lines,239.77,Expense,Loss,Liability,Debit,Checking Account
+TXN-10687,2025-09-01,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,668.34,Transfer,Neutral,Liability,Debit,Checking Account
+TXN-10207,2025-09-02,Household,Vehicle Maintenance,"Gasoline, car insurance, or repairs",99.46,Expense,Loss,Asset,Debit,Checking Account
+TXN-10150,2025-09-02,Business,Payroll & Wages,"Employee salaries, benefits, and payroll taxes",3129.71,Expense,Loss,Liability,Debit,Cash
+TXN-10655,2025-09-03,Household,Utilities,"Electricity, water, and gas bills",281.18,Expense,Loss,Liability,Debit,Digital Wallet
+TXN-10554,2025-09-03,Business,Loan Interest Expense,Interest charge on business debt/credit lines,169.36,Expense,Loss,Liability,Debit,Digital Wallet
+TXN-10572,2025-09-03,Household,Vehicle Maintenance,"Gasoline, car insurance, or repairs",155.9,Expense,Loss,Asset,Debit,Wire Transfer
+TXN-10333,2025-09-03,Household,Groceries,Supermarket purchase (food/supplies),217.93,Expense,Loss,Asset,Debit,ACH Transfer
+TXN-10653,2025-09-03,Household,Credit Card Payment,Credit card balance payoff from checking account,471.56,Transfer,Neutral,Liability,Debit,Cash
+TXN-10726,2025-09-03,Household,Credit Card Payment,Credit card balance payoff from checking account,608.44,Transfer,Neutral,Liability,Debit,ACH Transfer
+TXN-10297,2025-09-04,Household,Vehicle Maintenance,"Gasoline, car insurance, or repairs",581.57,Expense,Loss,Asset,Debit,Cash
+TXN-11110,2025-09-04,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,134.1,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-11104,2025-09-05,Household,Dining Out,Restaurant bill / food delivery,111.64,Expense,Loss,Asset,Debit,Checking Account
+TXN-11052,2025-09-07,Household,Rent / Mortgage,Monthly residential lease/mortgage payment,1598.73,Expense,Loss,Liability,Debit,Credit Card
+TXN-10186,2025-09-07,Household,Investment Returns,Stock dividend or savings interest payout,113.94,Income,Profit,Asset,Credit,Cash
+TXN-10612,2025-09-08,Business,Loan Interest Expense,Interest charge on business debt/credit lines,113.66,Expense,Loss,Liability,Debit,Wire Transfer
+TXN-10549,2025-09-08,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,2626.22,Transfer,Neutral,Liability,Debit,Cash
+TXN-11114,2025-09-09,Household,Rent / Mortgage,Monthly residential lease/mortgage payment,1577.14,Expense,Loss,Liability,Debit,Cash
+TXN-10208,2025-09-09,Business,Payroll & Wages,"Employee salaries, benefits, and payroll taxes",4629.81,Expense,Loss,Liability,Debit,Digital Wallet
+TXN-10334,2025-09-09,Household,Utilities,"Electricity, water, and gas bills",236.73,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-10877,2025-09-10,Business,Loan Interest Expense,Interest charge on business debt/credit lines,748.45,Expense,Loss,Liability,Debit,Credit Card
+TXN-10588,2025-09-10,Business,Owner's Drawings / Distributions,Owner cash withdrawal for personal use,7224.82,Equity Withdrawal,Neutral,Equity,Debit,Credit Card
+TXN-10718,2025-09-10,Household,Vehicle Maintenance,"Gasoline, car insurance, or repairs",117.45,Expense,Loss,Asset,Debit,Credit Card
+TXN-10533,2025-09-11,Business,Product Sales Revenue,Direct cash/card sales to customers,2749.21,Income,Profit,Asset,Credit,Digital Wallet
+TXN-10782,2025-09-11,Business,Loan Interest Expense,Interest charge on business debt/credit lines,434.81,Expense,Loss,Liability,Debit,Checking Account
+TXN-10262,2025-09-11,Household,Dining Out,Restaurant bill / food delivery,116.31,Expense,Loss,Asset,Debit,Credit Card
+TXN-10861,2025-09-12,Household,Rent / Mortgage,Monthly residential lease/mortgage payment,1819.36,Expense,Loss,Liability,Debit,Cash
+TXN-10373,2025-09-12,Household,Salary / Wages,Monthly salary direct deposit,5114.55,Income,Profit,Asset,Credit,Credit Card
+TXN-11081,2025-09-12,Household,Utilities,"Electricity, water, and gas bills",123.7,Expense,Loss,Liability,Debit,Credit Card
+TXN-10909,2025-09-12,Business,Payroll & Wages,"Employee salaries, benefits, and payroll taxes",3648.61,Expense,Loss,Liability,Debit,Digital Wallet
+TXN-10249,2025-09-13,Household,Dining Out,Restaurant bill / food delivery,112.93,Expense,Loss,Asset,Debit,Cash
+TXN-10913,2025-09-13,Business,Product Sales Revenue,Direct cash/card sales to customers,1942.17,Income,Profit,Asset,Credit,Wire Transfer
+TXN-10862,2025-09-13,Household,Groceries,Supermarket purchase (food/supplies),220.47,Expense,Loss,Asset,Debit,Credit Card
+TXN-11118,2025-09-13,Household,Rent / Mortgage,Monthly residential lease/mortgage payment,1804.72,Expense,Loss,Liability,Debit,Checking Account
+TXN-11136,2025-09-13,Household,Dining Out,Restaurant bill / food delivery,15.46,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-10529,2025-09-13,Household,Investment Returns,Stock dividend or savings interest payout,498.03,Income,Profit,Asset,Credit,ACH Transfer
+TXN-10559,2025-09-14,Business,Office Rent & Lease,Commercial property rental fee,4987.38,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-10296,2025-09-14,Business,Owner's Drawings / Distributions,Owner cash withdrawal for personal use,7394.41,Equity Withdrawal,Neutral,Equity,Debit,Credit Card
+TXN-10635,2025-09-15,Household,Dining Out,Restaurant bill / food delivery,119.32,Expense,Loss,Asset,Debit,Credit Card
+TXN-10919,2025-09-15,Business,Loan Interest Expense,Interest charge on business debt/credit lines,275.12,Expense,Loss,Liability,Debit,Cash
+TXN-10679,2025-09-15,Household,Salary / Wages,Monthly salary direct deposit,5346.05,Income,Profit,Asset,Credit,Digital Wallet
+TXN-10505,2025-09-15,Business,Office Rent & Lease,Commercial property rental fee,5598.21,Expense,Loss,Liability,Debit,Checking Account
+TXN-10982,2025-09-15,Household,Groceries,Supermarket purchase (food/supplies),159.96,Expense,Loss,Asset,Debit,Wire Transfer
+TXN-10674,2025-09-16,Household,Credit Card Payment,Credit card balance payoff from checking account,792.81,Transfer,Neutral,Liability,Debit,Checking Account
+TXN-10090,2025-09-16,Household,Vehicle Maintenance,"Gasoline, car insurance, or repairs",311.02,Expense,Loss,Asset,Debit,Checking Account
+TXN-11141,2025-09-16,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,10695.3,Income,Profit,Asset,Credit,ACH Transfer
+TXN-10531,2025-09-16,Business,Payroll & Wages,"Employee salaries, benefits, and payroll taxes",13059.07,Expense,Loss,Liability,Debit,Credit Card
+TXN-11012,2025-09-16,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",335.04,Expense,Loss,Asset,Debit,Checking Account
+TXN-10139,2025-09-16,Business,Equipment Asset Purchase,"Purchase of machinery, computers, or office hardware",3659.16,Asset Acquisition,Neutral,Asset,Debit,Wire Transfer
+TXN-10404,2025-09-16,Household,Rent / Mortgage,Monthly residential lease/mortgage payment,2163.03,Expense,Loss,Liability,Debit,Checking Account
+TXN-10254,2025-09-17,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,3938.9,Income,Profit,Asset,Credit,Checking Account
+TXN-11038,2025-09-17,Business,Cost of Goods Sold (COGS),Raw materials and inventory purchases,1640.94,Expense,Loss,Asset,Debit,Credit Card
+TXN-10844,2025-09-17,Business,Payroll & Wages,"Employee salaries, benefits, and payroll taxes",9302.73,Expense,Loss,Liability,Debit,Digital Wallet
+TXN-10119,2025-09-17,Business,Product Sales Revenue,Direct cash/card sales to customers,1495.39,Income,Profit,Asset,Credit,ACH Transfer
+TXN-11122,2025-09-18,Business,Product Sales Revenue,Direct cash/card sales to customers,2596.15,Income,Profit,Asset,Credit,Digital Wallet
+TXN-11188,2025-09-18,Business,Owner's Drawings / Distributions,Owner cash withdrawal for personal use,4118.9,Equity Withdrawal,Neutral,Equity,Debit,Checking Account
+TXN-10028,2025-09-18,Household,Dining Out,Restaurant bill / food delivery,66.82,Expense,Loss,Asset,Debit,Checking Account
+TXN-10543,2025-09-18,Business,Equipment Asset Purchase,"Purchase of machinery, computers, or office hardware",3489.29,Asset Acquisition,Neutral,Asset,Debit,Checking Account
+TXN-11138,2025-09-18,Business,Owner's Equity Injection,Capital contributed by business owner/investor,40148.67,Equity Injection,Neutral,Equity,Credit,Credit Card
+TXN-11026,2025-09-19,Household,Salary / Wages,Monthly salary direct deposit,5998.0,Income,Profit,Asset,Credit,Cash
+TXN-10385,2025-09-19,Household,Rent / Mortgage,Monthly residential lease/mortgage payment,2139.8,Expense,Loss,Liability,Debit,Wire Transfer
+TXN-10367,2025-09-20,Household,Credit Card Payment,Credit card balance payoff from checking account,347.96,Transfer,Neutral,Liability,Debit,ACH Transfer
+TXN-10465,2025-09-21,Business,Product Sales Revenue,Direct cash/card sales to customers,1882.27,Income,Profit,Asset,Credit,Wire Transfer
+TXN-10594,2025-09-21,Business,Office Rent & Lease,Commercial property rental fee,2975.67,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-10801,2025-09-21,Business,Payroll & Wages,"Employee salaries, benefits, and payroll taxes",19495.65,Expense,Loss,Liability,Debit,Digital Wallet
+TXN-10856,2025-09-22,Business,Owner's Drawings / Distributions,Owner cash withdrawal for personal use,6480.91,Equity Withdrawal,Neutral,Equity,Debit,Digital Wallet
+TXN-10755,2025-09-22,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,77.57,Expense,Loss,Asset,Debit,Credit Card
+TXN-10471,2025-09-23,Business,Cost of Goods Sold (COGS),Raw materials and inventory purchases,1480.26,Expense,Loss,Asset,Debit,Checking Account
+TXN-10744,2025-09-23,Business,Owner's Drawings / Distributions,Owner cash withdrawal for personal use,4905.95,Equity Withdrawal,Neutral,Equity,Debit,Digital Wallet
+TXN-11108,2025-09-23,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,6754.13,Income,Profit,Asset,Credit,Digital Wallet
+TXN-10233,2025-09-23,Business,Owner's Equity Injection,Capital contributed by business owner/investor,34317.93,Equity Injection,Neutral,Equity,Credit,Cash
+TXN-10545,2025-09-23,Business,Owner's Equity Injection,Capital contributed by business owner/investor,25564.49,Equity Injection,Neutral,Equity,Credit,Wire Transfer
+TXN-10508,2025-09-23,Business,Cost of Goods Sold (COGS),Raw materials and inventory purchases,4495.64,Expense,Loss,Asset,Debit,Checking Account
+TXN-10506,2025-09-23,Household,Utilities,"Electricity, water, and gas bills",113.66,Expense,Loss,Liability,Debit,Credit Card
+TXN-10884,2025-09-24,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,156.31,Expense,Loss,Asset,Debit,Cash
+TXN-10142,2025-09-24,Household,Vehicle Maintenance,"Gasoline, car insurance, or repairs",308.8,Expense,Loss,Asset,Debit,Credit Card
+TXN-11082,2025-09-25,Household,Vehicle Maintenance,"Gasoline, car insurance, or repairs",584.81,Expense,Loss,Asset,Debit,Cash
+TXN-10212,2025-09-25,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,145.52,Expense,Loss,Asset,Debit,ACH Transfer
+TXN-10991,2025-09-25,Business,Loan Interest Expense,Interest charge on business debt/credit lines,597.18,Expense,Loss,Liability,Debit,Checking Account
+TXN-10979,2025-09-25,Business,Payroll & Wages,"Employee salaries, benefits, and payroll taxes",12209.91,Expense,Loss,Liability,Debit,Wire Transfer
+TXN-11154,2025-09-25,Household,Salary / Wages,Monthly salary direct deposit,2872.65,Income,Profit,Asset,Credit,ACH Transfer
+TXN-10406,2025-09-25,Business,Owner's Drawings / Distributions,Owner cash withdrawal for personal use,5268.64,Equity Withdrawal,Neutral,Equity,Debit,Cash
+TXN-10453,2025-09-26,Household,Rent / Mortgage,Monthly residential lease/mortgage payment,2754.38,Expense,Loss,Liability,Debit,Checking Account
+TXN-10642,2025-09-26,Business,Payroll & Wages,"Employee salaries, benefits, and payroll taxes",10012.16,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-11065,2025-09-26,Business,Equipment Asset Purchase,"Purchase of machinery, computers, or office hardware",3063.5,Asset Acquisition,Neutral,Asset,Debit,Digital Wallet
+TXN-10383,2025-09-26,Business,Payroll & Wages,"Employee salaries, benefits, and payroll taxes",4730.24,Expense,Loss,Liability,Debit,Cash
+TXN-11008,2025-09-26,Household,Dining Out,Restaurant bill / food delivery,107.33,Expense,Loss,Asset,Debit,Checking Account
+TXN-10369,2025-09-27,Business,Owner's Equity Injection,Capital contributed by business owner/investor,35020.97,Equity Injection,Neutral,Equity,Credit,Checking Account
+TXN-10500,2025-09-27,Business,Owner's Equity Injection,Capital contributed by business owner/investor,23485.78,Equity Injection,Neutral,Equity,Credit,ACH Transfer
+TXN-11177,2025-09-27,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,3419.58,Income,Profit,Asset,Credit,Credit Card
+TXN-10430,2025-09-28,Business,Owner's Drawings / Distributions,Owner cash withdrawal for personal use,3930.63,Equity Withdrawal,Neutral,Equity,Debit,Credit Card
+TXN-10194,2025-09-29,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,1531.27,Transfer,Neutral,Liability,Debit,Digital Wallet
+TXN-11182,2025-09-29,Business,Equipment Asset Purchase,"Purchase of machinery, computers, or office hardware",3981.54,Asset Acquisition,Neutral,Asset,Debit,Wire Transfer
+TXN-11048,2025-09-29,Business,Payroll & Wages,"Employee salaries, benefits, and payroll taxes",9563.83,Expense,Loss,Liability,Debit,Checking Account
+TXN-10647,2025-09-29,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,902.28,Transfer,Neutral,Liability,Debit,Credit Card
+TXN-10338,2025-09-29,Business,Equipment Asset Purchase,"Purchase of machinery, computers, or office hardware",2775.81,Asset Acquisition,Neutral,Asset,Debit,Wire Transfer
+TXN-10563,2025-09-30,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",292.93,Expense,Loss,Asset,Debit,Cash
+TXN-10924,2025-10-01,Household,Vehicle Maintenance,"Gasoline, car insurance, or repairs",496.2,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-11200,2025-10-01,Household,Utilities,"Electricity, water, and gas bills",81.3,Expense,Loss,Liability,Debit,Digital Wallet
+TXN-10658,2025-10-01,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",529.16,Expense,Loss,Asset,Debit,Cash
+TXN-10156,2025-10-01,Business,Equipment Asset Purchase,"Purchase of machinery, computers, or office hardware",980.68,Asset Acquisition,Neutral,Asset,Debit,ACH Transfer
+TXN-10011,2025-10-02,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",125.24,Expense,Loss,Asset,Debit,ACH Transfer
+TXN-10449,2025-10-02,Business,Equipment Asset Purchase,"Purchase of machinery, computers, or office hardware",910.12,Asset Acquisition,Neutral,Asset,Debit,Wire Transfer
+TXN-10610,2025-10-02,Business,Loan Interest Expense,Interest charge on business debt/credit lines,154.9,Expense,Loss,Liability,Debit,Cash
+TXN-11193,2025-10-03,Household,Credit Card Payment,Credit card balance payoff from checking account,1277.37,Transfer,Neutral,Liability,Debit,Digital Wallet
+TXN-10116,2025-10-03,Business,Owner's Drawings / Distributions,Owner cash withdrawal for personal use,5808.0,Equity Withdrawal,Neutral,Equity,Debit,Digital Wallet
+TXN-10026,2025-10-03,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,1288.22,Transfer,Neutral,Liability,Debit,Wire Transfer
+TXN-10421,2025-10-04,Business,Owner's Drawings / Distributions,Owner cash withdrawal for personal use,6845.84,Equity Withdrawal,Neutral,Equity,Debit,Wire Transfer
+TXN-10964,2025-10-04,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,1295.79,Transfer,Neutral,Liability,Debit,Cash
+TXN-10227,2025-10-04,Business,Owner's Drawings / Distributions,Owner cash withdrawal for personal use,4456.57,Equity Withdrawal,Neutral,Equity,Debit,Checking Account
+TXN-10038,2025-10-04,Household,Investment Returns,Stock dividend or savings interest payout,477.21,Income,Profit,Asset,Credit,Wire Transfer
+TXN-10324,2025-10-04,Household,Dining Out,Restaurant bill / food delivery,41.32,Expense,Loss,Asset,Debit,Credit Card
+TXN-11150,2025-10-05,Business,Owner's Drawings / Distributions,Owner cash withdrawal for personal use,5860.18,Equity Withdrawal,Neutral,Equity,Debit,Cash
+TXN-10930,2025-10-05,Business,Owner's Equity Injection,Capital contributed by business owner/investor,18907.39,Equity Injection,Neutral,Equity,Credit,ACH Transfer
+TXN-10784,2025-10-05,Business,Cost of Goods Sold (COGS),Raw materials and inventory purchases,4148.53,Expense,Loss,Asset,Debit,Checking Account
+TXN-10670,2025-10-05,Household,Investment Returns,Stock dividend or savings interest payout,495.26,Income,Profit,Asset,Credit,Checking Account
+TXN-10070,2025-10-05,Business,Loan Interest Expense,Interest charge on business debt/credit lines,92.67,Expense,Loss,Liability,Debit,Cash
+TXN-10918,2025-10-06,Business,Owner's Equity Injection,Capital contributed by business owner/investor,40164.58,Equity Injection,Neutral,Equity,Credit,Cash
+TXN-10738,2025-10-06,Business,Office Rent & Lease,Commercial property rental fee,1665.44,Expense,Loss,Liability,Debit,Cash
+TXN-10316,2025-10-06,Business,Cost of Goods Sold (COGS),Raw materials and inventory purchases,4528.14,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-10692,2025-10-06,Household,Vehicle Maintenance,"Gasoline, car insurance, or repairs",353.38,Expense,Loss,Asset,Debit,Checking Account
+TXN-11179,2025-10-06,Business,Office Rent & Lease,Commercial property rental fee,3916.66,Expense,Loss,Liability,Debit,Checking Account
+TXN-10454,2025-10-06,Business,Owner's Drawings / Distributions,Owner cash withdrawal for personal use,4551.29,Equity Withdrawal,Neutral,Equity,Debit,Wire Transfer
+TXN-10095,2025-10-07,Household,Dining Out,Restaurant bill / food delivery,18.78,Expense,Loss,Asset,Debit,Cash
+TXN-10731,2025-10-07,Business,Loan Interest Expense,Interest charge on business debt/credit lines,175.95,Expense,Loss,Liability,Debit,Wire Transfer
+TXN-10785,2025-10-07,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",197.5,Expense,Loss,Asset,Debit,ACH Transfer
+TXN-10152,2025-10-07,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,2899.6,Transfer,Neutral,Liability,Debit,Credit Card
+TXN-11128,2025-10-08,Business,Product Sales Revenue,Direct cash/card sales to customers,2420.64,Income,Profit,Asset,Credit,Digital Wallet
+TXN-10609,2025-10-08,Household,Groceries,Supermarket purchase (food/supplies),229.61,Expense,Loss,Asset,Debit,Credit Card
+TXN-10337,2025-10-08,Business,Loan Interest Expense,Interest charge on business debt/credit lines,548.51,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-10666,2025-10-09,Business,Owner's Equity Injection,Capital contributed by business owner/investor,34457.36,Equity Injection,Neutral,Equity,Credit,Digital Wallet
+TXN-10539,2025-10-09,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",244.66,Expense,Loss,Asset,Debit,Wire Transfer
+TXN-10238,2025-10-09,Business,Payroll & Wages,"Employee salaries, benefits, and payroll taxes",3807.34,Expense,Loss,Liability,Debit,Checking Account
+TXN-10062,2025-10-09,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",104.49,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-10966,2025-10-09,Business,Loan Interest Expense,Interest charge on business debt/credit lines,637.9,Expense,Loss,Liability,Debit,Credit Card
+TXN-10498,2025-10-10,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",129.05,Expense,Loss,Asset,Debit,Checking Account
+TXN-11015,2025-10-10,Business,Loan Interest Expense,Interest charge on business debt/credit lines,294.83,Expense,Loss,Liability,Debit,Credit Card
+TXN-10012,2025-10-10,Household,Rent / Mortgage,Monthly residential lease/mortgage payment,1527.72,Expense,Loss,Liability,Debit,Digital Wallet
+TXN-10096,2025-10-10,Business,Loan Interest Expense,Interest charge on business debt/credit lines,153.67,Expense,Loss,Liability,Debit,Credit Card
+TXN-11164,2025-10-10,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,1591.82,Income,Profit,Asset,Credit,Digital Wallet
+TXN-10677,2025-10-10,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,1734.02,Transfer,Neutral,Liability,Debit,Checking Account
+TXN-10713,2025-10-11,Business,Cost of Goods Sold (COGS),Raw materials and inventory purchases,646.71,Expense,Loss,Asset,Debit,Wire Transfer
+TXN-10400,2025-10-11,Business,Loan Interest Expense,Interest charge on business debt/credit lines,717.96,Expense,Loss,Liability,Debit,Digital Wallet
+TXN-10321,2025-10-11,Household,Rent / Mortgage,Monthly residential lease/mortgage payment,1372.88,Expense,Loss,Liability,Debit,Credit Card
+TXN-11137,2025-10-11,Household,Groceries,Supermarket purchase (food/supplies),236.41,Expense,Loss,Asset,Debit,Wire Transfer
+TXN-10188,2025-10-12,Household,Vehicle Maintenance,"Gasoline, car insurance, or repairs",40.74,Expense,Loss,Asset,Debit,Credit Card
+TXN-11171,2025-10-12,Household,Vehicle Maintenance,"Gasoline, car insurance, or repairs",184.3,Expense,Loss,Asset,Debit,Credit Card
+TXN-10565,2025-10-13,Household,Vehicle Maintenance,"Gasoline, car insurance, or repairs",203.65,Expense,Loss,Asset,Debit,Cash
+TXN-11197,2025-10-13,Household,Vehicle Maintenance,"Gasoline, car insurance, or repairs",74.8,Expense,Loss,Asset,Debit,Credit Card
+TXN-10639,2025-10-13,Household,Groceries,Supermarket purchase (food/supplies),239.19,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-10300,2025-10-13,Business,Payroll & Wages,"Employee salaries, benefits, and payroll taxes",11047.05,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-10756,2025-10-14,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,5690.06,Income,Profit,Asset,Credit,ACH Transfer
+TXN-10414,2025-10-14,Business,Product Sales Revenue,Direct cash/card sales to customers,1788.55,Income,Profit,Asset,Credit,Cash
+TXN-10138,2025-10-14,Business,Owner's Drawings / Distributions,Owner cash withdrawal for personal use,5168.17,Equity Withdrawal,Neutral,Equity,Debit,ACH Transfer
+TXN-10375,2025-10-14,Business,Owner's Drawings / Distributions,Owner cash withdrawal for personal use,6833.48,Equity Withdrawal,Neutral,Equity,Debit,Cash
+TXN-10646,2025-10-15,Household,Groceries,Supermarket purchase (food/supplies),126.66,Expense,Loss,Asset,Debit,ACH Transfer
+TXN-10573,2025-10-15,Household,Vehicle Maintenance,"Gasoline, car insurance, or repairs",428.34,Expense,Loss,Asset,Debit,Credit Card
+TXN-10348,2025-10-15,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,1488.94,Transfer,Neutral,Liability,Debit,Checking Account
+TXN-10094,2025-10-15,Business,Office Rent & Lease,Commercial property rental fee,1543.51,Expense,Loss,Liability,Debit,Checking Account
+TXN-10305,2025-10-15,Business,Equipment Asset Purchase,"Purchase of machinery, computers, or office hardware",2997.64,Asset Acquisition,Neutral,Asset,Debit,Wire Transfer
+TXN-10157,2025-10-16,Business,Loan Interest Expense,Interest charge on business debt/credit lines,514.1,Expense,Loss,Liability,Debit,Checking Account
+TXN-10689,2025-10-17,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,11750.62,Income,Profit,Asset,Credit,Checking Account
+TXN-10359,2025-10-17,Household,Dining Out,Restaurant bill / food delivery,84.02,Expense,Loss,Asset,Debit,Checking Account
+TXN-10684,2025-10-17,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",216.51,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-10363,2025-10-18,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,7558.46,Income,Profit,Asset,Credit,Checking Account
+TXN-10592,2025-10-18,Business,Product Sales Revenue,Direct cash/card sales to customers,3083.64,Income,Profit,Asset,Credit,Credit Card
+TXN-10887,2025-10-18,Business,Loan Interest Expense,Interest charge on business debt/credit lines,93.6,Expense,Loss,Liability,Debit,Digital Wallet
+TXN-10696,2025-10-18,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,295.43,Expense,Loss,Asset,Debit,ACH Transfer
+TXN-11101,2025-10-19,Business,Owner's Equity Injection,Capital contributed by business owner/investor,35527.69,Equity Injection,Neutral,Equity,Credit,Credit Card
+TXN-11050,2025-10-19,Business,Office Rent & Lease,Commercial property rental fee,5517.8,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-10537,2025-10-19,Household,Groceries,Supermarket purchase (food/supplies),157.98,Expense,Loss,Asset,Debit,Cash
+TXN-10184,2025-10-19,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",499.57,Expense,Loss,Asset,Debit,ACH Transfer
+TXN-10259,2025-10-20,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,146.38,Expense,Loss,Asset,Debit,ACH Transfer
+TXN-10716,2025-10-20,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,191.96,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-10980,2025-10-21,Business,Owner's Equity Injection,Capital contributed by business owner/investor,44674.42,Equity Injection,Neutral,Equity,Credit,ACH Transfer
+TXN-10908,2025-10-21,Household,Investment Returns,Stock dividend or savings interest payout,222.25,Income,Profit,Asset,Credit,Digital Wallet
+TXN-10378,2025-10-22,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,5722.13,Income,Profit,Asset,Credit,ACH Transfer
+TXN-10728,2025-10-22,Business,Owner's Equity Injection,Capital contributed by business owner/investor,40188.85,Equity Injection,Neutral,Equity,Credit,Cash
+TXN-10761,2025-10-23,Household,Rent / Mortgage,Monthly residential lease/mortgage payment,1183.15,Expense,Loss,Liability,Debit,Wire Transfer
+TXN-10955,2025-10-23,Business,Owner's Equity Injection,Capital contributed by business owner/investor,34293.63,Equity Injection,Neutral,Equity,Credit,Digital Wallet
+TXN-10553,2025-10-23,Business,Loan Interest Expense,Interest charge on business debt/credit lines,209.28,Expense,Loss,Liability,Debit,Checking Account
+TXN-10528,2025-10-23,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,8932.41,Income,Profit,Asset,Credit,Credit Card
+TXN-10808,2025-10-23,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,891.78,Transfer,Neutral,Liability,Debit,ACH Transfer
+TXN-10054,2025-10-23,Business,Loan Interest Expense,Interest charge on business debt/credit lines,380.87,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-10351,2025-10-23,Household,Utilities,"Electricity, water, and gas bills",191.63,Expense,Loss,Liability,Debit,Credit Card
+TXN-11107,2025-10-23,Business,Owner's Drawings / Distributions,Owner cash withdrawal for personal use,6066.41,Equity Withdrawal,Neutral,Equity,Debit,Credit Card
+TXN-10232,2025-10-23,Household,Vehicle Maintenance,"Gasoline, car insurance, or repairs",57.73,Expense,Loss,Asset,Debit,Credit Card
+TXN-10075,2025-10-24,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,216.19,Expense,Loss,Asset,Debit,Wire Transfer
+TXN-10617,2025-10-24,Household,Credit Card Payment,Credit card balance payoff from checking account,294.94,Transfer,Neutral,Liability,Debit,ACH Transfer
+TXN-10124,2025-10-24,Business,Office Rent & Lease,Commercial property rental fee,4229.98,Expense,Loss,Liability,Debit,Cash
+TXN-10459,2025-10-25,Household,Utilities,"Electricity, water, and gas bills",241.74,Expense,Loss,Liability,Debit,Cash
+TXN-10512,2025-10-25,Business,Loan Interest Expense,Interest charge on business debt/credit lines,157.94,Expense,Loss,Liability,Debit,Digital Wallet
+TXN-11046,2025-10-25,Business,Loan Interest Expense,Interest charge on business debt/credit lines,711.01,Expense,Loss,Liability,Debit,Checking Account
+TXN-10598,2025-10-26,Business,Product Sales Revenue,Direct cash/card sales to customers,3294.54,Income,Profit,Asset,Credit,Checking Account
+TXN-10532,2025-10-26,Household,Credit Card Payment,Credit card balance payoff from checking account,658.76,Transfer,Neutral,Liability,Debit,Checking Account
+TXN-10737,2025-10-26,Business,Owner's Equity Injection,Capital contributed by business owner/investor,23036.23,Equity Injection,Neutral,Equity,Credit,Wire Transfer
+TXN-10027,2025-10-26,Business,Office Rent & Lease,Commercial property rental fee,3297.3,Expense,Loss,Liability,Debit,Credit Card
+TXN-11035,2025-10-26,Household,Groceries,Supermarket purchase (food/supplies),188.69,Expense,Loss,Asset,Debit,Wire Transfer
+TXN-10904,2025-10-26,Household,Rent / Mortgage,Monthly residential lease/mortgage payment,2055.01,Expense,Loss,Liability,Debit,Checking Account
+TXN-10234,2025-10-27,Household,Investment Returns,Stock dividend or savings interest payout,223.58,Income,Profit,Asset,Credit,ACH Transfer
+TXN-10938,2025-10-28,Business,Payroll & Wages,"Employee salaries, benefits, and payroll taxes",5222.71,Expense,Loss,Liability,Debit,Cash
+TXN-10652,2025-10-28,Household,Credit Card Payment,Credit card balance payoff from checking account,1141.6,Transfer,Neutral,Liability,Debit,Wire Transfer
+TXN-10049,2025-10-29,Household,Salary / Wages,Monthly salary direct deposit,4438.73,Income,Profit,Asset,Credit,Wire Transfer
+TXN-10789,2025-10-29,Household,Credit Card Payment,Credit card balance payoff from checking account,1095.87,Transfer,Neutral,Liability,Debit,Digital Wallet
+TXN-10199,2025-10-29,Household,Vehicle Maintenance,"Gasoline, car insurance, or repairs",586.78,Expense,Loss,Asset,Debit,Wire Transfer
+TXN-10213,2025-10-29,Business,Product Sales Revenue,Direct cash/card sales to customers,4456.64,Income,Profit,Asset,Credit,Cash
+TXN-11167,2025-10-29,Business,Cost of Goods Sold (COGS),Raw materials and inventory purchases,2823.75,Expense,Loss,Asset,Debit,Wire Transfer
+TXN-10978,2025-10-29,Business,Office Rent & Lease,Commercial property rental fee,2523.81,Expense,Loss,Liability,Debit,Checking Account
+TXN-10263,2025-10-30,Business,Owner's Drawings / Distributions,Owner cash withdrawal for personal use,3323.96,Equity Withdrawal,Neutral,Equity,Debit,Checking Account
+TXN-10548,2025-10-31,Business,Product Sales Revenue,Direct cash/card sales to customers,1613.22,Income,Profit,Asset,Credit,Wire Transfer
+TXN-10820,2025-10-31,Household,Dining Out,Restaurant bill / food delivery,38.75,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-10172,2025-10-31,Household,Rent / Mortgage,Monthly residential lease/mortgage payment,2243.11,Expense,Loss,Liability,Debit,Digital Wallet
+TXN-10330,2025-10-31,Business,Owner's Drawings / Distributions,Owner cash withdrawal for personal use,1763.38,Equity Withdrawal,Neutral,Equity,Debit,Wire Transfer
+TXN-10399,2025-11-01,Business,Equipment Asset Purchase,"Purchase of machinery, computers, or office hardware",4197.35,Asset Acquisition,Neutral,Asset,Debit,ACH Transfer
+TXN-10721,2025-11-01,Business,Owner's Equity Injection,Capital contributed by business owner/investor,32750.1,Equity Injection,Neutral,Equity,Credit,ACH Transfer
+TXN-10739,2025-11-01,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,2414.54,Transfer,Neutral,Liability,Debit,Checking Account
+TXN-10987,2025-11-01,Household,Dining Out,Restaurant bill / food delivery,42.08,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-10960,2025-11-01,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,11838.04,Income,Profit,Asset,Credit,ACH Transfer
+TXN-10030,2025-11-02,Business,Office Rent & Lease,Commercial property rental fee,1785.87,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-10552,2025-11-02,Household,Salary / Wages,Monthly salary direct deposit,4161.07,Income,Profit,Asset,Credit,Digital Wallet
+TXN-10423,2025-11-02,Household,Dining Out,Restaurant bill / food delivery,54.56,Expense,Loss,Asset,Debit,Credit Card
+TXN-10039,2025-11-03,Household,Salary / Wages,Monthly salary direct deposit,3634.55,Income,Profit,Asset,Credit,Checking Account
+TXN-11021,2025-11-04,Household,Investment Returns,Stock dividend or savings interest payout,402.42,Income,Profit,Asset,Credit,Credit Card
+TXN-11032,2025-11-04,Household,Groceries,Supermarket purchase (food/supplies),124.86,Expense,Loss,Asset,Debit,Cash
+TXN-10651,2025-11-05,Business,Equipment Asset Purchase,"Purchase of machinery, computers, or office hardware",1064.97,Asset Acquisition,Neutral,Asset,Debit,Checking Account
+TXN-10431,2025-11-06,Household,Credit Card Payment,Credit card balance payoff from checking account,379.92,Transfer,Neutral,Liability,Debit,Cash
+TXN-10513,2025-11-06,Business,Equipment Asset Purchase,"Purchase of machinery, computers, or office hardware",3062.05,Asset Acquisition,Neutral,Asset,Debit,Wire Transfer
+TXN-11121,2025-11-06,Household,Rent / Mortgage,Monthly residential lease/mortgage payment,2733.71,Expense,Loss,Liability,Debit,Digital Wallet
+TXN-10229,2025-11-06,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,3754.05,Income,Profit,Asset,Credit,Checking Account
+TXN-10483,2025-11-06,Household,Groceries,Supermarket purchase (food/supplies),72.22,Expense,Loss,Asset,Debit,ACH Transfer
+TXN-10289,2025-11-07,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,284.64,Expense,Loss,Asset,Debit,Credit Card
+TXN-10288,2025-11-07,Household,Groceries,Supermarket purchase (food/supplies),196.49,Expense,Loss,Asset,Debit,Cash
+TXN-10836,2025-11-07,Business,Owner's Drawings / Distributions,Owner cash withdrawal for personal use,4566.66,Equity Withdrawal,Neutral,Equity,Debit,Digital Wallet
+TXN-10366,2025-11-07,Business,Owner's Equity Injection,Capital contributed by business owner/investor,24891.99,Equity Injection,Neutral,Equity,Credit,Cash
+TXN-10168,2025-11-07,Household,Investment Returns,Stock dividend or savings interest payout,307.55,Income,Profit,Asset,Credit,Digital Wallet
+TXN-10480,2025-11-08,Household,Dining Out,Restaurant bill / food delivery,86.2,Expense,Loss,Asset,Debit,ACH Transfer
+TXN-10019,2025-11-08,Household,Rent / Mortgage,Monthly residential lease/mortgage payment,2142.96,Expense,Loss,Liability,Debit,Wire Transfer
+TXN-10356,2025-11-08,Household,Salary / Wages,Monthly salary direct deposit,5751.8,Income,Profit,Asset,Credit,Digital Wallet
+TXN-10037,2025-11-08,Business,Owner's Drawings / Distributions,Owner cash withdrawal for personal use,2392.38,Equity Withdrawal,Neutral,Equity,Debit,Cash
+TXN-10445,2025-11-08,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,2083.31,Transfer,Neutral,Liability,Debit,Checking Account
+TXN-11022,2025-11-08,Household,Vehicle Maintenance,"Gasoline, car insurance, or repairs",489.87,Expense,Loss,Asset,Debit,Cash
+TXN-10996,2025-11-08,Business,Loan Interest Expense,Interest charge on business debt/credit lines,381.13,Expense,Loss,Liability,Debit,Credit Card
+TXN-10564,2025-11-09,Household,Vehicle Maintenance,"Gasoline, car insurance, or repairs",308.56,Expense,Loss,Asset,Debit,Credit Card
+TXN-10593,2025-11-09,Household,Investment Returns,Stock dividend or savings interest payout,429.51,Income,Profit,Asset,Credit,ACH Transfer
+TXN-10355,2025-11-11,Business,Equipment Asset Purchase,"Purchase of machinery, computers, or office hardware",5322.34,Asset Acquisition,Neutral,Asset,Debit,Wire Transfer
+TXN-10630,2025-11-11,Business,Office Rent & Lease,Commercial property rental fee,4947.24,Expense,Loss,Liability,Debit,Checking Account
+TXN-10331,2025-11-11,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,34.31,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-10603,2025-11-11,Business,Cost of Goods Sold (COGS),Raw materials and inventory purchases,1260.08,Expense,Loss,Asset,Debit,Credit Card
+TXN-10933,2025-11-11,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,3216.11,Income,Profit,Asset,Credit,Credit Card
+TXN-10767,2025-11-11,Business,Product Sales Revenue,Direct cash/card sales to customers,2717.23,Income,Profit,Asset,Credit,Digital Wallet
+TXN-10912,2025-11-11,Household,Groceries,Supermarket purchase (food/supplies),170.03,Expense,Loss,Asset,Debit,Credit Card
+TXN-11056,2025-11-11,Household,Dining Out,Restaurant bill / food delivery,60.54,Expense,Loss,Asset,Debit,ACH Transfer
+TXN-10180,2025-11-12,Household,Vehicle Maintenance,"Gasoline, car insurance, or repairs",491.63,Expense,Loss,Asset,Debit,Wire Transfer
+TXN-10574,2025-11-12,Household,Utilities,"Electricity, water, and gas bills",243.0,Expense,Loss,Liability,Debit,Credit Card
+TXN-10122,2025-11-12,Household,Investment Returns,Stock dividend or savings interest payout,288.86,Income,Profit,Asset,Credit,ACH Transfer
+TXN-10516,2025-11-13,Business,Office Rent & Lease,Commercial property rental fee,4375.46,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-11080,2025-11-13,Business,Owner's Drawings / Distributions,Owner cash withdrawal for personal use,1824.14,Equity Withdrawal,Neutral,Equity,Debit,Checking Account
+TXN-10290,2025-11-14,Household,Credit Card Payment,Credit card balance payoff from checking account,525.81,Transfer,Neutral,Liability,Debit,Digital Wallet
+TXN-10723,2025-11-14,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,5178.79,Income,Profit,Asset,Credit,Cash
+TXN-10214,2025-11-14,Business,Loan Interest Expense,Interest charge on business debt/credit lines,92.16,Expense,Loss,Liability,Debit,Digital Wallet
+TXN-10165,2025-11-15,Household,Salary / Wages,Monthly salary direct deposit,3033.34,Income,Profit,Asset,Credit,Credit Card
+TXN-10242,2025-11-15,Business,Cost of Goods Sold (COGS),Raw materials and inventory purchases,3830.93,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-10876,2025-11-15,Business,Product Sales Revenue,Direct cash/card sales to customers,1205.24,Income,Profit,Asset,Credit,Cash
+TXN-10267,2025-11-16,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,8619.75,Income,Profit,Asset,Credit,Digital Wallet
+TXN-10118,2025-11-16,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,4453.07,Income,Profit,Asset,Credit,Checking Account
+TXN-11025,2025-11-16,Business,Owner's Drawings / Distributions,Owner cash withdrawal for personal use,3780.07,Equity Withdrawal,Neutral,Equity,Debit,Checking Account
+TXN-10640,2025-11-17,Household,Investment Returns,Stock dividend or savings interest payout,342.59,Income,Profit,Asset,Credit,Wire Transfer
+TXN-10810,2025-11-17,Household,Utilities,"Electricity, water, and gas bills",252.46,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-10828,2025-11-18,Household,Credit Card Payment,Credit card balance payoff from checking account,1172.75,Transfer,Neutral,Liability,Debit,ACH Transfer
+TXN-10291,2025-11-18,Household,Dining Out,Restaurant bill / food delivery,25.2,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-10916,2025-11-19,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,348.05,Expense,Loss,Asset,Debit,Wire Transfer
+TXN-10790,2025-11-20,Business,Equipment Asset Purchase,"Purchase of machinery, computers, or office hardware",3668.72,Asset Acquisition,Neutral,Asset,Debit,Wire Transfer
+TXN-10395,2025-11-20,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",262.47,Expense,Loss,Asset,Debit,Cash
+TXN-10462,2025-11-20,Business,Owner's Equity Injection,Capital contributed by business owner/investor,13202.51,Equity Injection,Neutral,Equity,Credit,Credit Card
+TXN-10799,2025-11-20,Business,Loan Interest Expense,Interest charge on business debt/credit lines,238.1,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-10702,2025-11-21,Household,Salary / Wages,Monthly salary direct deposit,3456.64,Income,Profit,Asset,Credit,ACH Transfer
+TXN-10272,2025-11-21,Household,Utilities,"Electricity, water, and gas bills",234.86,Expense,Loss,Liability,Debit,Checking Account
+TXN-10360,2025-11-21,Household,Dining Out,Restaurant bill / food delivery,117.04,Expense,Loss,Asset,Debit,Checking Account
+TXN-11166,2025-11-21,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,252.53,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-10091,2025-11-21,Household,Rent / Mortgage,Monthly residential lease/mortgage payment,1762.44,Expense,Loss,Liability,Debit,Cash
+TXN-11053,2025-11-21,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,1638.15,Income,Profit,Asset,Credit,ACH Transfer
+TXN-10456,2025-11-22,Household,Groceries,Supermarket purchase (food/supplies),121.25,Expense,Loss,Asset,Debit,Cash
+TXN-10576,2025-11-23,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,96.84,Expense,Loss,Asset,Debit,Checking Account
+TXN-10675,2025-11-23,Business,Equipment Asset Purchase,"Purchase of machinery, computers, or office hardware",5267.26,Asset Acquisition,Neutral,Asset,Debit,Wire Transfer
+TXN-10204,2025-11-23,Household,Dining Out,Restaurant bill / food delivery,106.19,Expense,Loss,Asset,Debit,ACH Transfer
+TXN-10886,2025-11-23,Household,Dining Out,Restaurant bill / food delivery,101.1,Expense,Loss,Asset,Debit,Checking Account
+TXN-11037,2025-11-23,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,2854.69,Transfer,Neutral,Liability,Debit,Digital Wallet
+TXN-11071,2025-11-24,Business,Payroll & Wages,"Employee salaries, benefits, and payroll taxes",8627.36,Expense,Loss,Liability,Debit,Wire Transfer
+TXN-10764,2025-11-24,Business,Owner's Drawings / Distributions,Owner cash withdrawal for personal use,3193.83,Equity Withdrawal,Neutral,Equity,Debit,ACH Transfer
+TXN-10947,2025-11-24,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,206.63,Expense,Loss,Asset,Debit,ACH Transfer
+TXN-10846,2025-11-24,Household,Rent / Mortgage,Monthly residential lease/mortgage payment,1965.82,Expense,Loss,Liability,Debit,Wire Transfer
+TXN-10940,2025-11-24,Business,Office Rent & Lease,Commercial property rental fee,5822.98,Expense,Loss,Liability,Debit,Digital Wallet
+TXN-10109,2025-11-25,Business,Cost of Goods Sold (COGS),Raw materials and inventory purchases,2645.15,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-11184,2025-11-25,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,222.52,Expense,Loss,Asset,Debit,Wire Transfer
+TXN-10432,2025-11-25,Household,Groceries,Supermarket purchase (food/supplies),140.92,Expense,Loss,Asset,Debit,Cash
+TXN-11004,2025-11-27,Business,Equipment Asset Purchase,"Purchase of machinery, computers, or office hardware",1398.22,Asset Acquisition,Neutral,Asset,Debit,ACH Transfer
+TXN-10387,2025-11-27,Business,Cost of Goods Sold (COGS),Raw materials and inventory purchases,4112.18,Expense,Loss,Asset,Debit,Credit Card
+TXN-10306,2025-11-28,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,40.86,Expense,Loss,Asset,Debit,ACH Transfer
+TXN-10741,2025-11-28,Household,Investment Returns,Stock dividend or savings interest payout,310.21,Income,Profit,Asset,Credit,Wire Transfer
+TXN-11194,2025-11-28,Business,Office Rent & Lease,Commercial property rental fee,5175.39,Expense,Loss,Liability,Debit,Checking Account
+TXN-11027,2025-11-28,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,2281.32,Transfer,Neutral,Liability,Debit,Cash
+TXN-10827,2025-11-29,Business,Equipment Asset Purchase,"Purchase of machinery, computers, or office hardware",1899.58,Asset Acquisition,Neutral,Asset,Debit,Cash
+TXN-10486,2025-11-29,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,4065.59,Income,Profit,Asset,Credit,Checking Account
+TXN-10307,2025-11-29,Business,Product Sales Revenue,Direct cash/card sales to customers,1926.09,Income,Profit,Asset,Credit,Credit Card
+TXN-11189,2025-11-30,Business,Product Sales Revenue,Direct cash/card sales to customers,987.43,Income,Profit,Asset,Credit,Wire Transfer
+TXN-10580,2025-11-30,Business,Owner's Equity Injection,Capital contributed by business owner/investor,13975.52,Equity Injection,Neutral,Equity,Credit,Cash
+TXN-11119,2025-12-01,Business,Owner's Equity Injection,Capital contributed by business owner/investor,5799.61,Equity Injection,Neutral,Equity,Credit,ACH Transfer
+TXN-11073,2025-12-01,Household,Utilities,"Electricity, water, and gas bills",263.95,Expense,Loss,Liability,Debit,Checking Account
+TXN-10599,2025-12-01,Household,Vehicle Maintenance,"Gasoline, car insurance, or repairs",238.15,Expense,Loss,Asset,Debit,Credit Card
+TXN-10579,2025-12-01,Business,Office Rent & Lease,Commercial property rental fee,5707.64,Expense,Loss,Liability,Debit,ACH Transfer
+TXN-10777,2025-12-01,Business,Owner's Drawings / Distributions,Owner cash withdrawal for personal use,4464.79,Equity Withdrawal,Neutral,Equity,Debit,Digital Wallet
+TXN-10786,2025-12-01,Household,Utilities,"Electricity, water, and gas bills",245.3,Expense,Loss,Liability,Debit,Cash
+TXN-11030,2025-12-02,Household,Vehicle Maintenance,"Gasoline, car insurance, or repairs",436.77,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-10340,2025-12-02,Household,Utilities,"Electricity, water, and gas bills",223.2,Expense,Loss,Liability,Debit,Wire Transfer
+TXN-10815,2025-12-02,Household,Rent / Mortgage,Monthly residential lease/mortgage payment,1648.78,Expense,Loss,Liability,Debit,Checking Account
+TXN-10676,2025-12-04,Business,Owner's Equity Injection,Capital contributed by business owner/investor,26953.45,Equity Injection,Neutral,Equity,Credit,Checking Account
+TXN-10835,2025-12-04,Household,Salary / Wages,Monthly salary direct deposit,5565.4,Income,Profit,Asset,Credit,Credit Card
+TXN-10127,2025-12-04,Household,Investment Returns,Stock dividend or savings interest payout,51.55,Income,Profit,Asset,Credit,Wire Transfer
+TXN-11135,2025-12-04,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",483.36,Expense,Loss,Asset,Debit,Wire Transfer
+TXN-10968,2025-12-05,Business,Product Sales Revenue,Direct cash/card sales to customers,2869.15,Income,Profit,Asset,Credit,ACH Transfer
+TXN-10474,2025-12-05,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,4252.04,Income,Profit,Asset,Credit,ACH Transfer
+TXN-10422,2025-12-05,Household,Groceries,Supermarket purchase (food/supplies),110.72,Expense,Loss,Asset,Debit,Wire Transfer
+TXN-10325,2025-12-05,Household,Utilities,"Electricity, water, and gas bills",270.62,Expense,Loss,Liability,Debit,Credit Card
+TXN-11175,2025-12-05,Business,Equipment Asset Purchase,"Purchase of machinery, computers, or office hardware",2817.74,Asset Acquisition,Neutral,Asset,Debit,Wire Transfer
+TXN-10068,2025-12-05,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,2655.22,Transfer,Neutral,Liability,Debit,Credit Card
+TXN-10221,2025-12-05,Business,Loan Interest Expense,Interest charge on business debt/credit lines,612.73,Expense,Loss,Liability,Debit,Credit Card
+TXN-10193,2025-12-06,Business,Product Sales Revenue,Direct cash/card sales to customers,2679.77,Income,Profit,Asset,Credit,ACH Transfer
+TXN-10086,2025-12-06,Business,Product Sales Revenue,Direct cash/card sales to customers,600.6,Income,Profit,Asset,Credit,Credit Card
+TXN-10816,2025-12-07,Business,Cost of Goods Sold (COGS),Raw materials and inventory purchases,4538.24,Expense,Loss,Asset,Debit,Credit Card
+TXN-10606,2025-12-07,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,2976.81,Transfer,Neutral,Liability,Debit,Credit Card
+TXN-10853,2025-12-08,Business,Product Sales Revenue,Direct cash/card sales to customers,3376.37,Income,Profit,Asset,Credit,Digital Wallet
+TXN-11152,2025-12-08,Business,Loan Interest Expense,Interest charge on business debt/credit lines,547.09,Expense,Loss,Liability,Debit,Digital Wallet
+TXN-10600,2025-12-08,Household,Groceries,Supermarket purchase (food/supplies),64.83,Expense,Loss,Asset,Debit,Cash
+TXN-10166,2025-12-09,Business,Owner's Equity Injection,Capital contributed by business owner/investor,10147.53,Equity Injection,Neutral,Equity,Credit,Credit Card
+TXN-10478,2025-12-10,Household,Rent / Mortgage,Monthly residential lease/mortgage payment,2147.52,Expense,Loss,Liability,Debit,Cash
+TXN-10236,2025-12-10,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,2150.6,Income,Profit,Asset,Credit,Credit Card
+TXN-10415,2025-12-10,Household,Dining Out,Restaurant bill / food delivery,88.8,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-10615,2025-12-11,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",651.13,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-10734,2025-12-11,Business,Office Rent & Lease,Commercial property rental fee,3746.86,Expense,Loss,Liability,Debit,Digital Wallet
+TXN-10302,2025-12-11,Business,Cost of Goods Sold (COGS),Raw materials and inventory purchases,3795.26,Expense,Loss,Asset,Debit,Cash
+TXN-10057,2025-12-11,Household,Groceries,Supermarket purchase (food/supplies),177.23,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-10304,2025-12-12,Household,Utilities,"Electricity, water, and gas bills",131.44,Expense,Loss,Liability,Debit,Checking Account
+TXN-10230,2025-12-12,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,295.87,Expense,Loss,Asset,Debit,Wire Transfer
+TXN-10864,2025-12-12,Business,Loan Interest Expense,Interest charge on business debt/credit lines,555.94,Expense,Loss,Liability,Debit,Credit Card
+TXN-10281,2025-12-13,Business,Product Sales Revenue,Direct cash/card sales to customers,2527.7,Income,Profit,Asset,Credit,Checking Account
+TXN-10983,2025-12-13,Business,Loan Interest Expense,Interest charge on business debt/credit lines,737.93,Expense,Loss,Liability,Debit,Credit Card
+TXN-10798,2025-12-13,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,149.59,Expense,Loss,Asset,Debit,Credit Card
+TXN-10754,2025-12-13,Household,Utilities,"Electricity, water, and gas bills",256.01,Expense,Loss,Liability,Debit,Digital Wallet
+TXN-10479,2025-12-14,Business,Owner's Drawings / Distributions,Owner cash withdrawal for personal use,2119.91,Equity Withdrawal,Neutral,Equity,Debit,Checking Account
+TXN-10746,2025-12-14,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",482.8,Expense,Loss,Asset,Debit,Wire Transfer
+TXN-10032,2025-12-15,Household,Salary / Wages,Monthly salary direct deposit,5022.53,Income,Profit,Asset,Credit,Digital Wallet
+TXN-11041,2025-12-15,Household,Investment Returns,Stock dividend or savings interest payout,450.8,Income,Profit,Asset,Credit,Digital Wallet
+TXN-10392,2025-12-15,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",741.52,Expense,Loss,Asset,Debit,Wire Transfer
+TXN-10492,2025-12-16,Household,Rent / Mortgage,Monthly residential lease/mortgage payment,2741.61,Expense,Loss,Liability,Debit,Cash
+TXN-11020,2025-12-16,Household,Salary / Wages,Monthly salary direct deposit,2531.14,Income,Profit,Asset,Credit,Credit Card
+TXN-10986,2025-12-16,Household,Rent / Mortgage,Monthly residential lease/mortgage payment,1783.71,Expense,Loss,Liability,Debit,Digital Wallet
+TXN-10809,2025-12-16,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,9384.79,Income,Profit,Asset,Credit,Checking Account
+TXN-10278,2025-12-16,Business,Equipment Asset Purchase,"Purchase of machinery, computers, or office hardware",2413.56,Asset Acquisition,Neutral,Asset,Debit,Wire Transfer
+TXN-10461,2025-12-17,Household,Investment Returns,Stock dividend or savings interest payout,237.67,Income,Profit,Asset,Credit,Digital Wallet
+TXN-11192,2025-12-17,Household,Credit Card Payment,Credit card balance payoff from checking account,751.47,Transfer,Neutral,Liability,Debit,Checking Account
+TXN-11028,2025-12-17,Business,Product Sales Revenue,Direct cash/card sales to customers,620.25,Income,Profit,Asset,Credit,Checking Account
+TXN-11103,2025-12-17,Household,Salary / Wages,Monthly salary direct deposit,5579.83,Income,Profit,Asset,Credit,Digital Wallet
+TXN-10220,2025-12-18,Household,Rent / Mortgage,Monthly residential lease/mortgage payment,1420.16,Expense,Loss,Liability,Debit,Cash
+TXN-10829,2025-12-18,Business,Equipment Asset Purchase,"Purchase of machinery, computers, or office hardware",3763.97,Asset Acquisition,Neutral,Asset,Debit,Credit Card
+TXN-11148,2025-12-18,Business,Product Sales Revenue,Direct cash/card sales to customers,1652.03,Income,Profit,Asset,Credit,Digital Wallet
+TXN-11016,2025-12-19,Household,Vehicle Maintenance,"Gasoline, car insurance, or repairs",86.07,Expense,Loss,Asset,Debit,Checking Account
+TXN-10698,2025-12-19,Household,Dining Out,Restaurant bill / food delivery,91.04,Expense,Loss,Asset,Debit,Wire Transfer
+TXN-10813,2025-12-19,Household,Credit Card Payment,Credit card balance payoff from checking account,1382.23,Transfer,Neutral,Liability,Debit,Digital Wallet
+TXN-10283,2025-12-20,Business,Office Rent & Lease,Commercial property rental fee,2625.44,Expense,Loss,Liability,Debit,Cash
+TXN-10381,2025-12-20,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",738.14,Expense,Loss,Asset,Debit,Checking Account
+TXN-10602,2025-12-20,Business,Product Sales Revenue,Direct cash/card sales to customers,660.76,Income,Profit,Asset,Credit,Cash
+TXN-10314,2025-12-20,Household,Groceries,Supermarket purchase (food/supplies),117.81,Expense,Loss,Asset,Debit,ACH Transfer
+TXN-10424,2025-12-21,Household,Investment Returns,Stock dividend or savings interest payout,387.84,Income,Profit,Asset,Credit,Credit Card
+TXN-11162,2025-12-21,Business,Product Sales Revenue,Direct cash/card sales to customers,3040.55,Income,Profit,Asset,Credit,ACH Transfer
+TXN-11142,2025-12-21,Business,Equipment Asset Purchase,"Purchase of machinery, computers, or office hardware",5907.91,Asset Acquisition,Neutral,Asset,Debit,Cash
+TXN-10951,2025-12-21,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,42.37,Expense,Loss,Asset,Debit,Cash
+TXN-11076,2025-12-22,Household,Credit Card Payment,Credit card balance payoff from checking account,1091.46,Transfer,Neutral,Liability,Debit,Checking Account
+TXN-10772,2025-12-22,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,3257.48,Transfer,Neutral,Liability,Debit,Credit Card
+TXN-10135,2025-12-23,Household,Investment Returns,Stock dividend or savings interest payout,263.8,Income,Profit,Asset,Credit,Checking Account
+TXN-10442,2025-12-23,Business,Owner's Equity Injection,Capital contributed by business owner/investor,42399.97,Equity Injection,Neutral,Equity,Credit,Digital Wallet
+TXN-10149,2025-12-23,Business,Loan Interest Expense,Interest charge on business debt/credit lines,63.67,Expense,Loss,Liability,Debit,Wire Transfer
+TXN-10927,2025-12-24,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,4946.61,Income,Profit,Asset,Credit,Wire Transfer
+TXN-10226,2025-12-25,Business,Product Sales Revenue,Direct cash/card sales to customers,1900.91,Income,Profit,Asset,Credit,Cash
+TXN-10167,2025-12-25,Business,Software / SaaS Subscriptions,"Cloud infrastructure, accounting & CRM tools",226.56,Expense,Loss,Asset,Debit,Cash
+TXN-10889,2025-12-25,Business,Payroll & Wages,"Employee salaries, benefits, and payroll taxes",21301.8,Expense,Loss,Liability,Debit,Cash
+TXN-10618,2025-12-25,Business,Cost of Goods Sold (COGS),Raw materials and inventory purchases,506.05,Expense,Loss,Asset,Debit,Checking Account
+TXN-10286,2025-12-25,Business,Product Sales Revenue,Direct cash/card sales to customers,1434.25,Income,Profit,Asset,Credit,Digital Wallet
+TXN-10018,2025-12-26,Household,Vehicle Maintenance,"Gasoline, car insurance, or repairs",564.21,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-10656,2025-12-27,Business,Equipment Asset Purchase,"Purchase of machinery, computers, or office hardware",2170.24,Asset Acquisition,Neutral,Asset,Debit,Credit Card
+TXN-10566,2025-12-27,Business,Product Sales Revenue,Direct cash/card sales to customers,1051.66,Income,Profit,Asset,Credit,Digital Wallet
+TXN-10928,2025-12-27,Household,Salary / Wages,Monthly salary direct deposit,4951.96,Income,Profit,Asset,Credit,Wire Transfer
+TXN-10084,2025-12-27,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,1407.55,Transfer,Neutral,Liability,Debit,Digital Wallet
+TXN-10896,2025-12-27,Business,Product Sales Revenue,Direct cash/card sales to customers,3181.42,Income,Profit,Asset,Credit,Checking Account
+TXN-11011,2025-12-27,Business,Cost of Goods Sold (COGS),Raw materials and inventory purchases,1155.73,Expense,Loss,Asset,Debit,Cash
+TXN-10760,2025-12-27,Household,Salary / Wages,Monthly salary direct deposit,3251.79,Income,Profit,Asset,Credit,Cash
+TXN-10250,2025-12-28,Business,Owner's Drawings / Distributions,Owner cash withdrawal for personal use,2913.97,Equity Withdrawal,Neutral,Equity,Debit,ACH Transfer
+TXN-10219,2025-12-28,Business,Product Sales Revenue,Direct cash/card sales to customers,1379.82,Income,Profit,Asset,Credit,ACH Transfer
+TXN-10560,2025-12-28,Household,Groceries,Supermarket purchase (food/supplies),69.0,Expense,Loss,Asset,Debit,Credit Card
+TXN-10146,2025-12-28,Household,Dining Out,Restaurant bill / food delivery,37.47,Expense,Loss,Asset,Debit,ACH Transfer
+TXN-10405,2025-12-29,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,164.46,Expense,Loss,Asset,Debit,ACH Transfer
+TXN-10645,2025-12-29,Business,Product Sales Revenue,Direct cash/card sales to customers,777.93,Income,Profit,Asset,Credit,ACH Transfer
+TXN-10202,2025-12-29,Household,Salary / Wages,Monthly salary direct deposit,4369.47,Income,Profit,Asset,Credit,Cash
+TXN-10493,2025-12-30,Business,Cost of Goods Sold (COGS),Raw materials and inventory purchases,511.71,Expense,Loss,Asset,Debit,Wire Transfer
+TXN-11149,2025-12-30,Household,Dining Out,Restaurant bill / food delivery,83.26,Expense,Loss,Asset,Debit,Credit Card
+TXN-10860,2025-12-31,Household,Vehicle Maintenance,"Gasoline, car insurance, or repairs",585.9,Expense,Loss,Asset,Debit,Digital Wallet
+TXN-10883,2025-12-31,Household,Dining Out,Restaurant bill / food delivery,44.38,Expense,Loss,Asset,Debit,Checking Account
+TXN-11146,2025-12-31,Business,Accounts Receivable Invoicing,Client invoice generated for B2B services rendered,9105.01,Income,Profit,Asset,Credit,Wire Transfer
+TXN-10868,2026-01-01,Business,Bank Loan Principal Payment,Repayment of principal on commercial loan,2722.0,Transfer,Neutral,Liability,Debit,ACH Transfer
+TXN-10706,2026-01-01,Household,Healthcare / Medical,Pharmacy prescription / Doctor copay,44.26,Expense,Loss,Asset,Debit,Cash
+TXN-10046,2026-01-01,Household,Credit Card Payment,Credit card balance payoff from checking account,605.23,Transfer,Neutral,Liability,Debit,Digital Wallet

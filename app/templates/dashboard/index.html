@@ -1,0 +1,2970 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard | ANGELIX{% endblock %}
+
+{% block content %}
+
+<div class="dashboard-page">
+
+    <!-- ================================================================ -->
+    <!-- HEADER -->
+    <!-- ================================================================ -->
+
+    <div class="dashboard-header">
+
+        <div>
+
+            <div class="dashboard-eyebrow">
+                FINANCIAL INTELLIGENCE
+            </div>
+
+            <h1>
+                Angelix Dashboard
+            </h1>
+
+            {% if organization %}
+
+                <p>
+                    Welcome back, {{ current_user.first_name }}.
+                    Here's the financial overview for
+                    <strong>{{ organization.name }}</strong>.
+                </p>
+
+            {% else %}
+
+                <p>
+                    Your central financial intelligence workspace.
+                </p>
+
+            {% endif %}
+
+        </div>
+
+
+        {% if organization %}
+
+        <div class="dashboard-header-actions">
+
+            <a
+                href="/organizations/{{ organization.id }}/uploads"
+                class="dashboard-primary-action"
+            >
+                + Upload Document
+            </a>
+
+            <a
+                href="/organizations/{{ organization.id }}/transactions/new"
+                class="dashboard-secondary-action"
+            >
+                + Transaction
+            </a>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+
+    {% if organization %}
+
+
+    <!-- ================================================================ -->
+    <!-- KPI CARDS -->
+    <!-- ================================================================ -->
+
+    <section class="dashboard-kpi-grid">
+
+        <!-- Revenue -->
+        <div class="dashboard-kpi-card">
+
+            <div class="kpi-top">
+
+                <span class="kpi-label">
+                    Total Revenue
+                </span>
+
+                <div class="kpi-icon revenue-icon">
+                    ↗
+                </div>
+
+            </div>
+
+            <div class="kpi-value">
+
+                ₹{{ "{:,.2f}".format(
+                    analytics.get("revenue", 0) or 0
+                ) }}
+
+            </div>
+
+            <div class="kpi-description">
+                Revenue recorded for the current analysis period
+            </div>
+
+        </div>
+
+
+        <!-- Expenses -->
+        <div class="dashboard-kpi-card">
+
+            <div class="kpi-top">
+
+                <span class="kpi-label">
+                    Total Expenses
+                </span>
+
+                <div class="kpi-icon expense-icon">
+                    ↘
+                </div>
+
+            </div>
+
+            <div class="kpi-value">
+
+                ₹{{ "{:,.2f}".format(
+                    analytics.get("expenses", 0) or 0
+                ) }}
+
+            </div>
+
+            <div class="kpi-description">
+                Expenses recorded for the current analysis period
+            </div>
+
+        </div>
+
+
+        <!-- Net Profit -->
+        <div class="dashboard-kpi-card">
+
+            <div class="kpi-top">
+
+                <span class="kpi-label">
+                    Net Profit
+                </span>
+
+                <div class="kpi-icon profit-icon">
+                    ✓
+                </div>
+
+            </div>
+
+            <div class="kpi-value">
+
+                ₹{{ "{:,.2f}".format(
+                    analytics.get("net_profit", 0) or 0
+                ) }}
+
+            </div>
+
+            <div class="kpi-description">
+                Revenue remaining after recorded expenses
+            </div>
+
+        </div>
+
+
+        <!-- Profit Margin -->
+        <div class="dashboard-kpi-card">
+
+            <div class="kpi-top">
+
+                <span class="kpi-label">
+                    Profit Margin
+                </span>
+
+                <div class="kpi-icon margin-icon">
+                    %
+                </div>
+
+            </div>
+
+            <div class="kpi-value">
+
+                {{ "{:.2f}".format(
+                    analytics.get("profit_margin", 0) or 0
+                ) }}%
+
+            </div>
+
+            <div class="kpi-description">
+                Net profit as a percentage of revenue
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================================================ -->
+    <!-- FINANCIAL HEALTH SCORE -->
+    <!-- ================================================================ -->
+
+    {% set health = financial_health or {} %}
+    {% set health_score = health.get("score", 0) or 0 %}
+    {% set health_level = health.get("health_level", "Unavailable") %}
+    {% set health_period = health.get("period", {}) or {} %}
+    {% set health_components = health.get("components", {}) or {} %}
+
+    <section class="dashboard-health-card">
+
+        <div class="health-score-main">
+
+            <div
+                class="health-score-ring"
+                data-health-score="{{ health_score }}"
+            >
+
+                <div class="health-score-ring-inner">
+
+                    <strong>
+                        {{ "{:.0f}".format(health_score) }}
+                    </strong>
+
+                    <span>
+                        /100
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="health-score-summary">
+
+                <div class="health-score-label">
+                    FINANCIAL HEALTH SCORE
+                </div>
+
+                <h2>
+                    {{ health_level }}
+                </h2>
+
+                <p>
+                    Deterministic financial health analysis based on
+                    your available financial data.
+                </p>
+
+                {% if health_period.get("start")
+                      and health_period.get("end") %}
+
+                    <div class="health-period">
+
+                        <span>
+                            Reporting Period
+                        </span>
+
+                        <strong>
+                            {{ health_period.get("start") }}
+                            →
+                            {{ health_period.get("end") }}
+                        </strong>
+
+                    </div>
+
+                {% endif %}
+
+            </div>
+
+        </div>
+
+
+        <div class="health-components">
+
+            <!-- Profitability -->
+
+            {% set profitability =
+                health_components.get("profitability", {}) or {} %}
+
+            <div class="health-component">
+
+                <div class="health-component-top">
+
+                    <span>
+                        Profitability
+                    </span>
+
+                    <strong>
+                        {{ profitability.get("score", 0) }}/
+                        {{ profitability.get("max_score", 25) }}
+                    </strong>
+
+                </div>
+
+                <div class="health-progress">
+
+                    <div
+                        class="health-progress-bar"
+                        data-health-width="{{
+                            (
+                                (
+                                    profitability.get("score", 0) or 0
+                                )
+                                /
+                                (
+                                    profitability.get("max_score", 25) or 25
+                                )
+                                * 100
+                            )
+                        }}"
+                    ></div>
+
+                </div>
+
+                <small>
+                    {{ profitability.get(
+                        "reason",
+                        "No data available."
+                    ) }}
+                </small>
+
+            </div>
+
+
+            <!-- Expense Control -->
+
+            {% set expense_control =
+                health_components.get("expense_control", {}) or {} %}
+
+            <div class="health-component">
+
+                <div class="health-component-top">
+
+                    <span>
+                        Expense Control
+                    </span>
+
+                    <strong>
+                        {{ expense_control.get("score", 0) }}/
+                        {{ expense_control.get("max_score", 20) }}
+                    </strong>
+
+                </div>
+
+                <div class="health-progress">
+
+                    <div
+                        class="health-progress-bar"
+                        data-health-width="{{
+                            (
+                                (
+                                    expense_control.get("score", 0) or 0
+                                )
+                                /
+                                (
+                                    expense_control.get("max_score", 20) or 20
+                                )
+                                * 100
+                            )
+                        }}"
+                    ></div>
+
+                </div>
+
+                <small>
+                    {{ expense_control.get(
+                        "reason",
+                        "No data available."
+                    ) }}
+                </small>
+
+            </div>
+
+
+            <!-- Asset / Liability Coverage -->
+
+            {% set liquidity =
+                health_components.get("liquidity", {}) or {} %}
+
+            <div class="health-component">
+
+                <div class="health-component-top">
+
+                    <span>
+                        Asset / Liability Coverage
+                    </span>
+
+                    <strong>
+                        {{ liquidity.get("score", 0) }}/
+                        {{ liquidity.get("max_score", 20) }}
+                    </strong>
+
+                </div>
+
+                <div class="health-progress">
+
+                    <div
+                        class="health-progress-bar"
+                        data-health-width="{{
+                            (
+                                (
+                                    liquidity.get("score", 0) or 0
+                                )
+                                /
+                                (
+                                    liquidity.get("max_score", 20) or 20
+                                )
+                                * 100
+                            )
+                        }}"
+                    ></div>
+
+                </div>
+
+                <small>
+                    {{ liquidity.get(
+                        "reason",
+                        "No data available."
+                    ) }}
+                </small>
+
+            </div>
+
+
+            <!-- Leverage -->
+
+            {% set leverage =
+                health_components.get("leverage", {}) or {} %}
+
+            <div class="health-component">
+
+                <div class="health-component-top">
+
+                    <span>
+                        Leverage
+                    </span>
+
+                    <strong>
+                        {{ leverage.get("score", 0) }}/
+                        {{ leverage.get("max_score", 20) }}
+                    </strong>
+
+                </div>
+
+                <div class="health-progress">
+
+                    <div
+                        class="health-progress-bar"
+                        data-health-width="{{
+                            (
+                                (
+                                    leverage.get("score", 0) or 0
+                                )
+                                /
+                                (
+                                    leverage.get("max_score", 20) or 20
+                                )
+                                * 100
+                            )
+                        }}"
+                    ></div>
+
+                </div>
+
+                <small>
+                    {{ leverage.get(
+                        "reason",
+                        "No data available."
+                    ) }}
+                </small>
+
+            </div>
+
+
+            <!-- Balance Sheet Strength -->
+
+            {% set balance_strength =
+                health_components.get(
+                    "balance_sheet_strength",
+                    {}
+                ) or {} %}
+
+            <div class="health-component">
+
+                <div class="health-component-top">
+
+                    <span>
+                        Balance Sheet Strength
+                    </span>
+
+                    <strong>
+                        {{ balance_strength.get("score", 0) }}/
+                        {{ balance_strength.get("max_score", 15) }}
+                    </strong>
+
+                </div>
+
+                <div class="health-progress">
+
+                    <div
+                        class="health-progress-bar"
+                        data-health-width="{{
+                            (
+                                (
+                                    balance_strength.get("score", 0) or 0
+                                )
+                                /
+                                (
+                                    balance_strength.get("max_score", 15)
+                                    or 15
+                                )
+                                * 100
+                            )
+                        }}"
+                    ></div>
+
+                </div>
+
+                <small>
+                    {{ balance_strength.get(
+                        "reason",
+                        "No data available."
+                    ) }}
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="health-card-footer">
+
+            <span>
+                The score is a deterministic analytical indicator,
+                not a professional financial rating or investment
+                recommendation.
+            </span>
+
+            <a
+                href="/organizations/{{ organization.id }}/analytics"
+                class="health-details-link"
+            >
+                View Detailed Analytics →
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================================================ -->
+    <!-- MAIN CHART + FINANCIAL POSITION -->
+    <!-- ================================================================ -->
+
+    <section class="dashboard-main-grid">
+
+
+        <!-- Revenue vs Expenses -->
+        <div class="dashboard-card chart-card">
+
+            <div class="dashboard-card-header">
+
+                <div>
+
+                    <h2>
+                        Revenue vs Expenses
+                    </h2>
+
+                    <p>
+                        Financial performance over time
+                    </p>
+
+                </div>
+
+                <a
+                    href="/organizations/{{ organization.id }}/analytics"
+                    class="dashboard-link"
+                >
+                    View Analytics →
+                </a>
+
+            </div>
+
+
+            <div class="chart-container">
+
+                <canvas id="revenueExpenseChart"></canvas>
+
+            </div>
+
+        </div>
+
+
+        <!-- Financial Position -->
+        <div class="dashboard-card">
+
+            <div class="dashboard-card-header">
+
+                <div>
+
+                    <h2>
+                        Financial Position
+                    </h2>
+
+                    <p>
+                        Current statement overview
+                    </p>
+
+                </div>
+
+                <a
+                    href="/organizations/{{ organization.id }}/statements"
+                    class="dashboard-link"
+                >
+                    Statements →
+                </a>
+
+            </div>
+
+
+            <div class="financial-position-list">
+
+
+                <div class="position-item">
+
+                    <div class="position-icon asset-position">
+                        A
+                    </div>
+
+                    <div class="position-content">
+
+                        <span>
+                            Total Assets
+                        </span>
+
+                        <strong>
+                            ₹{{ "{:,.2f}".format(
+                                analytics.get("total_assets", 0) or 0
+                            ) }}
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="position-item">
+
+                    <div class="position-icon liability-position">
+                        L
+                    </div>
+
+                    <div class="position-content">
+
+                        <span>
+                            Total Liabilities
+                        </span>
+
+                        <strong>
+                            ₹{{ "{:,.2f}".format(
+                                analytics.get("total_liabilities", 0) or 0
+                            ) }}
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="position-item">
+
+                    <div class="position-icon equity-position">
+                        E
+                    </div>
+
+                    <div class="position-content">
+
+                        <span>
+                            Total Equity
+                        </span>
+
+                        <strong>
+                            ₹{{ "{:,.2f}".format(
+                                analytics.get("total_equity", 0) or 0
+                            ) }}
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="position-divider"></div>
+
+
+                <div class="position-summary">
+
+                    <span>
+                        Accounting equation
+                    </span>
+
+                    <strong>
+                        Assets = Liabilities + Equity
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================================================ -->
+    <!-- CATEGORY + QUICK ACTIONS -->
+    <!-- ================================================================ -->
+
+    <section class="dashboard-secondary-grid">
+
+
+        <!-- Expense Categories -->
+        <div class="dashboard-card chart-card">
+
+            <div class="dashboard-card-header">
+
+                <div>
+
+                    <h2>
+                        Expense Categories
+                    </h2>
+
+                    <p>
+                        Distribution of recorded expenses
+                    </p>
+
+                </div>
+
+                <a
+                    href="/organizations/{{ organization.id }}/analytics"
+                    class="dashboard-link"
+                >
+                    Details →
+                </a>
+
+            </div>
+
+
+            <div class="category-chart-container">
+
+                <canvas id="categoryChart"></canvas>
+
+            </div>
+
+        </div>
+
+
+        <!-- Quick Actions -->
+        <div class="dashboard-card">
+
+            <div class="dashboard-card-header">
+
+                <div>
+
+                    <h2>
+                        Quick Actions
+                    </h2>
+
+                    <p>
+                        Access your most-used financial tools
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="quick-actions-grid">
+
+
+                <a
+                    href="/organizations/{{ organization.id }}/uploads"
+                    class="quick-action"
+                >
+
+                    <span class="quick-action-icon">
+                        ↑
+                    </span>
+
+                    <span>
+                        Upload Document
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="/organizations/{{ organization.id }}/transactions/new"
+                    class="quick-action"
+                >
+
+                    <span class="quick-action-icon">
+                        +
+                    </span>
+
+                    <span>
+                        Add Transaction
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="/organizations/{{ organization.id }}/analytics"
+                    class="quick-action"
+                >
+
+                    <span class="quick-action-icon">
+                        ◈
+                    </span>
+
+                    <span>
+                        View Analytics
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="/organizations/{{ organization.id }}/statements"
+                    class="quick-action"
+                >
+
+                    <span class="quick-action-icon">
+                        ≡
+                    </span>
+
+                    <span>
+                        Financial Statements
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="/organizations/{{ organization.id }}/advisor"
+                    class="quick-action"
+                >
+
+                    <span class="quick-action-icon">
+                        AI
+                    </span>
+
+                    <span>
+                        AI Advisor
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="/organizations/{{ organization.id }}/reports/generate"
+                    class="quick-action"
+                >
+
+                    <span class="quick-action-icon">
+                        PDF
+                    </span>
+
+                    <span>
+                        Generate Report
+                    </span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================================================ -->
+    <!-- RECENT TRANSACTIONS -->
+    <!-- ================================================================ -->
+
+    <section class="dashboard-card">
+
+        <div class="dashboard-card-header">
+
+            <div>
+
+                <h2>
+                    Recent Transactions
+                </h2>
+
+                <p>
+                    Latest financial activity recorded in ANGELIX
+                </p>
+
+            </div>
+
+            <a
+                href="/organizations/{{ organization.id }}/transactions"
+                class="dashboard-link"
+            >
+                View All →
+            </a>
+
+        </div>
+
+
+        {% if recent_transactions %}
+
+        <div class="recent-table-wrapper">
+
+            <table class="dashboard-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Date
+                        </th>
+
+                        <th>
+                            Description
+                        </th>
+
+                        <th>
+                            Category
+                        </th>
+
+                        <th>
+                            Type
+                        </th>
+
+                        <th class="amount-column">
+                            Amount
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    {% for transaction in recent_transactions %}
+
+                    <tr>
+
+                        <td>
+
+                            {% if transaction.transaction_date %}
+
+                                {{ transaction.transaction_date.strftime(
+                                    "%d %b %Y"
+                                ) }}
+
+                            {% else %}
+
+                                —
+
+                            {% endif %}
+
+                        </td>
+
+
+                        <td>
+
+                            <strong>
+                                {{ transaction.description
+                                   or "Unnamed transaction" }}
+                            </strong>
+
+                        </td>
+
+
+                        <td>
+
+                            {{ transaction.category or "Uncategorized" }}
+
+                        </td>
+
+
+                        <td>
+
+                            {% if transaction.transaction_type == "income" %}
+
+                                <span class="transaction-badge income-badge">
+                                    Income
+                                </span>
+
+                            {% elif transaction.transaction_type == "expense" %}
+
+                                <span class="transaction-badge expense-badge">
+                                    Expense
+                                </span>
+
+                            {% else %}
+
+                                <span class="transaction-badge">
+                                    {{ transaction.transaction_type|title }}
+                                </span>
+
+                            {% endif %}
+
+                        </td>
+
+
+                        <td class="amount-column">
+
+                            {% if transaction.amount is not none %}
+
+                                {% if transaction.amount < 0 %}
+
+                                    <span class="amount-negative">
+                                        -₹{{ "{:,.2f}".format(
+                                            transaction.amount|abs
+                                        ) }}
+                                    </span>
+
+                                {% else %}
+
+                                    <span class="amount-positive">
+                                        ₹{{ "{:,.2f}".format(
+                                            transaction.amount
+                                        ) }}
+                                    </span>
+
+                                {% endif %}
+
+                            {% else %}
+
+                                —
+
+                            {% endif %}
+
+                        </td>
+
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+        {% else %}
+
+        <div class="dashboard-empty">
+
+            <div class="dashboard-empty-icon">
+                ₹
+            </div>
+
+            <h3>
+                No transactions yet
+            </h3>
+
+            <p>
+                Add your first transaction to start building
+                your financial overview.
+            </p>
+
+            <a
+                href="/organizations/{{ organization.id }}/transactions/new"
+                class="dashboard-primary-action"
+            >
+                Add Transaction
+            </a>
+
+        </div>
+
+        {% endif %}
+
+    </section>
+
+
+    <!-- ================================================================ -->
+    <!-- RECENT UPLOADS + STATEMENTS -->
+    <!-- ================================================================ -->
+
+    <section class="dashboard-bottom-grid">
+
+
+        <!-- Recent Uploads -->
+        <div class="dashboard-card">
+
+            <div class="dashboard-card-header">
+
+                <div>
+
+                    <h2>
+                        Recent Uploads
+                    </h2>
+
+                    <p>
+                        Documents processed by ANGELIX
+                    </p>
+
+                </div>
+
+                <a
+                    href="/organizations/{{ organization.id }}/uploads"
+                    class="dashboard-link"
+                >
+                    View All →
+                </a>
+
+            </div>
+
+
+            {% if recent_uploads %}
+
+            <div class="dashboard-list">
+
+                {% for upload in recent_uploads %}
+
+                <div class="dashboard-list-item">
+
+                    <div class="dashboard-list-icon">
+                        DOC
+                    </div>
+
+
+                    <div class="dashboard-list-content">
+
+                        <strong>
+                            {{ upload.original_filename }}
+                        </strong>
+
+                        <span>
+
+                            {{ upload.processing_status
+                               |replace("_", " ")
+                               |title }}
+
+                            {% if upload.created_at %}
+                                ·
+                                {{ upload.created_at.strftime(
+                                    "%d %b %Y"
+                                ) }}
+                            {% endif %}
+
+                        </span>
+
+                    </div>
+
+
+                    <span class="status-dot
+                        {% if upload.processing_status == 'completed' %}
+                            status-success
+                        {% elif upload.processing_status == 'failed' %}
+                            status-failed
+                        {% else %}
+                            status-processing
+                        {% endif %}
+                    ">
+                    </span>
+
+                </div>
+
+                {% endfor %}
+
+            </div>
+
+            {% else %}
+
+            <div class="mini-empty">
+                No documents uploaded yet.
+            </div>
+
+            {% endif %}
+
+        </div>
+
+
+        <!-- Recent Statements -->
+        <div class="dashboard-card">
+
+            <div class="dashboard-card-header">
+
+                <div>
+
+                    <h2>
+                        Financial Statements
+                    </h2>
+
+                    <p>
+                        Recently processed statements
+                    </p>
+
+                </div>
+
+                <a
+                    href="/organizations/{{ organization.id }}/statements"
+                    class="dashboard-link"
+                >
+                    View All →
+                </a>
+
+            </div>
+
+
+            {% if recent_statements %}
+
+            <div class="dashboard-list">
+
+                {% for statement in recent_statements %}
+
+                <div class="dashboard-list-item">
+
+                    <div class="dashboard-list-icon statement-icon">
+                        FS
+                    </div>
+
+
+                    <div class="dashboard-list-content">
+
+                        <strong>
+                            {{ statement.statement_type
+                               |replace("_", " ")
+                               |title }}
+                        </strong>
+
+                        <span>
+
+                            {% if statement.period_start
+                                  and statement.period_end %}
+
+                                {{ statement.period_start.strftime(
+                                    "%d %b %Y"
+                                ) }}
+
+                                –
+
+                                {{ statement.period_end.strftime(
+                                    "%d %b %Y"
+                                ) }}
+
+                            {% else %}
+
+                                Period not available
+
+                            {% endif %}
+
+                        </span>
+
+                    </div>
+
+
+                    <span class="statement-status">
+
+                        {{ statement.processing_status
+                           |replace("_", " ")
+                           |title }}
+
+                    </span>
+
+                </div>
+
+                {% endfor %}
+
+            </div>
+
+            {% else %}
+
+            <div class="mini-empty">
+                No financial statements available yet.
+            </div>
+
+            {% endif %}
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================================================ -->
+    <!-- AI ADVISOR -->
+    <!-- ================================================================ -->
+
+    <section class="dashboard-ai-card">
+
+        <div class="ai-card-content">
+
+            <div class="ai-card-icon">
+                AI
+            </div>
+
+            <div>
+
+                <span class="ai-card-label">
+                    ANGELIX AI FINANCIAL ADVISOR
+                </span>
+
+                <h2>
+                    Turn your financial data into actionable insights.
+                </h2>
+
+                <p>
+                    Ask questions about your financial performance,
+                    identify important trends, and explore possible
+                    actions using your organization's financial context.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <a
+            href="/organizations/{{ organization.id }}/advisor"
+            class="ai-card-button"
+        >
+            Open AI Advisor →
+        </a>
+
+    </section>
+
+
+    {% else %}
+
+
+    <!-- ================================================================ -->
+    <!-- NO ORGANIZATION -->
+    <!-- ================================================================ -->
+
+    <div class="dashboard-no-organization">
+
+        <div class="no-org-icon">
+            A
+        </div>
+
+        <h2>
+            Welcome to ANGELIX
+        </h2>
+
+        <p>
+            Create or join an organization to begin managing
+            your financial information.
+        </p>
+
+    </div>
+
+
+    {% endif %}
+
+</div>
+
+
+<!-- ==================================================================== -->
+<!-- DASHBOARD STYLES -->
+<!-- ==================================================================== -->
+
+<style>
+
+    .dashboard-page {
+        max-width: 1440px;
+        margin: 0 auto;
+        padding-bottom: 50px;
+    }
+
+
+    .dashboard-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 30px;
+        margin-bottom: 28px;
+    }
+
+
+    .dashboard-eyebrow {
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        color: #4f46e5;
+        margin-bottom: 8px;
+    }
+
+
+    .dashboard-header h1 {
+        margin: 0;
+        font-size: 38px;
+        line-height: 1.15;
+        color: #0f172a;
+    }
+
+
+    .dashboard-header p {
+        margin: 10px 0 0;
+        color: #64748b;
+        font-size: 15px;
+    }
+
+
+    .dashboard-header-actions {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+
+    .dashboard-primary-action,
+    .dashboard-secondary-action {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px;
+        padding: 0 18px;
+        border-radius: 12px;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 700;
+        transition: all 0.2s ease;
+    }
+
+
+    .dashboard-primary-action {
+        color: white;
+        background: linear-gradient(
+            135deg,
+            #2563eb,
+            #4f46e5
+        );
+        box-shadow: 0 8px 20px rgba(37, 99, 235, 0.22);
+    }
+
+
+    .dashboard-primary-action:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 12px 25px rgba(37, 99, 235, 0.28);
+    }
+
+
+    .dashboard-secondary-action {
+        color: #334155;
+        background: white;
+        border: 1px solid #e2e8f0;
+    }
+
+
+    .dashboard-secondary-action:hover {
+        border-color: #c7d2fe;
+        color: #4338ca;
+    }
+
+
+    /* ================================================================ */
+    /* KPI */
+    /* ================================================================ */
+
+    .dashboard-kpi-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 16px;
+        margin-bottom: 18px;
+    }
+
+
+    .dashboard-kpi-card {
+        background: white;
+        border: 1px solid #e2e8f0;
+        border-radius: 18px;
+        padding: 21px;
+        box-shadow: 0 8px 25px rgba(15, 23, 42, 0.05);
+    }
+
+
+    .kpi-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+    }
+
+
+    .kpi-label {
+        font-size: 13px;
+        color: #64748b;
+        font-weight: 700;
+    }
+
+
+    .kpi-icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 11px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+    }
+
+
+    .revenue-icon {
+        background: #e8f7ef;
+        color: #15803d;
+    }
+
+
+    .expense-icon {
+        background: #fff0f0;
+        color: #dc2626;
+    }
+
+
+    .profit-icon {
+        background: #eaf1ff;
+        color: #2563eb;
+    }
+
+
+    .margin-icon {
+        background: #f0edff;
+        color: #6d28d9;
+    }
+
+
+    .kpi-value {
+        margin-top: 16px;
+        font-size: 26px;
+        font-weight: 800;
+        color: #0f172a;
+        letter-spacing: -0.02em;
+    }
+
+
+    .kpi-description {
+        margin-top: 7px;
+        color: #94a3b8;
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+
+    /* ================================================================ */
+    /* CARDS */
+    /* ================================================================ */
+
+    .dashboard-main-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.55fr) minmax(340px, 0.85fr);
+        gap: 18px;
+        margin-bottom: 18px;
+    }
+
+
+    .dashboard-secondary-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(340px, 0.85fr);
+        gap: 18px;
+        margin-bottom: 18px;
+    }
+
+
+    .dashboard-bottom-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+        margin-bottom: 18px;
+    }
+
+
+    .dashboard-card {
+        background: white;
+        border: 1px solid #e2e8f0;
+        border-radius: 18px;
+        padding: 22px;
+        box-shadow: 0 8px 25px rgba(15, 23, 42, 0.05);
+        min-width: 0;
+    }
+
+
+    .dashboard-card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+
+    .dashboard-card-header h2 {
+        margin: 0;
+        color: #0f172a;
+        font-size: 17px;
+    }
+
+
+    .dashboard-card-header p {
+        margin: 5px 0 0;
+        color: #94a3b8;
+        font-size: 12px;
+    }
+
+
+    .dashboard-link {
+        color: #4f46e5;
+        text-decoration: none;
+        font-size: 12px;
+        font-weight: 700;
+        white-space: nowrap;
+    }
+
+
+    .dashboard-link:hover {
+        text-decoration: underline;
+    }
+
+
+    /* ================================================================ */
+    /* CHARTS */
+    /* ================================================================ */
+
+    .chart-container {
+        position: relative;
+        height: 315px;
+    }
+
+
+    .category-chart-container {
+        position: relative;
+        height: 285px;
+    }
+
+
+    /* ================================================================ */
+    /* FINANCIAL POSITION */
+    /* ================================================================ */
+
+    .financial-position-list {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+    }
+
+
+    .position-item {
+        display: flex;
+        align-items: center;
+        gap: 13px;
+        padding: 13px;
+        border-radius: 13px;
+        background: #f8fafc;
+    }
+
+
+    .position-icon {
+        width: 38px;
+        height: 38px;
+        min-width: 38px;
+        border-radius: 11px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+    }
+
+
+    .asset-position {
+        background: #eaf1ff;
+        color: #2563eb;
+    }
+
+
+    .liability-position {
+        background: #fff4df;
+        color: #c46a00;
+    }
+
+
+    .equity-position {
+        background: #eeeaff;
+        color: #6d28d9;
+    }
+
+
+    .position-content {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        min-width: 0;
+    }
+
+
+    .position-content span {
+        color: #64748b;
+        font-size: 12px;
+    }
+
+
+    .position-content strong {
+        color: #0f172a;
+        font-size: 16px;
+    }
+
+
+    .position-divider {
+        height: 1px;
+        background: #e2e8f0;
+        margin: 8px 0;
+    }
+
+
+    .position-summary {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        padding: 4px 2px;
+    }
+
+
+    .position-summary span {
+        color: #94a3b8;
+        font-size: 11px;
+    }
+
+
+    .position-summary strong {
+        color: #475569;
+        font-size: 12px;
+    }
+
+
+    /* ================================================================ */
+    /* QUICK ACTIONS */
+    /* ================================================================ */
+
+    .quick-actions-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+
+    .quick-action {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        min-height: 58px;
+        padding: 10px 12px;
+        border: 1px solid #e2e8f0;
+        border-radius: 13px;
+        color: #334155;
+        text-decoration: none;
+        font-size: 12px;
+        font-weight: 700;
+        transition: all 0.2s ease;
+    }
+
+
+    .quick-action:hover {
+        border-color: #c7d2fe;
+        color: #4338ca;
+        transform: translateY(-1px);
+        box-shadow: 0 5px 15px rgba(79, 70, 229, 0.08);
+    }
+
+
+    .quick-action-icon {
+        width: 32px;
+        height: 32px;
+        min-width: 32px;
+        border-radius: 9px;
+        background: #eef2ff;
+        color: #4f46e5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 10px;
+        font-weight: 800;
+    }
+
+
+    /* ================================================================ */
+    /* TABLE */
+    /* ================================================================ */
+
+    .recent-table-wrapper {
+        overflow-x: auto;
+    }
+
+
+    .dashboard-table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 700px;
+    }
+
+
+    .dashboard-table th {
+        padding: 11px 10px;
+        text-align: left;
+        color: #94a3b8;
+        font-size: 11px;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        border-bottom: 1px solid #e2e8f0;
+    }
+
+
+    .dashboard-table td {
+        padding: 14px 10px;
+        border-bottom: 1px solid #f1f5f9;
+        color: #475569;
+        font-size: 13px;
+    }
+
+
+    .dashboard-table tbody tr:last-child td {
+        border-bottom: none;
+    }
+
+
+    .dashboard-table tbody tr:hover {
+        background: #f8fafc;
+    }
+
+
+    .dashboard-table td strong {
+        color: #0f172a;
+    }
+
+
+    .amount-column {
+        text-align: right !important;
+    }
+
+
+    .amount-positive {
+        color: #15803d;
+        font-weight: 800;
+    }
+
+
+    .amount-negative {
+        color: #dc2626;
+        font-weight: 800;
+    }
+
+
+    .transaction-badge {
+        display: inline-flex;
+        padding: 5px 9px;
+        border-radius: 999px;
+        background: #f1f5f9;
+        color: #64748b;
+        font-size: 10px;
+        font-weight: 800;
+    }
+
+
+    .transaction-badge.income-badge {
+        background: #e8f7ef;
+        color: #15803d;
+    }
+
+
+    .transaction-badge.expense-badge {
+        background: #fff0f0;
+        color: #dc2626;
+    }
+
+
+    /* ================================================================ */
+    /* LISTS */
+    /* ================================================================ */
+
+    .dashboard-list {
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .dashboard-list-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 13px 0;
+        border-bottom: 1px solid #f1f5f9;
+    }
+
+
+    .dashboard-list-item:last-child {
+        border-bottom: none;
+    }
+
+
+    .dashboard-list-icon {
+        width: 38px;
+        height: 38px;
+        min-width: 38px;
+        border-radius: 11px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #eef2ff;
+        color: #4f46e5;
+        font-size: 9px;
+        font-weight: 800;
+    }
+
+
+    .statement-icon {
+        background: #f0edff;
+        color: #6d28d9;
+    }
+
+
+    .dashboard-list-content {
+        flex: 1;
+        min-width: 0;
+    }
+
+
+    .dashboard-list-content strong {
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        color: #334155;
+        font-size: 12px;
+    }
+
+
+    .dashboard-list-content span {
+        display: block;
+        margin-top: 3px;
+        color: #94a3b8;
+        font-size: 10px;
+    }
+
+
+    .status-dot {
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        min-width: 9px;
+    }
+
+
+    .status-success {
+        background: #22c55e;
+    }
+
+
+    .status-failed {
+        background: #ef4444;
+    }
+
+
+    .status-processing {
+        background: #f59e0b;
+    }
+
+
+    .statement-status {
+        padding: 5px 8px;
+        border-radius: 999px;
+        background: #eef2ff;
+        color: #4f46e5;
+        font-size: 9px;
+        font-weight: 800;
+        white-space: nowrap;
+    }
+
+
+    /* ================================================================ */
+    /* EMPTY STATES */
+    /* ================================================================ */
+
+    .dashboard-empty {
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+
+    .dashboard-empty-icon,
+    .no-org-icon {
+        width: 54px;
+        height: 54px;
+        margin: 0 auto 14px;
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #eef2ff;
+        color: #4f46e5;
+        font-weight: 900;
+    }
+
+
+    .dashboard-empty h3 {
+        margin: 0;
+        color: #0f172a;
+        font-size: 16px;
+    }
+
+
+    .dashboard-empty p {
+        margin: 7px 0 18px;
+        color: #94a3b8;
+        font-size: 12px;
+    }
+
+
+    .mini-empty {
+        padding: 30px 5px;
+        color: #94a3b8;
+        text-align: center;
+        font-size: 12px;
+    }
+
+
+    /* ================================================================ */
+    /* AI CARD */
+    /* ================================================================ */
+
+    .dashboard-ai-card {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 25px;
+        padding: 25px;
+        border-radius: 19px;
+        background: linear-gradient(
+            135deg,
+            #172554,
+            #3730a3
+        );
+        box-shadow: 0 15px 35px rgba(37, 59, 140, 0.18);
+    }
+
+
+    .ai-card-content {
+        display: flex;
+        align-items: center;
+        gap: 17px;
+    }
+
+
+    .ai-card-icon {
+        width: 52px;
+        height: 52px;
+        min-width: 52px;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.14);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        color: white;
+        font-size: 12px;
+        font-weight: 900;
+    }
+
+
+    .ai-card-label {
+        color: #c7d2fe;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+    }
+
+
+    .ai-card-content h2 {
+        margin: 5px 0 5px;
+        color: white;
+        font-size: 19px;
+    }
+
+
+    .ai-card-content p {
+        margin: 0;
+        max-width: 750px;
+        color: #cbd5e1;
+        font-size: 12px;
+        line-height: 1.6;
+    }
+
+
+    .ai-card-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 42px;
+        padding: 0 16px;
+        border-radius: 11px;
+        background: white;
+        color: #3730a3;
+        text-decoration: none;
+        font-size: 12px;
+        font-weight: 800;
+        white-space: nowrap;
+    }
+
+
+    /* ================================================================ */
+    /* NO ORGANIZATION */
+    /* ================================================================ */
+
+    .dashboard-no-organization {
+        max-width: 550px;
+        margin: 80px auto;
+        padding: 45px 30px;
+        text-align: center;
+        background: white;
+        border: 1px solid #e2e8f0;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+    }
+
+
+    .dashboard-no-organization h2 {
+        margin: 0;
+        color: #0f172a;
+    }
+
+
+    .dashboard-no-organization p {
+        margin: 10px 0 0;
+        color: #64748b;
+        line-height: 1.6;
+    }
+
+
+    /* ================================================================ */
+    /* FINANCIAL HEALTH SCORE */
+    /* ================================================================ */
+
+    .dashboard-health-card {
+        display: grid;
+        grid-template-columns: minmax(270px, 0.8fr) minmax(0, 1.7fr);
+        gap: 25px;
+        margin-bottom: 18px;
+        padding: 25px;
+        background: white;
+        border: 1px solid #e2e8f0;
+        border-radius: 18px;
+        box-shadow: 0 8px 25px rgba(15, 23, 42, 0.05);
+    }
+
+
+    .health-score-main {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+        min-width: 0;
+    }
+
+
+    .health-score-ring {
+        width: 142px;
+        height: 142px;
+        min-width: 142px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background:
+            conic-gradient(
+                #2563eb var(--health-progress, 0%),
+                #e2e8f0 var(--health-progress, 0%)
+            );
+    }
+
+
+    .health-score-ring-inner {
+        width: 108px;
+        height: 108px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background: white;
+    }
+
+
+    .health-score-ring-inner strong {
+        color: #0f172a;
+        font-size: 31px;
+        line-height: 1;
+        font-weight: 900;
+    }
+
+
+    .health-score-ring-inner span {
+        margin-top: 4px;
+        color: #94a3b8;
+        font-size: 12px;
+        font-weight: 700;
+    }
+
+
+    .health-score-summary {
+        min-width: 0;
+    }
+
+
+    .health-score-label {
+        color: #4f46e5;
+        font-size: 10px;
+        font-weight: 900;
+        letter-spacing: 0.1em;
+    }
+
+
+    .health-score-summary h2 {
+        margin: 5px 0 6px;
+        color: #0f172a;
+        font-size: 25px;
+    }
+
+
+    .health-score-summary p {
+        margin: 0;
+        color: #64748b;
+        font-size: 12px;
+        line-height: 1.6;
+    }
+
+
+    .health-period {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        margin-top: 12px;
+    }
+
+
+    .health-period span {
+        color: #94a3b8;
+        font-size: 10px;
+        font-weight: 700;
+    }
+
+
+    .health-period strong {
+        color: #475569;
+        font-size: 11px;
+    }
+
+
+    .health-components {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 13px;
+    }
+
+
+    .health-component {
+        padding: 13px;
+        border-radius: 13px;
+        background: #f8fafc;
+    }
+
+
+    .health-component-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 8px;
+    }
+
+
+    .health-component-top span {
+        color: #475569;
+        font-size: 11px;
+        font-weight: 700;
+    }
+
+
+    .health-component-top strong {
+        color: #0f172a;
+        font-size: 11px;
+        white-space: nowrap;
+    }
+
+
+    .health-progress {
+        width: 100%;
+        height: 6px;
+        overflow: hidden;
+        border-radius: 999px;
+        background: #e2e8f0;
+    }
+
+
+    .health-progress-bar {
+        width: 0;
+        height: 100%;
+        border-radius: inherit;
+        background: linear-gradient(
+            90deg,
+            #2563eb,
+            #4f46e5
+        );
+        transition: width 0.6s ease;
+    }
+
+
+    .health-component small {
+        display: block;
+        margin-top: 7px;
+        color: #94a3b8;
+        font-size: 9px;
+        line-height: 1.5;
+    }
+
+
+    .health-card-footer {
+        grid-column: 1 / -1;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 15px;
+        padding-top: 15px;
+        border-top: 1px solid #e2e8f0;
+    }
+
+
+    .health-card-footer span {
+        color: #94a3b8;
+        font-size: 10px;
+        line-height: 1.5;
+    }
+
+
+    .health-details-link {
+        color: #4f46e5;
+        text-decoration: none;
+        font-size: 11px;
+        font-weight: 800;
+        white-space: nowrap;
+    }
+
+
+    .health-details-link:hover {
+        text-decoration: underline;
+    }
+
+
+    /* ================================================================ */
+    /* RESPONSIVE */
+    /* ================================================================ */
+
+    @media (max-width: 1100px) {
+
+        .dashboard-kpi-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .dashboard-main-grid,
+        .dashboard-secondary-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .dashboard-health-card {
+            grid-template-columns: 1fr;
+        }
+
+    }
+
+
+    @media (max-width: 760px) {
+
+        .dashboard-header {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+
+        .dashboard-header h1 {
+            font-size: 30px;
+        }
+
+
+        .dashboard-kpi-grid,
+        .dashboard-bottom-grid {
+            grid-template-columns: 1fr;
+        }
+
+
+        .dashboard-ai-card {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+
+        .ai-card-button {
+            width: 100%;
+        }
+
+
+        .quick-actions-grid {
+            grid-template-columns: 1fr;
+        }
+
+
+        .health-score-main {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+
+        .health-components {
+            grid-template-columns: 1fr;
+        }
+
+
+        .health-card-footer {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+    }
+
+
+    /* ================================================================ */
+    /* DARK MODE */
+    /* ================================================================ */
+
+    body.dark-mode .dashboard-header h1,
+    body.dark-mode .dashboard-kpi-card .kpi-value,
+    body.dark-mode .dashboard-card-header h2,
+    body.dark-mode .position-content strong,
+    body.dark-mode .dashboard-table td strong,
+    body.dark-mode .dashboard-empty h3 {
+        color: #f8fafc;
+    }
+
+
+    body.dark-mode .dashboard-header p,
+    body.dark-mode .dashboard-card-header p,
+    body.dark-mode .kpi-description,
+    body.dark-mode .position-content span,
+    body.dark-mode .position-summary span,
+    body.dark-mode .dashboard-list-content span,
+    body.dark-mode .dashboard-empty p {
+        color: #94a3b8;
+    }
+
+
+    body.dark-mode .dashboard-kpi-card,
+    body.dark-mode .dashboard-card,
+    body.dark-mode .dashboard-no-organization {
+        background: #111827;
+        border-color: #1f2937;
+    }
+
+
+    body.dark-mode .dashboard-secondary-action,
+    body.dark-mode .quick-action {
+        background: #111827;
+        border-color: #1f2937;
+        color: #cbd5e1;
+    }
+
+
+    body.dark-mode .position-item,
+    body.dark-mode .dashboard-table tbody tr:hover {
+        background: #172033;
+    }
+
+
+    body.dark-mode .dashboard-table th,
+    body.dark-mode .dashboard-table td {
+        border-color: #1f2937;
+    }
+
+
+    body.dark-mode .dashboard-table td {
+        color: #cbd5e1;
+    }
+
+
+    body.dark-mode .dashboard-list-item,
+    body.dark-mode .position-divider {
+        border-color: #1f2937;
+    }
+
+
+    body.dark-mode .dashboard-empty-icon,
+    body.dark-mode .no-org-icon {
+        background: #1e293b;
+    }
+
+
+    body.dark-mode .dashboard-health-card {
+        background: #111827;
+        border-color: #1f2937;
+    }
+
+
+    body.dark-mode .health-score-ring-inner {
+        background: #111827;
+    }
+
+
+    body.dark-mode .health-score-ring {
+        background:
+            conic-gradient(
+                #60a5fa var(--health-progress, 0%),
+                #1f2937 var(--health-progress, 0%)
+            );
+    }
+
+
+    body.dark-mode .health-score-ring-inner strong,
+    body.dark-mode .health-score-summary h2,
+    body.dark-mode .health-component-top strong {
+        color: #f8fafc;
+    }
+
+
+    body.dark-mode .health-score-summary p,
+    body.dark-mode .health-period span,
+    body.dark-mode .health-component small,
+    body.dark-mode .health-card-footer span {
+        color: #94a3b8;
+    }
+
+
+    body.dark-mode .health-period strong,
+    body.dark-mode .health-component-top span {
+        color: #cbd5e1;
+    }
+
+
+    body.dark-mode .health-component {
+        background: #172033;
+    }
+
+
+    body.dark-mode .health-progress {
+        background: #1f2937;
+    }
+
+
+    body.dark-mode .health-card-footer {
+        border-color: #1f2937;
+    }
+
+</style>
+
+
+<!-- ==================================================================== -->
+<!-- DASHBOARD CHART DATA -->
+<!-- ==================================================================== -->
+
+<script
+    id="dashboard-chart-data"
+    type="application/json"
+>
+{
+    "monthlyTrends": {{ analytics.get("monthly_trends", []) | tojson }},
+    "categoryBreakdown": {{ analytics.get("category_breakdown", []) | tojson }}
+}
+</script>
+
+
+<!-- ==================================================================== -->
+<!-- CHART.JS -->
+<!-- ==================================================================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    /*
+     * ANGELIX Dashboard
+     *
+     * Backend services perform all financial calculations.
+     * This JavaScript is responsible only for visualization.
+     */
+
+
+    /* ================================================================ */
+    /* FINANCIAL HEALTH SCORE VISUALIZATION */
+    /* ================================================================ */
+
+    const healthRing =
+        document.querySelector(
+            ".health-score-ring"
+        );
+
+
+    if (healthRing) {
+
+        const healthScore =
+            Number(
+                healthRing.dataset.healthScore
+            );
+
+
+        if (
+            Number.isFinite(healthScore)
+            && healthScore >= 0
+        ) {
+
+            const normalizedScore =
+                Math.min(
+                    Math.max(healthScore, 0),
+                    100
+                );
+
+
+            healthRing.style.setProperty(
+                "--health-progress",
+                normalizedScore + "%"
+            );
+
+        }
+
+    }
+
+
+    /* ================================================================ */
+    /* FINANCIAL HEALTH COMPONENT PROGRESS BARS */
+    /* ================================================================ */
+
+    const healthProgressBars =
+        document.querySelectorAll(
+            "[data-health-width]"
+        );
+
+
+    healthProgressBars.forEach(
+        function (bar) {
+
+            const width =
+                Number(
+                    bar.dataset.healthWidth
+                );
+
+
+            if (
+                Number.isFinite(width)
+                && width >= 0
+            ) {
+
+                const normalizedWidth =
+                    Math.min(
+                        Math.max(width, 0),
+                        100
+                    );
+
+
+                bar.style.width =
+                    normalizedWidth + "%";
+
+            }
+
+        }
+    );
+
+
+    /* ================================================================ */
+    /* READ SERVER-SIDE CHART DATA */
+    /* ================================================================ */
+
+    const chartDataElement =
+        document.getElementById(
+            "dashboard-chart-data"
+        );
+
+
+    if (!chartDataElement) {
+        return;
+    }
+
+
+    let dashboardData = {};
+
+
+    try {
+
+        dashboardData =
+            JSON.parse(
+                chartDataElement.textContent
+            );
+
+    } catch (error) {
+
+        console.error(
+            "Unable to read dashboard chart data:",
+            error
+        );
+
+        return;
+    }
+
+
+    /* ================================================================ */
+    /* REVENUE VS EXPENSE CHART */
+    /* ================================================================ */
+
+    const revenueCanvas =
+        document.getElementById(
+            "revenueExpenseChart"
+        );
+
+
+    if (revenueCanvas) {
+
+        const monthlyData =
+            Array.isArray(
+                dashboardData.monthlyTrends
+            )
+                ? dashboardData.monthlyTrends
+                : [];
+
+
+        const labels = [];
+
+        const revenueValues = [];
+
+        const expenseValues = [];
+
+
+        monthlyData.forEach(function (item) {
+
+            if (!item || typeof item !== "object") {
+                return;
+            }
+
+
+            labels.push(
+                item.month
+                || item.period
+                || item.label
+                || ""
+            );
+
+
+            revenueValues.push(
+                Number(
+                    item.revenue
+                    ?? item.total_revenue
+                    ?? 0
+                )
+            );
+
+
+            expenseValues.push(
+                Number(
+                    item.expenses
+                    ?? item.total_expenses
+                    ?? item.expense
+                    ?? 0
+                )
+            );
+
+        });
+
+
+        new Chart(
+            revenueCanvas,
+            {
+                type: "line",
+
+                data: {
+
+                    labels: labels,
+
+                    datasets: [
+
+                        {
+                            label: "Revenue",
+                            data: revenueValues,
+                            tension: 0.35,
+                            borderWidth: 3,
+                            pointRadius: 3,
+                            fill: false
+                        },
+
+                        {
+                            label: "Expenses",
+                            data: expenseValues,
+                            tension: 0.35,
+                            borderWidth: 3,
+                            pointRadius: 3,
+                            fill: false
+                        }
+
+                    ]
+
+                },
+
+                options: {
+
+                    responsive: true,
+
+                    maintainAspectRatio: false,
+
+                    interaction: {
+                        intersect: false,
+                        mode: "index"
+                    },
+
+                    plugins: {
+
+                        legend: {
+                            position: "bottom"
+                        }
+
+                    },
+
+                    scales: {
+
+                        y: {
+
+                            beginAtZero: true,
+
+                            ticks: {
+
+                                callback: function (value) {
+
+                                    return (
+                                        "₹" +
+                                        Number(value)
+                                            .toLocaleString("en-IN")
+                                    );
+
+                                }
+
+                            }
+
+                        }
+
+                    }
+
+                }
+
+            }
+        );
+
+    }
+
+
+    /* ================================================================ */
+    /* EXPENSE CATEGORY CHART */
+    /* ================================================================ */
+
+    const categoryCanvas =
+        document.getElementById(
+            "categoryChart"
+        );
+
+
+    if (categoryCanvas) {
+
+        const categoryData =
+            dashboardData.categoryBreakdown;
+
+
+        const categoryLabels = [];
+
+        const categoryValues = [];
+
+
+        if (Array.isArray(categoryData)) {
+
+            categoryData.forEach(function (item) {
+
+                if (!item || typeof item !== "object") {
+                    return;
+                }
+
+
+                categoryLabels.push(
+                    item.category
+                    || item.name
+                    || "Other"
+                );
+
+
+                categoryValues.push(
+                    Number(
+                        item.amount
+                        ?? item.total
+                        ?? item.value
+                        ?? 0
+                    )
+                );
+
+            });
+
+        } else if (
+            categoryData
+            && typeof categoryData === "object"
+        ) {
+
+            Object.entries(
+                categoryData
+            ).forEach(function ([key, value]) {
+
+                categoryLabels.push(key);
+
+                categoryValues.push(
+                    Number(value ?? 0)
+                );
+
+            });
+
+        }
+
+
+        new Chart(
+            categoryCanvas,
+            {
+                type: "doughnut",
+
+                data: {
+
+                    labels: categoryLabels,
+
+                    datasets: [
+
+                        {
+                            data: categoryValues,
+                            borderWidth: 0
+                        }
+
+                    ]
+
+                },
+
+                options: {
+
+                    responsive: true,
+
+                    maintainAspectRatio: false,
+
+                    cutout: "62%",
+
+                    plugins: {
+
+                        legend: {
+                            position: "right"
+                        }
+
+                    }
+
+                }
+
+            }
+        );
+
+    }
+
+});
+
+</script>
+
+{% endblock %}

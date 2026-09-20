@@ -1,0 +1,1 @@
+The included training CSV is generated specifically for this package and is synthetic. It is not copied from the public datasets discussed during research.

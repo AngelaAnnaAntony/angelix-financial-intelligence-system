@@ -1,0 +1,13 @@
+{
+  "dataset_rows": 10000,
+  "account_classes": [
+    "asset",
+    "equity",
+    "expense",
+    "liability",
+    "revenue"
+  ],
+  "account_type_accuracy": 1.0,
+  "debit_credit_accuracy": 0.92,
+  "dataset_note": "Synthetic training data generated from accounting transaction templates. It is a development/bootstrap dataset, not a benchmark of real-world accuracy."
+}

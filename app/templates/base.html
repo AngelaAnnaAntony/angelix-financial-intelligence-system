@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="ANGELIX - AI-Powered Financial Intelligence and Decision Support Platform"
+    >
+
+    <meta
+        name="theme-color"
+        content="#2563eb"
+    >
+
+    <title>
+        {% block title %}ANGELIX{% endblock %}
+    </title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+    {% block extra_css %}{% endblock %}
+
+</head>
+
+
+<body>
+
+    <!-- ==========================================================
+         GLOBAL HEADER
+         ========================================================== -->
+
+    <header class="topbar">
+
+        <div class="topbar-inner">
+
+            <!-- Brand -->
+
+            <a
+                href="{{
+                    url_for(
+                        'dashboard.home'
+                    )
+                    if current_user.is_authenticated
+                    else url_for('auth.login')
+                }}"
+                class="brand"
+                aria-label="ANGELIX Home"
+            >
+
+                <span class="brand-mark">
+                    A
+                </span>
+
+                <span class="brand-text">
+                    ANGELIX
+                </span>
+
+            </a>
+
+
+            <!-- ==================================================
+                 AUTHENTICATED NAVIGATION
+                 ================================================== -->
+
+            {% if current_user.is_authenticated %}
+
+            <nav
+                class="top-navigation"
+                aria-label="Main navigation"
+            >
+
+                <!-- Dashboard -->
+
+                <a
+                    href="{{ url_for('dashboard.home') }}"
+                    class="nav-link"
+                >
+                    Dashboard
+                </a>
+
+
+                <!-- Analytics -->
+
+                {% if current_user.organization_id %}
+
+                <a
+                    href="{{
+                        url_for(
+                            'analytics.overview',
+                            organization_id=current_user.organization_id
+                        )
+                    }}"
+                    class="nav-link"
+                >
+                    Analytics
+                </a>
+
+
+                <!-- Transactions -->
+
+                <a
+                    href="{{
+                        url_for(
+                            'transactions.list_transactions',
+                            organization_id=current_user.organization_id
+                        )
+                    }}"
+                    class="nav-link"
+                >
+                    Transactions
+                </a>
+
+
+                <!-- Uploads -->
+
+                <a
+                    href="{{
+                        url_for(
+                            'uploads.uploads',
+                            organization_id=current_user.organization_id
+                        )
+                    }}"
+                    class="nav-link"
+                >
+                    Uploads
+                </a>
+
+                {% endif %}
+
+                <!-- Logout -->
+
+                <form
+                    method="POST"
+                    action="{{ url_for('auth.logout') }}"
+                    style="display: inline; margin: 0;"
+                >
+
+                    <input
+                        type="hidden"
+                        name="csrf_token"
+                        value="{{ csrf_token() }}"
+                    >
+
+                    <button
+                        type="submit"
+                        class="nav-link"
+                        style="
+                            border: 0;
+                            background: transparent;
+                            cursor: pointer;
+                            font: inherit;
+                        "
+                    >
+                        Logout
+                    </button>
+
+                </form>
+
+            </nav>
+
+            <!-- ==================================================
+                 HEADER ACTIONS
+                 ================================================== -->
+
+            <div class="topbar-actions">
+
+                <button
+                    type="button"
+                    class="icon-button"
+                    id="themeToggle"
+                    aria-label="Toggle dark mode"
+                    title="Toggle theme"
+                >
+                    <span id="themeIcon">
+                        ☾
+                    </span>
+                </button>
+
+
+                <div class="user-menu">
+
+                    <div class="user-avatar">
+
+                        {{
+                            current_user.first_name[0]|upper
+                            if current_user.first_name
+                            else 'U'
+                        }}
+
+                    </div>
+
+
+                    <div class="user-info">
+
+                        <span class="user-name">
+
+                            {{ current_user.first_name }}
+                            {{ current_user.last_name }}
+
+                        </span>
+
+
+                        <span class="user-role">
+
+                            {{ current_user.role|capitalize }}
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            {% else %}
+
+
+            <!-- ==================================================
+                 PUBLIC HEADER
+                 ================================================== -->
+
+            <div class="topbar-actions">
+
+                <button
+                    type="button"
+                    class="icon-button"
+                    id="themeToggle"
+                    aria-label="Toggle dark mode"
+                    title="Toggle theme"
+                >
+
+                    <span id="themeIcon">
+                        ☾
+                    </span>
+
+                </button>
+
+            </div>
+
+            {% endif %}
+
+        </div>
+
+    </header>
+
+
+    <!-- ==========================================================
+         PAGE CONTENT
+         ========================================================== -->
+
+    <main class="page-container">
+
+        {% with messages =
+            get_flashed_messages(with_categories=true)
+        %}
+
+            {% if messages %}
+
+                <div class="flash-container">
+
+                    {% for category, message in messages %}
+
+                        <div
+                            class="alert alert-{{ category }}"
+                            role="alert"
+                        >
+
+                            <span class="alert-message">
+                                {{ message }}
+                            </span>
+
+
+                            <button
+                                type="button"
+                                class="alert-close"
+                                onclick="this.parentElement.remove()"
+                                aria-label="Close notification"
+                            >
+                                ×
+                            </button>
+
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+
+            {% endif %}
+
+        {% endwith %}
+
+
+        {% block content %}{% endblock %}
+
+    </main>
+
+
+    <!-- ==========================================================
+         FOOTER
+         ========================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-inner">
+
+            <div class="footer-brand">
+
+                <span class="footer-logo">
+                    A
+                </span>
+
+                <span>
+                    ANGELIX
+                </span>
+
+            </div>
+
+
+            <p>
+                AI-Powered Financial Intelligence & Decision Support
+            </p>
+
+
+            <span class="footer-copy">
+
+                © {{
+                    current_year
+                    if current_year
+                    else 2026
+                }}
+                ANGELIX
+
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ==========================================================
+         GLOBAL JAVASCRIPT
+         ========================================================== -->
+
+    <script>
+
+        /* ========================================================
+           THEME MANAGEMENT
+           ======================================================== */
+
+        const themeToggle =
+            document.getElementById("themeToggle");
+
+        const themeIcon =
+            document.getElementById("themeIcon");
+
+
+        function applyTheme(theme) {
+
+            document.documentElement
+                .setAttribute(
+                    "data-theme",
+                    theme
+                );
+
+
+            if (themeIcon) {
+
+                themeIcon.textContent =
+                    theme === "dark"
+                        ? "☀"
+                        : "☾";
+
+            }
+
+        }
+
+
+        function getPreferredTheme() {
+
+            const savedTheme =
+                localStorage.getItem(
+                    "angelix-theme"
+                );
+
+
+            if (savedTheme) {
+                return savedTheme;
+            }
+
+
+            if (
+                window.matchMedia &&
+                window.matchMedia(
+                    "(prefers-color-scheme: dark)"
+                ).matches
+            ) {
+
+                return "dark";
+
+            }
+
+
+            return "light";
+
+        }
+
+
+        const initialTheme =
+            getPreferredTheme();
+
+
+        applyTheme(initialTheme);
+
+
+        if (themeToggle) {
+
+            themeToggle.addEventListener(
+                "click",
+                function () {
+
+                    const currentTheme =
+                        document.documentElement
+                            .getAttribute(
+                                "data-theme"
+                            );
+
+
+                    const newTheme =
+                        currentTheme === "dark"
+                            ? "light"
+                            : "dark";
+
+
+                    applyTheme(newTheme);
+
+
+                    localStorage.setItem(
+                        "angelix-theme",
+                        newTheme
+                    );
+
+                }
+            );
+
+        }
+
+
+        /* ========================================================
+           AUTO-HIDE FLASH MESSAGES
+           ======================================================== */
+
+        setTimeout(
+            function () {
+
+                const alerts =
+                    document.querySelectorAll(
+                        ".alert"
+                    );
+
+
+                alerts.forEach(
+                    function (alert) {
+
+                        alert.style.opacity =
+                            "0";
+
+                        alert.style.transform =
+                            "translateY(-8px)";
+
+
+                        setTimeout(
+                            function () {
+
+                                alert.remove();
+
+                            },
+                            300
+                        );
+
+                    }
+                );
+
+            },
+            5000
+        );
+
+    </script>
+
+
+    {% block extra_js %}{% endblock %}
+
+</body>
+
+</html>

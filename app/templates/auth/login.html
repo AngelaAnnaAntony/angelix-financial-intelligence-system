@@ -1,0 +1,632 @@
+{% extends "base.html" %}
+
+{% block title %}Sign In | ANGELIX{% endblock %}
+
+{% block content %}
+
+<div class="auth-page">
+
+    <!-- ==========================================
+         LEFT BRAND PANEL
+         ========================================== -->
+
+    <section class="auth-brand-panel">
+
+        <div class="auth-brand-content">
+
+            <div class="auth-large-logo">
+                <span class="auth-logo-icon">A</span>
+                <span>ANGELIX</span>
+            </div>
+
+            <div class="auth-brand-copy">
+
+                <span class="auth-eyebrow">
+                    FINANCIAL INTELLIGENCE PLATFORM
+                </span>
+
+                <h1>
+                    Turn financial data
+                    into smarter decisions.
+                </h1>
+
+                <p>
+                    ANGELIX combines financial analytics,
+                    intelligent insights and AI-powered
+                    decision support in one platform.
+                </p>
+
+            </div>
+
+
+            <!-- Feature List -->
+
+            <div class="auth-features">
+
+                <div class="auth-feature">
+
+                    <div class="auth-feature-icon">
+                        ✓
+                    </div>
+
+                    <div>
+                        <strong>
+                            Intelligent Analytics
+                        </strong>
+
+                        <span>
+                            Understand your financial performance
+                            through meaningful KPIs and trends.
+                        </span>
+                    </div>
+
+                </div>
+
+
+                <div class="auth-feature">
+
+                    <div class="auth-feature-icon">
+                        ✓
+                    </div>
+
+                    <div>
+                        <strong>
+                            AI-Powered Insights
+                        </strong>
+
+                        <span>
+                            Get contextual financial observations
+                            and recommendations.
+                        </span>
+                    </div>
+
+                </div>
+
+
+                <div class="auth-feature">
+
+                    <div class="auth-feature-icon">
+                        ✓
+                    </div>
+
+                    <div>
+                        <strong>
+                            Financial Health
+                        </strong>
+
+                        <span>
+                            Monitor financial strength using
+                            transparent metrics and indicators.
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Decorative Elements -->
+
+        <div class="auth-decoration auth-decoration-one"></div>
+
+        <div class="auth-decoration auth-decoration-two"></div>
+
+    </section>
+
+
+    <!-- ==========================================
+         RIGHT LOGIN PANEL
+         ========================================== -->
+
+    <section class="auth-form-panel">
+
+        <div class="auth-card">
+
+            <!-- Header -->
+
+            <div class="auth-card-header">
+
+                <span class="auth-mobile-logo">
+                    A
+                </span>
+
+                <h2>
+                    Welcome back
+                </h2>
+
+                <p>
+                    Sign in to continue to your
+                    Angelix financial workspace.
+                </p>
+
+            </div>
+
+
+            <!-- Login Form -->
+
+            <form
+                method="post"
+                action="{{ url_for('auth.login') }}"
+                class="auth-form"
+                id="loginForm"
+            >
+                <input
+                    type="hidden"
+                    name="csrf_token"
+                    value="{{ csrf_token() }}"
+                >
+
+                <!-- Email -->
+
+                <div class="auth-form-group">
+
+                    <label
+                        for="email"
+                        class="auth-label"
+                    >
+                        Email address
+                    </label>
+
+                    <div class="auth-input-wrapper">
+
+                        <span
+                            class="auth-input-icon"
+                            aria-hidden="true"
+                        >
+                            @
+                        </span>
+
+                        <input
+                            id="email"
+                            name="email"
+                            type="email"
+                            class="auth-input"
+                            placeholder="Enter your email address"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+                    <small
+                        class="auth-field-error"
+                        id="emailError"
+                    ></small>
+
+                </div>
+
+
+                <!-- Password -->
+
+                <div class="auth-form-group">
+
+                    <div class="auth-label-row">
+
+                        <label
+                            for="password"
+                            class="auth-label"
+                        >
+                            Password
+                        </label>
+
+                    </div>
+
+
+                    <div class="auth-input-wrapper">
+
+                        <span
+                            class="auth-input-icon"
+                            aria-hidden="true"
+                        >
+                            •
+                        </span>
+
+                        <input
+                            id="password"
+                            name="password"
+                            type="password"
+                            class="auth-input auth-password-input"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            id="passwordToggle"
+                            aria-label="Show password"
+                            title="Show password"
+                        >
+                            <span id="passwordToggleIcon">
+                                Show
+                            </span>
+                        </button>
+
+                    </div>
+
+                    <small
+                        class="auth-field-error"
+                        id="passwordError"
+                    ></small>
+
+                </div>
+
+
+                <!-- Options -->
+
+                <div class="auth-options">
+
+                    <label class="remember-option">
+
+                        <input
+                            type="checkbox"
+                            name="remember"
+                            value="1"
+                        >
+
+                        <span>
+                            Remember me
+                        </span>
+
+                    </label>
+
+
+                    <a href="{{ url_for('auth.forgot_password') }}" class="forgot-password-link">
+                        Forgot password?
+                    </a>
+
+                </div>
+
+
+                <!-- Submit -->
+
+                <button
+                    type="submit"
+                    class="auth-submit"
+                    id="loginButton"
+                >
+
+                    <span
+                        class="auth-submit-text"
+                        id="loginButtonText"
+                    >
+                        Sign in
+                    </span>
+
+                    <span
+                        class="auth-spinner"
+                        id="loginSpinner"
+                        aria-hidden="true"
+                    ></span>
+
+                </button>
+
+            </form>
+
+
+            <!-- Registration -->
+
+            <div class="auth-divider">
+
+                <span></span>
+
+                <small>
+                    New to Angelix?
+                </small>
+
+                <span></span>
+
+            </div>
+
+
+            <a
+                href="/auth/register"
+                class="auth-register-link"
+            >
+                Create an account
+                <span aria-hidden="true">→</span>
+            </a>
+
+
+            <!-- Security Notice -->
+
+            <div class="auth-security-note">
+
+                <span class="auth-security-icon">
+                    ✓
+                </span>
+
+                <span>
+                    Your financial information is protected
+                    by secure application controls.
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+{% endblock %}
+
+
+{% block extra_js %}
+
+<script>
+
+    /* ==========================================
+       PASSWORD VISIBILITY
+       ========================================== */
+
+    const passwordInput =
+        document.getElementById("password");
+
+    const passwordToggle =
+        document.getElementById("passwordToggle");
+
+    const passwordToggleIcon =
+        document.getElementById("passwordToggleIcon");
+
+
+    if (
+        passwordInput &&
+        passwordToggle
+    ) {
+
+        passwordToggle.addEventListener(
+            "click",
+            function () {
+
+                const isPassword =
+                    passwordInput.type === "password";
+
+
+                if (isPassword) {
+
+                    passwordInput.type = "text";
+
+                    passwordToggleIcon.textContent =
+                        "Hide";
+
+                    passwordToggle.setAttribute(
+                        "aria-label",
+                        "Hide password"
+                    );
+
+                    passwordToggle.setAttribute(
+                        "title",
+                        "Hide password"
+                    );
+
+                } else {
+
+                    passwordInput.type = "password";
+
+                    passwordToggleIcon.textContent =
+                        "Show";
+
+                    passwordToggle.setAttribute(
+                        "aria-label",
+                        "Show password"
+                    );
+
+                    passwordToggle.setAttribute(
+                        "title",
+                        "Show password"
+                    );
+
+                }
+
+            }
+        );
+
+    }
+
+
+    /* ==========================================
+       CLIENT-SIDE VALIDATION
+       ========================================== */
+
+    const loginForm =
+        document.getElementById("loginForm");
+
+    const emailInput =
+        document.getElementById("email");
+
+    const emailError =
+        document.getElementById("emailError");
+
+    const passwordError =
+        document.getElementById("passwordError");
+
+
+    function clearValidationErrors() {
+
+        if (emailError) {
+            emailError.textContent = "";
+        }
+
+        if (passwordError) {
+            passwordError.textContent = "";
+        }
+
+        if (emailInput) {
+            emailInput.classList.remove(
+                "auth-input-error"
+            );
+        }
+
+        if (passwordInput) {
+            passwordInput.classList.remove(
+                "auth-input-error"
+            );
+        }
+
+    }
+
+
+    if (loginForm) {
+
+        loginForm.addEventListener(
+            "submit",
+            function (event) {
+
+                clearValidationErrors();
+
+                let valid = true;
+
+
+                /* Email */
+
+                if (
+                    !emailInput.value.trim()
+                ) {
+
+                    emailError.textContent =
+                        "Please enter your email address.";
+
+                    emailInput.classList.add(
+                        "auth-input-error"
+                    );
+
+                    valid = false;
+
+                } else if (
+                    !emailInput.validity.valid
+                ) {
+
+                    emailError.textContent =
+                        "Please enter a valid email address.";
+
+                    emailInput.classList.add(
+                        "auth-input-error"
+                    );
+
+                    valid = false;
+
+                }
+
+
+                /* Password */
+
+                if (
+                    !passwordInput.value
+                ) {
+
+                    passwordError.textContent =
+                        "Please enter your password.";
+
+                    passwordInput.classList.add(
+                        "auth-input-error"
+                    );
+
+                    valid = false;
+
+                }
+
+
+                if (!valid) {
+
+                    event.preventDefault();
+
+                    return;
+
+                }
+
+
+                /* Loading state */
+
+                const button =
+                    document.getElementById(
+                        "loginButton"
+                    );
+
+                const buttonText =
+                    document.getElementById(
+                        "loginButtonText"
+                    );
+
+                const spinner =
+                    document.getElementById(
+                        "loginSpinner"
+                    );
+
+
+                if (button) {
+
+                    button.disabled = true;
+
+                }
+
+                if (buttonText) {
+
+                    buttonText.textContent =
+                        "Signing in...";
+
+                }
+
+                if (spinner) {
+
+                    spinner.style.display =
+                        "block";
+
+                }
+
+            }
+        );
+
+    }
+
+
+    /* ==========================================
+       REMOVE ERROR STATE WHEN USER TYPES
+       ========================================== */
+
+    if (emailInput) {
+
+        emailInput.addEventListener(
+            "input",
+            function () {
+
+                emailInput.classList.remove(
+                    "auth-input-error"
+                );
+
+                if (emailError) {
+                    emailError.textContent = "";
+                }
+
+            }
+        );
+
+    }
+
+
+    if (passwordInput) {
+
+        passwordInput.addEventListener(
+            "input",
+            function () {
+
+                passwordInput.classList.remove(
+                    "auth-input-error"
+                );
+
+                if (passwordError) {
+                    passwordError.textContent = "";
+                }
+
+            }
+        );
+
+    }
+
+</script>
+
+{% endblock %}

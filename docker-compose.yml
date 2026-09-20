@@ -1,0 +1,23 @@
+services:
+  db:
+    image: postgres:18
+    environment:
+      POSTGRES_DB: angelix
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: CHANGE_ME
+    volumes:
+      - angelix_db:/var/lib/postgresql
+  web:
+    build: .
+    environment:
+      DATABASE_URL: postgresql+psycopg://postgres:CHANGE_ME@db:5432/angelix
+      FLASK_SECRET_KEY: CHANGE_ME
+      JWT_SECRET_KEY: CHANGE_ME
+      OPENROUTER_API_KEY: ""
+      OPENROUTER_MODEL: ""
+    depends_on:
+      - db
+    ports:
+      - "8000:8000"
+volumes:
+  angelix_db:
